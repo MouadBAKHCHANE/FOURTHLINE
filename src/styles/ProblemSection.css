@@ -1,0 +1,192 @@
+.problem-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bento-tile {
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-tile:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tile 1: Disconnect (Spans 2 rows on Desktop) */
+.disconnect-tile {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.red-glow {
+    box-shadow: 0 0 30px rgba(255, 95, 86, 0.1);
+}
+
+.orange-glow {
+    box-shadow: 0 0 30px rgba(255, 189, 46, 0.1);
+}
+
+.text-red {
+    color: #ff5f56;
+}
+
+.text-orange {
+    color: #ffbd2e;
+}
+
+.tile-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.tile-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Visual for disconnect */
+.visual-disconnect {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.5;
+}
+
+.line-segment {
+    height: 2px;
+    background: var(--text-secondary);
+    flex: 1;
+}
+
+.gap-indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff5f56;
+    border-radius: 50%;
+    position: relative;
+}
+
+.gap-indicator::after {
+    content: "!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff5f56;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Tile 2: Stat */
+.stat-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 95, 86, 0.05) 100%);
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+.absolute-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+/* Tile 3: Clock */
+.clock-tile .row-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.clock-tile .icon-wrapper {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.clock-tile h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .disconnect-tile {
+        grid-row: span 1;
+    }
+
+    .clock-tile .row-layout {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,82 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(11, 12, 16, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: 1.25rem;
+}
+
+.logo-icon {
+    display: flex;
+    gap: 3px;
+    height: 24px;
+    align-items: flex-end;
+}
+
+.bar {
+    width: 4px;
+    background-color: var(--text-secondary);
+    border-radius: 2px;
+}
+
+.bar-1 {
+    height: 12px;
+    background-color: var(--text-secondary);
+}
+
+.bar-2 {
+    height: 16px;
+    background-color: var(--text-secondary);
+}
+
+.bar-3 {
+    height: 20px;
+    background-color: var(--text-secondary);
+}
+
+.bar-4 {
+    height: 24px;
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
