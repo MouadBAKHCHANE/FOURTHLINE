@@ -220,8 +220,24 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
     }
 
     .dashboard-stage {
@@ -229,6 +245,12 @@
         transform: none;
         height: auto;
         gap: 20px;
+        padding: 0 1rem;
+    }
+
+    .mockup-card {
+        width: 100%;
+        max-width: 320px;
     }
 
     .hero:hover .dashboard-stage {
@@ -237,9 +259,71 @@
 
     .connection-line-container {
         transform: rotate(90deg);
+        height: 60px;
+        width: 60px;
     }
 
     .hero-visual {
         height: auto;
+        margin-top: 2rem;
+    }
+}
+
+/* Laser Storm Animation */
+.laser-storm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.laser {
+    position: absolute;
+    top: -150px;
+    width: 4px;
+    /* Thicker lasers */
+    height: 150px;
+    background: linear-gradient(180deg, rgba(0, 161, 224, 0) 0%, rgba(0, 161, 224, 0.8) 50%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0 0 15px var(--accent-blue);
+    opacity: 0;
+    animation: laser-fall linear infinite;
+}
+
+/* Central Core Glow */
+.laser-core {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 161, 224, 0.1) 0%, rgba(0, 161, 224, 0.0) 80%);
+    filter: blur(40px);
+    z-index: 0;
+}
+
+@keyframes laser-fall {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(120vh) scaleX(0.5);
+        opacity: 0;
     }
 }
