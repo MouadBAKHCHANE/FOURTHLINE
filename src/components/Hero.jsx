@@ -4,17 +4,6 @@ import '../styles/Hero.css';
 const Hero = () => {
     return (
         <section className="hero">
-            <div className="laser-storm">
-                {[...Array(30)].map((_, i) => (
-                    <div key={i} className="laser" style={{
-                        left: `${40 + Math.random() * 20}%`,
-                        animationDelay: `${Math.random() * 2}s`,
-                        animationDuration: `${0.5 + Math.random() * 1}s`,
-                        opacity: Math.random() * 0.5 + 0.2
-                    }}></div>
-                ))}
-                <div className="laser-core"></div>
-            </div>
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1 className="hero-title">
