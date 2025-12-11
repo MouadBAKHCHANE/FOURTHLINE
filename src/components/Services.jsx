@@ -1,15 +1,18 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import '../styles/Services.css';
+import { useLanguage } from '../App';
 
 const Services = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="services-section" id="services">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title">Investment Packages</h2>
+                    <h2 className="section-title">{t.services.title}</h2>
                     <p className="section-subtitle">
-                        Transparent pricing for scalable growth.
+                        {t.services.subtitle}
                     </p>
                 </div>
 
@@ -17,18 +20,18 @@ const Services = () => {
                     {/* Tier 1: The Essential */}
                     <div className="pricing-card glass-card">
                         <div className="card-content">
-                            <div className="tier-badge">Startups</div>
-                            <h3 className="tier-name">The Essential</h3>
-                            <p className="tier-desc">Perfect for launching your digital presence.</p>
+                            <div className="tier-badge">{t.services.tier1Badge}</div>
+                            <h3 className="tier-name">{t.services.tier1Name}</h3>
+                            <p className="tier-desc">{t.services.tier1Desc}</p>
 
                             <ul className="feature-list">
-                                <li><Check size={18} className="check-icon" /> High-Conversion Landing Page</li>
-                                <li><Check size={18} className="check-icon" /> Salesforce Starter Setup</li>
-                                <li><Check size={18} className="check-icon" /> Basic Web-to-Lead</li>
-                                <li><Check size={18} className="check-icon" /> Email Support</li>
+                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat1}</li>
+                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat2}</li>
+                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat3}</li>
+                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
                             </ul>
 
-                            <a href="#contact" className="btn btn-glass full-width">Get Started</a>
+                            <a href="#contact" className="btn btn-glass full-width">{t.services.tier1Button}</a>
                         </div>
                     </div>
 
@@ -36,19 +39,19 @@ const Services = () => {
                     <div className="pricing-card glass-card enterprise-card">
                         <div className="card-glow"></div>
                         <div className="card-content">
-                            <div className="tier-badge badge-accent">SME & Industry</div>
-                            <h3 className="tier-name">The Enterprise</h3>
-                            <p className="tier-desc">Complete digital infrastructure scaling.</p>
+                            <div className="tier-badge badge-accent">{t.services.tier2Badge}</div>
+                            <h3 className="tier-name">{t.services.tier2Name}</h3>
+                            <p className="tier-desc">{t.services.tier2Desc}</p>
 
                             <ul className="feature-list">
-                                <li><Check size={18} className="check-icon accent" /> Full Corporate Website (5+ Pages)</li>
-                                <li><Check size={18} className="check-icon accent" /> Advanced CRM Customization</li>
-                                <li><Check size={18} className="check-icon accent" /> Lead Scoring & Automation</li>
-                                <li><Check size={18} className="check-icon accent" /> Priority Support (1 Month)</li>
-                                <li><Check size={18} className="check-icon accent" /> Half-day Training Workshop</li>
+                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat1}</li>
+                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat2}</li>
+                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat3}</li>
+                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat4}</li>
+                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
                             </ul>
 
-                            <a href="#contact" className="btn btn-primary full-width">Start Your Build</a>
+                            <a href="#contact" className="btn btn-primary full-width">{t.services.tier2Button}</a>
                         </div>
                     </div>
                 </div>

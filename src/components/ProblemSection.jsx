@@ -1,15 +1,18 @@
 import React from 'react';
 import { Unlink, AlertCircle, Clock } from 'lucide-react';
 import '../styles/ProblemSection.css';
+import { useLanguage } from '../App';
 
 const ProblemSection = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="problem-section">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title">The Disconnect</h2>
+                    <h2 className="section-title">{t.problem.title}</h2>
                     <p className="section-subtitle">
-                        Most businesses have a critical gap between their marketing efforts and sales results.
+                        {t.problem.subtitle}
                     </p>
                 </div>
 
@@ -20,8 +23,8 @@ const ProblemSection = () => {
                             <div className="icon-wrapper red-glow">
                                 <Unlink size={48} className="text-red" />
                             </div>
-                            <h3>Marketing and Sales are isolated.</h3>
-                            <p>Leads generated online fall into a black hole before reaching your sales team.</p>
+                            <h3>{t.problem.card1Title}</h3>
+                            <p>{t.problem.card1Desc}</p>
                         </div>
                         <div className="visual-disconnect">
                             {/* Abstract visual of broken connection */}
@@ -34,9 +37,9 @@ const ProblemSection = () => {
                     {/* Tile 2: Stat Highlight */}
                     <div className="bento-tile stat-tile glass-card">
                         <div className="tile-content">
-                            <div className="stat-number text-gradient">60%</div>
-                            <div className="stat-label">of leads are lost</div>
-                            <p className="stat-desc">buried in manual Excel sheets and overlooked emails.</p>
+                            <div className="stat-number text-gradient">{t.problem.card2Stat}</div>
+                            <div className="stat-label">{t.problem.card2Label}</div>
+                            <p className="stat-desc">{t.problem.card2Desc}</p>
                             <AlertCircle className="absolute-icon" size={120} />
                         </div>
                     </div>
@@ -48,8 +51,8 @@ const ProblemSection = () => {
                                 <Clock size={32} className="text-orange" />
                             </div>
                             <div>
-                                <h3>Slow response times kill deals.</h3>
-                                <p>Every minute of delay reduces conversion probability by 10%.</p>
+                                <h3>{t.problem.card3Title}</h3>
+                                <p>{t.problem.card3Desc}</p>
                             </div>
                         </div>
                     </div>

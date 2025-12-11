@@ -1,12 +1,15 @@
 import React from 'react';
 import '../styles/Footer.css';
+import { useLanguage } from '../App';
 
 const Footer = () => {
+    const { t } = useLanguage();
+
     return (
         <footer className="footer-section">
             {/* Trust Bar */}
             <div className="trust-bar-container">
-                <p className="trust-label">Powering Sales for</p>
+                <p className="trust-label">{t.footer.poweringSales}</p>
                 <div className="logos-grid">
                     <div className="logo-placeholder">LOGOS</div>
                     <div className="logo-placeholder">NEXUS</div>
@@ -18,38 +21,38 @@ const Footer = () => {
             {/* Final CTA */}
             <div className="container">
                 <div className="final-cta">
-                    <h2 className="cta-title">Stop losing leads.<br />Start building your system.</h2>
-                    <a href="#contact" className="btn btn-primary btn-lg">Get Your Audit</a>
+                    <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
+                    <a href="#contact" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
                 </div>
 
                 <div className="footer-content">
                     <div className="footer-col brand-col">
                         <div className="logo-text">FOURTHLINE</div>
                         <p className="footer-desc">
-                            Bridging the gap between marketing and sales with Salesforce integration.
+                            {t.footer.desc}
                         </p>
                     </div>
 
                     <div className="footer-col">
-                        <h4>Services</h4>
+                        <h4>{t.footer.services}</h4>
                         <ul>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Salesforce Setup</a></li>
-                            <li><a href="#">Web-to-Lead</a></li>
-                            <li><a href="#">Audits</a></li>
+                            <li><a href="#">{t.footer.webDesign}</a></li>
+                            <li><a href="#">{t.footer.salesforceSetup}</a></li>
+                            <li><a href="#">{t.footer.webToLead}</a></li>
+                            <li><a href="#">{t.footer.audits}</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
-                        <h4>Legal</h4>
+                        <h4>{t.footer.legal}</h4>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">{t.footer.privacyPolicy}</a></li>
+                            <li><a href="#">{t.footer.termsOfService}</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
-                        <h4>Contact</h4>
+                        <h4>{t.footer.contact}</h4>
                         <ul>
                             <li>contact@fourthline.ma</li>
                             <li>Casablanca, Morocco</li>
@@ -58,7 +61,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; 2023 Fourthline Consulting. All rights reserved.</p>
+                    <p>&copy; 2025 Fourthline Consulting. {t.footer.rights}</p>
                 </div>
             </div>
         </footer>
