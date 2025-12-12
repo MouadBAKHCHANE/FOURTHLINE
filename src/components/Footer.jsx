@@ -10,14 +10,25 @@ const Footer = () => {
             {/* Trust Bar */}
             <div className="trust-bar-container">
                 <p className="trust-label">{t.footer.poweringSales}</p>
-                <div className="logos-grid">
-                    <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
-                    <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
-                    <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
-                    <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
-                    <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
-                    <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
-                    <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                <div className="logos-slider">
+                    <div className="logos-slide">
+                        <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                    </div>
+                    <div className="logos-slide">
+                        <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
+                        <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
+                        <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                    </div>
                 </div>
             </div>
 
