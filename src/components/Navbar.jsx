@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className="navbar-wrapper">
             <div className="navbar-pill">
                 <div className="logo">
-                    <span className="logo-text">FOURTHLINE</span>
+                    <span className="logo-text">FourthLine</span>
                 </div>
 
                 {/* Desktop Links */}

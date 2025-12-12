@@ -24,13 +24,20 @@
     display: flex;
     justify-content: center;
     gap: 60px;
-    opacity: 0.4;
 }
 
-.logo-placeholder {
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
+.client-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%) brightness(100%);
 }
 
 /* Final CTA */

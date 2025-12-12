@@ -11,10 +11,13 @@ const Footer = () => {
             <div className="trust-bar-container">
                 <p className="trust-label">{t.footer.poweringSales}</p>
                 <div className="logos-grid">
-                    <div className="logo-placeholder">LOGOS</div>
-                    <div className="logo-placeholder">NEXUS</div>
-                    <div className="logo-placeholder">VENTURE</div>
-                    <div className="logo-placeholder">ALPHA</div>
+                    <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
+                    <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
+                    <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
+                    <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
+                    <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
+                    <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
+                    <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
                 </div>
             </div>
 
@@ -27,7 +30,7 @@ const Footer = () => {
 
                 <div className="footer-content">
                     <div className="footer-col brand-col">
-                        <div className="logo-text">FOURTHLINE</div>
+                        <div className="logo-text">FourthLine</div>
                         <p className="footer-desc">
                             {t.footer.desc}
                         </p>
