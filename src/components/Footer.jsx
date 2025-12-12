@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Footer.css';
 import { useLanguage } from '../App';
+import AuditModal from './AuditModal';
 
 const Footer = () => {
     const { t } = useLanguage();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (e) => {
+        e.preventDefault();
+        setIsModalOpen(true);
+    };
 
     return (
         <footer className="footer-section">
+            <AuditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
             {/* Trust Bar */}
             <div className="trust-bar-container">
                 <p className="trust-label">{t.footer.poweringSales}</p>
@@ -36,7 +45,7 @@ const Footer = () => {
             <div className="container">
                 <div className="final-cta">
                     <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
-                    <a href="#contact" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
+                    <a href="#audit" onClick={openModal} className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
                 </div>
 
                 <div className="footer-content">
