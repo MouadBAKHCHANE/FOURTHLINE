@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="container">
                 <div className="final-cta">
                     <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
-                    <a href="#audit" onClick={openModal} className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
+                    <a href="/contact.html" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
                 </div>
 
                 <div className="footer-content">
@@ -87,7 +87,7 @@ const Footer = () => {
                     <p>&copy; 2025 Fourthline Consulting. {t.footer.rights}</p>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 };
 

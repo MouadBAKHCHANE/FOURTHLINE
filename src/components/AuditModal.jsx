@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { X, CheckCircle, ArrowRight } from 'lucide-react';
 import '../styles/AuditModal.css';
 import { useLanguage } from '../App';
@@ -6,25 +6,32 @@ import { useLanguage } from '../App';
 const AuditModal = ({ isOpen, onClose }) => {
     const { t } = useLanguage();
     const [formData, setFormData] = useState({
-        name: '',
+        first_name: '',
+        last_name: '',
         email: '',
         company: '',
-        website: '',
-        goals: ''
+        url: '', // Website maps to 'url'
+        '00NQH00000NPSK1': '' // Primary Goal ID
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const iframeRef = useRef(null);
 
     if (!isOpen) return null;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you would typically send the data to your backend/Salesforce
-        console.log('Form submitted:', formData);
+    const handleSubmit = () => {
+        // We let the form submit naturally to the iframe, then show success
         setIsSubmitted(true);
         setTimeout(() => {
             setIsSubmitted(false);
             onClose();
-            setFormData({ name: '', email: '', company: '', website: '', goals: '' });
+            setFormData({
+                first_name: '',
+                last_name: '',
+                email: '',
+                company: '',
+                url: '',
+                '00NQH00000NPSK1': ''
+            });
         }, 3000);
     };
 
@@ -46,17 +53,42 @@ const AuditModal = ({ isOpen, onClose }) => {
                             <p className="modal-subtitle">Ready to optimize your sales pipeline? Let's audit your system.</p>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="audit-form">
-                            <div className="form-group">
-                                <label>Full Name</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="John Doe"
-                                    required
-                                />
+                        {/* hidden iframe for submission target */}
+                        <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }} ref={iframeRef}></iframe>
+
+                        <form
+                            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000K6psL"
+                            method="POST"
+                            target="hidden_iframe"
+                            onSubmit={handleSubmit}
+                            className="audit-form"
+                        >
+                            <input type="hidden" name="oid" value="00DQH00000K6psL" />
+                            <input type="hidden" name="retURL" value="http://localhost:5173/" />
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label>First Name</label>
+                                    <input
+                                        type="text"
+                                        name="first_name"
+                                        value={formData.first_name}
+                                        onChange={handleChange}
+                                        placeholder="John"
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>Last Name</label>
+                                    <input
+                                        type="text"
+                                        name="last_name"
+                                        value={formData.last_name}
+                                        onChange={handleChange}
+                                        placeholder="Doe"
+                                        required
+                                    />
+                                </div>
                             </div>
 
                             <div className="form-group">
@@ -68,6 +100,7 @@ const AuditModal = ({ isOpen, onClose }) => {
                                     onChange={handleChange}
                                     placeholder="john@company.com"
                                     required
+                                    maxLength="80"
                                 />
                             </div>
 
@@ -80,32 +113,40 @@ const AuditModal = ({ isOpen, onClose }) => {
                                         value={formData.company}
                                         onChange={handleChange}
                                         placeholder="Acme Inc."
+                                        maxLength="40"
                                     />
                                 </div>
                                 <div className="form-group">
                                     <label>Current Website</label>
                                     <input
-                                        type="url"
-                                        name="website"
-                                        value={formData.website}
+                                        type="text"
+                                        name="url"
+                                        value={formData.url}
                                         onChange={handleChange}
                                         placeholder="https://test.com"
+                                        maxLength="80"
                                     />
                                 </div>
                             </div>
 
                             <div className="form-group">
                                 <label>Primary Goal</label>
-                                <select name="goals" value={formData.goals} onChange={handleChange}>
+                                <select
+                                    id="00NQH00000NPSK1"
+                                    name="00NQH00000NPSK1"
+                                    value={formData['00NQH00000NPSK1']}
+                                    onChange={handleChange}
+                                    title="Primary Goal"
+                                >
                                     <option value="">Select an objective...</option>
-                                    <option value="leads">Generate More Leads</option>
-                                    <option value="crm">Organize Sales Process (CRM)</option>
-                                    <option value="automation">Automate Follow-ups</option>
-                                    <option value="redesign">Complete Website Redesign</option>
+                                    <option value="Generate More Leads">Generate More Leads</option>
+                                    <option value="Organize Sales Process (CRM)">Organize Sales Process (CRM)</option>
+                                    <option value="Automate Follow-ups">Automate Follow-ups</option>
+                                    <option value="Complete Website Redesign">Complete Website Redesign</option>
                                 </select>
                             </div>
 
-                            <button type="submit" className="btn-submit">
+                            <button type="submit" name="submit" className="btn-submit">
                                 Request Audit <ArrowRight size={18} />
                             </button>
                         </form>

@@ -72,6 +72,12 @@ export const translations = {
             title: "Technical Arsenal",
             subtitle: "Built with industry-leading platforms for reliability and scale."
         },
+        stats: {
+            projects: "Leads Generated",
+            satisfaction: "Revenue Influenced",
+            experience: "Hours Automated",
+            systems: "CRM Deployments"
+        },
         footer: {
             poweringSales: "Powering Sales for",
             ctaTitle: "Stop losing leads.\nStart building your system.",
@@ -161,6 +167,12 @@ export const translations = {
         techStack: {
             title: "Arsenal Technique",
             subtitle: "Construit avec des plateformes leaders pour la fiabilité et la mise à l'échelle."
+        },
+        stats: {
+            projects: "Leads Générés",
+            satisfaction: "Revenu Influencé",
+            experience: "Heures Automatisées",
+            systems: "Déploiements CRM"
         },
         footer: {
             poweringSales: "Propulse les ventes pour",

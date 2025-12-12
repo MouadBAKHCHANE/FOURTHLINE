@@ -5,6 +5,7 @@ import ProblemSection from './components/ProblemSection'
 import SolutionTimeline from './components/SolutionTimeline'
 import Services from './components/Services'
 import TechStack from './components/TechStack'
+import Stats from './components/Stats'
 import Footer from './components/Footer'
 import './index.css'
 import { translations } from './data/translations'
@@ -30,6 +31,7 @@ function App() {
         <Navbar />
         <Hero />
         <ProblemSection />
+        <Stats />
         <SolutionTimeline />
         <Services />
         <TechStack />
