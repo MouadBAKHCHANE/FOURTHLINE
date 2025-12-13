@@ -68,10 +68,10 @@ const Stats = () => {
     const { t } = useLanguage();
 
     const statsData = [
-        { number: 45, suffix: "k+", label: t.stats.projects },
-        { number: 9, suffix: "M+", label: t.stats.satisfaction },
-        { number: 850, suffix: "+", label: t.stats.experience },
-        { number: 40, suffix: "+", label: t.stats.systems }
+        { number: 2, suffix: "k+", label: t.stats.projects },
+        { number: 1, suffix: "M+", label: t.stats.satisfaction },
+        { number: 150, suffix: "+", label: t.stats.experience },
+        { number: 8, suffix: "+", label: t.stats.systems }
     ];
 
     return (
