@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 import { useLanguage } from '../App';
 
@@ -31,7 +32,7 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
                             </ul>
 
-                            <a href="#contact" className="btn btn-glass full-width">{t.services.tier1Button}</a>
+                            <Link to="/start-build" className="btn btn-glass full-width">{t.services.tier1Button}</Link>
                         </div>
                     </div>
 
@@ -51,7 +52,7 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
                             </ul>
 
-                            <a href="#contact" className="btn btn-primary full-width">{t.services.tier2Button}</a>
+                            <Link to="/start-build" className="btn btn-primary full-width">{t.services.tier2Button}</Link>
                         </div>
                     </div>
                 </div>

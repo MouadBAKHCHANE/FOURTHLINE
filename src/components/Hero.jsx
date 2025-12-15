@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Hero.css';
 import { useLanguage } from '../App';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const { t } = useLanguage();
@@ -23,7 +24,7 @@ const Hero = () => {
                         {t.hero.subtitle}
                     </p>
                     <div className="hero-actions">
-                        <a href="#contact" className="btn btn-primary">{t.hero.startBuild}</a>
+                        <Link to="/start-build" className="btn btn-primary">{t.hero.startBuild}</Link>
                         <a href="#system" className="btn btn-glass">{t.hero.viewSystem}</a>
                     </div>
                 </div>

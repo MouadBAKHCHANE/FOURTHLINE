@@ -1,11 +1,10 @@
 import { useState, createContext, useContext } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ProblemSection from './components/ProblemSection'
-import SolutionTimeline from './components/SolutionTimeline'
-import Services from './components/Services'
-import TechStack from './components/TechStack'
-import Stats from './components/Stats'
+import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import QualificationForm from './pages/QualificationForm'
 import Footer from './components/Footer'
 import './index.css'
 import { translations } from './data/translations'
@@ -27,16 +26,18 @@ function App() {
 
   return (
     <LanguageContext.Provider value={value}>
-      <div className="app">
-        <Navbar />
-        <Hero />
-        <ProblemSection />
-        <Stats />
-        <SolutionTimeline />
-        <Services />
-        <TechStack />
-        <Footer />
-      </div>
+      <Router>
+        <div className="app">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/start-build" element={<QualificationForm />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </LanguageContext.Provider>
   )
 }

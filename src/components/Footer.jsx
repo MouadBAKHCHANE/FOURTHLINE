@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Footer.css';
 import { useLanguage } from '../App';
 import AuditModal from './AuditModal';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const { t } = useLanguage();
@@ -69,8 +70,8 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>{t.footer.legal}</h4>
                         <ul>
-                            <li><a href="#">{t.footer.privacyPolicy}</a></li>
-                            <li><a href="#">{t.footer.termsOfService}</a></li>
+                            <li><Link to="/privacy-policy">{t.footer.privacyPolicy}</Link></li>
+                            <li><Link to="/terms-of-service">{t.footer.termsOfService}</Link></li>
                         </ul>
                     </div>
 

@@ -1,27 +1,43 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowRight, Globe } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import { useLanguage } from '../App';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { language, toggleLanguage, t } = useLanguage();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    const handleNavClick = (e, hash) => {
+        e.preventDefault();
+        if (location.pathname !== '/') {
+            navigate('/' + hash);
+        } else {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        setIsOpen(false);
+    };
 
     return (
         <nav className="navbar-wrapper">
             <div className="navbar-pill">
-                <div className="logo">
+                <Link to="/" className="logo">
                     <span className="logo-text">FourthLine</span>
-                </div>
+                </Link>
 
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
-                    <a href="#services">{t.nav.product}</a>
-                    <a href="#process">{t.nav.docs}</a>
-                    <a href="#customers">{t.nav.customers}</a>
-                    <a href="#pricing">{t.nav.pricing}</a>
+                    <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
+                    <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
                 </div>
 
                 <div className="nav-right desktop-links">
@@ -29,9 +45,9 @@ const Navbar = () => {
                         <Globe size={16} />
                         <span>{language === 'en' ? 'FR' : 'EN'}</span>
                     </button>
-                    <a href="#contact" className="btn-pill-gradient">
+                    <Link to="/start-build" className="btn-pill-gradient">
                         {t.nav.requestDemo} <ArrowRight size={16} />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -46,13 +62,13 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <a href="#services" onClick={toggleMenu}>{t.nav.product}</a>
-                    <a href="#process" onClick={toggleMenu}>{t.nav.docs}</a>
-                    <a href="#customers" onClick={toggleMenu}>{t.nav.customers}</a>
-                    <a href="#pricing" onClick={toggleMenu}>{t.nav.pricing}</a>
-                    <a href="#contact" className="btn-pill-gradient" onClick={toggleMenu}>
+                    <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
+                    <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
+                    <Link to="/start-build" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>
                         {t.nav.requestDemo}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
