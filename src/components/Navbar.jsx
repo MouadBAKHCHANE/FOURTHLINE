@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight, Globe } from 'lucide-react';
+import { Menu, X, ArrowRight, Globe, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import { useLanguage } from '../App';
@@ -25,6 +25,11 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
+    const handleIndustryClick = (index) => {
+        window.dispatchEvent(new CustomEvent('switchSector', { detail: index }));
+        setIsOpen(false);
+    };
+
     return (
         <nav className="navbar-wrapper">
             <div className="navbar-pill">
@@ -35,9 +40,21 @@ const Navbar = () => {
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
                     <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+
+                    <div className="nav-item-dropdown">
+                        <button className="nav-link-btn">
+                            {t.nav.industries} <ChevronDown size={14} />
+                        </button>
+                        <div className="dropdown-menu">
+                            <button onClick={() => handleIndustryClick(0)}>{t.solutionsSection.logistics.title}</button>
+                            <button onClick={() => handleIndustryClick(1)}>{t.solutionsSection.realEstate.title}</button>
+                            <button onClick={() => handleIndustryClick(2)}>{t.solutionsSection.education.title}</button>
+                            <button onClick={() => handleIndustryClick(3)}>{t.solutionsSection.b2b.title}</button>
+                        </div>
+                    </div>
+
                     <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
                     <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
-                    <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
                 </div>
 
                 <div className="nav-right desktop-links">

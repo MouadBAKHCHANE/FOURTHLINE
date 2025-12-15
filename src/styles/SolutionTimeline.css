@@ -115,86 +115,110 @@
     line-height: 1.5;
 }
 
-/* Weeks were removed as per request */
+/* Swipe Hint - Hidden on Desktop */
+.swipe-hint {
+    display: none;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
     .timeline-container {
-        margin-top: 30px;
-        padding-bottom: 40px;
-        /* Space for scrollbar or visual balance */
+        margin-top: 20px;
+        padding-bottom: 20px;
     }
 
     .timeline-line {
         display: none;
-        /* Hide connecting line on mobile */
+    }
+
+    .swipe-hint {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: #00A1E0;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        opacity: 0.8;
+        font-weight: 500;
+        animation: fadeIn 1s ease;
+    }
+
+    .arrow-anim {
+        animation: bounceRight 1.5s infinite;
+    }
+
+    @keyframes bounceRight {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
     }
 
     .steps-wrapper {
         display: flex;
         flex-direction: row;
-        /* Keep row for swipe */
-        gap: 20px;
+        gap: 15px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding: 20px 20px 40px 20px;
-        /* Padding for scroll snapping */
+        padding: 10px 5vw 40px 5vw;
+        /* Side padding so first card triggers snap */
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
     }
 
-    /* Hide scrollbar */
     .steps-wrapper::-webkit-scrollbar {
         display: none;
     }
 
-    .steps-wrapper {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
     .timeline-step {
-        min-width: 85vw;
-        /* Almost full width card */
+        min-width: 80vw;
+        /* 80vw allows next card to peek */
         scroll-snap-align: center;
         flex-direction: column;
-        /* Stack icon and text vertically inside card */
         text-align: center;
         align-items: center;
-        background: rgba(15, 22, 35, 0.5);
+        background: rgba(30, 41, 59, 0.7);
+        /* Darker background for readability */
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 0;
-        /* Let content padding take over */
+        padding: 30px 20px;
+        margin-right: 5px;
     }
 
     .step-marker {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         margin-right: 0;
     }
 
     .step-icon {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         margin-bottom: 0;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .step-dot {
-        display: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        background: #0f1623;
     }
 
     .step-content {
         background: transparent;
         border: none;
-        padding: 20px;
+        padding: 10px 0 0 0;
     }
 
     .step-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-bottom: 8px;
+        color: #fff;
     }
 
     .step-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        color: #cbd5e1;
+        /* Lighter text for contrast */
     }
 }

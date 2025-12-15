@@ -327,6 +327,23 @@
     transition: color 0.2s;
 }
 
+.footer-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: left;
+}
+
+.footer-link-btn:hover {
+    color: var(--text-primary);
+}
+
 .footer-col a:hover {
     color: var(--text-primary);
 }

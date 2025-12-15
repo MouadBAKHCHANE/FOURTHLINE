@@ -15,6 +15,16 @@ const Solutions = () => {
         return () => clearTimeout(timer);
     }, [activeTab]);
 
+    // Listen for footer clicks
+    useEffect(() => {
+        const handleSwitch = (e) => {
+            setActiveTab(e.detail);
+            document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' });
+        };
+        window.addEventListener('switchSector', handleSwitch);
+        return () => window.removeEventListener('switchSector', handleSwitch);
+    }, []);
+
     const industries = [
         {
             id: 'logistique',
@@ -95,7 +105,7 @@ const Solutions = () => {
     ];
 
     return (
-        <section className="solutions-section">
+        <section className="solutions-section" id="solutions">
             <div className="container">
                 <div className="solutions-header">
                     <h2 className="section-title">

@@ -12,16 +12,19 @@
 .navbar-pill {
     background: rgba(11, 12, 16, 0.7);
     backdrop-filter: blur(12px);
-    border: none;
-    /* Removed border as per request */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Added slight border for definition */
     border-radius: 100px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.8rem 2rem;
+    /* Increased padding slightly */
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 900px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    /* Increased to fit website size */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.05);
+    /* Backlight effect */
     transition: all 0.3s ease;
 }
 
@@ -31,9 +34,14 @@
     color: var(--text-primary);
 }
 
+/* Center Nav Links */
 .nav-center {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    /* Increased gap for better spacing */
+    align-items: center;
+    /* Critical for vertical alignment */
+    height: 100%;
 }
 
 .nav-center a {
@@ -42,12 +50,16 @@
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
+    display: flex;
+    /* Ensure links behave like flex containers for alignment if needed */
+    align-items: center;
 }
 
 .nav-center a:hover {
     color: var(--text-primary);
 }
 
+/* Right Actions */
 .nav-right {
     display: flex;
     align-items: center;
@@ -63,6 +75,82 @@
 
 .nav-link:hover {
     color: var(--text-primary);
+}
+
+.nav-item-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    /* Removed padding to match links */
+    transition: color 0.2s;
+    height: auto;
+}
+
+.nav-link-btn:hover {
+    color: var(--text-primary);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(15, 22, 35, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
+    /* Prevent accidental clicks when hidden */
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.dropdown-menu button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #00A1E0;
+    transform: translateX(4px);
 }
 
 /* Gradient Pill Button */

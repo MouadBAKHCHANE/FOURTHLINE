@@ -2,6 +2,7 @@ export const translations = {
     en: {
         nav: {
             product: "Product",
+            industries: "Industries",
             docs: "Methodology",
             customers: "Customers",
             pricing: "Pricing",
@@ -139,6 +140,7 @@ export const translations = {
     fr: {
         nav: {
             product: "Produit",
+            industries: "Industries",
             docs: "Méthodologie",
             customers: "Clients",
             pricing: "Tarifs",
