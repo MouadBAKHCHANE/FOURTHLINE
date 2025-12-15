@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ProblemSection from '../components/ProblemSection';
+import Solutions from '../components/Solutions';
 import SolutionTimeline from '../components/SolutionTimeline';
 import Services from '../components/Services';
 import TechStack from '../components/TechStack';
@@ -25,6 +26,7 @@ const Home = () => {
         <>
             <Hero />
             <ProblemSection />
+            <Solutions />
             <Stats />
             <SolutionTimeline />
             <Services />

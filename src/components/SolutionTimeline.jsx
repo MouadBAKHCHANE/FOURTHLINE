@@ -11,29 +11,25 @@ const SolutionTimeline = () => {
             id: 1,
             title: t.solution.step1Title,
             icon: <Search size={24} />,
-            desc: t.solution.step1Desc,
-            week: t.solution.week1
+            desc: t.solution.step1Desc
         },
         {
             id: 2,
             title: t.solution.step2Title,
             icon: <Code size={24} />,
-            desc: t.solution.step2Desc,
-            week: t.solution.week2
+            desc: t.solution.step2Desc
         },
         {
             id: 3,
             title: t.solution.step3Title,
             icon: <Cloud size={24} />,
-            desc: t.solution.step3Desc,
-            week: t.solution.week3
+            desc: t.solution.step3Desc
         },
         {
             id: 4,
             title: t.solution.step4Title,
             icon: <Handshake size={24} />,
-            desc: t.solution.step4Desc,
-            week: t.solution.week4
+            desc: t.solution.step4Desc
         }
     ];
 
@@ -52,7 +48,7 @@ const SolutionTimeline = () => {
                     <div className="timeline-line"></div>
 
                     <div className="steps-wrapper">
-                        {steps.map((step, index) => (
+                        {steps.map((step) => (
                             <div key={step.id} className="timeline-step">
                                 <div className="step-marker">
                                     <div className="step-icon glass-card">
@@ -61,7 +57,6 @@ const SolutionTimeline = () => {
                                     <div className="step-dot"></div>
                                 </div>
                                 <div className="step-content glass-card">
-                                    <span className="step-week">{step.week}</span>
                                     <h3>{step.title}</h3>
                                     <p>{step.desc}</p>
                                 </div>

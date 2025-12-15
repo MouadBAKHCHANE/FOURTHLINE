@@ -2,7 +2,7 @@ export const translations = {
     en: {
         nav: {
             product: "Product",
-            docs: "Docs",
+            docs: "Methodology",
             customers: "Customers",
             pricing: "Pricing",
             signin: "Sign in",
@@ -32,20 +32,20 @@ export const translations = {
             card3Desc: "Every minute of delay reduces conversion probability by 10%."
         },
         solution: {
-            title: "The Solution",
-            subtitle: "From static brochure to automated sales engine in 4 steps.",
-            step1Title: "The Audit",
-            step1Desc: "We analyze your current sales data flow and identify bottlenecks.",
-            step2Title: "The Build",
-            step2Desc: "Development of high-performance site and Salesforce environment.",
-            step3Title: "The Integration",
-            step3Desc: "Connecting forms directly to CRM. The \"Handshake\" moment.",
-            step4Title: "The Handover",
-            step4Desc: "Training your team and handing over the keys to the engine.",
-            week1: "Step 1",
-            week2: "Step 2",
-            week3: "Step 3",
-            week4: "Step 4"
+            title: "The Roadmap",
+            subtitle: "4 Steps to Automate Your Sales Revenue.",
+            step1Title: "The Deep Dive",
+            step1Desc: "We audit your current flow to find exactly where you're losing money.",
+            step2Title: "The Engine Build",
+            step2Desc: "We build a high-performance website designed to convert, not just look pretty.",
+            step3Title: "The Handshake",
+            step3Desc: "We connect your forms to Salesforce. Zero manual data entry. Infinite scale.",
+            step4Title: "Liftoff",
+            step4Desc: "We train your team and hand over the keys to a self-driving sales machine.",
+            week1: "Week 1",
+            week2: "Week 2",
+            week3: "Week 3",
+            week4: "Week 4"
         },
         services: {
             title: "Investment Packages",
@@ -93,12 +93,53 @@ export const translations = {
             termsOfService: "Terms of Service",
             contact: "Contact",
             rights: "All rights reserved."
+        },
+        solutionsSection: {
+            title: "Your Industry,",
+            titleHighlight: "Our Expertise",
+            subtitle: "Sales systems designed for the realities of your market.\nBuild your system, not just a website.",
+            logistics: {
+                title: "Logistics & Transport",
+                role: "Fleet Manager",
+                pain: "Quotes lost in emails.",
+                solution: "Auto-assignment to freight sales.",
+                result: "Response in < 15 min.",
+                dashTitle: "Logistics Overview",
+                dashList: ["Freight Quote #2929", "Route: CMN -> PAR", "Customs Doc pending"]
+            },
+            realEstate: {
+                title: "Real Estate",
+                role: "Developer",
+                pain: "Paper tracking & forgotten leads.",
+                solution: "Centralization & Sort by budget.",
+                result: "100% visible pipeline.",
+                dashTitle: "Real Estate CRM",
+                dashList: ["Villa Inquiry - Anfa", "Budget: > 5M DH", "Appointment Scheduled"]
+            },
+            education: {
+                title: "Education",
+                role: "Director",
+                pain: "Enrollment files in chaos.",
+                solution: "Secure admission portal.",
+                result: "Modern image & paperless.",
+                dashTitle: "Admissions Portal",
+                dashList: ["Student: Sara B.", "Status: Accepted", "Docs Verified"]
+            },
+            b2b: {
+                title: "B2B Services",
+                role: "Consulting",
+                pain: "Amateur image (Gmail/Excel).",
+                solution: "Client portal & Pro CRM.",
+                result: "Trust & Fast signing.",
+                dashTitle: "Consulting Hub",
+                dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
+            }
         }
     },
     fr: {
         nav: {
             product: "Produit",
-            docs: "Docs",
+            docs: "Méthodologie",
             customers: "Clients",
             pricing: "Tarifs",
             signin: "Connexion",
@@ -128,20 +169,20 @@ export const translations = {
             card3Desc: "Chaque minute de retard réduit la probabilité de conversion de 10%."
         },
         solution: {
-            title: "La Solution",
-            subtitle: "D'une brochure statique à un moteur de vente automatisé en 4 étapes.",
-            step1Title: "L'Audit",
-            step1Desc: "Nous analysons votre flux de données commerciales actuel et identifions les goulots d'étranglement.",
-            step2Title: "La Construction",
-            step2Desc: "Développement d'un site haute performance et de l'environnement Salesforce.",
-            step3Title: "L'Intégration",
-            step3Desc: "Connexion directe des formulaires au CRM. Le moment de la \"Poignée de main\".",
-            step4Title: "La Remise",
-            step4Desc: "Formation de votre équipe et remise des clés du moteur.",
-            week1: "Étape 1",
-            week2: "Étape 2",
-            week3: "Étape 3",
-            week4: "Étape 4"
+            title: "La Roadmap",
+            subtitle: "4 Étapes pour Automatiser Vos Revenus.",
+            step1Title: "L'Audit Profond",
+            step1Desc: "Nous trouvons exactement où vous perdez de l'argent dans votre processus actuel.",
+            step2Title: "Le Moteur",
+            step2Desc: "Un site web haute performance conçu pour convertir, pas juste pour faire joli.",
+            step3Title: "La Connexion",
+            step3Desc: "Formulaires connectés à Salesforce. Zéro saisie manuelle. Évolutivité infinie.",
+            step4Title: "Le Décollage",
+            step4Desc: "Nous formons votre équipe et remettons les clés d'une machine de vente autonome.",
+            week1: "Semaine 1",
+            week2: "Semaine 2",
+            week3: "Semaine 3",
+            week4: "Semaine 4"
         },
         services: {
             title: "Forfaits d'Investissement",
@@ -189,6 +230,47 @@ export const translations = {
             termsOfService: "Conditions d'Utilisation",
             contact: "Contact",
             rights: "Tous droits réservés."
+        },
+        solutionsSection: {
+            title: "Votre Industrie,",
+            titleHighlight: "Notre Expertise",
+            subtitle: "Des systèmes de vente conçus pour les réalités de votre marché.\nBuild your system, not just a website.",
+            logistics: {
+                title: "Logistique & Transport",
+                role: "Gérant de Flotte",
+                pain: "Devis perdus dans les emails.",
+                solution: "Attribution auto au commercial fret.",
+                result: "Réponse en < 15 min.",
+                dashTitle: "Logistics Overview",
+                dashList: ["Freight Quote #2929", "Route: CMN -> PAR", "Customs Doc pending"]
+            },
+            realEstate: {
+                title: "Immobilier",
+                role: "Promoteur",
+                pain: "Suivi papier & leads oubliés.",
+                solution: "Centralisation & Tri par budget.",
+                result: "Pipeline 100% visible.",
+                dashTitle: "Real Estate CRM",
+                dashList: ["Villa Inquiry - Anfa", "Budget: > 5M DH", "Appointment Scheduled"]
+            },
+            education: {
+                title: "Éducation",
+                role: "Directeur",
+                pain: "Dossiers d'inscription en chaos.",
+                solution: "Portail d'admission sécurisé.",
+                result: "Image moderne & zéro papier.",
+                dashTitle: "Admissions Portal",
+                dashList: ["Student: Sara B.", "Status: Accepted", "Docs Verified"]
+            },
+            b2b: {
+                title: "Services B2B",
+                role: "Consulting",
+                pain: "Image amateur (Gmail/Excel).",
+                solution: "Espace client & CRM Pro.",
+                result: "Confiance & Signature rapide.",
+                dashTitle: "Consulting Hub",
+                dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
+            }
         }
     }
 };

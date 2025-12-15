@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import '../styles/Footer.css';
 import { useLanguage } from '../App';
 import AuditModal from './AuditModal';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
     const { t } = useLanguage();
+    const location = useLocation();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const isQualificationPage = location.pathname === '/start-build';
 
     const openModal = (e) => {
         e.preventDefault();
@@ -17,37 +19,41 @@ const Footer = () => {
         <footer className="footer-section">
             <AuditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-            {/* Trust Bar */}
-            <div className="trust-bar-container">
-                <p className="trust-label">{t.footer.poweringSales}</p>
-                <div className="logos-slider">
-                    <div className="logos-slide">
-                        <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
-                    </div>
-                    <div className="logos-slide">
-                        <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
-                        <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
-                        <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+            {/* Trust Bar - Hidden on Qualification Page */}
+            {!isQualificationPage && (
+                <div className="trust-bar-container">
+                    <p className="trust-label">{t.footer.poweringSales}</p>
+                    <div className="logos-slider">
+                        <div className="logos-slide">
+                            <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                        </div>
+                        <div className="logos-slide">
+                            <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
+                            <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
+                            <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
 
-            {/* Final CTA */}
+            {/* Final CTA - Hidden on Qualification Page */}
             <div className="container">
-                <div className="final-cta">
-                    <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
-                    <a href="/contact.html" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
-                </div>
+                {!isQualificationPage && (
+                    <div className="final-cta">
+                        <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
+                        <a href="/contact.html" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
+                    </div>
+                )}
 
                 <div className="footer-content">
                     <div className="footer-col brand-col">
