@@ -8,7 +8,7 @@ const Footer = () => {
     const { t } = useLanguage();
     const location = useLocation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const isQualificationPage = location.pathname === '/start-build';
+    const isCleanFooterPage = ['/start-build', '/privacy-policy', '/terms-of-service'].includes(location.pathname);
 
     const openModal = (e) => {
         e.preventDefault();
@@ -19,8 +19,8 @@ const Footer = () => {
         <footer className="footer-section">
             <AuditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-            {/* Trust Bar - Hidden on Qualification Page */}
-            {!isQualificationPage && (
+            {/* Trust Bar - Hidden on Clean Footer Pages */}
+            {!isCleanFooterPage && (
                 <div className="trust-bar-container">
                     <p className="trust-label">{t.footer.poweringSales}</p>
                     <div className="logos-slider">
@@ -46,9 +46,9 @@ const Footer = () => {
                 </div>
             )}
 
-            {/* Final CTA - Hidden on Qualification Page */}
+            {/* Final CTA - Hidden on Clean Footer Pages */}
             <div className="container">
-                {!isQualificationPage && (
+                {!isCleanFooterPage && (
                     <div className="final-cta">
                         <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
                         <a href="/contact.html" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
@@ -76,6 +76,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>{t.footer.legal}</h4>
                         <ul>
+                            <li><Link to="/careers">{t.nav.careers}</Link></li>
                             <li><Link to="/privacy-policy">{t.footer.privacyPolicy}</Link></li>
                             <li><Link to="/terms-of-service">{t.footer.termsOfService}</Link></li>
                         </ul>

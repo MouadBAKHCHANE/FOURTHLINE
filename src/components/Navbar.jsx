@@ -55,6 +55,7 @@ const Navbar = () => {
 
                     <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
                     <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                 </div>
 
                 <div className="nav-right desktop-links">
@@ -82,6 +83,7 @@ const Navbar = () => {
                     <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
                     <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
                     <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
                     <Link to="/start-build" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>
                         {t.nav.requestDemo}

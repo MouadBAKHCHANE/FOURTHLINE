@@ -101,23 +101,30 @@
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* Final CTA Section (Hidden on Form page) */
-.final-cta {
+/* Trust Bar */
+.trust-bar-container {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0;
     text-align: center;
-    margin-bottom: 80px;
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.005);
+    position: relative;
+    overflow: hidden;
 }
 
-.cta-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.trust-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #64748b;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, transparent, #0B0C10 20%, #0B0C10 80%, transparent);
+    /* Fade text line */
+    display: inline-block;
+    padding: 0 20px;
 }
 
 /* Logos Slider */
@@ -126,8 +133,9 @@
     white-space: nowrap;
     position: relative;
     width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    /* Stronger fade mask for seamless look */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
 
 .logos-slide {
@@ -146,150 +154,81 @@
 }
 
 .client-logo {
-    height: 40px;
+    height: 45px;
     width: auto;
     margin: 0 40px;
-    filter: grayscale(100%) opacity(0.5);
-    transition: all 0.3s ease;
+    filter: grayscale(100%) opacity(0.4);
+    transition: all 0.4s ease;
 }
 
 .client-logo:hover {
     filter: grayscale(0%) opacity(1);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 1024px) {
-    .footer-content {
-        gap: 40px;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .brand-col {
-        grid-column: 1 / -1;
-        /* Brand spans full width on medium screens */
-        text-align: center;
-    }
-
-    .brand-col .footer-desc {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-section {
-        padding: 60px 0 30px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        /* Stack vertically on mobile */
-        gap: 40px;
-        text-align: center;
-    }
-
-    .footer-col h4 {
-        margin-bottom: 16px;
-        color: var(--accent-blue);
-        /* Highlight headers on mobile */
-    }
-
-    .cta-title {
-        font-size: 2rem;
-    }
-
-    .final-cta {
-        margin-bottom: 60px;
-        padding: 40px 20px;
-    }
-}
-
-.footer-section .container {
-    max-width: 1200px;
-    /* Match QualificationForm width */
-    padding: 0 20px;
-    /* Match form padding if needed, or keep 2rem? Form uses 90% width. */
-    /* QualificationForm uses width: 90% max-width 1200px. 
-       Let's stick to max-width 1200px and standard centering. */
-}
-
-/* Trust Bar */
-.trust-bar-container {
-    border-bottom: 1px solid var(--border-subtle);
-    padding: 40px 0;
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.trust-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-}
-
-/* Infinite Scroll Slider */
-.logos-slider {
-    overflow: hidden;
-    padding: 20px 0;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.logos-slide {
-    display: inline-block;
-    animation: slide 35s infinite linear;
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-.client-logo {
-    height: 50px;
-    /* Increased size */
-    width: auto;
-    object-fit: contain;
-    margin: 0 50px;
-    /* Spacing between logos */
-    filter: grayscale(100%) brightness(200%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-.client-logo:hover {
-    opacity: 1;
-    filter: grayscale(0%) brightness(100%);
     transform: scale(1.1);
-    /* Subtle zoom on hover */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
-/* Final CTA */
+/* Final CTA Section (Hidden on Form page) */
 .final-cta {
     text-align: center;
     margin-bottom: 100px;
+    padding: 80px 40px;
+    background: radial-gradient(circle at top right, rgba(0, 161, 224, 0.1), transparent 70%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 32px;
+    /* Smooth rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Glow Overlay */
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 161, 224, 0.05) 0%, transparent 60%);
+    animation: rotateGlow 15s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .cta-title {
     font-size: 3.5rem;
     font-weight: 800;
+    margin-bottom: 20px;
     line-height: 1.1;
-    margin-bottom: 32px;
-    background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.final-cta .btn {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 161, 224, 0.3);
+    border-radius: 100px;
+    /* Pill shape for button */
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .btn-lg {

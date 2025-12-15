@@ -3,6 +3,7 @@ export const translations = {
         nav: {
             product: "Product",
             industries: "Industries",
+            careers: "Careers",
             docs: "Methodology",
             customers: "Customers",
             pricing: "Pricing",
@@ -89,7 +90,7 @@ export const translations = {
             salesforceSetup: "Salesforce Setup",
             webToLead: "Web-to-Lead",
             audits: "Audits",
-            legal: "Legal",
+            legal: "Company",
             privacyPolicy: "Privacy Policy",
             termsOfService: "Terms of Service",
             contact: "Contact",
@@ -141,6 +142,7 @@ export const translations = {
         nav: {
             product: "Produit",
             industries: "Industries",
+            careers: "Carrières",
             docs: "Méthodologie",
             customers: "Clients",
             pricing: "Tarifs",
@@ -227,7 +229,7 @@ export const translations = {
             salesforceSetup: "Configuration Salesforce",
             webToLead: "Web-to-Lead",
             audits: "Audits",
-            legal: "Légal",
+            legal: "Entreprise",
             privacyPolicy: "Politique de Confidentialité",
             termsOfService: "Conditions d'Utilisation",
             contact: "Contact",
