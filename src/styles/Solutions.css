@@ -422,7 +422,15 @@
 @media (max-width: 900px) {
     .solutions-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 0;
+    }
+
+    .dashboard-preview-container {
+        display: none;
+    }
+
+    .solutions-tabs {
+        width: 100%;
     }
 
     .dashboard-frame {
