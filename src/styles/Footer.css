@@ -15,22 +15,6 @@
     margin: 0 auto;
 }
 
-/* Trust Bar */
-.trust-bar-container {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 60px;
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.trust-label {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    opacity: 0.7;
-}
 
 /* Footer Content Grid */
 .footer-content {
@@ -103,8 +87,6 @@
 
 /* Trust Bar */
 .trust-bar-container {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 60px 0;
     text-align: center;
     margin-bottom: 100px;
@@ -167,68 +149,54 @@
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
-/* Final CTA Section (Hidden on Form page) */
+/* Final CTA Section (premium dark glass) */
 .final-cta {
     text-align: center;
     margin-bottom: 100px;
     padding: 80px 40px;
-    background: radial-gradient(circle at top right, rgba(0, 161, 224, 0.1), transparent 70%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    background: linear-gradient(180deg, rgba(20, 25, 35, 0.6) 0%, rgba(10, 12, 16, 0.8) 100%);
+    backdrop-filter: blur(10px);
     border-radius: 32px;
-    /* Smooth rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle border */
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* CTA Glow Overlay */
-.final-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 161, 224, 0.05) 0%, transparent 60%);
-    animation: rotateGlow 15s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes rotateGlow {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    /* Subtle inner glow at top */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 50px -10px rgba(0, 0, 0, 0.3);
 }
 
 .cta-title {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.1;
-    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    z-index: 1;
+    color: #fff;
+    /* Clean white text */
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    /* Subtle glowing text */
 }
 
 .final-cta .btn {
     position: relative;
     z-index: 1;
-    box-shadow: 0 0 20px rgba(0, 161, 224, 0.3);
+    background: #fff;
+    color: #000;
     border-radius: 100px;
-    /* Pill shape for button */
-    padding: 16px 40px;
+    padding: 18px 48px;
     font-size: 1.1rem;
     font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.final-cta .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    background: #fff;
 }
 
 .btn-lg {
