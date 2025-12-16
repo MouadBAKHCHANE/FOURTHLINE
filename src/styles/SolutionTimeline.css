@@ -229,32 +229,42 @@
 
     /* Content styling */
     .step-content {
-        background: rgba(15, 23, 42, 0.8) !important;
-        /* Force visibility */
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(15, 23, 42, 0.95) !important;
+        /* Increased opacity for better visibility */
+        border: 1px solid rgba(255, 255, 255, 0.15);
         padding: 20px;
         border-radius: 12px;
         width: 100%;
         min-width: 0;
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        display: block !important;
+        /* Force display */
+        visibility: visible !important;
+        /* Force visibility */
+        opacity: 1 !important;
+        /* Ensure it's visible */
+        position: relative;
+        z-index: 5;
     }
 
     .step-content h3 {
         font-size: 1.1rem;
         margin-bottom: 8px;
-        color: #fff;
+        color: #fff !important;
         line-height: 1.3;
-        display: block;
-        /* Ensure it's not hidden */
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .step-content p {
         font-size: 0.9rem;
-        color: #cbd5e1;
+        color: #cbd5e1 !important;
         line-height: 1.5;
-        display: block;
-        /* Ensure it's not hidden */
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
 
