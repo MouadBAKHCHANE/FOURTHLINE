@@ -30,7 +30,7 @@ export const jobs = [
         department: "Product",
         salary: "Competitive",
         shortDesc: "Build stunning, high-performance web interfaces using modern React stack and glassmorphism design.",
-        description: "FourthLine is obsessed with design and performance. We need a Frontend Engineer who cares about every pixel and animation frame. You will build the client-facing interfaces of our growth systems.",
+        description: "Seedsvision is obsessed with design and performance. We need a Frontend Engineer who cares about every pixel and animation frame. You will build the client-facing interfaces of our growth systems.",
         requirements: [
             "3+ years of experience with React, Tailwind, and CSS animations.",
             "Experience with Framer Motion or GSAP is widely appreciated.",
@@ -52,7 +52,7 @@ export const jobs = [
         type: "Full-Time",
         department: "Growth",
         salary: "Commission Uncapped",
-        shortDesc: "Drive FourthLine's growth by closing deals with high-value B2B clients.",
+        shortDesc: "Drive Seedsvision's growth by closing deals with high-value B2B clients.",
         description: "You will be on the front lines, identifying potential clients who need our systems to scale. This is a high-impact role where your results directly correlate with your compensation.",
         requirements: [
             "2+ years of B2B sales experience (SaaS or Agency).",

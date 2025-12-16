@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
 
             <section>
                 <h2>1. Introduction</h2>
-                <p>Welcome to FourthLine. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.</p>
+                <p>Welcome to Seedsvision. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.</p>
             </section>
 
             <section>
@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
 
             <section>
                 <h2>5. Contact Us</h2>
-                <p>If you have any questions about this privacy policy or our privacy practices, please contact us at: contact@fourthline.ma</p>
+                <p>If you have any questions about this privacy policy or our privacy practices, please contact us at: contact@seedsvision.ma</p>
             </section>
         </div>
     );
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
 
             <section>
                 <h2>1. Introduction</h2>
-                <p>Bienvenue chez FourthLine. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informera sur la manière dont nous traitons vos données personnelles lorsque vous visitez notre site web.</p>
+                <p>Bienvenue chez Seedsvision. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informera sur la manière dont nous traitons vos données personnelles lorsque vous visitez notre site web.</p>
             </section>
 
             <section>
@@ -88,7 +88,7 @@ const PrivacyPolicy = () => {
 
             <section>
                 <h2>5. Contactez-nous</h2>
-                <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à : contact@fourthline.ma</p>
+                <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à : contact@seedsvision.ma</p>
             </section>
         </div>
     );

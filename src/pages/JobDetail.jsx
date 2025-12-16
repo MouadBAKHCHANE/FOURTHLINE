@@ -64,7 +64,7 @@ const JobDetail = () => {
                     <div className="apply-bar">
                         <div className="apply-text">
                             <strong style={{ display: 'block', fontSize: '1.1rem' }}>Interested?</strong>
-                            <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Join the team at FourthLine.</span>
+                            <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Join the team at Seedsvision.</span>
                         </div>
                         <button className="btn btn-primary" onClick={() => setIsModalOpen(true)}>
                             Apply for this Position

@@ -158,7 +158,7 @@ const Solutions = () => {
                                 </div>
                                 <div className="dash-title-bar">
                                     <Globe size={14} className="dash-icon" />
-                                    <span>fourthline-crm.com/{industries[activeTab].id}</span>
+                                    <span>seedsvision-crm.com/{industries[activeTab].id}</span>
                                 </div>
                             </div>
 

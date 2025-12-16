@@ -28,10 +28,21 @@
     transition: all 0.3s ease;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .logo-text {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, #ffffff 20%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
 }
 
 /* Center Nav Links */
@@ -242,12 +253,64 @@
     border: 1px solid var(--border-subtle);
 }
 
-.mobile-menu a {
+.mobile-menu a,
+.mobile-submenu-items button {
     padding: 15px;
     color: var(--text-primary);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s;
+}
+
+.mobile-submenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Removed background and borders */
+}
+
+.mobile-submenu-label {
+    padding: 15px;
+    color: var(--text-secondary);
+    /* Differentiate main label slightly or keep same? User said 'under main name', implying separation */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* User said 'font not like other', so let's match the main items more closely but maybe distinct color */
+
+.mobile-submenu-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.mobile-submenu-items button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    /* Slightly smaller than main links */
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.mobile-submenu-items button:hover {
+    color: var(--text-primary);
+    background: none;
+    /* Removed background hover block */
 }
 
 @media (max-width: 768px) {

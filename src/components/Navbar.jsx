@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, Globe, ChevronDown, Sprout } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import { useLanguage } from '../App';
@@ -34,7 +34,7 @@ const Navbar = () => {
         <nav className="navbar-wrapper">
             <div className="navbar-pill">
                 <Link to="/" className="logo">
-                    <span className="logo-text">FourthLine</span>
+                    <span className="logo-text">Seedsvision</span>
                 </Link>
 
                 {/* Desktop Links */}
@@ -81,6 +81,17 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+
+                    <div className="mobile-submenu">
+                        <span className="mobile-submenu-label">{t.nav.industries}</span>
+                        <div className="mobile-submenu-items">
+                            <button onClick={() => handleIndustryClick(0)}>{t.solutionsSection.logistics.title}</button>
+                            <button onClick={() => handleIndustryClick(1)}>{t.solutionsSection.realEstate.title}</button>
+                            <button onClick={() => handleIndustryClick(2)}>{t.solutionsSection.education.title}</button>
+                            <button onClick={() => handleIndustryClick(3)}>{t.solutionsSection.b2b.title}</button>
+                        </div>
+                    </div>
+
                     <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
                     <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>

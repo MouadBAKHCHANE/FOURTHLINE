@@ -57,7 +57,7 @@ const Footer = () => {
 
                 <div className="footer-content">
                     <div className="footer-col brand-col">
-                        <div className="logo-text">FourthLine</div>
+                        <div className="logo-text">Seedsvision</div>
                         <p className="footer-desc">
                             {t.footer.desc}
                         </p>
@@ -85,14 +85,14 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>{t.footer.contact}</h4>
                         <ul>
-                            <li>contact@fourthline.ma</li>
+                            <li>contact@seedsvision.ma</li>
                             <li>Casablanca, Morocco</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; 2025 Fourthline Consulting. {t.footer.rights}</p>
+                    <p>&copy; 2025 Seedsvision Consulting. {t.footer.rights}</p>
                 </div>
             </div>
         </footer >
