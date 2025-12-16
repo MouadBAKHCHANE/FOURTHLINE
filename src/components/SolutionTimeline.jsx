@@ -47,11 +47,7 @@ const SolutionTimeline = () => {
                     {/* Connecting Line */}
                     <div className="timeline-line"></div>
 
-                    {/* Mobile Swipe Hint */}
-                    <div className="swipe-hint">
-                        <span>Swipe to explore</span>
-                        <div className="arrow-anim">→</div>
-                    </div>
+
 
                     <div className="steps-wrapper">
                         {steps.map((step) => (
