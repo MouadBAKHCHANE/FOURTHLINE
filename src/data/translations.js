@@ -315,7 +315,7 @@ export const translations = {
                 dashTitle: "Consulting Hub",
                 dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
             }
-        }
+        },
         smallBusiness: {
             navLink: "PME & Startups",
             title: "La puissance du CRM n°1, conçue à l'échelle de votre entreprise.",
