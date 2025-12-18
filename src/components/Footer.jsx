@@ -70,6 +70,7 @@ const Footer = () => {
                             <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 1 }))} className="footer-link-btn">{t.solutionsSection.realEstate.title}</button></li>
                             <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 2 }))} className="footer-link-btn">{t.solutionsSection.education.title}</button></li>
                             <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 3 }))} className="footer-link-btn">{t.solutionsSection.b2b.title}</button></li>
+                            <li><Link to="/small-business" className="footer-link-btn">{t.smallBusiness.navLink}</Link></li>
                         </ul>
                     </div>
 

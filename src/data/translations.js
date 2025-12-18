@@ -136,6 +136,46 @@ export const translations = {
                 dashTitle: "Consulting Hub",
                 dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
             }
+        },
+        smallBusiness: {
+            navLink: "Small Business",
+            title: "The Power of the #1 CRM, Built for the Scale of Your Business.",
+            packages: {
+                launchpad: {
+                    name: "The Launchpad (Starter)",
+                    target: "Solo entrepreneurs & teams < 5.",
+                    feat1: "High-Performance Landing Page",
+                    feat2: "Salesforce Free Suite Integration",
+                    feat3: "Automated WhatsApp/Email Lead Capture",
+                    feat4: "\"Zero-Touch\" Contact Organization"
+                },
+                engine: {
+                    name: "The Engine (Scalable)",
+                    target: "Growing teams ready to automate.",
+                    feat1: "Full Corporate Multi-page Website",
+                    feat2: "Advanced Salesforce Pro Suite Setup",
+                    feat3: "AI Lead Scoring (Einstein Logic)",
+                    feat4: "Sales Team Dashboard & Onboarding"
+                }
+            },
+            hook: {
+                title: "Stop managing your business on Excel.",
+                text: "We build your website and connect it to Salesforce's Free Suite. You get the world's most powerful CRM for $0/month (up to 2 users), and we handle the 100% of the technical setup.",
+                valueProp: "We don't just give you a website; we give you a revenue engine. Your site captures the lead, Salesforce organizes it, and you just focus on closing the deal."
+            },
+            industries: {
+                agencies: "Service Agencies",
+                agenciesDesc: "Stop losing leads in your Gmail inbox. Your website sends every inquiry directly to your Salesforce mobile app.",
+                retail: "Retail & Boutiques",
+                retailDesc: "Connect your online store to a customer database that remembers every client's preference automatically.",
+                local: "Local Professionals",
+                localDesc: "Automated appointment booking that syncs with your calendar and creates a Salesforce record instantly."
+            },
+            cta: "Start Your Salesforce Build",
+            comparison: {
+                oldWay: "The Lead Leak",
+                newWay: "The Growth System"
+            }
         }
     },
     fr: {
@@ -274,6 +314,46 @@ export const translations = {
                 result: "Confiance & Signature rapide.",
                 dashTitle: "Consulting Hub",
                 dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
+            }
+        }
+        smallBusiness: {
+            navLink: "PME & Startups",
+            title: "La puissance du CRM n°1, conçue à l'échelle de votre entreprise.",
+            packages: {
+                launchpad: {
+                    name: "La Rampe de Lancement (Starter)",
+                    target: "Entrepreneurs solo & équipes < 5.",
+                    feat1: "Landing Page Haute Performance",
+                    feat2: "Intégration Salesforce Free Suite",
+                    feat3: "Capture Automatisée WhatsApp/Email",
+                    feat4: "Organisation des Contacts \"Zero-Touch\""
+                },
+                engine: {
+                    name: "Le Moteur (Scalable)",
+                    target: "Équipes en croissance prêtes à automatiser.",
+                    feat1: "Site Corporatif Complet",
+                    feat2: "Configuration Avancée Salesforce Pro Suite",
+                    feat3: "Scoring de Leads IA (Einstein)",
+                    feat4: "Tableau de Bord Commercial & Onboarding"
+                },
+            },
+            hook: {
+                title: "Arrêtez de gérer votre entreprise sur Excel.",
+                text: "Nous construisons votre site web et le connectons à la Suite Gratuite Salesforce. Vous obtenez le CRM le plus puissant au monde pour 0$/mois, et nous gérons 100% de la configuration technique.",
+                valueProp: "Nous ne vous donnons pas juste un site web; nous vous donnons un moteur de revenus. Votre site capture le lead, Salesforce l'organise, et vous vous concentrez sur la vente."
+            },
+            industries: {
+                agencies: "Agences de Service",
+                agenciesDesc: "Arrêtez de perdre des leads dans votre boîte Gmail. Votre site envoie chaque demande directement sur votre app mobile Salesforce.",
+                retail: "Retail & Boutiques",
+                retailDesc: "Connectez votre boutique en ligne à une base client qui se souvient automatiquement des préférences de chacun.",
+                local: "Professionnels Locaux",
+                localDesc: "Réservation de rendez-vous automatisée qui se synchronise avec votre calendrier et crée un enregistrement Salesforce instantanément."
+            },
+            cta: "Commencer votre Build Salesforce",
+            comparison: {
+                oldWay: "La Fuite de Leads",
+                newWay: "Le Système de Croissance"
             }
         }
     }
