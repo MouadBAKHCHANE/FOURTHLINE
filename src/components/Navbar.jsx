@@ -39,7 +39,8 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
-                    <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <a href="/#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <Link to="/small-business">{t.smallBusiness.navLink}</Link>
 
                     <div className="nav-item-dropdown">
                         <button className="nav-link-btn">
@@ -80,7 +81,8 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <a href="/#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
+                    <Link to="/small-business" onClick={() => setIsOpen(false)}>{t.smallBusiness.navLink}</Link>
 
                     <div className="mobile-submenu">
                         <span className="mobile-submenu-label">{t.nav.industries}</span>
