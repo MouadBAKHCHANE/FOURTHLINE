@@ -30,6 +30,7 @@ const Home = () => {
             <Stats />
             <SolutionTimeline />
             <Services />
+            <TechStack />
         </>
     );
 };

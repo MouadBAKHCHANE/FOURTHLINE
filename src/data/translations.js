@@ -71,8 +71,25 @@ export const translations = {
             tier2Button: "Build The Empire"
         },
         techStack: {
-            title: "Technical Arsenal",
-            subtitle: "Built with industry-leading platforms for reliability and scale."
+            title: "Engineering Digital Speed.",
+            cards: {
+                nocode: {
+                    title: "Design-First & Rapid Deployment",
+                    platform: "Framer / Webflow",
+                    desc: "Ship stunning, animated websites in days. Perfect for startups needing immediate impact with smooth interactions."
+                },
+                cms: {
+                    title: "Scalability & Content Control",
+                    platform: "WordPress / Headless",
+                    desc: "The world's most popular CMS, engineered for performance. Manage your own content easily while we handle the code."
+                },
+                custom: {
+                    title: "Next.js/React - Unlimited Potential",
+                    platform: "Custom Stack",
+                    desc: "Bank-grade security and blazing fast performance. For complex web apps requiring robust logic and scale."
+                }
+            },
+            cta: "⚡ Start Your Build"
         },
         stats: {
             projects: "Leads Generated",
@@ -220,6 +237,7 @@ export const translations = {
         },
     },
 
+
     fr: {
         nav: {
             product: "Produit",
@@ -292,8 +310,25 @@ export const translations = {
             tier2Button: "Construire L'Empire"
         },
         techStack: {
-            title: "Arsenal Technique",
-            subtitle: "Construit avec des plateformes leaders pour la fiabilité et la mise à l'échelle."
+            title: "L'Ingénierie de la Vitesse Digitale.",
+            cards: {
+                nocode: {
+                    title: "Design-First & Déploiement Rapide",
+                    platform: "Framer / Webflow",
+                    desc: "Livrez des sites web époustouflants et animés en quelques jours. Parfait pour un impact immédiat avec des interactions fluides."
+                },
+                cms: {
+                    title: "Évolutivité & Contrôle de Contenu",
+                    platform: "WordPress / Headless",
+                    desc: "Le CMS le plus populaire, optimisé pour la performance. Gérez votre contenu facilement pendant que nous gérons le code."
+                },
+                custom: {
+                    title: "Next.js/React - Potentiel Illimité",
+                    platform: "Stack Sur-Mesure",
+                    desc: "Sécurité bancaire et performance ultra-rapide. Pour les applications web complexes nécessitant logique robuste et échelle."
+                }
+            },
+            cta: "⚡ Commencer Votre Build"
         },
         stats: {
             projects: "Leads Générés",

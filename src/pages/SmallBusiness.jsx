@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
-import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe } from 'lucide-react';
 import '../styles/SmallBusiness.css';
 
 const SmallBusiness = () => {
@@ -170,6 +170,8 @@ const SmallBusiness = () => {
                     </div>
                 </div>
             </section>
+
+
 
             {/* Comparison Section (Old Way vs New Way) */}
             <section className="sb-comparison section-padding">
