@@ -1,11 +1,11 @@
 export const translations = {
     en: {
         nav: {
-            product: "Product",
+            product: "Website",
             industries: "Industries",
             careers: "Careers",
             docs: "Methodology",
-            customers: "Customers",
+            projects: "Projects",
             pricing: "Pricing",
             signin: "Sign in",
             requestDemo: "Start Your Build"
@@ -36,13 +36,13 @@ export const translations = {
         solution: {
             title: "The Roadmap",
             subtitle: "4 Steps to Automate Your Sales Revenue.",
-            step1Title: "The Deep Dive",
+            step1Title: "The Audit",
             step1Desc: "We audit your current flow to find exactly where you're losing money.",
-            step2Title: "The Engine Build",
+            step2Title: "The Website",
             step2Desc: "We build a high-performance website designed to convert, not just look pretty.",
-            step3Title: "The Handshake",
+            step3Title: "The CRM",
             step3Desc: "We connect your forms to Salesforce. Zero manual data entry. Infinite scale.",
-            step4Title: "Liftoff",
+            step4Title: "The Training",
             step4Desc: "We train your team and hand over the keys to a self-driving sales machine.",
             week1: "Week 1",
             week2: "Week 2",
@@ -155,7 +155,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "Small Business",
+            navLink: "CRM",
             title: "The Power of the #1 CRM, Built for the Scale of Your Business.",
             finalCta: {
                 title: ["Stop losing leads.", "Start building your system."],
@@ -235,16 +235,60 @@ export const translations = {
                 }
             }
         },
+        websitePage: {
+            hero: {
+                title: "Build a High-Performance Digital Footprint.",
+                subtitle: "From landing pages to complex web applications. We build fast, scalable, and stunning websites.",
+                cta: "Start Your Build"
+            },
+            services: {
+                landing: {
+                    title: "Landing Pages",
+                    desc: "For speed and conversion. High impact, fast deployment.",
+                },
+                multi: {
+                    title: "Multi-Page Websites",
+                    desc: "For authority and SEO. Corporate presence, content-rich.",
+                }
+            },
+            techStack: {
+                title: "The Arsenal",
+                nocode: {
+                    title: "No-Code / Low-Code",
+                    framer: "Framer: Design speed. World-class animations.",
+                    webflow: "Webflow: The professional standard for visual development."
+                },
+                cms: {
+                    title: "CMS",
+                    wordpress: "WordPress: Powering 40% of the web. Infinite flexibility."
+                },
+                custom: {
+                    title: "Custom Development",
+                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js for modern, scalable apps.",
+                    laravel: "Laravel / VueJS: Elegant syntax, rapid application development.",
+                    java: "Java / Angular: Enterprise-grade stability and strict typing for large-scale systems."
+                },
+                benefits: {
+                    perf: "Core Web Vitals optimized.",
+                    seo: "Built-in technical SEO.",
+                    scale: "Ready to grow with your business."
+                }
+            },
+            cta: {
+                text: "Ready to upgrade your web presence?",
+                button: "Start Your Build"
+            }
+        },
     },
 
 
     fr: {
         nav: {
-            product: "Produit",
+            product: "Site Web",
             industries: "Industries",
             careers: "Carrières",
             docs: "Méthodologie",
-            customers: "Clients",
+            projects: "Projets",
             pricing: "Tarifs",
             signin: "Connexion",
             requestDemo: "Commencer"
@@ -275,13 +319,13 @@ export const translations = {
         solution: {
             title: "La Roadmap",
             subtitle: "4 Étapes pour Automatiser Vos Revenus.",
-            step1Title: "L'Audit Profond",
+            step1Title: "L'Audit",
             step1Desc: "Nous trouvons exactement où vous perdez de l'argent dans votre processus actuel.",
-            step2Title: "Le Moteur",
+            step2Title: "Le Site Web",
             step2Desc: "Un site web haute performance conçu pour convertir, pas juste pour faire joli.",
-            step3Title: "La Connexion",
+            step3Title: "Le CRM",
             step3Desc: "Formulaires connectés à Salesforce. Zéro saisie manuelle. Évolutivité infinie.",
-            step4Title: "Le Décollage",
+            step4Title: "La Formation",
             step4Desc: "Nous formons votre équipe et remettons les clés d'une machine de vente autonome.",
             week1: "Semaine 1",
             week2: "Semaine 2",
@@ -394,7 +438,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "PME & Startups",
+            navLink: "CRM",
             title: "La puissance du CRM n°1, conçue à l'échelle de votre entreprise.",
             finalCta: {
                 title: ["Arrêtez de perdre des leads.", "Commencez à construire votre système."],
@@ -472,6 +516,50 @@ export const translations = {
                         btn: "Voir les fonctionnalités Analytics"
                     }
                 }
+            }
+        },
+        websitePage: {
+            hero: {
+                title: "Construisez une Empreinte Numérique Performante.",
+                subtitle: "Des landing pages aux applications web complexes. Nous créons des sites rapides, évolutifs et époustouflants.",
+                cta: "Commencer"
+            },
+            services: {
+                landing: {
+                    title: "Landing Pages",
+                    desc: "Pour la vitesse et la conversion. Impact fort, déploiement rapide.",
+                },
+                multi: {
+                    title: "Sites Multi-Pages",
+                    desc: "Pour l'autorité et le SEO. Présence corporative, riche en contenu.",
+                }
+            },
+            techStack: {
+                title: "L'Arsenal Technique",
+                nocode: {
+                    title: "No-Code / Low-Code",
+                    framer: "Framer: Vitesse de design. Animations de classe mondiale.",
+                    webflow: "Webflow: Le standard professionnel pour le développement visuel."
+                },
+                cms: {
+                    title: "CMS",
+                    wordpress: "WordPress: Propulse 40% du web. Flexibilité infinie."
+                },
+                custom: {
+                    title: "Développement Sur Mesure",
+                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js pour des apps modernes et évolutives.",
+                    laravel: "Laravel / VueJS: Syntaxe élégante, développement rapide d'applications.",
+                    java: "Java / Angular: Stabilité d'entreprise et typage strict pour les systèmes à grande échelle."
+                },
+                benefits: {
+                    perf: "Cœur Web Vitals optimisé.",
+                    seo: "SEO technique intégré.",
+                    scale: "Prêt à grandir avec votre entreprise."
+                }
+            },
+            cta: {
+                text: "Prêt à moderniser votre présence web ?",
+                button: "Commencer"
             }
         }
     }

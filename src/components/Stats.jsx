@@ -75,7 +75,7 @@ const Stats = () => {
     ];
 
     return (
-        <section className="stats-section">
+        <section className="stats-section" id="projects">
             <div className="container">
                 <div className="stats-grid">
                     {statsData.map((stat, index) => (

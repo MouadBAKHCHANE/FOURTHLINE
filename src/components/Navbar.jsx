@@ -39,23 +39,10 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
-                    <a href="/#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
-                    <Link to="/small-business">{t.smallBusiness.navLink}</Link>
+                    <Link to="/website">{t.nav.product}</Link>
+                    <Link to="/crm">{t.smallBusiness.navLink}</Link>
 
-                    <div className="nav-item-dropdown">
-                        <button className="nav-link-btn">
-                            {t.nav.industries} <ChevronDown size={14} />
-                        </button>
-                        <div className="dropdown-menu">
-                            <button onClick={() => handleIndustryClick(0)}>{t.solutionsSection.logistics.title}</button>
-                            <button onClick={() => handleIndustryClick(1)}>{t.solutionsSection.realEstate.title}</button>
-                            <button onClick={() => handleIndustryClick(2)}>{t.solutionsSection.education.title}</button>
-                            <button onClick={() => handleIndustryClick(3)}>{t.solutionsSection.b2b.title}</button>
-                        </div>
-                    </div>
-
-                    <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
-                    <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>{t.nav.projects}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                 </div>
 
@@ -81,21 +68,10 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <a href="/#services" onClick={(e) => handleNavClick(e, '#services')}>{t.nav.product}</a>
-                    <Link to="/small-business" onClick={() => setIsOpen(false)}>{t.smallBusiness.navLink}</Link>
+                    <Link to="/website" onClick={() => setIsOpen(false)}>{t.nav.product}</Link>
+                    <Link to="/crm" onClick={() => setIsOpen(false)}>{t.smallBusiness.navLink}</Link>
 
-                    <div className="mobile-submenu">
-                        <span className="mobile-submenu-label">{t.nav.industries}</span>
-                        <div className="mobile-submenu-items">
-                            <button onClick={() => handleIndustryClick(0)}>{t.solutionsSection.logistics.title}</button>
-                            <button onClick={() => handleIndustryClick(1)}>{t.solutionsSection.realEstate.title}</button>
-                            <button onClick={() => handleIndustryClick(2)}>{t.solutionsSection.education.title}</button>
-                            <button onClick={() => handleIndustryClick(3)}>{t.solutionsSection.b2b.title}</button>
-                        </div>
-                    </div>
-
-                    <a href="#process" onClick={(e) => handleNavClick(e, '#process')}>{t.nav.docs}</a>
-                    <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
+                    <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>{t.nav.projects}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
                     <a href="/Webtoleadform.html" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>

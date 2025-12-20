@@ -64,13 +64,11 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-col">
-                        <h4>{t.footer.industries || "Industries"}</h4>
+                        <h4>{t.footer.services || "Services"}</h4>
                         <ul>
-                            <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 0 }))} className="footer-link-btn">{t.solutionsSection.logistics.title}</button></li>
-                            <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 1 }))} className="footer-link-btn">{t.solutionsSection.realEstate.title}</button></li>
-                            <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 2 }))} className="footer-link-btn">{t.solutionsSection.education.title}</button></li>
-                            <li><button onClick={() => window.dispatchEvent(new CustomEvent('switchSector', { detail: 3 }))} className="footer-link-btn">{t.solutionsSection.b2b.title}</button></li>
-                            <li><Link to="/small-business" className="footer-link-btn">{t.smallBusiness.navLink}</Link></li>
+                            <li><Link to="/website">{t.nav.product}</Link></li>
+                            <li><Link to="/crm">{t.smallBusiness.navLink}</Link></li>
+                            <li><a href="/#projects">{t.nav.projects}</a></li>
                         </ul>
                     </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
 import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe } from 'lucide-react';
-import '../styles/SmallBusiness.css';
+import '../styles/CRMPage.css';
 
 const SmallBusiness = () => {
     const { t } = useLanguage();
@@ -70,47 +70,7 @@ const SmallBusiness = () => {
                 </div>
             </section>
 
-            {/* Packages Section */}
-            <section className="sb-packages section-padding">
-                <div className="container">
-                    <div className="packages-grid">
-                        {/* Launchpad Package */}
-                        <div className="sb-package-card glass-card">
-                            <div className="package-header">
-                                <h3>{sb.packages.launchpad.name}</h3>
-                                <div className="target-badge">{sb.packages.launchpad.target}</div>
-                            </div>
-                            <ul className="package-features">
-                                <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat1}</li>
-                                <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat2}</li>
-                                <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat3}</li>
-                                <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat4}</li>
-                            </ul>
-                            <a href="/Webtoleadform.html" className="btn btn-secondary full-width">
-                                {sb.cta} <ArrowRight size={16} />
-                            </a>
-                        </div>
 
-                        {/* Engine Package */}
-                        <div className="sb-package-card glass-card featured">
-                            <div className="featured-tag">POPULAR</div>
-                            <div className="package-header">
-                                <h3>{sb.packages.engine.name}</h3>
-                                <div className="target-badge accent">{sb.packages.engine.target}</div>
-                            </div>
-                            <ul className="package-features">
-                                <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat1}</li>
-                                <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat2}</li>
-                                <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat3}</li>
-                                <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat4}</li>
-                            </ul>
-                            <a href="/Webtoleadform.html" className="btn btn-primary full-width">
-                                {sb.cta} <ArrowRight size={16} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Feature Tabs Section */}
             {sb.featureTabs && (

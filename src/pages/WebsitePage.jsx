@@ -1,0 +1,179 @@
+import React, { useEffect } from 'react';
+import { useLanguage } from '../App';
+import { ArrowRight, Zap, Search, TrendingUp, Layers, Code, Globe, Database, Server } from 'lucide-react';
+import '../styles/Website.css';
+
+const WebsitePage = () => {
+    const { t } = useLanguage();
+    const ws = t.websitePage;
+
+    // Smooth scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="website-page">
+            {/* Hero */}
+            <section className="ws-hero">
+                <div className="ws-hero-bg"></div>
+                <div className="container ws-hero-container">
+                    <div className="ws-hero-text">
+                        <h1 className="ws-title">{ws.hero.title}</h1>
+                        <p className="ws-subtitle">{ws.hero.subtitle}</p>
+                        <a href="/Webtoleadform.html" className="btn btn-primary btn-lg btn-glow">
+                            {ws.hero.cta} <ArrowRight size={20} />
+                        </a>
+                    </div>
+
+                    <div className="ws-hero-visual">
+                        {/* Floating Tech Icons */}
+                        <div className="float-icon icon-react"><Code size={24} /></div>
+                        <div className="float-icon icon-vue"><Zap size={24} /></div>
+
+                        {/* The Code Window */}
+                        <div className="code-window">
+                            <div className="window-header">
+                                <div className="dot red"></div>
+                                <div className="dot yellow"></div>
+                                <div className="dot green"></div>
+                            </div>
+                            <div className="code-content">
+                                <span className="code-line"><span className="c-purple">const</span> <span className="c-yellow">GrowthSystem</span> = () =&gt; {'{'}</span>
+                                <span className="code-line">&nbsp;&nbsp;<span className="c-purple">return</span> (</span>
+                                <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="c-green">AutoPilot</span></span>
+                                <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-orange">leads</span>={'{'}<span className="c-blue">true</span>{'}'}</span>
+                                <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-orange">sales</span>={'{'}<span className="c-blue">"24/7"</span>{'}'}</span>
+                                <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</span>
+                                <span className="code-line">&nbsp;&nbsp;);</span>
+                                <span className="code-line">{'}'};</span>
+                            </div>
+                        </div>
+
+                        {/* The Live Preview Card */}
+                        <div className="preview-card">
+                            <div className="preview-header">
+                                <div className="preview-avatar"></div>
+                                <div className="preview-lines">
+                                    <div className="p-line"></div>
+                                    <div className="p-line short"></div>
+                                </div>
+                            </div>
+                            <div className="preview-stat">
+                                <span className="stat-num">+124%</span>
+                                <span className="stat-label">Conversion Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Grid */}
+            <section className="container ws-services">
+                <div className="ws-services-grid">
+                    <div className="ws-card">
+                        <Zap size={40} className="text-yellow mb-4" />
+                        <h3>{ws.services.landing.title}</h3>
+                        <p>{ws.services.landing.desc}</p>
+                    </div>
+                    <div className="ws-card">
+                        <Layers size={40} className="text-blue mb-4" />
+                        <h3>{ws.services.multi.title}</h3>
+                        <p>{ws.services.multi.desc}</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Tech Stack (The Arsenal) - Modern Redesign */}
+            <section className="ws-stack-section">
+                <div className="container">
+                    <h2 className="ws-section-title">{ws.techStack.title}</h2>
+
+                    <div className="stack-grid-modern">
+                        {/* Framer Card */}
+                        <div className="tech-card">
+                            <div className="tech-logo-wrapper">
+                                <img src="/assets/tech/framer.png" alt="Framer Logo" className="tech-logo" />
+                            </div>
+                            <h4>Framer</h4>
+                            <p>{ws.techStack.nocode.framer.split(':')[1]}</p>
+                            <div className="tech-tags">
+                                <span className="tech-tag">No-Code</span>
+                                <span className="tech-tag">Animation</span>
+                            </div>
+                        </div>
+
+                        {/* Webflow Card */}
+                        <div className="tech-card">
+                            <div className="tech-logo-wrapper">
+                                <img src="/assets/tech/webflow.png" alt="Webflow Logo" className="tech-logo" />
+                            </div>
+                            <h4>Webflow</h4>
+                            <p>{ws.techStack.nocode.webflow.split(':')[1]}</p>
+                            <div className="tech-tags">
+                                <span className="tech-tag">CMS</span>
+                                <span className="tech-tag">Visual Dev</span>
+                            </div>
+                        </div>
+
+                        {/* WordPress Card */}
+                        <div className="tech-card">
+                            <div className="tech-logo-wrapper">
+                                <img src="/assets/tech/wordpress.png" alt="WordPress Logo" className="tech-logo" />
+                            </div>
+                            <h4>WordPress</h4>
+                            <p>{ws.techStack.cms.wordpress.split(':')[1]}</p>
+                            <div className="tech-tags">
+                                <span className="tech-tag">Open Source</span>
+                                <span className="tech-tag">Scalable</span>
+                            </div>
+                        </div>
+
+                        {/* Full Stack Card (Featured) */}
+                        <div className="tech-card featured-stack">
+                            <div className="tech-logo-wrapper">
+                                <img src="/assets/tech/fullstack.png" alt="Full Stack Logo" className="tech-logo" />
+                            </div>
+                            <h4>{ws.techStack.custom.title}</h4>
+                            <p>MERN, Laravel/Vue, Java/Angular. {ws.techStack.custom.mern.split(':')[1]}</p>
+                            <div className="tech-tags">
+                                <span className="tech-tag">React</span>
+                                <span className="tech-tag">Node</span>
+                                <span className="tech-tag">Vue</span>
+                                <span className="tech-tag">Angular</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Benefits */}
+            <section className="container">
+                <div className="ws-benefits">
+                    <div className="benefit-item">
+                        <div className="benefit-icon"><Zap /></div>
+                        <h4>{ws.techStack.benefits.perf}</h4>
+                    </div>
+                    <div className="benefit-item">
+                        <div className="benefit-icon"><Search /></div>
+                        <h4>{ws.techStack.benefits.seo}</h4>
+                    </div>
+                    <div className="benefit-item">
+                        <div className="benefit-icon"><TrendingUp /></div>
+                        <h4>{ws.techStack.benefits.scale}</h4>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="ws-cta container">
+                <h2 className="mb-4">{ws.cta.text}</h2>
+                <a href="/Webtoleadform.html" className="btn btn-primary btn-lg">
+                    {ws.cta.button} <ArrowRight />
+                </a>
+            </section>
+        </div>
+    );
+};
+
+export default WebsitePage;

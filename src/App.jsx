@@ -7,7 +7,8 @@ import TermsOfService from './pages/TermsOfService'
 import QualificationForm from './pages/QualificationForm'
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
-import SmallBusiness from './pages/SmallBusiness';
+import SmallBusiness from './pages/CRMPage';
+import WebsitePage from './pages/WebsitePage';
 import Footer from './components/Footer'
 import './index.css'
 import { translations } from './data/translations'
@@ -28,7 +29,8 @@ const AppContent = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/small-business" element={<SmallBusiness />} />
+        <Route path="/website" element={<WebsitePage />} />
+        <Route path="/crm" element={<SmallBusiness />} />
         {/* <Route path="/start-build" element={<QualificationForm />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
