@@ -24,7 +24,7 @@ const Hero = () => {
                         {t.hero.subtitle}
                     </p>
                     <div className="hero-actions">
-                        <Link to="/start-build" className="btn btn-primary">{t.hero.startBuild}</Link>
+                        <a href="/Webtoleadform.html" className="btn btn-primary">{t.hero.startBuild}</a>
                         <a href="#system" className="btn btn-glass">{t.hero.viewSystem}</a>
                     </div>
                 </div>

@@ -36,12 +36,80 @@ const QualificationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Submitted:', formData);
-        setShowSuccess(true);
 
-        setTimeout(() => {
-            navigate('/');
-        }, 3000);
+        // Map React state values to Salesforce Picklist values
+        const needTypeMap = {
+            'Site Web': 'Website Only',
+            'CRM': 'CRM Setup',
+            'Les Deux': 'Website + CRM'
+        };
+
+        const painPointMap = {
+            'Lost Leads': 'Losing Leads',
+            'No Visibility': 'No Visibility',
+            'Slow Site': 'Slow Website',
+            'Manual Work': 'Manual Data'
+        };
+
+        const budgetMap = {
+            'Essential': '15k - 25k MAD',
+            'Growth': '25k - 45k MAD',
+            'Enterprise': '> 45k MAD',
+            'Autre': 'Other'
+        };
+
+        // Split Name
+        const fullName = formData.name.trim();
+        const names = fullName.split(' ');
+        const firstName = names[0];
+        const lastName = names.slice(1).join(' ') || '.'; // Salesforce requires Last Name
+
+        // Create Hidden Form
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV';
+        // form.target = '_blank'; // Optional: Open in new tab if you don't want to redirect page
+
+        const appendField = (name, value) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = value || '';
+            form.appendChild(input);
+        };
+
+        // Standard Fields
+        appendField('oid', '00DQH00000KAqzV');
+        appendField('retURL', 'https://www.seedsvision.com/small-business'); // Direct Success URL
+
+        appendField('first_name', firstName);
+        appendField('last_name', lastName);
+        appendField('email', formData.email);
+        appendField('phone', formData.phone);
+        appendField('company', formData.companyName);
+
+        // Custom Fields
+        appendField('00NQH00000NSvqv', formData.role);                // Role
+        appendField('00NQH00000NUGN3', formData.roleOther);           // Other Role
+
+        appendField('00NQH00000NSvyz', formData.industry);            // Industry
+        appendField('00NQH00000NUGOf', formData.industryOther);       // Other Industry
+
+        appendField('00NQH00000NSw8f', needTypeMap[formData.needType] || formData.needType); // Client Needs
+        appendField('00NQH00000NSwAH', painPointMap[formData.painPoint] || formData.painPoint); // Pain Point
+
+        appendField('00NQH00000NSwG1', formData.crmChoice);           // Preferred CRM
+        appendField('00NQH00000NUGQH', formData.crmOther);            // Other CRM
+
+        appendField('00NQH00000NSwLZ', budgetMap[formData.budget] || formData.budget);       // Investment
+        appendField('00NQH00000NUGJq', formData.budgetOther);         // Other Budget
+
+        // Submit
+        document.body.appendChild(form);
+        form.submit();
+
+        // Show success UI locally (though page will likely redirect)
+        setShowSuccess(true);
     };
 
     const steps = [

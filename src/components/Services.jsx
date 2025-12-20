@@ -32,7 +32,7 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
                             </ul>
 
-                            <Link to="/start-build" className="btn btn-glass full-width">{t.services.tier1Button}</Link>
+                            <a href="/Webtoleadform.html" className="btn btn-glass full-width">{t.services.tier1Button}</a>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
                             </ul>
 
-                            <Link to="/start-build" className="btn btn-primary full-width">{t.services.tier2Button}</Link>
+                            <a href="/Webtoleadform.html" className="btn btn-primary full-width">{t.services.tier2Button}</a>
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/small-business" element={<SmallBusiness />} />
-        <Route path="/start-build" element={<QualificationForm />} />
+        {/* <Route path="/start-build" element={<QualificationForm />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/careers" element={<Careers />} />

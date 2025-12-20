@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <title>Start Your Build | Seedsvision</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap');
+
+        :root {
+            --bg-primary: #0B0C10;
+            --bg-secondary: #12141a;
+            --accent-blue: #00A1E0;
+            --accent-green: #10b981;
+            --text-primary: #ffffff;
+            --text-secondary: #A1A1AA;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Outfit', 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 0%, #1a2744 0%, #0B0C10 60%);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Glowing Blobs */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(0, 161, 224, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(0, 161, 224, 0.1) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: 0;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, 30px);
+            }
+        }
+
+        .main-container {
+            z-index: 20;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-card {
+            background: #12141a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .progress-step::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+
+        .progress-step:first-child::before {
+            display: none;
+        }
+
+        .progress-step.active::before,
+        .progress-step.completed::before {
+            background: var(--accent-blue);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-number {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 161, 224, 0.5);
+        }
+
+        .progress-step.completed .step-number {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #A1A1AA 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #fff;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(0, 161, 224, 0.05);
+            box-shadow: 0 0 0 3px rgba(0, 161, 224, 0.1);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23A1A1AA%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 12px;
+            cursor: pointer;
+        }
+
+        select option {
+            background-color: #12141a;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .other-field {
+            display: none;
+            margin-top: 10px;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Buttons */
+        .form-navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #0081b3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 161, 224, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Success Screen */
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-screen.active {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            position: relative;
+        }
+
+        .checkmark::after {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            width: 8px;
+            height: 16px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        .success-screen h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .success-screen p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .redirect-note {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .form-card {
+                padding: 30px 24px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .progress-steps {
+                margin-bottom: 10px;
+            }
+
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.75rem;
+            }
+
+            .step-label {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="form-card">
+            <!-- Progress Bar -->
+            <div class="progress-wrapper">
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Contact</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Company</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Project</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Budget</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="header">
+                <h2>Start Building</h2>
+                <p class="subtitle">Help us understand your needs</p>
+            </div>
+
+            <!-- Form -->
+            <form id="leadForm"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV"
+                method="POST">
+                <input type="hidden" name="oid" value="00DQH00000KAqzV">
+                <input type="hidden" name="retURL" value="https://www.seedsvision.com/small-business">
+
+                <!-- Step 1: Contact Info -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-group">
+                        <label for="first_name">First Name *</label>
+                        <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name *</label>
+                        <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input id="email" maxlength="80" name="email" type="email" placeholder="john@company.com"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" maxlength="40" name="phone" type="tel" placeholder="+212 6..." />
+                    </div>
+                </div>
+
+                <!-- Step 2: Company Info -->
+                <div class="form-step" data-step="2">
+                    <div class="form-group">
+                        <label for="company">Company *</label>
+                        <input id="company" maxlength="40" name="company" type="text" placeholder="Acme Inc."
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="00NQH00000NSvqv">Your Role</label>
+                        <select id="00NQH00000NSvqv" name="00NQH00000NSvqv" title="Role">
+                            <option value="">Select your role...</option>
+                            <option value="CEO / FOUNDER">CEO / FOUNDER</option>
+                            <option value="Sales Director">Sales Director</option>
+                            <option value="Tech Lead">Tech Lead</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="otherRole" class="other-field">
+                            <input id="00NQH00000NUGN3" maxlength="255" name="00NQH00000NUGN3" type="text"
+                                placeholder="Please specify your role" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="00NQH00000NSvyz">Industry Sector</label>
+                        <select id="00NQH00000NSvyz" name="00NQH00000NSvyz" title="Industry Sector">
+                            <option value="">Select your industry...</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Education">Education</option>
+                            <option value="Consulting">Consulting</option>
+                            <option value="Industry">Industry</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="otherIndustry" class="other-field">
+                            <input id="00NQH00000NUGOf" maxlength="255" name="00NQH00000NUGOf" type="text"
+                                placeholder="Please specify your industry" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Project Details -->
+                <div class="form-step" data-step="3">
+                    <div class="form-group">
+                        <label for="00NQH00000NSw8f">What do you need?</label>
+                        <select id="00NQH00000NSw8f" name="00NQH00000NSw8f" title="Client Needs">
+                            <option value="">Select an option...</option>
+                            <option value="Website Only">Website Only</option>
+                            <option value="CRM Setup">CRM Setup</option>
+                            <option value="Website + CRM">Website + CRM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="00NQH00000NSwAH">Primary Pain Point</label>
+                        <select id="00NQH00000NSwAH" name="00NQH00000NSwAH" title="Primary Pain Point">
+                            <option value="">Select your biggest challenge...</option>
+                            <option value="Losing Leads">Losing Leads</option>
+                            <option value="No Visibility">No Visibility</option>
+                            <option value="Slow Website">Slow Website</option>
+                            <option value="Manual Data">Manual Data</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="00NQH00000NSwG1">Preferred CRM Platform</label>
+                        <select id="00NQH00000NSwG1" name="00NQH00000NSwG1" title="Preferred CRM Platform">
+                            <option value="">Select a CRM...</option>
+                            <option value="Salesforce">Salesforce</option>
+                            <option value="Odoo">Odoo</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="otherCRM" class="other-field">
+                            <input id="00NQH00000NUGQH" maxlength="255" name="00NQH00000NUGQH" type="text"
+                                placeholder="Please specify your CRM" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Budget -->
+                <div class="form-step" data-step="4">
+                    <div class="form-group">
+                        <label for="00NQH00000NSwLZ">Investment Range</label>
+                        <select id="00NQH00000NSwLZ" name="00NQH00000NSwLZ" title="Investment Range">
+                            <option value="">Select your budget...</option>
+                            <option value="15k - 25k MAD">15k - 25k MAD</option>
+                            <option value="25k - 45k MAD">25k - 45k MAD</option>
+                            <option value="&gt; 45k MAD">&gt; 45k MAD</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="otherBudget" class="other-field">
+                            <input id="00NQH00000NUGJq" maxlength="255" name="00NQH00000NUGJq" type="text"
+                                placeholder="Please specify your budget" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 20px;">
+                            Review your information and click "Submit Request" to send your details to our team.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">←
+                        Previous</button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">Next →</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit
+                        Request</button>
+                </div>
+            </form>
+
+            <!-- Success Screen -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">
+                    <div class="checkmark"></div>
+                </div>
+                <h3>Thank You!</h3>
+                <p>Your request has been submitted successfully.</p>
+                <p>Our team will review your information and reach out shortly.</p>
+                <p class="redirect-note">Redirecting you to the homepage in <span id="countdown">3</span> seconds...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+        const form = document.getElementById('leadForm');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const successScreen = document.getElementById('successScreen');
+
+        // Show/hide "Other" fields
+        function setupOtherFields() {
+            const configs = [
+                { selectId: '00NQH00000NSvqv', otherId: 'otherRole' },
+                { selectId: '00NQH00000NSvyz', otherId: 'otherIndustry' },
+                { selectId: '00NQH00000NSwG1', otherId: 'otherCRM' },
+                { selectId: '00NQH00000NSwLZ', otherId: 'otherBudget' }
+            ];
+
+            configs.forEach(config => {
+                const select = document.getElementById(config.selectId);
+                const otherField = document.getElementById(config.otherId);
+
+                if (select && otherField) {
+                    select.addEventListener('change', function () {
+                        if (this.value === 'Other') {
+                            otherField.style.display = 'block';
+                        } else {
+                            otherField.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                }
+            });
+        }
+
+        // Show step
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(stepEl => {
+                stepEl.classList.remove('active');
+            });
+
+            const activeStep = document.querySelector(`.form-step[data-step="${step}"]`);
+            if (activeStep) {
+                activeStep.classList.add('active');
+            }
+
+            // Update buttons
+            prevBtn.style.display = step === 1 ? 'none' : 'block';
+
+            if (step === totalSteps) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+
+            updateProgressBar();
+        }
+
+        // Validate current step
+        function validateStep() {
+            const currentStepEl = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+            const requiredInputs = currentStepEl.querySelectorAll('input[required], select[required]');
+
+            for (let input of requiredInputs) {
+                if (!input.value.trim()) {
+                    input.focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Next button
+        nextBtn.addEventListener('click', () => {
+            if (validateStep() && currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        // Previous button
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Hide form, show success screen
+            form.style.display = 'none';
+            document.querySelector('.progress-wrapper').style.display = 'none';
+            document.querySelector('.header').style.display = 'none';
+            successScreen.classList.add('active');
+
+            // Countdown and redirect
+            let countdown = 3;
+            const countdownEl = document.getElementById('countdown');
+
+            const timer = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+
+                if (countdown === 0) {
+                    clearInterval(timer);
+                    // Submit to Salesforce
+                    form.submit();
+                }
+            }, 1000);
+        });
+
+        // Initialize
+        setupOtherFields();
+        showStep(1);
+    </script>
+</body>
+
+</html>

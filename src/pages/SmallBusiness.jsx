@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users } from 'lucide-react';
 import '../styles/SmallBusiness.css';
 
@@ -27,7 +28,7 @@ const SmallBusiness = () => {
                             {sb.hook.valueProp}
                         </p>
                         <div className="sb-hero-actions">
-                            <a href="#start-build" className="btn btn-primary btn-lg btn-glow">
+                            <a href="/Webtoleadform.html" className="btn btn-primary btn-lg btn-glow">
                                 {sb.cta} <ArrowRight size={20} />
                             </a>
                         </div>
@@ -86,7 +87,7 @@ const SmallBusiness = () => {
                                 <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat3}</li>
                                 <li><CheckCircle size={18} className="text-green" /> {sb.packages.launchpad.feat4}</li>
                             </ul>
-                            <a href="#start-build" className="btn btn-secondary full-width">
+                            <a href="/Webtoleadform.html" className="btn btn-secondary full-width">
                                 {sb.cta} <ArrowRight size={16} />
                             </a>
                         </div>
@@ -104,7 +105,7 @@ const SmallBusiness = () => {
                                 <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat3}</li>
                                 <li><CheckCircle size={18} className="text-blue" /> {sb.packages.engine.feat4}</li>
                             </ul>
-                            <a href="#start-build" className="btn btn-primary full-width">
+                            <a href="/Webtoleadform.html" className="btn btn-primary full-width">
                                 {sb.cta} <ArrowRight size={16} />
                             </a>
                         </div>
@@ -136,12 +137,19 @@ const SmallBusiness = () => {
                             <div className="tab-text">
                                 <h3>{sb.featureTabs.content[activeTab].title}</h3>
                                 <p>{sb.featureTabs.content[activeTab].desc}</p>
-                                <a href="#start-build" className="btn btn-outline">
+                                <a href="/Webtoleadform.html" className="btn btn-outline">
                                     {sb.featureTabs.content[activeTab].btn} <ArrowRight size={16} />
                                 </a>
                             </div>
                             <div className="tab-visual-wrapper">
-                                <div className={`tab-visual ${activeTab}`}></div>
+                                <div className={`tab-visual ${activeTab}`}>
+                                    {activeTab === 'sales' && (
+                                        <img src="/assets/salesforce_dashboard_preview.png" alt="Salesforce Sales Dashboard" />
+                                    )}
+                                    {activeTab === 'service' && (
+                                        <img src="/assets/service_dashboard_preview.png" alt="Salesforce Service Dashboard" />
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

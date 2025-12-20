@@ -64,9 +64,9 @@ const Navbar = () => {
                         <Globe size={16} />
                         <span>{language === 'en' ? 'FR' : 'EN'}</span>
                     </button>
-                    <Link to="/start-build" className="btn-pill-gradient">
+                    <a href="/Webtoleadform.html" className="btn-pill-gradient">
                         {t.nav.requestDemo} <ArrowRight size={16} />
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -98,9 +98,9 @@ const Navbar = () => {
                     <a href="#customers" onClick={(e) => handleNavClick(e, '#customers')}>{t.nav.customers}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
-                    <Link to="/start-build" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>
+                    <a href="/Webtoleadform.html" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>
                         {t.nav.requestDemo}
-                    </Link>
+                    </a>
                 </div>
             </div>
         </nav>
