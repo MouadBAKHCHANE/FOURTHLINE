@@ -798,6 +798,25 @@
         font-size: 1.1rem;
     }
 
+    .tab-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .tab-text {
+        order: 2;
+        /* Visual first? Or text first? Let's keep text first for logic or visual first for impact. Usually text first on mobile is better for context. Default order is fine (text is 1st child). */
+    }
+
+    .tab-visual {
+        height: 300px;
+        order: 1;
+        /* Actually, visuals are nice. Let's put visual first? No, Title -> Visual -> Text is best. But structure is Text(H3+P+Btn) | Visual. */
+        /* Let's keep default HTML order: Text then Visual. */
+    }
+
+
     .sb-hero-visual {
         margin-top: 40px;
         height: 480px;

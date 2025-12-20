@@ -313,7 +313,7 @@
     /* Removed background hover block */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .desktop-links {
         display: none;
     }

@@ -229,9 +229,21 @@
         width: 60px;
     }
 
-    .hero-visual {
+    .hero-visual,
+    .hero-visual-creative {
         height: auto;
+        min-height: 350px;
         width: 100%;
         margin-top: 2rem;
+    }
+
+    .circle-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .mascot-container {
+        width: 140px;
+        right: 0px;
     }
 }
