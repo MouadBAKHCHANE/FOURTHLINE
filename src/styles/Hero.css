@@ -123,10 +123,11 @@
 /* Rotating Salesforce Circle */
 .circle-container {
     position: relative;
-    width: 300px; /* Reduced sizre */
+    width: 300px;
+    /* Reduced sizre */
     height: 300px;
     z-index: 1;
-    animation: rotateCircle 60s linear infinite;
+    /* animation: rotateCircle 60s linear infinite; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,8 +141,13 @@
 }
 
 @keyframes rotateCircle {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Astro Mascot */
@@ -149,7 +155,8 @@
     position: absolute;
     bottom: 0px;
     right: 20px;
-    width: 160px; /* Reduced size */
+    width: 160px;
+    /* Reduced size */
     z-index: 2;
     animation: floatMascot 4s ease-in-out infinite;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
@@ -162,8 +169,15 @@
 }
 
 @keyframes floatMascot {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 /* Media Queries */
