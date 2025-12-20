@@ -11,8 +11,8 @@ export const translations = {
             requestDemo: "Start Your Build"
         },
         hero: {
-            title: "Your Website is Open.",
-            titleHighlight: "Is Your Sales Team?",
+            title: "Turning Vision",
+            titleHighlight: "Into Digital Power",
             subtitle: "We build the digital infrastructure for Moroccan business. Professional websites integrated directly with Salesforce CRM to capture every lead, automatically.",
             startBuild: "Start Your Build",
             viewSystem: "View the System",
@@ -32,6 +32,11 @@ export const translations = {
             card2Desc: "buried in manual Excel sheets and overlooked emails.",
             card3Title: "Slow response times kill deals.",
             card3Desc: "Every minute of delay reduces conversion probability by 10%."
+        },
+
+        solutionVisual: {
+            title: "The Solution",
+            subtitle: "Bridging the gap with automated, intelligent infrastructure."
         },
         solution: {
             title: "The Roadmap",
@@ -99,7 +104,7 @@ export const translations = {
         },
         footer: {
             poweringSales: "Powering Sales for",
-            ctaTitle: "Stop losing leads.\nStart building your system.",
+            ctaTitle: "Turning vision\ninto digital power",
             ctaButton: "Get Your Audit",
             desc: "Bridging the gap between marketing and sales with Salesforce integration.",
             services: "Services",
@@ -294,8 +299,8 @@ export const translations = {
             requestDemo: "Commencer"
         },
         hero: {
-            title: "Votre Site est Ouvert.",
-            titleHighlight: "Votre Équipe Commerciale l'est-elle ?",
+            title: "Transformer la Vision",
+            titleHighlight: "En Puissance Numérique",
             subtitle: "Nous construisons l'infrastructure numérique des entreprises marocaines. Des sites web professionnels intégrés directement à Salesforce CRM pour capturer chaque lead, automatiquement.",
             startBuild: "Commencer",
             viewSystem: "Voir le Système",
@@ -315,6 +320,10 @@ export const translations = {
             card2Desc: "enterrés dans des fichiers Excel manuels et des emails oubliés.",
             card3Title: "La lenteur tue les affaires.",
             card3Desc: "Chaque minute de retard réduit la probabilité de conversion de 10%."
+        },
+        solutionVisual: {
+            title: "La Solution",
+            subtitle: "Combler le fossé avec une infrastructure automatisée et intelligente."
         },
         solution: {
             title: "La Roadmap",
@@ -382,7 +391,7 @@ export const translations = {
         },
         footer: {
             poweringSales: "Propulse les ventes pour",
-            ctaTitle: "Arrêtez de perdre des leads.\nCommencez à construire votre système.",
+            ctaTitle: "Transformer la vision\nen puissance numérique",
             ctaButton: "Obtenir votre Audit",
             desc: "Combler le fossé entre le marketing et les ventes avec l'intégration Salesforce.",
             services: "Services",

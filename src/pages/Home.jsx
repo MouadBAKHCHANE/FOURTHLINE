@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ProblemSection from '../components/ProblemSection';
+import SolutionAnimation from '../components/SolutionAnimation';
 import Solutions from '../components/Solutions';
 import SolutionTimeline from '../components/SolutionTimeline';
 import Services from '../components/Services';
-import TechStack from '../components/TechStack';
 import Stats from '../components/Stats';
 import { useLocation } from 'react-router-dom';
 
@@ -26,11 +26,11 @@ const Home = () => {
         <>
             <Hero />
             <ProblemSection />
+            <SolutionAnimation />
             <Solutions />
             <Stats />
             <SolutionTimeline />
             <Services />
-            <TechStack />
         </>
     );
 };

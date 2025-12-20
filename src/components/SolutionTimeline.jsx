@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Code, Cloud, Handshake } from 'lucide-react';
 import '../styles/SolutionTimeline.css';
 import { useLanguage } from '../App';
@@ -61,6 +62,12 @@ const SolutionTimeline = () => {
                                 <div className="step-content glass-card">
                                     <h3>{step.title}</h3>
                                     <p>{step.desc}</p>
+                                    {step.id === 2 && (
+                                        <Link to="/website" className="btn btn-outline btn-sm mt-3">{t.nav.product}</Link>
+                                    )}
+                                    {step.id === 3 && (
+                                        <Link to="/crm" className="btn btn-outline btn-sm mt-3">{t.smallBusiness.navLink}</Link>
+                                    )}
                                 </div>
                             </div>
                         ))}

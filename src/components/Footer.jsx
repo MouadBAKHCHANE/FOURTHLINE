@@ -58,6 +58,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <div className="footer-col brand-col">
                         <div className="logo-text">Seedsvision</div>
+                        <p className="brand-slogan">{t.hero.title} {t.hero.titleHighlight}</p>
                         <p className="footer-desc">
                             {t.footer.desc}
                         </p>

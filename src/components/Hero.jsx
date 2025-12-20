@@ -25,62 +25,29 @@ const Hero = () => {
                     </p>
                     <div className="hero-actions">
                         <a href="/Webtoleadform.html" className="btn btn-primary">{t.hero.startBuild}</a>
-                        <a href="#system" className="btn btn-glass">{t.hero.viewSystem}</a>
+                        <a href="#process" className="btn btn-glass">{t.hero.viewSystem}</a>
                     </div>
                 </div>
 
-                <div className="hero-visual perspective-container">
+                <div className="hero-visual-creative">
                     <div className="glow-bg hero-glow"></div>
 
-                    <div className="dashboard-stage">
-                        {/* Left Card: Contact Form */}
-                        <div className="glass-card mockup-card form-card">
-                            <div className="card-header">
-                                <div className="dot red"></div>
-                                <div className="dot yellow"></div>
-                                <div className="dot green"></div>
-                                <span className="card-title">{t.hero.contactUs}</span>
-                            </div>
-                            <div className="card-body">
-                                <div className="skeleton-input short"></div>
-                                <div className="skeleton-input"></div>
-                                <div className="skeleton-input"></div>
-                                <div className="skeleton-btn"></div>
-                            </div>
-                        </div>
+                    {/* Rotating Salesforce Circle */}
+                    <div className="circle-container">
+                        <img
+                            src="/assets/hero/salesforce_circle.png"
+                            alt="Salesforce Ecosystem"
+                            className="sf-circle-img"
+                        />
+                    </div>
 
-                        {/* Connection Line */}
-                        <div className="connection-line-container">
-                            <svg className="connection-svg" viewBox="0 0 200 100" preserveAspectRatio="none">
-                                <path className="connection-path" d="M0,50 C100,50 100,50 200,50" />
-                                <circle className="connection-dot" r="4" cx="0" cy="50">
-                                    <animateMotion repeatCount="indefinite" dur="2s" path="M0,50 C100,50 100,50 200,50" />
-                                </circle>
-                            </svg>
-                        </div>
-
-                        {/* Right Card: Salesforce Pipeline */}
-                        <div className="glass-card mockup-card crm-card">
-                            <div className="card-header sf-header">
-                                <div className="sf-logo"></div>
-                                <span className="card-title">{t.hero.salesPipeline}</span>
-                            </div>
-                            <div className="card-body kanban-board">
-                                <div className="kanban-col">
-                                    <div className="kanban-header">{t.hero.newLeads}</div>
-                                    <div className="kanban-item"></div>
-                                    <div className="kanban-item"></div>
-                                </div>
-                                <div className="kanban-col">
-                                    <div className="kanban-header">{t.hero.qualified}</div>
-                                    <div className="kanban-item active"></div>
-                                </div>
-                                <div className="kanban-col">
-                                    <div className="kanban-header">{t.hero.closed}</div>
-                                    <div className="kanban-item"></div>
-                                </div>
-                            </div>
-                        </div>
+                    {/* Astro Mascot */}
+                    <div className="mascot-container">
+                        <img
+                            src="/assets/hero/astro_mascot.png"
+                            alt="Salesforce Astro"
+                            className="sf-mascot-img"
+                        />
                     </div>
                 </div>
             </div>
