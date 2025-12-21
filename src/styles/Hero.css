@@ -90,9 +90,7 @@
 }
 
 .text-highlight {
-    color: #FFE500;
-    /* Creamy Yellow from reference */
-    /* text-shadow: 0 0 20px rgba(255, 229, 0, 0.3); */
+    color: var(--accent-blue);
 }
 
 .hero-subtitle {
