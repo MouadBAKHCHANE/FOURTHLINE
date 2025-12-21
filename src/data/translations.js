@@ -13,7 +13,7 @@ export const translations = {
         hero: {
             title: "Turning Vision",
             titleHighlight: "Into Digital Power",
-            subtitle: "We build the digital infrastructure for Moroccan business. Professional websites integrated directly with Salesforce CRM to capture every lead, automatically.",
+            subtitle: "We build the digital infrastructure for business. Professional websites integrated directly with CRM to scale.",
             startBuild: "Start Your Build",
             viewSystem: "View the System",
             contactUs: "Contact Us",
