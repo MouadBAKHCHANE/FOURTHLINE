@@ -105,7 +105,7 @@ export const translations = {
         },
         footer: {
             poweringSales: "Powering Sales for",
-            ctaTitle: "Turning vision\ninto digital power",
+            ctaTitle: "Turning Vision Into Digital Power",
             ctaButton: "Get Your Audit",
             desc: "",
             services: "Services",

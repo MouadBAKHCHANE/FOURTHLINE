@@ -25,7 +25,7 @@ const Footer = () => {
             {!isCleanFooterPage && (
                 <div className="final-cta-new">
                     <div className="cta-content-wrapper">
-                        <h2 className="cta-title">Ready to Build a<br />System That Sells?</h2>
+                        <h2 className="cta-title">{t.footer.ctaTitle}</h2>
                         <p className="cta-sub">Let's design and build your premium Framer website in 7 days or less.</p>
 
                         <a href="/contact.html" className="btn-nova-glow cta-btn">
