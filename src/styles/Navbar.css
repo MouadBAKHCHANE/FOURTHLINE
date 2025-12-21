@@ -10,21 +10,18 @@
 }
 
 .navbar-pill {
-    background: rgba(11, 12, 16, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Added slight border for definition */
+    background: rgba(11, 12, 16, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    /* Tighter, crisper border */
     border-radius: 100px;
     padding: 0.8rem 2rem;
-    /* Increased padding slightly */
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
-    /* Increased to fit website size */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.05);
-    /* Backlight effect */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 

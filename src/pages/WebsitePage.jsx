@@ -21,8 +21,8 @@ const WebsitePage = () => {
                     <div className="ws-hero-text">
                         <h1 className="ws-title">{ws.hero.title}</h1>
                         <p className="ws-subtitle">{ws.hero.subtitle}</p>
-                        <a href="/Webtoleadform.html" className="btn btn-primary btn-lg btn-glow">
-                            {ws.hero.cta} <ArrowRight size={20} />
+                        <a href="/Webtoleadform.html" className="btn-nova-glow">
+                            <div className="btn-dot-indicator"></div> {ws.hero.cta}
                         </a>
                     </div>
 
@@ -134,13 +134,11 @@ const WebsitePage = () => {
                             <div className="tech-logo-wrapper">
                                 <img src="/assets/tech/fullstack.png" alt="Full Stack Logo" className="tech-logo" />
                             </div>
-                            <h4>{ws.techStack.custom.title}</h4>
-                            <p>MERN, Laravel/Vue, Java/Angular. {ws.techStack.custom.mern.split(':')[1]}</p>
-                            <div className="tech-tags">
-                                <span className="tech-tag">React</span>
-                                <span className="tech-tag">Node</span>
-                                <span className="tech-tag">Vue</span>
-                                <span className="tech-tag">Angular</span>
+                            <h4>Custom Development</h4>
+                            <div className="tech-list">
+                                <p>MERN Full Stack</p>
+                                <p>Java/Angular Full Stack</p>
+                                <p>Laravel/VueJS Full Stack</p>
                             </div>
                         </div>
                     </div>
@@ -165,13 +163,7 @@ const WebsitePage = () => {
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="ws-cta container">
-                <h2 className="mb-4">{ws.cta.text}</h2>
-                <a href="/Webtoleadform.html" className="btn btn-primary btn-lg">
-                    {ws.cta.button} <ArrowRight />
-                </a>
-            </section>
+
         </div>
     );
 };

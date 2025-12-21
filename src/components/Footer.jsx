@@ -19,41 +19,47 @@ const Footer = () => {
         <footer className="footer-section">
             <AuditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-            {/* Trust Bar - Hidden on Clean Footer Pages */}
+
+
+            {/* Final CTA - Hidden on Clean Footer Pages */}
             {!isCleanFooterPage && (
-                <div className="trust-bar-container">
-                    <p className="trust-label">{t.footer.poweringSales}</p>
-                    <div className="logos-slider">
-                        <div className="logos-slide">
-                            <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
-                        </div>
-                        <div className="logos-slide">
-                            <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo" />
-                            <img src="/logos/client-2.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-3.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-4.png" alt="Client Logo" className="client-logo" />
-                            <img src="/logos/client-5.png" alt="Client Logo" className="client-logo" />
+                <div className="final-cta-new">
+                    <div className="cta-content-wrapper">
+                        <h2 className="cta-title">Ready to Build a<br />System That Sells?</h2>
+                        <p className="cta-sub">Let's design and build your premium Framer website in 7 days or less.</p>
+
+                        <a href="/contact.html" className="btn-nova-glow cta-btn">
+                            <span className="btn-dot-indicator"></span>
+                            {t.footer.ctaButton}
+                        </a>
+
+                        <div className="cta-social-proof">
+                            <p className="proof-label">20+ businesses already trust us</p>
+                            <div className="proof-logos-mask">
+                                <div className="proof-logos">
+                                    {/* Original Set */}
+                                    <img src="/logos/new-client-1.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/new-client-2.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/new-client-3.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-3.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-4.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-5.png" alt="Partner" className="footer-client-logo" />
+
+                                    {/* Duplicate Set for Infinite Scroll */}
+                                    <img src="/logos/new-client-1.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/new-client-2.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/new-client-3.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-3.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-4.png" alt="Partner" className="footer-client-logo" />
+                                    <img src="/logos/client-5.png" alt="Partner" className="footer-client-logo" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             )}
 
-            {/* Final CTA - Hidden on Clean Footer Pages */}
             <div className="container">
-                {!isCleanFooterPage && (
-                    <div className="final-cta">
-                        <h2 className="cta-title nl-whitespace">{t.footer.ctaTitle}</h2>
-                        <a href="/contact.html" className="btn btn-primary btn-lg">{t.footer.ctaButton}</a>
-                    </div>
-                )}
 
                 <div className="footer-content">
                     <div className="footer-col brand-col">

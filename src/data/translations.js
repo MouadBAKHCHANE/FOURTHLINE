@@ -20,7 +20,8 @@ export const translations = {
             salesPipeline: "Sales Pipeline",
             newLeads: "New Leads",
             qualified: "Qualified",
-            closed: "Closed"
+            closed: "Closed",
+            trustedBy: "20+ companies powered by our system"
         },
         problem: {
             title: "The Disconnect",
@@ -308,7 +309,8 @@ export const translations = {
             salesPipeline: "Pipeline de Vente",
             newLeads: "Nouveaux Leads",
             qualified: "Qualifié",
-            closed: "Fermé"
+            closed: "Fermé",
+            trustedBy: "20+ entreprises propulsées par notre système"
         },
         problem: {
             title: "La Déconnexion",

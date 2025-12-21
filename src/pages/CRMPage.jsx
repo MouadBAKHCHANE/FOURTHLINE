@@ -27,8 +27,8 @@ const SmallBusiness = () => {
                             {sb.hook.valueProp}
                         </p>
                         <div className="sb-hero-actions">
-                            <a href="/Webtoleadform.html" className="btn btn-primary btn-lg btn-glow">
-                                {sb.cta} <ArrowRight size={20} />
+                            <a href="/Webtoleadform.html" className="btn-nova-glow">
+                                <div className="btn-dot-indicator"></div> {sb.cta}
                             </a>
                         </div>
                     </div>

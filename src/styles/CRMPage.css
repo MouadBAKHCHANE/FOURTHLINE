@@ -1,10 +1,11 @@
 .small-business-page {
-    padding-top: 80px;
+    padding-top: 0;
 }
 
 /* Hero Section */
 .sb-hero {
     padding: 120px 0 80px;
+    /* Increased to 120px */
     position: relative;
     overflow: hidden;
 }

@@ -2,7 +2,7 @@
 .footer-section {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background: linear-gradient(to bottom, #0B0C10, #111318);
-    padding: 80px 0 30px;
+    padding: 0 0 30px;
     /* Generous padding for breathing room */
     position: relative;
     overflow: hidden;
@@ -150,22 +150,125 @@
 }
 
 /* Final CTA Section (premium dark glass) */
-.final-cta {
+/* Final CTA Section (premium dark glass) */
+.final-cta-new {
     text-align: center;
-    margin-bottom: 100px;
-    padding: 80px 40px;
-    background: linear-gradient(180deg, rgba(20, 25, 35, 0.6) 0%, rgba(10, 12, 16, 0.8) 100%);
-    backdrop-filter: blur(10px);
-    border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Very subtle border */
+    margin-bottom: 50px;
+    padding: 100px 40px;
+    background: radial-gradient(circle at center, #0B0C10 0%, #000000 100%);
     position: relative;
     overflow: hidden;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    /* Subtle inner glow at top */
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 50px -10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.final-cta-new::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 50, 180, 0.25) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cta-content-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    color: #fff;
+    background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-sub {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.cta-btn {
+    margin-bottom: 80px;
+}
+
+.cta-social-proof {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.proof-label {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.proof-logos-static {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0.7;
+}
+
+.footer-client-logo {
+    height: 35px;
+    width: auto;
+    filter: grayscale(1) invert(0.6);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    margin: 0 40px;
+}
+
+.footer-client-logo:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Infinite Marquee Animation */
+.proof-logos-mask {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.proof-logos {
+    display: flex;
+    width: max-content;
+    animation: infiniteScroll 40s linear infinite;
+}
+
+.proof-logos:hover {
+    animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .cta-title {
