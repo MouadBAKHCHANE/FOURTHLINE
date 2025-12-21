@@ -213,6 +213,15 @@
     width: 100%;
 }
 
+.brand-slogan {
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    font-weight: 700;
+}
+
 .proof-label {
     font-size: 0.9rem;
     color: #fff;
