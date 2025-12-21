@@ -107,7 +107,7 @@ export const translations = {
             poweringSales: "Powering Sales for",
             ctaTitle: "Turning vision\ninto digital power",
             ctaButton: "Get Your Audit",
-            desc: "Bridging the gap between marketing and sales with Salesforce integration.",
+            desc: "",
             services: "Services",
             webDesign: "Web Design",
             salesforceSetup: "Salesforce Setup",
