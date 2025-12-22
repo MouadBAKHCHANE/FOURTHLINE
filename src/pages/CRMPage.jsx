@@ -108,6 +108,15 @@ const SmallBusiness = () => {
                                     {activeTab === 'service' && (
                                         <img src="/assets/service_dashboard_preview.png" alt="Salesforce Service Dashboard" />
                                     )}
+                                    {activeTab === 'marketing' && (
+                                        <img src="/assets/marketing_cloud_dashboard.png" alt="Salesforce Marketing Cloud Dashboard" />
+                                    )}
+                                    {activeTab === 'ai' && (
+                                        <img src="/assets/agentforce_dashboard.png" alt="Salesforce Agentforce AI & Automation" />
+                                    )}
+                                    {activeTab === 'analytics' && (
+                                        <img src="/assets/analytics_dashboard.png" alt="Salesforce Einstein Analytics Dashboard" />
+                                    )}
                                 </div>
                             </div>
                         </div>
