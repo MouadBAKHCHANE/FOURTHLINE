@@ -1,321 +1,221 @@
-/* SolutionTimeline.css */
+/* SolutionTimeline.css - Redesigned Vertical Roadmap */
 
 .solution-section {
-    padding: 100px 40px;
-    /* Added side padding */
+    padding: 120px 20px;
     position: relative;
     overflow: hidden;
     background: radial-gradient(circle at center, rgba(0, 161, 224, 0.05) 0%, transparent 70%);
 }
 
 .solution-section .section-header {
-    text-align: left;
-    margin-bottom: 60px;
-    padding-left: 20px;
-    /* Optional adjustment to align with grid if needed */
-}
-
-.solution-section .section-title {
-    margin-left: 0;
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 2;
 }
 
 .solution-section .section-subtitle {
-    margin-left: 0;
+    margin: 16px auto 0;
     max-width: 600px;
-    /* Ensure readability */
 }
 
+/* Timeline Container */
 .timeline-container {
     position: relative;
-    margin-top: 60px;
-    padding: 20px 0;
-    margin-top: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px 0;
 }
 
-.timeline-actions {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 60px;
-}
-
-/* Horizontal Line */
+/* Vertical Center Line */
 .timeline-line {
     position: absolute;
-    top: 45px;
-    /* Aligns with center of icons */
-    left: 5%;
-    right: 5%;
-    height: 2px;
-    background: linear-gradient(90deg,
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background: linear-gradient(180deg,
             rgba(0, 161, 224, 0) 0%,
-            #00A1E0 50%,
-            rgba(16, 185, 129, 0) 100%);
+            rgba(0, 161, 224, 1) 15%,
+            rgba(0, 161, 224, 1) 85%,
+            rgba(0, 161, 224, 0) 100%);
     z-index: 0;
+    box-shadow: 0 0 20px rgba(0, 161, 224, 0.6);
 }
 
 .steps-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0;
     position: relative;
     z-index: 1;
-    gap: 20px;
 }
 
+/* Step Layout */
 .timeline-step {
-    flex: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 280px;
-}
-
-.step-marker {
+    width: 100%;
+    margin-bottom: 100px;
     position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+/* Marker (Icon) - Absolute Center */
+.step-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+/* Icon Style */
 .step-icon {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    background: #000;
+    border: 2px solid rgba(0, 161, 224, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #00A1E0;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #0f1623;
-    position: relative;
-    z-index: 2;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 161, 224, 0.1);
     transition: all 0.3s ease;
 }
 
-.step-icon:hover {
-    transform: scale(1.1);
+.timeline-step:hover .step-icon {
     border-color: #00A1E0;
-    box-shadow: 0 0 20px rgba(0, 161, 224, 0.3);
+    box-shadow: 0 0 30px rgba(0, 161, 224, 0.6), inset 0 0 10px rgba(0, 161, 224, 0.4);
+    transform: scale(1.15);
 }
 
 .step-dot {
-    width: 12px;
-    height: 12px;
-    background: #10b981;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #10b981;
-    position: absolute;
-    bottom: -36px;
-    /* Position on the line */
-    z-index: 2;
+    display: none;
 }
 
+/* Content Card */
 .step-content {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 24px;
-    width: 100%;
-    transition: all 0.3s ease;
+    width: 42%;
+    /* Fit within 50% minus gap */
+    padding: 40px;
+    background: rgba(20, 20, 25, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
 }
 
 .step-content:hover {
-    background: rgba(255, 255, 255, 0.05);
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(30, 30, 35, 0.85);
+    border-color: rgba(0, 161, 224, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .step-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-weight: 700;
 }
 
 .step-content p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
+    color: #9CA3AF;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
-/* Swipe Hint - Hidden on Desktop */
-.swipe-hint {
-    display: none;
+.step-content .btn {
+    margin-top: 24px;
 }
 
-/* Responsive */
-/* Responsive Vertical Timeline */
+/* Alternating Logic */
+
+/* Odd Steps: Content Left */
+.timeline-step:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.timeline-step:nth-child(odd) .step-content {
+    margin-left: auto;
+    /* Push to right of the left half? No. */
+    /* If flex-start, element is at left. */
+    /* We want aligned to the right side of the left half. */
+    margin-right: 55%;
+    /* 50% + 5% gap */
+    text-align: right;
+}
+
+/* Even Steps: Content Right */
+.timeline-step:nth-child(even) {
+    justify-content: flex-start;
+    /* Still start, but we push with margin */
+}
+
+.timeline-step:nth-child(even) .step-content {
+    margin-left: 55%;
+    /* 50% + 5% gap */
+    text-align: left;
+}
+
+
+/* Responsive Mobile */
 @media (max-width: 900px) {
     .solution-section {
-        padding: 60px 0;
-    }
-
-    .solution-section .section-header {
-        text-align: left;
-        padding-left: 20px;
-        align-items: flex-start;
-    }
-
-    .timeline-container {
-        margin-top: 10px;
-        padding-bottom: 20px;
-    }
-
-    .timeline-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        margin-top: 40px;
+        padding: 60px 20px;
     }
 
     .timeline-line {
-        display: none;
-    }
-
-    .swipe-hint {
-        display: none;
-    }
-
-    .steps-wrapper {
-        flex-direction: column;
-        gap: 0;
-        padding: 0 20px;
-        position: relative;
-    }
-
-    /* Vertical Connecting Line */
-    .steps-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 30px;
-        bottom: 50px;
-        left: 50px;
-        /* 20px padding + 30px half-icon */
+        left: 30px;
+        /* Line on left */
+        transform: none;
         width: 2px;
-        background: linear-gradient(180deg,
-                #00A1E0 0%,
-                rgba(0, 161, 224, 0.5) 50%,
-                rgba(16, 185, 129, 0) 100%);
-        z-index: 0;
-        box-shadow: 0 0 10px rgba(0, 161, 224, 0.3);
     }
 
     .timeline-step {
+        /* Reset flex behavior */
         display: grid;
         grid-template-columns: 60px 1fr;
         gap: 20px;
+        margin-bottom: 50px;
         align-items: start;
-        width: 100%;
-        margin-bottom: 30px;
-        position: relative;
-        z-index: 10;
-        opacity: 0;
-        animation: slideInUp 0.6s ease forwards;
-        animation-fill-mode: forwards;
-        /* Ensure it stays visible */
     }
 
-    .timeline-step:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Animation Delays */
-    .timeline-step:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .timeline-step:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-
-    .timeline-step:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-
-    .timeline-step:nth-child(4) {
-        animation-delay: 0.4s;
-    }
-
+    /* Reset Markers */
     .step-marker {
+        position: relative;
+        left: auto;
+        transform: none;
         width: 60px;
+        height: 60px;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        /* Remove other margins as grid handles gap */
     }
 
     .step-icon {
         width: 60px;
         height: 60px;
-        margin-bottom: 0;
-        background: #0f1623;
-        border: 1px solid rgba(0, 161, 224, 0.3);
-        box-shadow: 0 0 15px rgba(0, 161, 224, 0.2);
-        z-index: 2;
-        border-radius: 50%;
-        /* Ensure circular */
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
-    .step-dot {
-        display: none;
-    }
-
-    /* Content styling */
+    /* Reset Content */
     .step-content {
-        background: rgba(15, 23, 42, 0.95) !important;
-        /* Increased opacity for better visibility */
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        padding: 20px;
-        border-radius: 12px;
         width: 100%;
-        min-width: 0;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        display: block !important;
-        /* Force display */
-        visibility: visible !important;
-        /* Force visibility */
-        opacity: 1 !important;
-        /* Ensure it's visible */
-        position: relative;
-        z-index: 5;
+        margin: 0 !important;
+        /* Reset odd/even margins */
+        text-align: left !important;
+        padding: 24px;
     }
 
     .step-content h3 {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        color: #fff !important;
-        line-height: 1.3;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    .step-content p {
-        font-size: 0.9rem;
-        color: #cbd5e1 !important;
-        line-height: 1.5;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        font-size: 1.3rem;
     }
 }

@@ -181,25 +181,34 @@
 
 @media (max-width: 900px) {
     .dashboard-stage {
-        flex-direction: column;
-        transform: none;
-        height: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        transform: none !important;
+        height: auto !important;
         gap: 40px;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
     }
 
     .mockup-card {
-        width: 100%;
-        max-width: 320px;
+        width: 90% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        align-self: center !important;
     }
 
     .solution-animation-section:hover .dashboard-stage {
-        transform: none;
+        transform: none !important;
     }
 
     .connection-line-container {
         transform: rotate(90deg);
         height: 60px;
         width: 60px;
+        margin: 0 auto !important;
     }
 
     .animation-container {

@@ -32,7 +32,10 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
                             </ul>
 
-                            <a href="/Webtoleadform.html" className="btn btn-glass full-width">{t.services.tier1Button}</a>
+                            <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
+                                <span className="btn-dot-indicator"></span>
+                                {t.services.tier1Button}
+                            </a>
                         </div>
                     </div>
 
@@ -52,7 +55,10 @@ const Services = () => {
                                 <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
                             </ul>
 
-                            <a href="/Webtoleadform.html" className="btn btn-primary full-width">{t.services.tier2Button}</a>
+                            <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
+                                <span className="btn-dot-indicator"></span>
+                                {t.services.tier2Button}
+                            </a>
                         </div>
                     </div>
                 </div>
