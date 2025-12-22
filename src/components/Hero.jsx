@@ -13,7 +13,7 @@ const Hero = () => {
     const [typingSpeed, setTypingSpeed] = React.useState(150);
 
     const phrases = [
-        "DIGITAL INFRASTRUCTURE",
+        "DIGITAL INFRA",
         "CRM TO SCALE",
         "PREMIUM WEBSITES"
     ];
@@ -120,4 +120,5 @@ const Hero = () => {
     );
 };
 
+// Export Hero component
 export default Hero;

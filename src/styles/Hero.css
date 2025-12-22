@@ -72,6 +72,8 @@
     text-align: left;
     max-width: 500px;
     margin: 0;
+    margin-top: 80px;
+    /* Push content down as requested */
     position: relative;
     z-index: 10;
 }
@@ -91,6 +93,9 @@
 
 .text-highlight {
     color: var(--accent-blue);
+    font-size: 2.5rem;
+    /* Reduced to fit single line */
+    display: inline-block;
 }
 
 .hero-subtitle {
