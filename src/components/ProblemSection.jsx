@@ -1,6 +1,7 @@
 import React from 'react';
 import { Unlink, Layout, Database, Bot, BarChart3, HeartHandshake, Code2, Copy, Frown, EyeOff, CalendarX2, UserX, AlertTriangle } from 'lucide-react';
 import '../styles/ProblemSection.css';
+import '../styles/ProblemSectionPremium.css';
 import { useLanguage } from '../App';
 
 const ProblemSection = () => {

@@ -65,6 +65,13 @@ const SolutionAnimation = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="center-cta" style={{ marginTop: '60px', textAlign: 'center' }}>
+                    <a href="/contact.html" className="btn-opti-primary">
+                        <span className="btn-dot-indicator"></span>
+                        {t.footer.ctaButton}
+                    </a>
+                </div>
             </div>
         </section>
     );

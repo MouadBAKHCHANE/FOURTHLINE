@@ -53,7 +53,7 @@ export const translations = {
         },
 
         solutionVisual: {
-            title: "The Solution",
+            title: "Turning Vision Into Digital Power",
             subtitle: "Bridging the gap with automated, intelligent infrastructure."
         },
         solution: {

@@ -1,0 +1,46 @@
+/* Flip Text Animation */
+.text-flip-wrapper {
+    display: inline-block;
+    position: relative;
+    height: 1.2em;
+    /* Adjust based on font size */
+    overflow: visible;
+    vertical-align: bottom;
+    perspective: 1000px;
+    min-width: 300px;
+    /* Prevent layout shift */
+    text-align: left;
+}
+
+.text-flip {
+    display: inline-block;
+    animation: flipUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    transform-origin: 50% 50% -20px;
+    opacity: 0;
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+
+/* We need a way to animate out the old one? 
+   Actually, usually simpler to just animate IN the new one on top, if the old one unmounts.
+   But to be smooth, we might want to just switch the text with a key.
+*/
+
+.flip-enter {
+    animation: flipIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes flipIn {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) translateY(0);
+    }
+}

@@ -1,16 +1,14 @@
 import React from 'react';
 import '../styles/Hero.css';
+import '../styles/FlipText.css';
 import { useLanguage } from '../App';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const { t } = useLanguage();
 
-    // Typewriter State
-    const [text, setText] = React.useState('');
-    const [isDeleting, setIsDeleting] = React.useState(false);
-    const [loopNum, setLoopNum] = React.useState(0);
-    const [typingSpeed, setTypingSpeed] = React.useState(150);
+    // Flip Text State
+    const [index, setIndex] = React.useState(0);
 
     const phrases = [
         "DIGITAL INFRA",
@@ -19,33 +17,11 @@ const Hero = () => {
     ];
 
     React.useEffect(() => {
-        const handleType = () => {
-            const i = loopNum % phrases.length;
-            const fullText = phrases[i];
-
-            setText(isDeleting
-                ? fullText.substring(0, text.length - 1)
-                : fullText.substring(0, text.length + 1)
-            );
-
-            // Typing Speed Logic
-            setTypingSpeed(isDeleting ? 30 : 100);
-
-            if (!isDeleting && text === fullText) {
-                // Finished typing word
-                setTimeout(() => setIsDeleting(true), 1500); // Pause at end
-                setTypingSpeed(1500); // Wait before deleting
-            } else if (isDeleting && text === '') {
-                // Finished deleting
-                setIsDeleting(false);
-                setLoopNum(loopNum + 1);
-                setTypingSpeed(500); // Pause before next word
-            }
-        };
-
-        const timer = setTimeout(handleType, typingSpeed);
-        return () => clearTimeout(timer);
-    }, [text, isDeleting, loopNum, typingSpeed]);
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % phrases.length);
+        }, 3000); // Change every 3 seconds
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className="hero">
@@ -59,15 +35,16 @@ const Hero = () => {
                 <div className="hero-content">
                     <h1 className="hero-title nova-title">
                         WE BUILD <br />
-                        <span className="text-highlight">{text}</span>
-                        <span className="cursor">|</span>
+                        <span key={index} className="text-highlight flip-enter" style={{ display: 'inline-block' }}>
+                            {phrases[index]}
+                        </span>
                     </h1>
                     <div className="hero-actions">
                         <a href="/Webtoleadform.html" className="btn-nova-glow">
                             <span className="btn-dot-indicator"></span>
                             {t.hero.startBuild}
                         </a>
-                        <a href="#process" className="btn btn-glass btn-nova-glass">{t.hero.viewSystem}</a>
+
                     </div>
 
                     <div className="hero-social-proof">
