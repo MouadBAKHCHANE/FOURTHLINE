@@ -11,6 +11,7 @@ import SmallBusiness from './pages/CRMPage';
 import ServicesPage from './pages/ServicesPage';
 import Footer from './components/Footer'
 import './index.css'
+import { SparklesPreview } from './components/SparklesDemo';
 import { translations } from './data/translations'
 
 const LanguageContext = createContext();
@@ -35,6 +36,7 @@ const AppContent = () => {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<JobDetail />} />
+        <Route path="/sparkles" element={<SparklesPreview />} />
       </Routes>
       <Footer />
     </div>
