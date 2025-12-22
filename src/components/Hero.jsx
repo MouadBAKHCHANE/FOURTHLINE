@@ -6,6 +6,47 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
     const { t } = useLanguage();
 
+    // Typewriter State
+    const [text, setText] = React.useState('');
+    const [isDeleting, setIsDeleting] = React.useState(false);
+    const [loopNum, setLoopNum] = React.useState(0);
+    const [typingSpeed, setTypingSpeed] = React.useState(150);
+
+    const phrases = [
+        "DIGITAL INFRASTRUCTURE",
+        "CRM TO SCALE",
+        "PREMIUM WEBSITES"
+    ];
+
+    React.useEffect(() => {
+        const handleType = () => {
+            const i = loopNum % phrases.length;
+            const fullText = phrases[i];
+
+            setText(isDeleting
+                ? fullText.substring(0, text.length - 1)
+                : fullText.substring(0, text.length + 1)
+            );
+
+            // Typing Speed Logic
+            setTypingSpeed(isDeleting ? 30 : 100);
+
+            if (!isDeleting && text === fullText) {
+                // Finished typing word
+                setTimeout(() => setIsDeleting(true), 1500); // Pause at end
+                setTypingSpeed(1500); // Wait before deleting
+            } else if (isDeleting && text === '') {
+                // Finished deleting
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+                setTypingSpeed(500); // Pause before next word
+            }
+        };
+
+        const timer = setTimeout(handleType, typingSpeed);
+        return () => clearTimeout(timer);
+    }, [text, isDeleting, loopNum, typingSpeed]);
+
     return (
         <section className="hero">
             <div className="trail-background">
@@ -17,12 +58,10 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1 className="hero-title nova-title">
-                        {t.hero.title.toUpperCase()} <br />
-                        <span className="text-highlight">{t.hero.titleHighlight.toUpperCase()} .</span>
+                        WE BUILD <br />
+                        <span className="text-highlight">{text}</span>
+                        <span className="cursor">|</span>
                     </h1>
-                    <p className="hero-subtitle">
-                        {t.hero.subtitle}
-                    </p>
                     <div className="hero-actions">
                         <a href="/Webtoleadform.html" className="btn-nova-glow">
                             <span className="btn-dot-indicator"></span>

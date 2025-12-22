@@ -412,3 +412,24 @@
         bottom: -10px;
     }
 }
+
+/* Typewriter Cursor */
+.cursor {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-weight: 400;
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
