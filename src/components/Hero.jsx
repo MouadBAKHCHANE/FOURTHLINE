@@ -61,7 +61,7 @@ const Hero = () => {
                     {/* Main Dashboard Visual */}
                     <div className="dashboard-container">
                         <img
-                            src="/assets/hero/dashboard_new.png"
+                            src="/assets/hero/dashboard_v2.png"
                             alt="Salesforce Dashboard Interface"
                             className="hero-dashboard-img"
                         />

@@ -1,194 +1,178 @@
 .problem-section {
     padding: 100px 0;
     position: relative;
+    overflow: hidden;
+    background-color: var(--bg-primary);
 }
 
-.section-header {
+.toggle-header {
     text-align: center;
     margin-bottom: 60px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.section-subtitle {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.bento-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 40px;
-    /* Added side padding */
-}
-
-.bento-tile {
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.bento-tile:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Tile 1: Disconnect (Spans 2 rows on Desktop) */
-.disconnect-tile {
-    grid-row: span 2;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.toggle-headline {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.toggle-sub {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch-container {
+    display: inline-flex;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.toggle-switch {
+    background: #0f172a;
+    /* Dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 4px;
+    display: flex;
+    position: relative;
+    width: 160px;
+    height: 60px;
+    align-items: center;
     justify-content: space-between;
 }
 
-.icon-wrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.toggle-slider {
+    position: absolute;
+    width: 76px;
+    height: 50px;
+    background: #10b981;
+    /* Green for 'Do' */
+    border-radius: 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    left: 80px;
+    /* Default right position (Do) */
 }
 
-.red-glow {
-    box-shadow: 0 0 30px rgba(255, 95, 86, 0.1);
+/* State: Don't (Red/Gray theme) */
+.toggle-switch.active-dont .toggle-slider {
+    left: 4px;
+    background: #ef4444;
+    /* Red for 'Don't' */
 }
 
-.orange-glow {
-    box-shadow: 0 0 30px rgba(255, 189, 46, 0.1);
-}
-
-.text-red {
-    color: #ff5f56;
-}
-
-.text-orange {
-    color: #ffbd2e;
-}
-
-.tile-content h3 {
+.toggle-label {
+    z-index: 10;
+    flex: 1;
+    text-align: center;
     font-size: 1.5rem;
-    margin-bottom: 12px;
     font-weight: 600;
+    color: #64748b;
+    transition: color 0.3s ease;
+    text-transform: lowercase;
 }
 
-.tile-content p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+.toggle-label.active {
+    color: #fff;
 }
 
-/* Visual for disconnect */
-.visual-disconnect {
-    margin-top: 40px;
+/* Stat Banner */
+.stat-banner {
     display: flex;
     align-items: center;
     gap: 10px;
-    opacity: 0.5;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    color: #f87171;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease;
 }
 
-.line-segment {
-    height: 2px;
-    background: var(--text-secondary);
-    flex: 1;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.gap-indicator {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ff5f56;
-    border-radius: 50%;
-    position: relative;
+/* Grid Layout */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Columns */
+    gap: 30px;
 }
 
-.gap-indicator::after {
-    content: "!";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ff5f56;
-    font-size: 12px;
-    font-weight: bold;
+.comparison-card {
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
 
-/* Tile 2: Stat */
-.stat-tile {
+.comparison-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.comparison-card h3 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.comparison-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Icon Styles */
+.card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 95, 86, 0.05) 100%);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
 }
 
-.stat-number {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-.stat-label {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-.stat-desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-top: 8px;
-}
-
-.absolute-icon {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    opacity: 0.05;
-    transform: rotate(-15deg);
-}
-
-/* Tile 3: Clock */
-.clock-tile .row-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.clock-tile .icon-wrapper {
-    margin-bottom: 0;
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-}
-
-.clock-tile h3 {
-    font-size: 1.25rem;
-    margin-bottom: 8px;
-}
-
-@media (max-width: 768px) {
-    .bento-grid {
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .comparison-grid {
         grid-template-columns: 1fr;
+        /* Stack vertically */
     }
 
-    .disconnect-tile {
-        grid-row: span 1;
-    }
-
-    .clock-tile .row-layout {
+    .toggle-headline {
+        font-size: 2rem;
         flex-direction: column;
+        gap: 10px;
     }
 }

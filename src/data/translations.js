@@ -24,15 +24,32 @@ export const translations = {
             trustedBy: "20+ companies powered by our system"
         },
         problem: {
-            title: "The Disconnect",
-            subtitle: "Most businesses have a critical gap between their marketing efforts and sales results.",
-            card1Title: "Marketing and Sales are isolated.",
-            card1Desc: "Leads generated online fall into a black hole before reaching your sales team.",
-            card2Stat: "60%",
-            card2Label: "of leads are lost",
-            card2Desc: "buried in manual Excel sheets and overlooked emails.",
-            card3Title: "Slow response times kill deals.",
-            card3Desc: "Every minute of delay reduces conversion probability by 10%."
+            headline: "When people {switch} work with us.",
+            toggle: {
+                do: "do",
+                dont: "don't"
+            },
+            stat: "75% of users won’t trust a company if the website design looks bad.",
+            subDo: "Expect creative solutions, clear communication, and results tailored to your vision.",
+            subDont: "Expect generic templates, missed deadlines, and systems that don't scale.",
+            cards: {
+                do: [
+                    { title: "Premium Landing Page & Websites", desc: "Design that builds trust instantly." },
+                    { title: "Salesforce CRM Integration", desc: "Capture and organize every lead automatically." },
+                    { title: "AI & Automations", desc: "Work smarter with intelligent workflows." },
+                    { title: "Analytics & Insights", desc: "Data-driven decisions for growth." },
+                    { title: "Service & Support", desc: "Long-term partnership for success." },
+                    { title: "Custom Development", desc: "Scalable solutions for complex needs." }
+                ],
+                dont: [
+                    { title: "Generic Designs", desc: "Uninspired templates that blend in." },
+                    { title: "Poor User Experience", desc: "Frustrating navigation that kills conversions." },
+                    { title: "Low Visibility", desc: "Websites that disappear in search results." },
+                    { title: "Limited Functionality", desc: "Systems that break as you grow." },
+                    { title: "Missed Deadlines", desc: "Projects that drag on forever." },
+                    { title: "Inadequate Support", desc: "Ghosted after the final invoice." }
+                ]
+            }
         },
 
         solutionVisual: {

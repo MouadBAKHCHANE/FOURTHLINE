@@ -1,61 +1,74 @@
 import React from 'react';
-import { Unlink, AlertCircle, Clock } from 'lucide-react';
+import { Unlink, Layout, Database, Bot, BarChart3, HeartHandshake, Code2, Copy, Frown, EyeOff, CalendarX2, UserX, AlertTriangle } from 'lucide-react';
 import '../styles/ProblemSection.css';
 import { useLanguage } from '../App';
 
 const ProblemSection = () => {
     const { t } = useLanguage();
+    const [isDo, setIsDo] = React.useState(true); // Default to 'Do'
+
+    const problemData = t.problem;
+    const currentCards = isDo ? problemData.cards.do : problemData.cards.dont;
+
+    // Icons mapping
+    const iconsDo = [
+        <Layout size={32} className="text-green-400" />,
+        <Database size={32} className="text-blue-400" />,
+        <Bot size={32} className="text-purple-400" />,
+        <BarChart3 size={32} className="text-yellow-400" />,
+        <HeartHandshake size={32} className="text-pink-400" />,
+        <Code2 size={32} className="text-cyan-400" />
+    ];
+
+    const iconsDont = [
+        <Copy size={32} className="text-gray-400" />,
+        <Frown size={32} className="text-red-400" />,
+        <EyeOff size={32} className="text-gray-400" />,
+        <Unlink size={32} className="text-red-400" />,
+        <CalendarX2 size={32} className="text-red-400" />,
+        <UserX size={32} className="text-red-400" />
+    ];
 
     return (
-        <section className="problem-section">
+        <section className="problem-section" id="problem">
             <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">{t.problem.title}</h2>
-                    <p className="section-subtitle">
-                        {t.problem.subtitle}
+                {/* Header with Toggle Switch */}
+                <div className="toggle-header">
+                    <h2 className="toggle-headline">
+                        When people
+                        <div className="toggle-switch-container" onClick={() => setIsDo(!isDo)}>
+                            <div className={`toggle-switch ${!isDo ? 'active-dont' : ''}`}>
+                                <div className="toggle-slider"></div>
+                                <span className={`toggle-label ${!isDo ? 'active' : ''}`}>{problemData.toggle.dont}</span>
+                                <span className={`toggle-label ${isDo ? 'active' : ''}`}>{problemData.toggle.do}</span>
+                            </div>
+                        </div>
+                        work with us.
+                    </h2>
+
+                    <p className="toggle-sub">
+                        {isDo ? problemData.subDo : problemData.subDont}
                     </p>
+
+                    {!isDo && (
+                        <div className="stat-banner">
+                            <AlertTriangle size={20} className="text-yellow-400" />
+                            <span>{problemData.stat}</span>
+                        </div>
+                    )}
                 </div>
 
-                <div className="bento-grid">
-                    {/* Tile 1: The Disconnect */}
-                    <div className="bento-tile disconnect-tile glass-card">
-                        <div className="tile-content">
-                            <div className="icon-wrapper red-glow">
-                                <Unlink size={48} className="text-red" />
+                {/* Grid */}
+                <div className="comparison-grid">
+                    {currentCards.map((card, index) => (
+                        <div key={index} className={`comparison-card glass-card ${isDo ? 'card-do' : 'card-dont'}`}>
+                            <div className="card-icon-wrapper">
+                                {isDo ? iconsDo[index] : iconsDont[index]}
                             </div>
-                            <h3>{t.problem.card1Title}</h3>
-                            <p>{t.problem.card1Desc}</p>
+                            <h3>{card.title}</h3>
+                            <p>{card.desc}</p>
                         </div>
-                        <div className="visual-disconnect">
-                            {/* Abstract visual of broken connection */}
-                            <div className="line-segment left"></div>
-                            <div className="gap-indicator"></div>
-                            <div className="line-segment right"></div>
-                        </div>
-                    </div>
-
-                    {/* Tile 2: Stat Highlight */}
-                    <div className="bento-tile stat-tile glass-card">
-                        <div className="tile-content">
-                            <div className="stat-number text-gradient">{t.problem.card2Stat}</div>
-                            <div className="stat-label">{t.problem.card2Label}</div>
-                            <p className="stat-desc">{t.problem.card2Desc}</p>
-                            <AlertCircle className="absolute-icon" size={120} />
-                        </div>
-                    </div>
-
-                    {/* Tile 3: Slow Response */}
-                    <div className="bento-tile clock-tile glass-card">
-                        <div className="tile-content row-layout">
-                            <div className="icon-wrapper orange-glow">
-                                <Clock size={32} className="text-orange" />
-                            </div>
-                            <div>
-                                <h3>{t.problem.card3Title}</h3>
-                                <p>{t.problem.card3Desc}</p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
