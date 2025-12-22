@@ -1,6 +1,22 @@
+/* Services.css */
 .services-section {
     padding: 100px 0;
     position: relative;
+    overflow: hidden;
+}
+
+.services-section .section-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.services-section .section-title {
+    margin-bottom: 16px;
+}
+
+.services-section .section-subtitle {
+    margin: 0;
+    max-width: 600px;
 }
 
 .pricing-grid {
@@ -9,7 +25,14 @@
     gap: 32px;
     max-width: 900px;
     margin: 0 auto;
+    /* Keep grid centered? Or move left? Usually pricing cards are centered. Keeping centered for now but header left. */
 }
+
+/* Align grid left if desired, but user only said 'header'. */
+/* If user wants EVERYTHING left, I'd change pricing-grid margin. But usually cards look weird if not centered or spanning full width. */
+/* I will stick to header for now. */
+
+/* ... (rest of the file content) ... */
 
 .pricing-card {
     padding: 40px;

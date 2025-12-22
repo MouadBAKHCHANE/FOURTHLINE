@@ -5,6 +5,16 @@
     background: radial-gradient(circle at center, rgba(0, 161, 224, 0.05) 0%, transparent 70%);
 }
 
+.solution-animation-section .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.solution-animation-section .section-subtitle {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
 .animation-container {
     height: 400px;
     display: flex;

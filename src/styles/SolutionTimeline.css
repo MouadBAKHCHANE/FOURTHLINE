@@ -8,6 +8,23 @@
     background: radial-gradient(circle at center, rgba(0, 161, 224, 0.05) 0%, transparent 70%);
 }
 
+.solution-section .section-header {
+    text-align: left;
+    margin-bottom: 60px;
+    padding-left: 20px;
+    /* Optional adjustment to align with grid if needed */
+}
+
+.solution-section .section-title {
+    margin-left: 0;
+}
+
+.solution-section .section-subtitle {
+    margin-left: 0;
+    max-width: 600px;
+    /* Ensure readability */
+}
+
 .timeline-container {
     position: relative;
     margin-top: 60px;
@@ -135,6 +152,12 @@
 @media (max-width: 900px) {
     .solution-section {
         padding: 60px 0;
+    }
+
+    .solution-section .section-header {
+        text-align: left;
+        padding-left: 20px;
+        align-items: flex-start;
     }
 
     .timeline-container {

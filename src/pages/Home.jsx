@@ -26,11 +26,11 @@ const Home = () => {
         <>
             <Hero />
             <ProblemSection />
-            <SolutionAnimation />
+            <SolutionTimeline />
             <Solutions />
             <Stats />
-            <SolutionTimeline />
             <Services />
+            <SolutionAnimation />
         </>
     );
 };
