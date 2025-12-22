@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Hero from '../components/Hero';
+import About from '../components/About';
 import ProblemSection from '../components/ProblemSection';
 import SolutionAnimation from '../components/SolutionAnimation';
 import Solutions from '../components/Solutions';
@@ -24,7 +24,7 @@ const Home = () => {
 
     return (
         <>
-            <Hero />
+            <About />
             <ProblemSection />
             <SolutionTimeline />
             <Solutions />

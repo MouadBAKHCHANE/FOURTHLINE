@@ -1,7 +1,7 @@
 export const translations = {
     en: {
         nav: {
-            product: "Website",
+            product: "Services",
             industries: "Industries",
             careers: "Careers",
             docs: "Methodology",
@@ -57,8 +57,8 @@ export const translations = {
             subtitle: "Bridging the gap with automated, intelligent infrastructure."
         },
         solution: {
-            title: "The Roadmap",
-            subtitle: "4 Steps to Automate Your Sales Revenue.",
+            title: "Work Process",
+            subtitle: "Our Proven Strategy",
             step1Title: "The Audit",
             step1Desc: "We audit your current flow to find exactly where you're losing money.",
             step2Title: "The Website",
@@ -307,7 +307,7 @@ export const translations = {
 
     fr: {
         nav: {
-            product: "Site Web",
+            product: "Services",
             industries: "Industries",
             careers: "Carrières",
             docs: "Méthodologie",
@@ -346,7 +346,7 @@ export const translations = {
         },
         solution: {
             title: "La Roadmap",
-            subtitle: "4 Étapes pour Automatiser Vos Revenus.",
+            subtitle: "Notre Stratégie",
             step1Title: "L'Audit",
             step1Desc: "Nous trouvons exactement où vous perdez de l'argent dans votre processus actuel.",
             step2Title: "Le Site Web",

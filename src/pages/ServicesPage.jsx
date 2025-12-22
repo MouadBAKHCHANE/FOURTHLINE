@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../App';
 import { ArrowRight, Zap, Search, TrendingUp, Layers, Code, Globe, Database, Server } from 'lucide-react';
+import SmallBusiness from './CRMPage';
 import '../styles/Website.css';
 
-const WebsitePage = () => {
+const ServicesPage = () => {
     const { t } = useLanguage();
     const ws = t.websitePage;
 
@@ -164,8 +165,14 @@ const WebsitePage = () => {
             </section>
 
 
+
+            {/* CRM Section (Merged) */}
+            <div className="merged-crm-section">
+                <SmallBusiness />
+            </div>
+
         </div>
     );
 };
 
-export default WebsitePage;
+export default ServicesPage;
