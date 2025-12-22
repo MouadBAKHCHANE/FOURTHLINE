@@ -124,48 +124,7 @@ const SmallBusiness = () => {
                 </section>
             )}
 
-            {/* Industries Section */}
-            <section className="sb-industries section-padding">
-                <div className="container">
-                    <div className="industries-grid">
-                        <div className="industry-card glass-card">
-                            <Users size={32} className="text-blue mb-4" />
-                            <h4>{sb.industries.agencies}</h4>
-                            <p>{sb.industries.agenciesDesc}</p>
-                        </div>
-                        <div className="industry-card glass-card">
-                            <Zap size={32} className="text-yellow mb-4" />
-                            <h4>{sb.industries.retail}</h4>
-                            <p>{sb.industries.retailDesc}</p>
-                        </div>
-                        <div className="industry-card glass-card">
-                            <CheckCircle size={32} className="text-green mb-4" />
-                            <h4>{sb.industries.local}</h4>
-                            <p>{sb.industries.localDesc}</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-
-
-            {/* Comparison Section (Old Way vs New Way) */}
-            <section className="sb-comparison section-padding">
-                <div className="container">
-                    <div className="comparison-wrapper glass-card">
-                        <div className="comparison-side old-way">
-                            <div className="overlay-text">{sb.comparison.oldWay}</div>
-                            {/* Placeholder for the image that failed generation - CSS styled instead */}
-                            <div className="comparison-visual messy-desk"></div>
-                        </div>
-                        <div className="comparison-side new-way">
-                            <div className="overlay-text">{sb.comparison.newWay}</div>
-                            {/* CSS styled placeholder */}
-                            <div className="comparison-visual clean-dashboard"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
 
         </div>

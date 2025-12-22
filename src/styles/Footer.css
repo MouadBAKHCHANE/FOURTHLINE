@@ -1,11 +1,13 @@
-/* OptiRank Style Footer */
+/* OptiRank Style Footer - Redesigned */
+
+/* Footer Section */
 .footer-section {
-    background-color: #000000;
-    padding: 0 0 50px;
+    background-color: #020408;
+    /* Deep Dark Background */
+    padding: 80px 0 40px;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Subtle border */
-    overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer-section .container {
@@ -14,142 +16,173 @@
     margin: 0 auto;
 }
 
-/* Final CTA Section (Embedded in Footer area or just above) */
-/* Remade to look like OptiRank's large CTA */
-.final-cta-new {
-    text-align: center;
-    padding: 120px 20px;
-    background: radial-gradient(circle at center, rgba(15, 15, 15, 1) 0%, #000000 100%);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 50px;
-    /* Separator */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* Newsletter Section */
+.footer-newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.final-cta-new::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(57, 143, 255, 0.15) 0%, transparent 60%);
-    filter: blur(100px);
-    pointer-events: none;
-    z-index: 0;
+.newsletter-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 600px;
 }
 
-.cta-content-wrapper {
-    position: relative;
-    z-index: 1;
+.newsletter-content h2 .script-highlight {
+    font-family: 'Dancing Script', cursive;
+    color: #3b82f6;
+    /* Accent Blue */
+    font-weight: 400;
+    display: block;
+    margin-top: 10px;
+}
+
+.newsletter-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 16px;
+    min-width: 350px;
 }
 
-.cta-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 24px;
-    line-height: 1.1;
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
     color: #fff;
-    letter-spacing: -0.02em;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.cta-sub {
-    font-size: 1.2rem;
-    color: #9CA3AF;
-    margin-bottom: 40px;
-    max-width: 500px;
-    font-weight: 400;
+.newsletter-form input:focus {
+    border-color: #3b82f6;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Footer Content Grid */
+.newsletter-form button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Footer Content Grid - 3 Columns */
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px;
-    padding-top: 60px;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
     padding-bottom: 60px;
 }
 
 /* Brand Column */
+.brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .brand-col .logo-text {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-weight: 800;
     color: #fff;
-    display: inline-block;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.brand-slogan {
-    color: #d1d5db;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
+/* Optional: Add an icon if you have one, e.g. ::before */
 
-.footer-desc {
+.brand-info p {
     color: #9CA3AF;
     font-size: 0.95rem;
+    margin: 0;
     line-height: 1.6;
-    max-width: 320px;
 }
 
-/* Column Styling */
+/* Links Columns */
 .footer-col h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 24px;
+    font-size: 1rem;
+    font-weight: 700;
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer-col ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.footer-col ul li {
-    margin-bottom: 16px;
-}
-
-.footer-col a,
-.footer-link-btn {
+.footer-col ul li a,
+.footer-col ul li Link {
     color: #9CA3AF;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.2s ease;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    padding: 0;
 }
 
-.footer-col a:hover,
-.footer-link-btn:hover {
+.footer-col ul li a:hover,
+.footer-col ul li Link:hover {
     color: #fff;
-    text-decoration: none;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-    padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
     color: #6B7280;
+    font-size: 0.9rem;
 }
 
-.footer-bottom p {
-    margin: 0;
+/* Responsive */
+@media (max-width: 900px) {
+    .newsletter-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .footer-newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        /* 2 col on tablet */
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        /* 1 col on mobile */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
 }
 
 /* Clients/Trust Bar inside Footer */

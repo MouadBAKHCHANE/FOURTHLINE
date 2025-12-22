@@ -40,9 +40,9 @@ const Navbar = () => {
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
                     <Link to="/services">{t.nav.product}</Link>
-
-                    <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>{t.nav.projects}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
+                    <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>
                 </div>
 
                 <div className="nav-right desktop-links">
@@ -68,10 +68,9 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <Link to="/services" onClick={() => setIsOpen(false)}>{t.nav.product}</Link>
-
-                    <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>{t.nav.projects}</a>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
-                    <a href="#pricing" onClick={(e) => handleNavClick(e, '#pricing')}>{t.nav.pricing}</a>
+                    <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>
                     <a href="/Webtoleadform.html" className="btn-pill-gradient" onClick={() => setIsOpen(false)}>
                         {t.nav.requestDemo}
                     </a>

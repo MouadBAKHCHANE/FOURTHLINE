@@ -411,8 +411,12 @@
 }
 
 .tech-card:hover .tech-logo {
-    filter: grayscale(0) brightness(1);
-    /* Full color on hover */
+    filter: grayscale(0) brightness(10);
+    /* Full color on hover - Brightened for Dark Mode */
+}
+
+.webflow-logo {
+    transform: scale(0.7);
 }
 
 .tech-card h4 {

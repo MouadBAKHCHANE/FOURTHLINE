@@ -107,7 +107,7 @@ const ServicesPage = () => {
                         {/* Webflow Card */}
                         <div className="tech-card">
                             <div className="tech-logo-wrapper">
-                                <img src="/assets/tech/webflow.png" alt="Webflow Logo" className="tech-logo" />
+                                <img src="/assets/tech/webflow.png" alt="Webflow Logo" className="tech-logo webflow-logo" />
                             </div>
                             <h4>Webflow</h4>
                             <p>{ws.techStack.nocode.webflow.split(':')[1]}</p>
@@ -146,23 +146,7 @@ const ServicesPage = () => {
                 </div>
             </section>
 
-            {/* Benefits */}
-            <section className="container">
-                <div className="ws-benefits">
-                    <div className="benefit-item">
-                        <div className="benefit-icon"><Zap /></div>
-                        <h4>{ws.techStack.benefits.perf}</h4>
-                    </div>
-                    <div className="benefit-item">
-                        <div className="benefit-icon"><Search /></div>
-                        <h4>{ws.techStack.benefits.seo}</h4>
-                    </div>
-                    <div className="benefit-item">
-                        <div className="benefit-icon"><TrendingUp /></div>
-                        <h4>{ws.techStack.benefits.scale}</h4>
-                    </div>
-                </div>
-            </section>
+
 
 
 

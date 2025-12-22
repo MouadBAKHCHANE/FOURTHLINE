@@ -8,6 +8,8 @@ export const translations = {
             projects: "Projects",
             pricing: "Pricing",
             signin: "Sign in",
+            blog: "Blog",
+            contact: "Contact",
             requestDemo: "Start Your Build"
         },
         hero: {
@@ -121,20 +123,29 @@ export const translations = {
             systems: "CRM Deployments"
         },
         footer: {
-            poweringSales: "Powering Sales for",
-            ctaTitle: "Turning Vision Into Digital Power",
-            ctaButton: "Get Your Audit",
-            desc: "",
-            services: "Services",
-            webDesign: "Web Design",
-            salesforceSetup: "Salesforce Setup",
-            webToLead: "Web-to-Lead",
-            audits: "Audits",
-            legal: "Company",
-            privacyPolicy: "Privacy Policy",
-            termsOfService: "Terms of Service",
-            contact: "Contact",
-            rights: "All rights reserved."
+            newsletterTitle: "Stay Connected &",
+            newsletterTitleHighlight: "Subscribe Our Newsletter!",
+            newsletterPlaceholder: "Your Email Address",
+            newsletterButton: "Subscribe",
+            sections: "Sections",
+            utility: "Utility",
+            social: "Social",
+            rights: "All rights reserved.",
+            poweredBy: "Powered by Seedsvision",
+            brandAddr: "Casablanca, Morocco",
+            brandPhone: "+212 600 000 000",
+            links: {
+                features: "Features",
+                services: "Services",
+                process: "Process",
+                pricing: "Pricing",
+                contact: "Contact",
+                notFound: "404",
+                privacy: "Privacy Policy",
+                whatsapp: "WhatsApp",
+                instagram: "Instagram",
+                twitter: "Twitter" // Or X
+            }
         },
         solutionsSection: {
             title: "Your Industry,",
@@ -260,7 +271,7 @@ export const translations = {
         },
         websitePage: {
             hero: {
-                title: "Build a High-Performance Digital Footprint.",
+                title: "Build a Premium Digital Footprint.",
                 subtitle: "From landing pages to complex web applications. We build fast, scalable, and stunning websites.",
                 cta: "Start Your Build"
             },
@@ -314,6 +325,8 @@ export const translations = {
             projects: "Projets",
             pricing: "Tarifs",
             signin: "Connexion",
+            blog: "Blog",
+            contact: "Contact",
             requestDemo: "Commencer"
         },
         hero: {
@@ -409,20 +422,29 @@ export const translations = {
             systems: "Déploiements CRM"
         },
         footer: {
-            poweringSales: "Propulse les ventes pour",
-            ctaTitle: "Transformer la vision\nen puissance numérique",
-            ctaButton: "Obtenir votre Audit",
-            desc: "Combler le fossé entre le marketing et les ventes avec l'intégration Salesforce.",
-            services: "Services",
-            webDesign: "Design Web",
-            salesforceSetup: "Configuration Salesforce",
-            webToLead: "Web-to-Lead",
-            audits: "Audits",
-            legal: "Entreprise",
-            privacyPolicy: "Politique de Confidentialité",
-            termsOfService: "Conditions d'Utilisation",
-            contact: "Contact",
-            rights: "Tous droits réservés."
+            newsletterTitle: "Restez Connecté &",
+            newsletterTitleHighlight: "Abonnez-vous !",
+            newsletterPlaceholder: "Votre Adresse Email",
+            newsletterButton: "S'abonner",
+            sections: "RUBRIQUES",
+            utility: "UTILITAIRE",
+            social: "RÉSEAUX",
+            rights: "Tous droits réservés.",
+            poweredBy: "Propulsé par Seedsvision",
+            brandAddr: "Casablanca, Maroc",
+            brandPhone: "+212 600 000 000",
+            links: {
+                features: "Fonctionnalités",
+                services: "Services",
+                process: "Processus",
+                pricing: "Tarifs",
+                contact: "Contact",
+                notFound: "404",
+                privacy: "Politique de Conf.",
+                whatsapp: "WhatsApp",
+                instagram: "Instagram",
+                twitter: "Twitter"
+            }
         },
         solutionsSection: {
             title: "Votre Industrie,",
