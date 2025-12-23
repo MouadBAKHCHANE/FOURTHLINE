@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    /* Changed from hidden to allow mascot overlap */
     position: relative;
     background: transparent;
     /* Let global bg show through */
@@ -221,12 +222,17 @@
 @media (max-width: 900px) {
     .hero {
         padding-top: 140px;
+        padding-bottom: 40px;
+        /* Reduced from default */
+        min-height: auto;
+        /* Allow height to shrink on mobile */
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 60px;
+        gap: 20px;
+        /* Reduced from 60px */
     }
 
     .hero-content {
@@ -241,7 +247,8 @@
 
     .hero-visual-creative {
         padding-left: 0;
-        margin-top: 20px;
+        margin-top: 0;
+        /* Reduced from 20px */
         justify-content: center;
     }
 
@@ -250,13 +257,21 @@
         transform: none;
     }
 
+    .mascot-container {
+        bottom: -150px;
+        right: -10px;
+    }
+
     .hero-title.nova-title {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
 
     .text-highlight {
         font-size: 2.2rem;
+        padding-top: 15px;
+        display: block;
     }
 }
 

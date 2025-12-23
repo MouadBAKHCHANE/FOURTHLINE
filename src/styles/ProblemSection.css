@@ -170,6 +170,11 @@
         /* Stack vertically */
     }
 
+    .problem-section {
+        padding: 20px 0 0 0;
+        /* Removed bottom padding */
+    }
+
     .toggle-headline {
         font-size: 2rem;
         flex-direction: column;

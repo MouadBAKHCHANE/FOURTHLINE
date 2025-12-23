@@ -174,7 +174,7 @@ export const translations = {
                 role: "Director",
                 pain: "Enrollment files in chaos.",
                 solution: "Secure admission portal.",
-                result: "Modern image & paperless.",
+                result: "Image moderne & zéro papier.",
                 dashTitle: "Admissions Portal",
                 dashList: ["Student: Sara B.", "Status: Accepted", "Docs Verified"]
             },
@@ -267,6 +267,36 @@ export const translations = {
                         btn: "See Analytics Features"
                     }
                 }
+            }
+        },
+        contactPage: {
+            header: {
+                title: "Let's Elevate Your Business",
+                highlight: "Get In Touch Today!",
+            },
+            info: {
+                phone: "Phone",
+                phoneValue: "+212 600 000 000",
+                office: "Office",
+                officeValue: "Casablanca, Morocco",
+                social: {
+                    whatsapp: "WhatsApp",
+                    twitter: "Twitter",
+                    instagram: "Instagram"
+                }
+            },
+            form: {
+                title: "Send Us a Message",
+                subtitle: "You can use the contact form below to send us a message directly. We will get back to you as soon as possible.",
+                nameLabel: "Full Name",
+                namePlaceholder: "Enter your name",
+                emailLabel: "Email",
+                emailPlaceholder: "Enter your email",
+                businessLabel: "Business Type",
+                businessPlaceholder: "E-commerce",
+                messageLabel: "Message",
+                messagePlaceholder: "Type your opinion",
+                submitButton: "Submit Now"
             }
         },
         websitePage: {
@@ -566,6 +596,36 @@ export const translations = {
                         btn: "Voir les fonctionnalités Analytics"
                     }
                 }
+            }
+        },
+        contactPage: {
+            header: {
+                title: "Boostez Votre SEO",
+                highlight: "Contactez-nous Aujourd'hui !",
+            },
+            info: {
+                phone: "Téléphone",
+                phoneValue: "+212 600 000 000",
+                office: "Bureau",
+                officeValue: "Casablanca, Maroc",
+                social: {
+                    whatsapp: "WhatsApp",
+                    twitter: "Twitter",
+                    instagram: "Instagram"
+                }
+            },
+            form: {
+                title: "Envoyez-nous un Message",
+                subtitle: "Utilisez le formulaire ci-dessous pour nous envoyer un message direct. Nous vous répondrons dès que possible.",
+                nameLabel: "Nom Complet",
+                namePlaceholder: "Entrez votre nom",
+                emailLabel: "Email",
+                emailPlaceholder: "Entrez votre email",
+                businessLabel: "Type d'Entreprise",
+                businessPlaceholder: "E-commerce",
+                messageLabel: "Message",
+                messagePlaceholder: "Votre message",
+                submitButton: "Envoyer Maintenant"
             }
         },
         websitePage: {

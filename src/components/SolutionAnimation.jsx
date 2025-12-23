@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/SolutionAnimation.css';
 import { useLanguage } from '../App';
 
@@ -67,10 +68,10 @@ const SolutionAnimation = () => {
                 </div>
 
                 <div className="center-cta" style={{ marginTop: '60px', textAlign: 'center' }}>
-                    <a href="/contact.html" className="btn-opti-primary">
+                    <Link to="/contact" className="btn-opti-primary">
                         <span className="btn-dot-indicator"></span>
-                        {t.footer.ctaButton}
-                    </a>
+                        {t.websitePage.hero.cta}
+                    </Link>
                 </div>
             </div>
         </section>

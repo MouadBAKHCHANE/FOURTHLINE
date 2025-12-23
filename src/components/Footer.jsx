@@ -3,6 +3,7 @@ import '../styles/Footer.css';
 import { useLanguage } from '../App';
 import AuditModal from './AuditModal';
 import { Link, useLocation } from 'react-router-dom';
+import { MessageCircle, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
     const { t } = useLanguage();
@@ -42,9 +43,12 @@ const Footer = () => {
                             {/* <img src="/path/to/icon.svg" alt="logo" /> */}
                             <span className="logo-text">Seedsvision</span>
                         </div>
-                        <div className="brand-info">
-                            <p>{t.footer.brandAddr}</p>
-                            <p>{t.footer.brandPhone}</p>
+
+                        <div className="social-buttons footer-socials">
+                            <a href="#" className="social-btn"><MessageCircle size={18} /></a>
+                            <a href="#" className="social-btn"><Linkedin size={18} /></a>
+                            <a href="#" className="social-btn"><Twitter size={18} /></a>
+                            <a href="#" className="social-btn"><Instagram size={18} /></a>
                         </div>
                     </div>
 
@@ -59,14 +63,14 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Social Column */}
+                    {/* Contact Info Column (Formerly Social) */}
                     <div className="footer-col">
-                        <h4>{t.footer.social}</h4>
-                        <ul>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">{t.footer.links.whatsapp}</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">{t.footer.links.instagram}</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">{t.footer.links.twitter}</a></li>
-                        </ul>
+                        <h4>{t.nav.contact}</h4>
+                        <div className="contact-info-list">
+                            <p>{t.footer.brandAddr}</p>
+                            <p>contact@seedsvision.com</p>
+                            <p>{t.footer.brandPhone}</p>
+                        </div>
                     </div>
                 </div>
 

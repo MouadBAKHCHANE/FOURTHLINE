@@ -62,9 +62,6 @@ const SmallBusiness = () => {
                                 <div className="crm-tag">Salesforce</div>
                             </div>
 
-                            <div className="floating-badge">
-                                <Zap size={16} fill="currentColor" /> {sb.hook.title}
-                            </div>
                         </div>
                     </div>
                 </div>
