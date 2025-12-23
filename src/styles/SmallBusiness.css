@@ -487,15 +487,34 @@
 }
 
 .industry-card {
-    padding: 30px;
+    padding: 24px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.industry-card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.industry-card h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.industry-card p {
+    margin: 0;
+    padding: 0;
 }
 
 .mb-4 {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 /* Comparison Visuals (CSS Only fallbacks) */

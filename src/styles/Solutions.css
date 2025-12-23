@@ -47,14 +47,23 @@
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 16px;
+    padding: 14px 16px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    /* Stack Header and Details */
+    gap: 0;
     position: relative;
     overflow: hidden;
+}
+
+.tab-header-row {
+    display: flex;
+    align-items: center;
+    /* Perfect Centering */
+    gap: 16px;
+    width: 100%;
 }
 
 .solution-tab:hover {
@@ -71,8 +80,8 @@
 }
 
 .tab-icon-box {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
     display: flex;
@@ -89,23 +98,32 @@
     box-shadow: 0 0 15px rgba(0, 161, 224, 0.4);
 }
 
-.tab-content {
+.tab-text-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .tab-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 4px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .tab-role {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 500;
+    margin: 6px 0 0 0;
+    /* Increased from 2px to 6px for better spacing */
+    padding: 0;
+    line-height: 1;
 }
 
 /* Accordion Details */
@@ -115,6 +133,16 @@
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 0;
+}
+
+.tab-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
+    padding-left: 62px;
+    /* Indent to align with text (Icon width + Gap) */
 }
 
 .solution-tab.active .tab-details {
@@ -159,7 +187,8 @@
 .tab-arrow {
     color: #64748b;
     transition: transform 0.3s ease;
-    margin-top: 15px;
+    flex-shrink: 0;
+    margin: 0;
 }
 
 .tab-arrow.rotated {
