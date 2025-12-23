@@ -66,6 +66,7 @@ const ServicesPage = () => {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -84,6 +85,7 @@ const ServicesPage = () => {
                     </div>
                 </div>
             </section>
+
 
             {/* Tech Stack (The Arsenal) - Modern Redesign */}
             <section className="ws-stack-section">
@@ -149,6 +151,17 @@ const ServicesPage = () => {
 
 
 
+
+            {/* Premium Combo Equation - Below Arsenal */}
+            <section className="ws-combo-section">
+                <div className="container ws-combo-container">
+                    <div className="ws-combo-part ws-combo-highlight">{ws.combo.part1}</div>
+                    <div className="ws-combo-operator">+</div>
+                    <div className="ws-combo-part ws-combo-highlight">{ws.combo.part2}</div>
+                    <div className="ws-combo-operator">=</div>
+                    <div className="ws-combo-part ws-combo-result">{ws.combo.result}</div>
+                </div>
+            </section>
 
             {/* CRM Section (Merged) */}
             <div className="merged-crm-section">

@@ -69,7 +69,6 @@ const Footer = () => {
                         <div className="contact-info-list">
                             <p>{t.footer.brandAddr}</p>
                             <p>contact@seedsvision.com</p>
-                            <p>{t.footer.brandPhone}</p>
                         </div>
                     </div>
                 </div>

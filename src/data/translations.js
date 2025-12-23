@@ -315,6 +315,11 @@ export const translations = {
                     desc: "For authority and SEO. Corporate presence, content-rich.",
                 }
             },
+            combo: {
+                part1: "Premium Website",
+                part2: "Powerful CRM",
+                result: "Scale & Grow"
+            },
             techStack: {
                 title: "The Arsenal",
                 nocode: {
@@ -643,6 +648,11 @@ export const translations = {
                     title: "Sites Multi-Pages",
                     desc: "Pour l'autorité et le SEO. Présence corporative, riche en contenu.",
                 }
+            },
+            combo: {
+                part1: "Site Web Premium",
+                part2: "CRM Puissant",
+                result: "Échelle & Croissance"
             },
             techStack: {
                 title: "L'Arsenal Technique",

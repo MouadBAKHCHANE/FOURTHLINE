@@ -56,7 +56,7 @@ const SolutionTimeline = () => {
                                         {step.icon}
                                     </div>
                                 </div>
-                                <div className="step-content">
+                                <div className="timeline-content">
                                     <h3>{step.title}</h3>
                                     <p>{step.desc}</p>
                                     {step.id === 2 && (

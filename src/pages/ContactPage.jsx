@@ -31,10 +31,7 @@ const ContactPage = () => {
                         <img src={WorldMapDots} alt="World Map Pattern" className="world-map-bg-img" />
 
                         <div className="info-details">
-                            <div className="info-group">
-                                <h4 className="info-label">{txt.info.phone}</h4>
-                                <p className="info-value">{txt.info.phoneValue}</p>
-                            </div>
+
                             <div className="info-group">
                                 <h4 className="info-label">{txt.info.office}</h4>
                                 <p className="info-value">{txt.info.officeValue}</p>
