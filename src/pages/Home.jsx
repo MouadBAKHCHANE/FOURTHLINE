@@ -8,6 +8,8 @@ import Services from '../components/Services';
 import Stats from '../components/Stats';
 import { useLocation } from 'react-router-dom';
 
+import ResultsSection from '../components/ResultsSection';
+
 const Home = () => {
     const location = useLocation();
 
@@ -29,6 +31,7 @@ const Home = () => {
             <SolutionTimeline />
             <Solutions />
             <Stats />
+            <ResultsSection />
             <Services />
             <SolutionAnimation />
         </>

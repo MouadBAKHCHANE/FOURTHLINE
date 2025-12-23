@@ -4,6 +4,8 @@ import { ArrowRight, Zap, Search, TrendingUp, Layers, Code, Globe, Database, Ser
 import SmallBusiness from './CRMPage';
 import '../styles/Website.css';
 
+import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
+
 const ServicesPage = () => {
     const { t } = useLanguage();
     const ws = t.websitePage;
@@ -91,60 +93,7 @@ const ServicesPage = () => {
             <section className="ws-stack-section">
                 <div className="container">
                     <h2 className="ws-section-title">{ws.techStack.title}</h2>
-
-                    <div className="stack-grid-modern">
-                        {/* Framer Card */}
-                        <div className="tech-card">
-                            <div className="tech-logo-wrapper">
-                                <img src="/assets/tech/framer.png" alt="Framer Logo" className="tech-logo" />
-                            </div>
-                            <h4>Framer</h4>
-                            <p>{ws.techStack.nocode.framer.split(':')[1]}</p>
-                            <div className="tech-tags">
-                                <span className="tech-tag">No-Code</span>
-                                <span className="tech-tag">Animation</span>
-                            </div>
-                        </div>
-
-                        {/* Webflow Card */}
-                        <div className="tech-card">
-                            <div className="tech-logo-wrapper">
-                                <img src="/assets/tech/webflow.png" alt="Webflow Logo" className="tech-logo webflow-logo" />
-                            </div>
-                            <h4>Webflow</h4>
-                            <p>{ws.techStack.nocode.webflow.split(':')[1]}</p>
-                            <div className="tech-tags">
-                                <span className="tech-tag">CMS</span>
-                                <span className="tech-tag">Visual Dev</span>
-                            </div>
-                        </div>
-
-                        {/* WordPress Card */}
-                        <div className="tech-card">
-                            <div className="tech-logo-wrapper">
-                                <img src="/assets/tech/wordpress.png" alt="WordPress Logo" className="tech-logo" />
-                            </div>
-                            <h4>WordPress</h4>
-                            <p>{ws.techStack.cms.wordpress.split(':')[1]}</p>
-                            <div className="tech-tags">
-                                <span className="tech-tag">Open Source</span>
-                                <span className="tech-tag">Scalable</span>
-                            </div>
-                        </div>
-
-                        {/* Full Stack Card (Featured) */}
-                        <div className="tech-card featured-stack">
-                            <div className="tech-logo-wrapper">
-                                <img src="/assets/tech/fullstack.png" alt="Full Stack Logo" className="tech-logo" />
-                            </div>
-                            <h4>Custom Development</h4>
-                            <div className="tech-list">
-                                <p>MERN Full Stack</p>
-                                <p>Java/Angular Full Stack</p>
-                                <p>Laravel/VueJS Full Stack</p>
-                            </div>
-                        </div>
-                    </div>
+                    <GlowingEffectDemo />
                 </div>
             </section>
 

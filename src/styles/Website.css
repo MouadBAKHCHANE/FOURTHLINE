@@ -413,7 +413,7 @@
 
 /* Tech Stack Grid - Creative Redesign */
 .ws-stack-section {
-    padding: 120px 0;
+    padding: 40px 0 120px;
     position: relative;
     overflow: hidden;
 }
@@ -432,12 +432,20 @@
 
 .ws-section-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4.5rem;
     margin-bottom: 80px;
-    font-weight: 700;
+    font-weight: 800;
+    line-height: 1.1;
     position: relative;
     z-index: 1;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
 
 .stack-grid-modern {
     display: grid;

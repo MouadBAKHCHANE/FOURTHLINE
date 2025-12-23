@@ -299,6 +299,17 @@ export const translations = {
                 submitButton: "Submit Now"
             }
         },
+        resultsSection: {
+            badge: "Works",
+            title: "Our Results Speak For Themselves",
+            beforeLabel: "Before Market Growth",
+            afterLabel: "After Market Increase",
+            card1: { title: "Keyword Research and Analysis" },
+            card2: { title: "Social Media Mastery" },
+            card3: { title: "Marketing Strategy" },
+            card4: { title: "Driving Organic Traffic" },
+            card5: { title: "Video Editing SaaS" }
+        },
         websitePage: {
             hero: {
                 title: "Build a Premium Digital Footprint.",
@@ -632,6 +643,17 @@ export const translations = {
                 messagePlaceholder: "Votre message",
                 submitButton: "Envoyer Maintenant"
             }
+        },
+        resultsSection: {
+            badge: "Projets",
+            title: "Nos Résultats Parlent d'Eux-mêmes",
+            beforeLabel: "Avant Croissance",
+            afterLabel: "Après Croissance",
+            card1: { title: "Recherche et Analyse Mots-Clés" },
+            card2: { title: "Maîtrise Réseaux Sociaux" },
+            card3: { title: "Stratégie Marketing" },
+            card4: { title: "Trafic Organique" },
+            card5: { title: "SaaS Édition Vidéo" }
         },
         websitePage: {
             hero: {
