@@ -10,7 +10,7 @@ import JobDetail from './pages/JobDetail';
 import SmallBusiness from './pages/CRMPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
-import BlogPage from './pages/BlogPage';
+// import BlogPage from './pages/BlogPage';
 import Footer from './components/Footer'
 import './index.css'
 import { SparklesPreview } from './components/SparklesDemo';
@@ -39,7 +39,7 @@ const AppContent = () => {
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<JobDetail />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        {/* <Route path="/blog" element={<BlogPage />} /> */}
         <Route path="/sparkles" element={<SparklesPreview />} />
       </Routes>
       <Footer />

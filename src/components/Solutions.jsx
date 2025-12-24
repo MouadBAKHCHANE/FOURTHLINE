@@ -125,25 +125,27 @@ const Solutions = () => {
                                 className={`solution-tab ${activeTab === index ? 'active' : ''}`}
                                 onClick={() => setActiveTab(index)}
                             >
-                                <div className="tab-icon-box">
-                                    {item.icon}
+                                <div className="tab-header-row">
+                                    <div className="tab-icon-box">
+                                        {item.icon}
+                                    </div>
+                                    <div className="tab-text-content">
+                                        <h3 className="tab-title">{item.title}</h3>
+                                        <p className="tab-role">{item.role}</p>
+                                    </div>
+                                    <ChevronRight className={`tab-arrow ${activeTab === index ? 'rotated' : ''}`} size={20} />
                                 </div>
-                                <div className="tab-content">
-                                    <h3 className="tab-title">{item.title}</h3>
-                                    <p className="tab-role">{item.role}</p>
 
-                                    <div className={`tab-details ${activeTab === index ? 'open' : ''}`}>
-                                        <div className="detail-row pain">
-                                            <div className="dot red"></div>
-                                            <span>"{item.pain}"</span>
-                                        </div>
-                                        <div className="detail-row solution">
-                                            <div className="dot green"></div>
-                                            <span>{item.solution}</span>
-                                        </div>
+                                <div className={`tab-details ${activeTab === index ? 'open' : ''}`}>
+                                    <div className="detail-row pain">
+                                        <div className="dot red"></div>
+                                        <span>"{item.pain}"</span>
+                                    </div>
+                                    <div className="detail-row solution">
+                                        <div className="dot green"></div>
+                                        <span>{item.solution}</span>
                                     </div>
                                 </div>
-                                <ChevronRight className={`tab-arrow ${activeTab === index ? 'rotated' : ''}`} size={20} />
                             </div>
                         ))}
                     </div>

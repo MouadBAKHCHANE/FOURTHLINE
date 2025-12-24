@@ -32,6 +32,7 @@ const Home = () => {
             <Solutions />
             <Stats />
             <ResultsSection />
+
             <Services />
             <SolutionAnimation />
         </>

@@ -1,0 +1,761 @@
+/* ComparisonSlider.css */
+
+.comparison-section {
+    padding: 120px 0;
+    position: relative;
+    background: radial-gradient(circle at center, #0B0F19 0%, #020408 100%);
+    overflow: hidden;
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.comparison-header h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    color: white;
+}
+
+.comparison-header p {
+    color: #94a3b8;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.text-grad-red {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-grad-blue {
+    background: linear-gradient(135deg, #38bdf8, #00A1E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.comparison-wrapper-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 32px;
+    background: #000;
+    box-shadow:
+        0 40px 100px -20px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    height: 600px;
+    user-select: none;
+    overflow: hidden;
+}
+
+.comparison-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: col-resize;
+}
+
+/* --- COMMON LAYERS --- */
+.compare-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.layer-content {
+    width: 1100px;
+    /* Fixed width to prevent content shift */
+    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label-badge {
+    position: absolute;
+    top: 40px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.label-badge.problem {
+    right: 40px;
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.1);
+}
+
+.label-badge.solution {
+    left: 40px;
+    background: rgba(0, 161, 224, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(0, 161, 224, 0.3);
+    box-shadow: 0 0 20px rgba(0, 161, 224, 0.1);
+}
+
+.diagram-cluster {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+}
+
+/* --- CHAOS VISUALS (Left Side) --- */
+
+.layer-before {
+    background: #0f0f0f;
+}
+
+.bg-grid-chaos {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+}
+
+.chaos .center-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 5;
+}
+
+.chaos .icon-circle {
+    width: 80px;
+    height: 80px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.stress-indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: black;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    animation: shake 2s infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+.chaos .node-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ef4444;
+    padding: 4px 12px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 4px;
+}
+
+.chaos .floating {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    background: #1a1a1a;
+    border: 1px dashed #444;
+    border-radius: 8px;
+    color: #888;
+    width: 120px;
+    transition: all 0.3s;
+}
+
+.chaos .n1 {
+    top: 10%;
+    left: 15%;
+    transform: rotate(-6deg);
+}
+
+/* Excel */
+.chaos .n2 {
+    top: 20%;
+    right: 10%;
+    transform: rotate(3deg);
+}
+
+/* Email */
+.chaos .n3 {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(5deg);
+    border-color: #7f1d1d;
+    color: #ef4444;
+}
+
+/* Lost Leads */
+.chaos .n4 {
+    bottom: 20%;
+    right: 20%;
+    transform: rotate(-4deg);
+}
+
+/* Data Silos */
+
+.paper-stack {
+    position: absolute;
+    top: -4px;
+    left: 4px;
+    right: -4px;
+    bottom: 4px;
+    background: #222;
+    z-index: -1;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.conn-line-broken {
+    position: absolute;
+    border-left: 2px dashed #333;
+    z-index: -2;
+    opacity: 0.5;
+}
+
+.chaos .n1 .conn-line-broken {
+    height: 150px;
+    top: 100%;
+    left: 50%;
+    transform: rotate(-25deg);
+    transform-origin: top;
+}
+
+.chaos .n2 .conn-line-broken {
+    height: 120px;
+    top: 100%;
+    left: 50%;
+    transform: rotate(15deg);
+    transform-origin: top;
+}
+
+.chaos .n3 .conn-line-broken {
+    height: 130px;
+    bottom: 100%;
+    left: 50%;
+    transform: rotate(20deg);
+    transform-origin: bottom;
+}
+
+.chaos .n4 .conn-line-broken {
+    height: 140px;
+    bottom: 100%;
+    left: 50%;
+    transform: rotate(-10deg);
+    transform-origin: bottom;
+}
+
+.chaos-cross {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.chaos-cross::before,
+.chaos-cross::after {
+    content: '';
+    position: absolute;
+    background: #ef4444;
+    opacity: 0.3;
+}
+
+.chaos-cross::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+}
+
+.chaos-cross::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+}
+
+.c1 {
+    top: 30%;
+    right: 35%;
+    animation: floatChaos 4s infinite;
+}
+
+.c2 {
+    bottom: 40%;
+    left: 30%;
+    animation: floatChaos 5s infinite reverse;
+}
+
+
+/* --- SYSTEM VISUALS (Right Side) --- */
+
+.layer-after {
+    background: #030610;
+}
+
+.bg-mesh-system {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 161, 224, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+}
+
+.bg-glow-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 161, 224, 0.05) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(40px);
+}
+
+.solution .main-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.hub-core {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #001e35, #000);
+    border: 1px solid rgba(0, 161, 224, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00A1E0;
+    box-shadow:
+        0 0 30px rgba(0, 161, 224, 0.3),
+        inset 0 0 20px rgba(0, 161, 224, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.hub-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 161, 224, 0.3);
+    border-radius: 50%;
+    animation: ripple 3s infinite linear;
+    z-index: 1;
+}
+
+.hub-ripple.r2 {
+    animation-delay: 1.5s;
+}
+
+@keyframes ripple {
+    0% {
+        width: 100px;
+        height: 100px;
+        opacity: 0.8;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+.hub-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 161, 224, 0.5);
+}
+
+/* Glass Cards */
+.solution .satellite {
+    position: absolute;
+    z-index: 5;
+    width: 160px;
+    perspective: 1000px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.solution .s1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.solution .s2 {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.solution .s3 {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.solution .s4 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.text-cyan {
+    color: #22d3ee;
+    filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.5));
+}
+
+.text-green {
+    color: #4ade80;
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.5));
+}
+
+.text-purple {
+    color: #c084fc;
+    filter: drop-shadow(0 0 5px rgba(192, 132, 252, 0.5));
+}
+
+.text-amber {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.5));
+}
+
+/* Animated Data Lines */
+.data-stream-line {
+    position: absolute;
+    background: linear-gradient(to bottom, #00A1E0, transparent);
+    z-index: -1;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+.solution .s1 .data-stream-line {
+    width: 2px;
+    height: 160px;
+    top: 100%;
+    left: 50%;
+}
+
+.solution .s2 .data-stream-line {
+    width: 160px;
+    height: 2px;
+    right: 100%;
+    top: 50%;
+    background: linear-gradient(to left, #4ade80, transparent);
+}
+
+.solution .s3 .data-stream-line {
+    width: 2px;
+    height: 160px;
+    bottom: 100%;
+    left: 50%;
+    background: linear-gradient(to top, #c084fc, transparent);
+}
+
+.solution .s4 .data-stream-line {
+    width: 160px;
+    height: 2px;
+    left: 100%;
+    top: 50%;
+    background: linear-gradient(to right, #fbbf24, transparent);
+}
+
+.data-packet {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background: white;
+    box-shadow: 0 0 10px white;
+    border-radius: 4px;
+}
+
+.s1 .data-packet {
+    animation: dataFall 2s infinite;
+    top: 0;
+    left: -1px;
+}
+
+.s2 .data-packet {
+    animation: dataSlideLeft 2.5s infinite;
+    right: 0;
+    top: -1px;
+    width: 15px;
+    height: 4px;
+}
+
+.s3 .data-packet {
+    animation: dataRise 2s infinite;
+    bottom: 0;
+    left: -1px;
+}
+
+.s4 .data-packet {
+    animation: dataSlideRight 2.2s infinite;
+    left: 0;
+    top: -1px;
+    width: 15px;
+    height: 4px;
+}
+
+@keyframes dataFall {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 120%;
+        opacity: 0;
+    }
+}
+
+@keyframes dataRise {
+    0% {
+        bottom: -20%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 120%;
+        opacity: 0;
+    }
+}
+
+@keyframes dataSlideRight {
+    0% {
+        left: -20%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+@keyframes dataSlideLeft {
+    0% {
+        right: -20%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        right: 120%;
+        opacity: 0;
+    }
+}
+
+/* --- SLIDER HANDLE --- */
+.slider-handle-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    /* Hit area */
+    transform: translateX(-50%);
+    z-index: 100;
+    cursor: col-resize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.handle-bar {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5) 20%, #fff 50%, rgba(255, 255, 255, 0.5) 80%, transparent);
+    box-shadow: 0 0 15px white;
+}
+
+.handle-knob {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #020408;
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.2),
+        0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.slider-handle-control:hover .handle-knob,
+.comparison-container.dragging .handle-knob {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .comparison-wrapper-outer {
+        height: 500px;
+    }
+
+    .diagram-cluster {
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+
+    .comparison-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .layer-content {
+        width: 100%;
+    }
+
+    /* Allow flexible width */
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .comparison-section {
+        padding: 60px 0;
+    }
+
+    .comparison-header {
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .comparison-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .comparison-header p {
+        font-size: 1rem;
+    }
+
+    .comparison-wrapper-outer {
+        height: 600px;
+        /* Taller on mobile to fit vertical layout if needed, or keep compact */
+        border-radius: 16px;
+    }
+
+    /* Scale down the entire diagram heavily for phones */
+    .diagram-cluster {
+        transform: translate(-50%, -50%) scale(0.42);
+        width: 100%;
+        /* Ensure it doesn't overflow horizontally logic-wise */
+    }
+
+    /* Adjust badges */
+    .label-badge {
+        top: 20px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .label-badge.problem {
+        right: 10px;
+    }
+
+    .label-badge.solution {
+        left: 10px;
+    }
+
+    /* Make slider handle larger touch target */
+    .slider-handle-control {
+        width: 50px;
+    }
+
+    .handle-knob {
+        width: 44px;
+        height: 44px;
+    }
+}
