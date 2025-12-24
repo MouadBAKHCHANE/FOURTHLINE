@@ -681,7 +681,7 @@
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Mobile */
+/* Tablet */
 @media (max-width: 900px) {
     .comparison-wrapper-outer {
         height: 500px;
@@ -693,5 +693,69 @@
 
     .comparison-header h2 {
         font-size: 2.2rem;
+    }
+
+    .layer-content {
+        width: 100%;
+    }
+
+    /* Allow flexible width */
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .comparison-section {
+        padding: 60px 0;
+    }
+
+    .comparison-header {
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .comparison-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .comparison-header p {
+        font-size: 1rem;
+    }
+
+    .comparison-wrapper-outer {
+        height: 600px;
+        /* Taller on mobile to fit vertical layout if needed, or keep compact */
+        border-radius: 16px;
+    }
+
+    /* Scale down the entire diagram heavily for phones */
+    .diagram-cluster {
+        transform: translate(-50%, -50%) scale(0.42);
+        width: 100%;
+        /* Ensure it doesn't overflow horizontally logic-wise */
+    }
+
+    /* Adjust badges */
+    .label-badge {
+        top: 20px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .label-badge.problem {
+        right: 10px;
+    }
+
+    .label-badge.solution {
+        left: 10px;
+    }
+
+    /* Make slider handle larger touch target */
+    .slider-handle-control {
+        width: 50px;
+    }
+
+    .handle-knob {
+        width: 44px;
+        height: 44px;
     }
 }
