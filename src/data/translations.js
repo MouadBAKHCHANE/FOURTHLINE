@@ -304,11 +304,11 @@ export const translations = {
             title: "Our Results Speak For Themselves",
             beforeLabel: "Before Market Growth",
             afterLabel: "After Market Increase",
-            card1: { title: "Keyword Research and Analysis" },
-            card2: { title: "Social Media Mastery" },
-            card3: { title: "Marketing Strategy" },
-            card4: { title: "Driving Organic Traffic" },
-            card5: { title: "Video Editing SaaS" }
+            card1: { name: "Dreelio", title: "Keyword Research and Analysis" },
+            card2: { name: "FitFlow", title: "Social Media Mastery" },
+            card3: { name: "Glade", title: "Marketing Strategy" },
+            card4: { name: "Refit", title: "Driving Organic Traffic" },
+            card5: { name: "Editor", title: "Video Editing SaaS" }
         },
         websitePage: {
             hero: {
@@ -649,11 +649,11 @@ export const translations = {
             title: "Nos Résultats Parlent d'Eux-mêmes",
             beforeLabel: "Avant Croissance",
             afterLabel: "Après Croissance",
-            card1: { title: "Recherche et Analyse Mots-Clés" },
-            card2: { title: "Maîtrise Réseaux Sociaux" },
-            card3: { title: "Stratégie Marketing" },
-            card4: { title: "Trafic Organique" },
-            card5: { title: "SaaS Édition Vidéo" }
+            card1: { name: "Dreelio", title: "Recherche et Analyse Mots-Clés" },
+            card2: { name: "FitFlow", title: "Maîtrise Réseaux Sociaux" },
+            card3: { name: "Glade", title: "Stratégie Marketing" },
+            card4: { name: "Refit", title: "Trafic Organique" },
+            card5: { name: "Editor", title: "SaaS Édition Vidéo" }
         },
         websitePage: {
             hero: {

@@ -122,6 +122,16 @@
     transition: all 0.3s ease;
 }
 
+.result-project-name {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
 .result-card-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -174,6 +184,12 @@
 @media (max-width: 900px) {
     .results-grid {
         grid-template-columns: 1fr;
+    }
+
+    .results-grid .result-card:last-child:nth-child(2n+1) {
+        grid-column: auto;
+        /* Reset explicit span for mobile */
+        max-width: 100%;
     }
 
     .results-title {
