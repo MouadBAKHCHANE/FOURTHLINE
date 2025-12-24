@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
+import ComparisonSlider from '../components/ComparisonSlider';
 import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe } from 'lucide-react';
 import '../styles/CRMPage.css';
 
@@ -123,6 +124,9 @@ const SmallBusiness = () => {
 
 
 
+
+            {/* Comparison Slider Section */}
+            <ComparisonSlider />
 
         </div>
     );
