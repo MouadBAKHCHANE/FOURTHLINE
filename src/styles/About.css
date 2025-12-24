@@ -225,7 +225,8 @@
 
 @media (max-width: 900px) {
     .hero {
-        padding-top: 140px;
+        padding-top: 180px;
+        /* Increased from 140px */
         padding-bottom: 40px;
         /* Reduced from default */
         min-height: auto;
@@ -247,12 +248,14 @@
 
     .hero-actions {
         justify-content: center;
+        margin-bottom: 1.5rem;
+        /* Reduced from 4rem to move social proof up */
     }
 
     .hero-visual-creative {
         padding-left: 0;
-        margin-top: 0;
-        /* Reduced from 20px */
+        margin-top: 50px;
+        /* Added spacing between text/logos and images */
         justify-content: center;
     }
 
