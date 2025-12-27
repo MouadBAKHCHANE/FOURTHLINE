@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../App';
 import { ArrowRight, Zap, Search, TrendingUp, Layers, Code, Globe, Database, Server } from 'lucide-react';
 import SmallBusiness from './CRMPage';
+import GrowthFormula from '../components/GrowthFormula'; // New creative component
 import '../styles/Website.css';
 
 import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
@@ -17,11 +18,21 @@ const ServicesPage = () => {
 
     return (
         <div className="website-page">
-            {/* Hero */}
-            <section className="ws-hero">
+            {/* Hero with GrowthFormula integrated */}
+            <section className="ws-hero ws-hero-extended">
                 <div className="ws-hero-bg"></div>
+
+                {/* GrowthFormula at top of hero */}
+                <div className="ws-hero-formula">
+                    <GrowthFormula />
+                </div>
+
+                {/* Original hero content pushed down */}
                 <div className="container ws-hero-container">
                     <div className="ws-hero-text">
+                        <div className="ws-hero-badges">
+                            <div className="ws-hero-badge">Website</div>
+                        </div>
                         <h1 className="ws-title">{ws.hero.title}</h1>
                         <p className="ws-subtitle">{ws.hero.subtitle}</p>
                         <a href="/Webtoleadform.html" className="btn-nova-glow">
@@ -100,17 +111,6 @@ const ServicesPage = () => {
 
 
 
-
-            {/* Premium Combo Equation - Below Arsenal */}
-            <section className="ws-combo-section">
-                <div className="container ws-combo-container">
-                    <div className="ws-combo-part ws-combo-highlight">{ws.combo.part1}</div>
-                    <div className="ws-combo-operator">+</div>
-                    <div className="ws-combo-part ws-combo-highlight">{ws.combo.part2}</div>
-                    <div className="ws-combo-operator">=</div>
-                    <div className="ws-combo-part ws-combo-result">{ws.combo.result}</div>
-                </div>
-            </section>
 
             {/* CRM Section (Merged) */}
             <div className="merged-crm-section">

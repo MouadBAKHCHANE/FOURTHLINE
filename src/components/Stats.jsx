@@ -67,25 +67,23 @@ const StatItem = ({ number, suffix, label }) => {
 const Stats = () => {
     const { t } = useLanguage();
 
-    const statsData = [
-        { number: 2, suffix: "k+", label: t.stats.projects },
-        { number: 1, suffix: "M+", label: t.stats.satisfaction },
-        { number: 150, suffix: "+", label: t.stats.experience },
-        { number: 8, suffix: "+", label: t.stats.systems }
-    ];
-
     return (
-        <section className="stats-section" id="projects">
+        <section className="stats-section" id="stats">
             <div className="container">
-                <div className="stats-grid">
-                    {statsData.map((stat, index) => (
-                        <StatItem
-                            key={index}
-                            number={stat.number}
-                            suffix={stat.suffix}
-                            label={stat.label}
-                        />
-                    ))}
+                <div className="formula-container">
+                    <div className="equation-row">
+                        <div className="formula-item">
+                            {t.stats.formula.item1}
+                        </div>
+                        <div className="operator">+</div>
+                        <div className="formula-item">
+                            {t.stats.formula.item2}
+                        </div>
+                        <div className="operator">=</div>
+                    </div>
+                    <div className="formula-result">
+                        {t.stats.formula.result}
+                    </div>
                 </div>
             </div>
         </section>

@@ -124,10 +124,17 @@ export const translations = {
             cta: "⚡ Start Your Build"
         },
         stats: {
-            projects: "Leads Generated",
-            satisfaction: "Revenue Influenced",
-            experience: "Hours Automated",
-            systems: "CRM Deployments"
+            projects: "Projects Completed",
+            satisfaction: "Client Satisfaction",
+            experience: "Years Experience",
+            systems: "Systems Optimized",
+            formula: {
+                seed: "Your Vision",
+                item1: "Premium Website",
+                item2: "Powerful CRM",
+                result: "Scale & Grow",
+                tagline: "From idea to empire. We build the infrastructure for your digital dominance."
+            }
         },
         footer: {
             newsletterTitle: "Stay Connected &",
@@ -496,7 +503,14 @@ export const translations = {
             projects: "Leads Générés",
             satisfaction: "Revenu Influencé",
             experience: "Heures Automatisées",
-            systems: "Déploiements CRM"
+            systems: "Déploiements CRM",
+            formula: {
+                seed: "Votre Vision",
+                item1: "Site Web Premium",
+                item2: "CRM Puissant",
+                result: "Scaler & Croître",
+                tagline: "De l'idée à l'empire. Nous construisons l'infrastructure de votre domination digitale."
+            }
         },
         footer: {
             newsletterTitle: "Restez Connecté &",

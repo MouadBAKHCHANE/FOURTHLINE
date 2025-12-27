@@ -5,6 +5,26 @@
     font-family: 'Outfit', sans-serif;
 }
 
+/* Hero Badge - Small pill tag */
+.ws-hero-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ws-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
 /* Hero Section - Creative Redesign */
 .ws-hero {
     position: relative;
@@ -13,6 +33,22 @@
     min-height: 90vh;
     display: flex;
     align-items: center;
+}
+
+/* Extended hero with GrowthFormula at top */
+.ws-hero.ws-hero-extended {
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 120px;
+}
+
+.ws-hero-formula {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.ws-hero-extended .ws-hero-container {
+    width: 100%;
 }
 
 .ws-hero-bg {
@@ -292,8 +328,28 @@
     }
 
     .preview-card {
-        bottom: 20px;
+        bottom: -20px;
         right: -10px;
+        width: 180px;
+        padding: 12px;
+    }
+
+    .preview-avatar {
+        width: 28px;
+        height: 28px;
+    }
+
+    .preview-header {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .preview-stat .stat-num {
+        font-size: 1.2rem;
+    }
+
+    .preview-stat .stat-label {
+        font-size: 0.6rem;
     }
 }
 

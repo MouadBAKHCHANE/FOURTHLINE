@@ -30,7 +30,7 @@ const Home = () => {
             <ProblemSection />
             <SolutionTimeline />
             <Solutions />
-            <Stats />
+            {/* Stats removed as requested */}
             <ResultsSection />
 
             <Services />
