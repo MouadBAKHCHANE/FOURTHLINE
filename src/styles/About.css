@@ -1,10 +1,12 @@
 .hero {
-    padding-top: 180px;
-    /* Space for floating nav */
-    padding-bottom: 80px;
-    min-height: 100vh;
+    padding-top: 140px;
+    /* Match Services Hero */
+    padding-bottom: 100px;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* Vertical Center */
     align-items: center;
     overflow: visible;
     /* Changed from hidden to allow mascot overlap */
@@ -133,7 +135,7 @@
     gap: 40px;
     align-items: center;
     white-space: nowrap;
-    animation: scrollLogos 30s linear infinite;
+    animation: scrollLogos 5s linear infinite;
     padding-right: 40px;
 }
 

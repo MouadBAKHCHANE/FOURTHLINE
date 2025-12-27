@@ -59,7 +59,7 @@
 
 /* Card */
 .result-card {
-    height: 480px;
+    height: 380px;
     border-radius: 24px;
     position: relative;
     overflow: hidden;
@@ -117,7 +117,7 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px;
     z-index: 2;
     transition: all 0.3s ease;
 }
@@ -133,10 +133,10 @@
 }
 
 .result-card-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .stats-row {
@@ -165,7 +165,7 @@
 }
 
 .stat-val {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     line-height: 1;
 }

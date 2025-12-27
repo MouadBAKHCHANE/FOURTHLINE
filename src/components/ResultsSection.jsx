@@ -74,7 +74,6 @@ const ResultsSection = () => {
 
                             {/* Content Overlay */}
                             <div className="result-content-box">
-                                <span className="result-project-name">{card.name}</span>
                                 <h3 className="result-card-title">{card.title}</h3>
 
                                 <div className="stats-row">

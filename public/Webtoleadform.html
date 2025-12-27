@@ -4,21 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1LF0XWNN6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S1LF0XWNN6');
+    </script>
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
     <title>Start Your Build | Seedsvision</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap');
 
         :root {
-            --bg-primary: #0B0C10;
-            --bg-secondary: #12141a;
+            --bg-dark: #020408;
+            --card-bg: #0f1115;
             --accent-blue: #00A1E0;
-            --accent-green: #10b981;
+            --accent-glow: rgba(0, 161, 224, 0.4);
             --text-primary: #ffffff;
-            --text-secondary: #A1A1AA;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-            --font-heading: 'Outfit', 'Inter', sans-serif;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
         }
 
         * {
@@ -28,84 +37,77 @@
         }
 
         body {
-            background: radial-gradient(circle at 50% 0%, #1a2744 0%, #0B0C10 60%);
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(0, 161, 224, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 90%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
             color: var(--text-primary);
             font-family: var(--font-main);
-            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: relative;
             overflow-x: hidden;
         }
 
-        /* Glowing Blobs */
+        /* Ambient Glow */
         body::before {
             content: '';
             position: absolute;
-            top: -20%;
-            left: -10%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(0, 161, 224, 0.15) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: 0;
-            animation: float 10s infinite ease-in-out;
-        }
-
-        body::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            right: -10%;
-            width: 50%;
-            height: 50%;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
             background: radial-gradient(circle, rgba(0, 161, 224, 0.1) 0%, transparent 70%);
-            filter: blur(100px);
-            z-index: 0;
-            animation: float 15s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(30px, 30px);
-            }
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
         }
 
         .main-container {
-            z-index: 20;
-            position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 550px;
+            position: relative;
+            z-index: 1;
         }
 
         .form-card {
-            background: #12141a;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(20px);
+            background: rgba(15, 17, 21, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+                0 40px 80px -20px rgba(0, 0, 0, 0.6);
             position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle top shine */
+        .form-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
         /* Progress Bar */
         .progress-wrapper {
             margin-bottom: 40px;
+            padding: 0 10px;
         }
 
         .progress-steps {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
+            position: relative;
         }
 
         .progress-step {
@@ -114,25 +116,29 @@
             align-items: center;
             flex: 1;
             position: relative;
+            z-index: 1;
         }
 
+        /* Connection Lines */
         .progress-step::before {
             content: '';
             position: absolute;
-            top: 15px;
-            left: 50%;
+            top: 16px;
+            left: -50%;
             width: 100%;
             height: 2px;
             background: rgba(255, 255, 255, 0.1);
             z-index: -1;
+            transition: background 0.4s ease;
         }
 
         .progress-step:first-child::before {
             display: none;
         }
 
-        .progress-step.active::before,
-        .progress-step.completed::before {
+        /* Active/Completed Line Color */
+        .progress-step.completed+.progress-step::before,
+        .progress-step.active::before {
             background: var(--accent-blue);
         }
 
@@ -140,145 +146,95 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #1e293b;
+            border: 2px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .progress-step.active .step-number {
             background: var(--accent-blue);
             border-color: var(--accent-blue);
-            box-shadow: 0 0 20px rgba(0, 161, 224, 0.5);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 161, 224, 0.4);
+            transform: scale(1.1);
         }
 
         .progress-step.completed .step-number {
-            background: var(--accent-green);
-            border-color: var(--accent-green);
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: #fff;
+        }
+
+        /* Checkmark for completed steps */
+        .progress-step.completed .step-number::after {
+            content: '✓';
+            font-size: 0.8rem;
+        }
+
+        .progress-step.completed .step-number {
+            font-size: 0;
+            /* Hide number */
+        }
+
+        .progress-step.completed .step-number::after {
+            font-size: 0.9rem;
+            display: block;
         }
 
         .step-label {
             font-size: 0.75rem;
             color: var(--text-secondary);
-            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
         }
 
         .progress-step.active .step-label {
-            color: var(--text-primary);
-            font-weight: 500;
+            color: #fff;
         }
 
         /* Header */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         h2 {
             font-family: var(--font-heading);
-            font-size: 1.75rem;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #fff 0%, #A1A1AA 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         /* Form Steps */
         .form-step {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .form-step.active {
             display: block;
         }
 
-        @keyframes fadeIn {
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateX(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            margin-left: 4px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 12px 16px;
-            color: #fff;
-            font-family: var(--font-main);
-            font-size: 1rem;
-            width: 100%;
-            transition: all 0.2s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: rgba(0, 161, 224, 0.05);
-            box-shadow: 0 0 0 3px rgba(0, 161, 224, 0.1);
-        }
-
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23A1A1AA%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 12px;
-            cursor: pointer;
-        }
-
-        select option {
-            background-color: #12141a;
-            color: #fff;
-            padding: 10px;
-        }
-
-        .other-field {
-            display: none;
-            margin-top: 10px;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(20px);
             }
 
             to {
@@ -287,50 +243,124 @@
             }
         }
 
-        /* Navigation Buttons */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 10px;
+        }
+
+        /* Premium Inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* Darker border */
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #fff;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        input:hover,
+        select:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 4px rgba(0, 161, 224, 0.15);
+        }
+
+        /* Custom Select Arrow */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px;
+        }
+
+        /* Buttons */
         .form-navigation {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 16px;
+            margin-top: 40px;
         }
 
         .btn {
             flex: 1;
-            padding: 14px 24px;
-            border-radius: 10px;
+            padding: 16px;
+            border-radius: 12px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
             font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
             font-family: var(--font-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .btn-primary {
-            background: var(--accent-blue);
-            color: #fff;
+            background: linear-gradient(135deg, #00A1E0 0%, #0077A8 100%);
+            color: white;
+            box-shadow: 0 20px 40px -12px rgba(0, 161, 224, 0.4);
         }
 
         .btn-primary:hover {
-            background: #0081b3;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 161, 224, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 161, 224, 0.5);
+            filter: brightness(1.1);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
+            background: transparent;
             color: var(--text-secondary);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+        /* Other fields animation */
+        .other-field {
+            display: none;
+            margin-top: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @media (max-width: 480px) {
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
 
         /* Success Screen */
@@ -338,106 +368,27 @@
             display: none;
             text-align: center;
             padding: 40px 20px;
-            animation: fadeIn 0.5s ease;
         }
 
         .success-screen.active {
             display: block;
+            animation: slideUp 0.5s ease;
         }
 
         .success-icon {
             width: 80px;
             height: 80px;
-            background: rgba(16, 185, 129, 0.15);
+            background: rgba(16, 185, 129, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 24px;
-            animation: scaleIn 0.5s ease;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-
-            to {
-                transform: scale(1);
-            }
+            color: #10b981;
         }
 
         .checkmark {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--accent-green);
-            position: relative;
-        }
-
-        .checkmark::after {
-            content: '';
-            position: absolute;
-            left: 14px;
-            top: 8px;
-            width: 8px;
-            height: 16px;
-            border: solid white;
-            border-width: 0 3px 3px 0;
-            transform: rotate(45deg);
-        }
-
-        .success-screen h3 {
-            font-family: var(--font-heading);
-            font-size: 1.75rem;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .success-screen p {
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .redirect-note {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 20px;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .form-card {
-                padding: 30px 24px;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .progress-steps {
-                margin-bottom: 10px;
-            }
-
-            .step-number {
-                width: 28px;
-                height: 28px;
-                font-size: 0.75rem;
-            }
-
-            .step-label {
-                font-size: 0.65rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            .form-card {
-                padding: 24px 20px;
-            }
+            font-size: 2rem;
         }
     </style>
 </head>

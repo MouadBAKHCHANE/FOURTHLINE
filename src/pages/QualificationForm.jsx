@@ -3,9 +3,8 @@ import '../styles/QualificationForm.css';
 import { useLanguage } from '../App';
 import { useNavigate } from 'react-router-dom';
 import {
-    ArrowRight, Check, ArrowLeft, Briefcase, TrendingUp, Code, User,
-    Truck, Building, GraduationCap, Factory, Globe, Layout, Database,
-    Plug, Frown, Search, Zap, Clock, ShieldCheck, CreditCard, PieChart, CheckCircle
+    ArrowRight, Check, ArrowLeft, Globe, Database,
+    Users, DollarSign, Send, Briefcase, Building, Layers
 } from 'lucide-react';
 
 const QualificationForm = () => {
@@ -13,11 +12,13 @@ const QualificationForm = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState(1);
     const [showSuccess, setShowSuccess] = useState(false);
+
+    // Form Data - Matching WebToLead structure
     const [formData, setFormData] = useState({
-        role: '', roleOther: '', companyName: '', industry: '', industryOther: '',
-        needType: '', websiteFormat: '', painPoint: '',
-        crmChoice: '', crmUsers: '', crmOther: '', budget: '', budgetOther: '',
-        name: '', email: '', phone: ''
+        firstName: '', lastName: '', email: '', phone: '',
+        company: '', role: '',
+        goal: '',
+        budget: ''
     });
 
     useEffect(() => {
@@ -25,7 +26,6 @@ const QualificationForm = () => {
     }, []);
 
     const totalSteps = 4;
-    const progress = ((step - 1) / totalSteps) * 100;
 
     const handleNext = () => { if (step < totalSteps) setStep(step + 1); };
     const handleBack = () => { if (step > 1) setStep(step - 1); };
@@ -34,41 +34,18 @@ const QualificationForm = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    const handleSelect = (field, value) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Map React state values to Salesforce Picklist values
-        const needTypeMap = {
-            'Site Web': 'Website Only',
-            'CRM': 'CRM Setup',
-            'Les Deux': 'Website + CRM'
-        };
-
-        const painPointMap = {
-            'Lost Leads': 'Losing Leads',
-            'No Visibility': 'No Visibility',
-            'Slow Site': 'Slow Website',
-            'Manual Work': 'Manual Data'
-        };
-
-        const budgetMap = {
-            'Essential': '15k - 25k MAD',
-            'Growth': '25k - 45k MAD',
-            'Enterprise': '> 45k MAD',
-            'Autre': 'Other'
-        };
-
-        // Split Name
-        const fullName = formData.name.trim();
-        const names = fullName.split(' ');
-        const firstName = names[0];
-        const lastName = names.slice(1).join(' ') || '.'; // Salesforce requires Last Name
-
-        // Create Hidden Form
+        // Construct Salesforce Form
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV';
-        // form.target = '_blank'; // Optional: Open in new tab if you don't want to redirect page
+        // form.target = '_blank'; // Optional
 
         const appendField = (name, value) => {
             const input = document.createElement('input');
@@ -78,279 +55,176 @@ const QualificationForm = () => {
             form.appendChild(input);
         };
 
-        // Standard Fields
         appendField('oid', '00DQH00000KAqzV');
-        appendField('retURL', 'https://www.seedsvision.com/small-business'); // Direct Success URL
+        appendField('retURL', 'https://www.seedsvision.com/small-business');
 
-        appendField('first_name', firstName);
-        appendField('last_name', lastName);
+        // Map Standard Fields
+        appendField('first_name', formData.firstName);
+        appendField('last_name', formData.lastName);
         appendField('email', formData.email);
         appendField('phone', formData.phone);
-        appendField('company', formData.companyName);
+        appendField('company', formData.company);
 
-        // Custom Fields
-        appendField('00NQH00000NSvqv', formData.role);                // Role
-        appendField('00NQH00000NUGN3', formData.roleOther);           // Other Role
+        // Map Custom Fields (IDs based on previous file)
+        appendField('00NQH00000NSvqv', formData.role); // Role
+        appendField('00NQH00000NPSK1', formData.goal); // Primary Goal (using ID from contact.html if applicable, or fallback)
+        appendField('00NQH00000NSwLZ', formData.budget); // Budget/Investment
 
-        appendField('00NQH00000NSvyz', formData.industry);            // Industry
-        appendField('00NQH00000NUGOf', formData.industryOther);       // Other Industry
-
-        appendField('00NQH00000NSw8f', needTypeMap[formData.needType] || formData.needType); // Client Needs
-        appendField('00NQH00000NSwAH', painPointMap[formData.painPoint] || formData.painPoint); // Pain Point
-
-        appendField('00NQH00000NSwG1', formData.crmChoice);           // Preferred CRM
-        appendField('00NQH00000NUGQH', formData.crmOther);            // Other CRM
-
-        appendField('00NQH00000NSwLZ', budgetMap[formData.budget] || formData.budget);       // Investment
-        appendField('00NQH00000NUGJq', formData.budgetOther);         // Other Budget
-
-        // Submit
         document.body.appendChild(form);
         form.submit();
-
-        // Show success UI locally (though page will likely redirect)
         setShowSuccess(true);
     };
 
-    const steps = [
-        { num: 1, title: "Identity", subtitle: "Business & Role" },
-        { num: 2, title: "Scope", subtitle: "Project Needs" },
-        { num: 3, title: "Specs", subtitle: "CRM & Budget" },
-        { num: 4, title: "Finalize", subtitle: "Contact Info" }
+    // Steps Configuration matching the screenshot visual
+    const stepsConfig = [
+        { num: 1, label: "Contact" },
+        { num: 2, label: "Company" },
+        { num: 3, label: "Project" },
+        { num: 4, label: "Budget" }
     ];
 
     return (
-        <div className="qualification-wrapper">
-            <div className="qualification-container">
-                {/* Left Sidebar */}
-                <div className="sidebar">
-                    <div className="sidebar-header">
-                        <h3>Configuration</h3>
-                        <p>Build your digital engine.</p>
-                    </div>
+        <div className="qual-page-wrapper">
+            <div className="qual-card">
 
-                    <div className="steps-vertical">
-                        {steps.map((s) => (
-                            <div key={s.num} className={`step-row ${step === s.num ? 'active' : ''} ${step > s.num ? 'completed' : ''} `}>
-                                <div className="step-indicator">
+                {/* Stepper Header */}
+                <div className="stepper-header">
+                    <div className="step-line-bg"></div>
+                    <div className="step-line-fill" style={{ width: `${((step - 1) / (totalSteps - 1)) * 100}%` }}></div>
+
+                    <div className="steps-container">
+                        {stepsConfig.map((s) => (
+                            <div key={s.num} className={`step-item ${step >= s.num ? 'active' : ''} ${step > s.num ? 'completed' : ''}`}>
+                                <div className="step-circle">
                                     {step > s.num ? <Check size={16} /> : s.num}
                                 </div>
-                                <div className="step-content">
-                                    <span className="step-title">{s.title}</span>
-                                    <span className="step-subtitle">{s.subtitle}</span>
-                                </div>
+                                <span className="step-label">{s.label}</span>
                             </div>
                         ))}
                     </div>
-
-                    <div className="sidebar-footer">
-                        <div className="progress-label">Progress: {Math.round(((step - 1) / 4) * 100)}%</div>
-                        <div className="progress-bar-bg-sm">
-                            <div className="progress-bar-fill-sm" style={{ width: `${progress}% ` }}></div>
-                        </div>
-                    </div>
                 </div>
 
-                {/* Right Content */}
-                <div className="main-content">
-                    <form onSubmit={handleSubmit} className="form-content">
+                <div className="qual-content">
+                    <div className="qual-text-header">
+                        <h2>Start Building</h2>
+                        <p>Help us understand your needs</p>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="qual-form">
+
+                        {/* Step 1: Contact */}
                         {step === 1 && (
-                            <div className="step-pane fade-in">
-                                <h2 className="pane-title">Who are we building for?</h2>
-                                <p className="pane-subtitle">Help us tailor the experience to your role.</p>
-
-                                <label className="field-label">Your Role</label>
-                                <div className="cards-grid">
-                                    {[
-                                        { val: 'Dirigeant / Gérant', icon: <Briefcase />, label: 'CEO / Founder' },
-                                        { val: 'Directeur Commercial', icon: <TrendingUp />, label: 'Sales Director' },
-                                        { val: 'DSI / Chef de Projet', icon: <Code />, label: 'Tech Lead' },
-                                        { val: 'Autre', icon: <User />, label: 'Other' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`selection-card ${formData.role === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="role" value={opt.val} checked={formData.role === opt.val} onChange={handleChange} />
-                                            <div className="card-icon">{opt.icon}</div>
-                                            <span className="card-text">{opt.label}</span>
-                                        </label>
-                                    ))}
+                            <div className="form-step fade-in">
+                                <div className="input-row">
+                                    <div className="input-group">
+                                        <label>First Name *</label>
+                                        <input type="text" name="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} required />
+                                    </div>
+                                    <div className="input-group">
+                                        <label>Last Name *</label>
+                                        <input type="text" name="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} required />
+                                    </div>
                                 </div>
-                                {formData.role === 'Autre' && (
-                                    <input type="text" name="roleOther" className="input-text mt-4" placeholder="Please specify your role" value={formData.roleOther} onChange={handleChange} />
-                                )}
-
-                                <label className="field-label mt-8">Industry Sector</label>
-                                <div className="cards-grid">
-                                    {[
-                                        { val: 'Logistique', icon: <Truck />, label: 'Logistics' },
-                                        { val: 'Immobilier', icon: <Building />, label: 'Real Estate' },
-                                        { val: 'Education', icon: <GraduationCap />, label: 'Education' },
-                                        { val: 'Services B2B', icon: <Briefcase />, label: 'Consulting' },
-                                        { val: 'Industrie', icon: <Factory />, label: 'Industry' },
-                                        { val: 'Autre', icon: <Globe />, label: 'Other' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`selection-card ${formData.industry === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="industry" value={opt.val} checked={formData.industry === opt.val} onChange={handleChange} />
-                                            <div className="card-icon">{opt.icon}</div>
-                                            <span className="card-text">{opt.label}</span>
-                                        </label>
-                                    ))}
+                                <div className="input-group">
+                                    <label>Email *</label>
+                                    <input type="email" name="email" placeholder="john@company.com" value={formData.email} onChange={handleChange} required />
                                 </div>
-                                {formData.industry === 'Autre' && (
-                                    <input type="text" name="industryOther" className="input-text mt-4" placeholder="Please specify your industry" value={formData.industryOther} onChange={handleChange} />
-                                )}
+                                <div className="input-group">
+                                    <label>Phone</label>
+                                    <input type="tel" name="phone" placeholder="+212 6..." value={formData.phone} onChange={handleChange} />
+                                </div>
                             </div>
                         )}
 
+                        {/* Step 2: Company */}
                         {step === 2 && (
-                            <div className="step-pane fade-in">
-                                <h2 className="pane-title">Define the Scope</h2>
-                                <p className="pane-subtitle">What are the main components of your project?</p>
-
-                                <label className="field-label">Core Needs</label>
-                                <div className="cards-list">
-                                    {[
-                                        { val: 'Site Web', icon: <Layout />, label: 'Website Only', desc: 'High-performance digital presence.' },
-                                        { val: 'CRM', icon: <Database />, label: 'CRM Setup', desc: 'Internal sales infrastructure.' },
-                                        { val: 'Les Deux', icon: <Plug />, label: 'Website + CRM', desc: 'Integrated growth engine.' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`list-card ${formData.needType === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="needType" value={opt.val} checked={formData.needType === opt.val} onChange={handleChange} />
-                                            <div className="list-icon">{opt.icon}</div>
-                                            <div className="list-content">
-                                                <span className="list-title">{opt.label}</span>
-                                                <span className="list-desc">{opt.desc}</span>
-                                            </div>
-                                            {formData.needType === opt.val && <Check className="check-badge" size={20} />}
-                                        </label>
-                                    ))}
+                            <div className="form-step fade-in">
+                                <div className="input-group">
+                                    <label>Company Name *</label>
+                                    <input type="text" name="company" placeholder="Acme Inc." value={formData.company} onChange={handleChange} required />
                                 </div>
 
-                                <label className="field-label mt-8">Primary Pain Point</label>
-                                <div className="cards-grid">
-                                    {[
-                                        { val: 'Lost Leads', icon: <Frown />, label: 'Losing Leads' },
-                                        { val: 'No Visibility', icon: <Search />, label: 'No Visibility' },
-                                        { val: 'Slow Site', icon: <Zap />, label: 'Slow Website' },
-                                        { val: 'Manual Work', icon: <Clock />, label: 'Manual Data' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`selection-card ${formData.painPoint === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="painPoint" value={opt.val} checked={formData.painPoint === opt.val} onChange={handleChange} />
-                                            <div className="card-icon">{opt.icon}</div>
-                                            <span className="card-text">{opt.label}</span>
-                                        </label>
+                                <label className="field-label mt-4">Your Role</label>
+                                <div className="options-grid">
+                                    {['CEO / Founder', 'Sales Director', 'Marketing Lead', 'Other'].map(role => (
+                                        <div
+                                            key={role}
+                                            className={`option-card ${formData.role === role ? 'selected' : ''}`}
+                                            onClick={() => handleSelect('role', role)}
+                                        >
+                                            <span className="opt-text">{role}</span>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
                         )}
 
+                        {/* Step 3: Project */}
                         {step === 3 && (
-                            <div className="step-pane fade-in">
-                                <h2 className="pane-title">Technical Specs</h2>
-                                <p className="pane-subtitle">Structuring the deal.</p>
-
-                                <label className="field-label">Preferred CRM Platform</label>
-                                <div className="cards-grid two-col">
+                            <div className="form-step fade-in">
+                                <label className="field-label">Primary Goal</label>
+                                <div className="options-list">
                                     {[
-                                        { val: 'Salesforce', icon: <img src="/assets/salesforce.png" alt="Salesforce" className="crm-logo" />, label: 'Salesforce', sub: 'World Leader' },
-                                        { val: 'Odoo', icon: <img src="/assets/odoo_v2.png" alt="Odoo" className="crm-logo" />, label: 'Odoo', sub: 'Open Source' },
-                                        { val: 'Autre', icon: <Database />, label: 'Other', sub: 'Specify Below' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`selection-card large ${formData.crmChoice === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="crmChoice" value={opt.val} checked={formData.crmChoice === opt.val} onChange={handleChange} />
-                                            <div className="card-icon">{opt.icon}</div>
-                                            <span className="card-text">{opt.label}</span>
-                                            <span className="card-sub">{opt.sub}</span>
-                                        </label>
+                                        { val: 'Generate More Leads', icon: <Users size={18} /> },
+                                        { val: 'Organize Sales (CRM)', icon: <Database size={18} /> },
+                                        { val: 'Website Redesign', icon: <Globe size={18} /> },
+                                        { val: 'Automation', icon: <Layers size={18} /> }
+                                    ].map(goal => (
+                                        <div
+                                            key={goal.val}
+                                            className={`list-option ${formData.goal === goal.val ? 'selected' : ''}`}
+                                            onClick={() => handleSelect('goal', goal.val)}
+                                        >
+                                            <div className="opt-icon">{goal.icon}</div>
+                                            <span className="opt-text">{goal.val}</span>
+                                            {formData.goal === goal.val && <Check size={18} className="check-icon" />}
+                                        </div>
                                     ))}
                                 </div>
-                                {formData.crmChoice === 'Autre' && (
-                                    <input type="text" name="crmOther" className="input-text mt-4" placeholder="Please specify your CRM" value={formData.crmOther} onChange={handleChange} />
-                                )}
-
-                                <label className="field-label mt-8">Investment Range</label>
-                                <div className="cards-list compact">
-                                    {[
-                                        { val: 'Essential', icon: <CreditCard />, label: '15k - 25k MAD', desc: 'Starter Package' },
-                                        { val: 'Growth', icon: <PieChart />, label: '25k - 45k MAD', desc: 'Most Popular' },
-                                        { val: 'Enterprise', icon: <ShieldCheck />, label: '> 45k MAD', desc: 'Full Custom' },
-                                        { val: 'Autre', icon: <Briefcase />, label: 'Other', desc: 'Custom Budget' }
-                                    ].map(opt => (
-                                        <label key={opt.val} className={`list-card ${formData.budget === opt.val ? 'selected' : ''} `}>
-                                            <input type="radio" name="budget" value={opt.val} checked={formData.budget === opt.val} onChange={handleChange} />
-                                            <div className="list-icon sm">{opt.icon}</div>
-                                            <div className="list-content">
-                                                <span className="list-title">{opt.label}</span>
-                                                <span className="list-desc">{opt.desc}</span>
-                                            </div>
-                                        </label>
-                                    ))}
-                                </div>
-                                {formData.budget === 'Autre' && (
-                                    <input type="text" name="budgetOther" className="input-text mt-4" placeholder="Please specify your budget" value={formData.budgetOther} onChange={handleChange} />
-                                )}
                             </div>
                         )}
 
+                        {/* Step 4: Budget */}
                         {step === 4 && (
-                            <div className="step-pane fade-in">
-                                <h2 className="pane-title">Final Touch</h2>
-                                <p className="pane-subtitle">Where should we send the proposal?</p>
-
-                                <div className="contact-form-grid">
-                                    <div className="input-group">
-                                        <label>Full Name</label>
-                                        <input type="text" name="name" className="input-text" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
-                                    </div>
-                                    <div className="input-group">
-                                        <label>Email Address</label>
-                                        <input type="email" name="email" className="input-text" placeholder="john@company.com" value={formData.email} onChange={handleChange} required />
-                                    </div>
-                                    <div className="input-group">
-                                        <label>Phone Number</label>
-                                        <input type="tel" name="phone" className="input-text" placeholder="+212 6..." value={formData.phone} onChange={handleChange} required />
-                                    </div>
-                                    <div className="input-group">
-                                        <label>Company Name</label>
-                                        <input type="text" name="companyName" className="input-text" placeholder="Acme Corp" value={formData.companyName} onChange={handleChange} />
-                                    </div>
+                            <div className="form-step fade-in">
+                                <label className="field-label">Estimated Budget (MAD)</label>
+                                <div className="options-grid">
+                                    {['15k - 25k', '25k - 45k', '> 45k', 'Unsure'].map(b => (
+                                        <div
+                                            key={b}
+                                            className={`option-card ${formData.budget === b ? 'selected' : ''}`}
+                                            onClick={() => handleSelect('budget', b)}
+                                        >
+                                            <span className="opt-text">{b}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         )}
 
-                        <div className="form-footer">
-                            {step > 1 ? (
-                                <button type="button" className="nav-btn prev" onClick={handleBack}>
-                                    <ArrowLeft size={18} /> Back
-                                </button>
-                            ) : <div></div>}
-
+                        {/* Navigation */}
+                        <div className="form-actions">
                             {step < totalSteps ? (
-                                <button type="button" className="nav-btn next" onClick={handleNext}>
-                                    Next Step <ArrowRight size={18} />
+                                <button type="button" className="action-btn next" onClick={handleNext}>
+                                    Next <ArrowRight size={18} />
                                 </button>
                             ) : (
-                                <button type="submit" className="nav-btn submit">
-                                    Submit Request <Check size={18} />
+                                <button type="submit" className="action-btn submit">
+                                    Submit <Send size={18} />
+                                </button>
+                            )}
+
+                            {step > 1 && (
+                                <button type="button" className="back-link-btn" onClick={handleBack}>
+                                    Back
                                 </button>
                             )}
                         </div>
+
                     </form>
                 </div>
-            </div >
-
-            {/* Success Popup Overlay */}
-            {showSuccess && (
-                <div className="success-overlay fade-in">
-                    <div className="success-card-popup">
-                        <div className="success-icon-wrapper">
-                            <CheckCircle size={48} color="#10b981" />
-                        </div>
-                        <h3>Request Received!</h3>
-                        <p>We'll be in touch shortly to discuss your project.</p>
-                    </div>
-                </div>
-            )}
-        </div >
+            </div>
+        </div>
     );
 };
 

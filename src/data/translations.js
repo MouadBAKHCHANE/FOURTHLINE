@@ -1,6 +1,7 @@
 export const translations = {
     en: {
         nav: {
+            home: "Home",
             product: "Services",
             industries: "Industries",
             careers: "Careers",
@@ -370,6 +371,7 @@ export const translations = {
 
     fr: {
         nav: {
+            home: "Accueil",
             product: "Services",
             industries: "Industries",
             careers: "Carrières",
