@@ -41,6 +41,10 @@
     overflow: visible;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    /* Force Left Align */
+    align-items: flex-start;
+    /* Force Flex Items Left */
 }
 
 .pricing-card:hover {
@@ -103,6 +107,8 @@
     list-style: none;
     margin-bottom: 40px;
     flex-grow: 1;
+    width: 100%;
+    /* Ensure full width */
 }
 
 .feature-list li {
