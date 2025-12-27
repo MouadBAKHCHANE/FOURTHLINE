@@ -15,6 +15,12 @@ export const translations = {
         hero: {
             title: "Turning Vision",
             titleHighlight: "Into Digital Power",
+            mainTitle: "We Design And Engineer", // New key
+            dynamicPhrases: [ // New key
+                "Digital infra",
+                "CRM to scale",
+                "Premium websites"
+            ],
             subtitle: "We build the digital infrastructure for business. Professional websites integrated directly with CRM to scale.",
             startBuild: "Start Your Build",
             viewSystem: "View the System",
@@ -190,7 +196,7 @@ export const translations = {
         },
         smallBusiness: {
             navLink: "CRM",
-            title: "The Power of the #1 CRM, Built for the Scale of Your Business.",
+            title: "The Power of the #1 CRM",
             finalCta: {
                 title: ["Stop losing leads.", "Start building your system."],
                 button: "Get Your Audit"
@@ -304,11 +310,11 @@ export const translations = {
             title: "Our Results Speak For Themselves",
             beforeLabel: "Before Market Growth",
             afterLabel: "After Market Increase",
-            card1: { title: "Keyword Research and Analysis" },
-            card2: { title: "Social Media Mastery" },
-            card3: { title: "Marketing Strategy" },
-            card4: { title: "Driving Organic Traffic" },
-            card5: { title: "Video Editing SaaS" }
+            card1: { name: "Dreelio", title: "Keyword Research and Analysis" },
+            card2: { name: "FitFlow", title: "Social Media Mastery" },
+            card3: { name: "Glade", title: "Marketing Strategy" },
+            card4: { name: "Refit", title: "Driving Organic Traffic" },
+            card5: { name: "Editor", title: "Video Editing SaaS" }
         },
         websitePage: {
             hero: {
@@ -369,7 +375,7 @@ export const translations = {
             careers: "Carrières",
             docs: "Méthodologie",
             projects: "Projets",
-            pricing: "Tarifs",
+            pricing: "Prix",
             signin: "Connexion",
             blog: "Blog",
             contact: "Contact",
@@ -378,8 +384,14 @@ export const translations = {
         hero: {
             title: "Transformer la Vision",
             titleHighlight: "En Puissance Numérique",
-            subtitle: "Nous construisons l'infrastructure numérique des entreprises marocaines. Des sites web professionnels intégrés directement à Salesforce CRM pour capturer chaque lead, automatiquement.",
-            startBuild: "Commencer",
+            mainTitle: "Nous Concevons et Développons",
+            dynamicPhrases: [
+                "Infra numérique",
+                "CRM pour scaler",
+                "Sites web premium"
+            ],
+            subtitle: "Nous construisons l'infrastructure numérique des entreprises. Des sites web professionnels intégrés directement à un CRM pour évoluer.",
+            startBuild: "Commencer Votre Build",
             viewSystem: "Voir le Système",
             contactUs: "Contactez-nous",
             salesPipeline: "Pipeline de Vente",
@@ -389,38 +401,55 @@ export const translations = {
             trustedBy: "20+ entreprises propulsées par notre système"
         },
         problem: {
-            title: "La Déconnexion",
-            subtitle: "La plupart des entreprises ont un fossé critique entre leurs efforts marketing et leurs résultats commerciaux.",
-            card1Title: "Marketing et Ventes sont isolés.",
-            card1Desc: "Les leads générés en ligne tombent dans un trou noir avant d'atteindre votre équipe commerciale.",
-            card2Stat: "60%",
-            card2Label: "des leads sont perdus",
-            card2Desc: "enterrés dans des fichiers Excel manuels et des emails oubliés.",
-            card3Title: "La lenteur tue les affaires.",
-            card3Desc: "Chaque minute de retard réduit la probabilité de conversion de 10%."
+            headline: "Quand les personnes travaillent avec nous {switch}",
+            toggle: {
+                do: "OUI",
+                dont: "NON"
+            },
+            stat: "75% des utilisateurs perdent confiance en une entreprise si le design de son site est mauvais.",
+            subDo: "Attendez-vous à des solutions créatives, une communication claire et des résultats adaptés à votre vision.",
+            subDont: "Attendez-vous à des modèles génériques, des délais manqués et des systèmes inadaptés.",
+            cards: {
+                do: [
+                    { title: "Landing Page & Sites Premium", desc: "Un design qui inspire confiance instantanément." },
+                    { title: "Intégration Salesforce CRM", desc: "Capturez et organisez chaque lead automatiquement." },
+                    { title: "IA & Automatisations", desc: "Travaillez mieux avec des workflows intelligents." },
+                    { title: "Analytics & Insights", desc: "Décisions basées sur les données pour la croissance." },
+                    { title: "Service & Support", desc: "Partenariat à long terme pour le succès." },
+                    { title: "Développement Sur Mesure", desc: "Solutions évolutives pour besoins complexes." }
+                ],
+                dont: [
+                    { title: "Designs Génériques", desc: "Modèles sans inspiration qui passent inaperçus." },
+                    { title: "Mauvaise Expérience Utilisateur", desc: "Navigation frustrante qui tue les conversions." },
+                    { title: "Faible Visibilité", desc: "Sites qui disparaissent des résultats de recherche." },
+                    { title: "Fonctionnalité Limitée", desc: "Systèmes qui cassent quand vous grandissez." },
+                    { title: "Délais Manqués", desc: "Projets qui s'éternisent." },
+                    { title: "Support Inadéquat", desc: "Silence radio après la facture finale." }
+                ]
+            }
         },
         solutionVisual: {
-            title: "La Solution",
+            title: "Transformer la Vision en Puissance Numérique",
             subtitle: "Combler le fossé avec une infrastructure automatisée et intelligente."
         },
         solution: {
-            title: "La Roadmap",
-            subtitle: "Notre Stratégie",
+            title: "Processus de Travail",
+            subtitle: "Notre Stratégie Éprouvée",
             step1Title: "L'Audit",
-            step1Desc: "Nous trouvons exactement où vous perdez de l'argent dans votre processus actuel.",
+            step1Desc: "Nous auditons votre flux actuel pour trouver exactement où vous perdez de l'argent.",
             step2Title: "Le Site Web",
-            step2Desc: "Un site web haute performance conçu pour convertir, pas juste pour faire joli.",
+            step2Desc: "Nous construisons un site haute performance conçu pour convertir, pas juste pour faire joli.",
             step3Title: "Le CRM",
-            step3Desc: "Formulaires connectés à Salesforce. Zéro saisie manuelle. Évolutivité infinie.",
+            step3Desc: "Nous connectons vos formulaires à Salesforce. Zéro saisie manuelle. Évolutivité infinie.",
             step4Title: "La Formation",
-            step4Desc: "Nous formons votre équipe et remettons les clés d'une machine de vente autonome.",
+            step4Desc: "Nous formons votre équipe et vous remettons les clés d'une machine de vente autonome.",
             week1: "Semaine 1",
             week2: "Semaine 2",
             week3: "Semaine 3",
             week4: "Semaine 4"
         },
         services: {
-            title: "Choisissez Votre Moteur de Croissance",
+            title: "Choisissez Votre Système de Croissance",
             subtitle: "Arrêtez d'acheter juste un site web. Investissez dans une infrastructure de vente complète.",
             tier1Name: "L'Accélérateur",
             tier1Badge: "Vitesse Commerciale",
@@ -433,15 +462,15 @@ export const translations = {
             tier2Name: "Le Dominateur",
             tier2Badge: "Leader du Marché",
             tier2Desc: "Domination numérique totale. Un écosystème sur mesure qui gère des milliers de leads sans transpirer.",
-            tier2Feat1: "Plateforme Corporate Complète",
+            tier2Feat1: "Plateforme Corporate Complète (Scalable)",
             tier2Feat2: "CRM Avancé & Reporting",
             tier2Feat3: "Logique IA de Lead Scoring",
-            tier2Feat4: "Formation Équipe Commerciale",
+            tier2Feat4: "Onboarding Équipe Commerciale",
             tier2Feat5: "30 Jours de Support Croissance",
             tier2Button: "Construire L'Empire"
         },
         techStack: {
-            title: "L'Ingénierie de la Vitesse Digitale.",
+            title: "Ingénierie de la Vitesse Digitale.",
             cards: {
                 nocode: {
                     title: "Design-First & Déploiement Rapide",
@@ -456,7 +485,7 @@ export const translations = {
                 custom: {
                     title: "Next.js/React - Potentiel Illimité",
                     platform: "Stack Sur-Mesure",
-                    desc: "Sécurité bancaire et performance ultra-rapide. Pour les applications web complexes nécessitant logique robuste et échelle."
+                    desc: "Sécurité bancaire et performance ultra-rapide. Pour les applications web complexes nécessitant une logique robuste."
                 }
             },
             cta: "⚡ Commencer Votre Build"
@@ -472,9 +501,9 @@ export const translations = {
             newsletterTitleHighlight: "Abonnez-vous !",
             newsletterPlaceholder: "Votre Adresse Email",
             newsletterButton: "S'abonner",
-            sections: "RUBRIQUES",
-            utility: "UTILITAIRE",
-            social: "RÉSEAUX",
+            sections: "Sections",
+            utility: "Utilitaire",
+            social: "Social",
             rights: "Tous droits réservés.",
             poweredBy: "Propulsé par Seedsvision",
             brandAddr: "Casablanca, Maroc",
@@ -495,15 +524,15 @@ export const translations = {
         solutionsSection: {
             title: "Votre Industrie,",
             titleHighlight: "Notre Expertise",
-            subtitle: "Des systèmes de vente conçus pour les réalités de votre marché.\nBuild your system, not just a website.",
+            subtitle: "Des systèmes de vente conçus pour les réalités de votre marché.\nConstruisez un système, pas juste un site.",
             logistics: {
                 title: "Logistique & Transport",
-                role: "Gérant de Flotte",
+                role: "Directeur de Flotte",
                 pain: "Devis perdus dans les emails.",
-                solution: "Attribution auto au commercial fret.",
+                solution: "Attribution auto aux ventes fret.",
                 result: "Réponse en < 15 min.",
-                dashTitle: "Logistics Overview",
-                dashList: ["Freight Quote #2929", "Route: CMN -> PAR", "Customs Doc pending"]
+                dashTitle: "Aperçu Logistique",
+                dashList: ["Devis Fret #2929", "Route: CMN -> PAR", "Doc Douane En Attente"]
             },
             realEstate: {
                 title: "Immobilier",
@@ -511,8 +540,8 @@ export const translations = {
                 pain: "Suivi papier & leads oubliés.",
                 solution: "Centralisation & Tri par budget.",
                 result: "Pipeline 100% visible.",
-                dashTitle: "Real Estate CRM",
-                dashList: ["Villa Inquiry - Anfa", "Budget: > 5M DH", "Appointment Scheduled"]
+                dashTitle: "CRM Immobilier",
+                dashList: ["Demande Villa - Anfa", "Budget: > 5M DH", "Rendez-vous Programmé"]
             },
             education: {
                 title: "Éducation",
@@ -520,29 +549,29 @@ export const translations = {
                 pain: "Dossiers d'inscription en chaos.",
                 solution: "Portail d'admission sécurisé.",
                 result: "Image moderne & zéro papier.",
-                dashTitle: "Admissions Portal",
-                dashList: ["Student: Sara B.", "Status: Accepted", "Docs Verified"]
+                dashTitle: "Portail Admissions",
+                dashList: ["Étudiant: Sara B.", "Statut: Accepté", "Docs Vérifiés"]
             },
             b2b: {
                 title: "Services B2B",
-                role: "Consulting",
+                role: "Consultant",
                 pain: "Image amateur (Gmail/Excel).",
-                solution: "Espace client & CRM Pro.",
+                solution: "Portail Client & CRM Pro.",
                 result: "Confiance & Signature rapide.",
-                dashTitle: "Consulting Hub",
-                dashList: ["Audit Corp - Q3", "Invoice Sent", "Renewal: 30 Days"]
+                dashTitle: "Hub Consulting",
+                dashList: ["Audit Corp - Q3", "Facture Envoyée", "Renouvellement: 30 Jours"]
             }
         },
         smallBusiness: {
             navLink: "CRM",
-            title: "La puissance du CRM n°1, conçue à l'échelle de votre entreprise.",
+            title: "La Puissance du CRM n°1",
             finalCta: {
                 title: ["Arrêtez de perdre des leads.", "Commencez à construire votre système."],
                 button: "Obtenir votre Audit"
             },
             packages: {
                 launchpad: {
-                    name: "La Rampe de Lancement (Starter)",
+                    name: "Le Lancement (Starter)",
                     target: "Entrepreneurs solo & équipes < 5.",
                     feat1: "Landing Page Haute Performance",
                     feat2: "Intégration Salesforce Free Suite",
@@ -552,26 +581,26 @@ export const translations = {
                 engine: {
                     name: "Le Moteur (Scalable)",
                     target: "Équipes en croissance prêtes à automatiser.",
-                    feat1: "Site Corporatif Complet",
+                    feat1: "Site Web Corporate Complet",
                     feat2: "Configuration Avancée Salesforce Pro Suite",
-                    feat3: "Scoring de Leads IA (Einstein)",
+                    feat3: "Scoring de Leads IA (Logique Einstein)",
                     feat4: "Tableau de Bord Commercial & Onboarding"
-                },
+                }
             },
             hook: {
                 title: "Arrêtez de gérer votre entreprise sur Excel.",
-                text: "Nous construisons votre site web et le connectons à la Suite Gratuite Salesforce. Vous obtenez le CRM le plus puissant au monde pour 0$/mois, et nous gérons 100% de la configuration technique.",
-                valueProp: "Nous ne vous donnons pas juste un site web; nous vous donnons un moteur de revenus. Votre site capture le lead, Salesforce l'organise, et vous vous concentrez sur la vente."
+                text: "Nous construisons votre site web et le connectons à la Suite Gratuite Salesforce. Vous obtenez le CRM le plus puissant au monde pour 0$/mois (jusqu'à 2 utilisateurs), et nous gérons 100% de la configuration technique.",
+                valueProp: "Nous ne vous donnons pas juste un site web; nous vous donnons un moteur de revenus. Votre site capture le lead, Salesforce l'organise, et vous vous concentrez sur la conclusion du deal."
             },
             industries: {
                 agencies: "Agences de Service",
-                agenciesDesc: "Arrêtez de perdre des leads dans votre boîte Gmail. Votre site envoie chaque demande directement sur votre app mobile Salesforce.",
+                agenciesDesc: "Arrêtez de perdre des leads dans votre boîte de réception. Votre site envoie chaque demande directement sur votre app mobile Salesforce.",
                 retail: "Retail & Boutiques",
                 retailDesc: "Connectez votre boutique en ligne à une base client qui se souvient automatiquement des préférences de chacun.",
                 local: "Professionnels Locaux",
                 localDesc: "Réservation de rendez-vous automatisée qui se synchronise avec votre calendrier et crée un enregistrement Salesforce instantanément."
             },
-            cta: "Construire votre Système",
+            cta: "Construire Votre Système",
             comparison: {
                 oldWay: "La Fuite de Leads",
                 newWay: "Le Système de Croissance"
@@ -583,40 +612,40 @@ export const translations = {
                     service: "Service",
                     marketing: "Marketing",
                     ai: "IA & Automatisation",
-                    analytics: "Analytics"
+                    analytics: "Analytique"
                 },
                 content: {
                     sales: {
-                        title: "Augmentez vos revenus plus rapidement.",
-                        desc: "Gérez vos contacts et vos opportunités en un seul endroit. Automatisez les suivis et fermez plus de deals.",
-                        btn: "Voir les fonctionnalités Sales"
+                        title: "Augmentez vos revenus plus rapidement avec une équipe connectée.",
+                        desc: "Gérez vos contacts et vos opportunités en un seul endroit. Automatisez les suivis et fermez plus de deals avec moins d'effort.",
+                        btn: "Voir Fonct. Ventes"
                     },
                     service: {
-                        title: "Fidélisez vos clients pour la vie.",
-                        desc: "Répondez plus vite aux demandes clients avec une vue unifiée. Transformez chaque interaction en opportunité.",
-                        btn: "Voir les fonctionnalités Service"
+                        title: "Gardez vos clients heureux et fidèles.",
+                        desc: "Répondez plus vite aux demandes clients avec une vue unifiée. Transformez chaque interaction en une opportunité de fidélisation.",
+                        btn: "Voir Fonct. Service"
                     },
                     marketing: {
-                        title: "Développez votre portée avec un marketing par e-mail personnalisé.",
-                        desc: "La solution marketing connectée et agentique est là. Les agents d'IA marketing vous aident à personnaliser chaque interaction, transformant les canaux en conversations bidirectionnelles, connectant les campagnes aux ventes et au service, et utilisant des informations en temps réel pour renforcer la fidélité client.",
-                        btn: "Voir les fonctionnalités Marketing"
+                        title: "Étendez votre portée avec un marketing personnalisé.",
+                        desc: "La solution marketing connectée est là. Les agents d'IA vous aident à personnaliser chaque touche, connectant les campagnes aux ventes et au service pour renforcer la fidélité.",
+                        btn: "Voir Fonct. Marketing"
                     },
                     ai: {
-                        title: "Accomplissez plus avec l'Automatisation et les Agents IA.",
-                        desc: "Simplifiez les tâches quotidiennes dans la vente, le service et le marketing avec Agentforce. De la qualification des leads à la résolution des cas de support en passant par la création de campagnes personnalisées, les agents IA et l'automatisation gèrent les tâches répétitives pour que votre équipe puisse se concentrer sur l'essentiel.",
-                        btn: "Découvrir Agentforce"
+                        title: "Faites-en plus avec l'Automatisation et les Agents IA.",
+                        desc: "Simplifiez les tâches quotidiennes. De la qualification des leads à la résolution des cas de support, l'IA et l'automatisation gèrent le travail répétitif.",
+                        btn: "Explorer Agentforce"
                     },
                     analytics: {
-                        title: "Prenez des décisions éclairées.",
-                        desc: "Visualisez vos performances en temps réel. Comprenez ce qui fonctionne et optimisez votre croissance.",
-                        btn: "Voir les fonctionnalités Analytics"
+                        title: "Prenez des décisions plus intelligentes avec des données en temps réel.",
+                        desc: "Visualisez vos performances instantanément. Comprenez ce qui fonctionne et optimisez pour la croissance.",
+                        btn: "Voir Fonct. Analytique"
                     }
                 }
             }
         },
         contactPage: {
             header: {
-                title: "Boostez Votre SEO",
+                title: "Élevons Votre Business",
                 highlight: "Contactez-nous Aujourd'hui !",
             },
             info: {
@@ -640,26 +669,26 @@ export const translations = {
                 businessLabel: "Type d'Entreprise",
                 businessPlaceholder: "E-commerce",
                 messageLabel: "Message",
-                messagePlaceholder: "Votre message",
+                messagePlaceholder: "Tapez votre message",
                 submitButton: "Envoyer Maintenant"
             }
         },
         resultsSection: {
-            badge: "Projets",
+            badge: "Réalisations",
             title: "Nos Résultats Parlent d'Eux-mêmes",
             beforeLabel: "Avant Croissance",
             afterLabel: "Après Croissance",
-            card1: { title: "Recherche et Analyse Mots-Clés" },
-            card2: { title: "Maîtrise Réseaux Sociaux" },
-            card3: { title: "Stratégie Marketing" },
-            card4: { title: "Trafic Organique" },
-            card5: { title: "SaaS Édition Vidéo" }
+            card1: { name: "Dreelio", title: "Recherche de Mots-clés" },
+            card2: { name: "FitFlow", title: "Maîtrise Réseaux Sociaux" },
+            card3: { name: "Glade", title: "Stratégie Marketing" },
+            card4: { name: "Refit", title: "Trafic Organique" },
+            card5: { name: "Editor", title: "SaaS Édition Vidéo" }
         },
         websitePage: {
             hero: {
-                title: "Construisez une Empreinte Numérique Performante.",
-                subtitle: "Des landing pages aux applications web complexes. Nous créons des sites rapides, évolutifs et époustouflants.",
-                cta: "Commencer"
+                title: "Construisez une Empreinte Numérique Premium.",
+                subtitle: "Des landing pages aux applications web complexes. Nous construisons des sites rapides, évolutifs et époustouflants.",
+                cta: "Commencer Votre Build"
             },
             services: {
                 landing: {
@@ -668,7 +697,7 @@ export const translations = {
                 },
                 multi: {
                     title: "Sites Multi-Pages",
-                    desc: "Pour l'autorité et le SEO. Présence corporative, riche en contenu.",
+                    desc: "Pour l'autorité et le SEO. Présence corporate, riche en contenu.",
                 }
             },
             combo: {
@@ -677,7 +706,7 @@ export const translations = {
                 result: "Échelle & Croissance"
             },
             techStack: {
-                title: "L'Arsenal Technique",
+                title: "L'Arsenal",
                 nocode: {
                     title: "No-Code / Low-Code",
                     framer: "Framer: Vitesse de design. Animations de classe mondiale.",
@@ -689,19 +718,19 @@ export const translations = {
                 },
                 custom: {
                     title: "Développement Sur Mesure",
-                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js pour des apps modernes et évolutives.",
-                    laravel: "Laravel / VueJS: Syntaxe élégante, développement rapide d'applications.",
-                    java: "Java / Angular: Stabilité d'entreprise et typage strict pour les systèmes à grande échelle."
+                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js pour apps modernes.",
+                    laravel: "Laravel / VueJS: Syntaxe élégante, développement rapide.",
+                    java: "Java / Angular: Stabilité entreprise et typage strict."
                 },
                 benefits: {
-                    perf: "Cœur Web Vitals optimisé.",
+                    perf: "Core Web Vitals optimisés.",
                     seo: "SEO technique intégré.",
                     scale: "Prêt à grandir avec votre entreprise."
                 }
             },
             cta: {
                 text: "Prêt à moderniser votre présence web ?",
-                button: "Commencer"
+                button: "Commencer Votre Build"
             }
         }
     }

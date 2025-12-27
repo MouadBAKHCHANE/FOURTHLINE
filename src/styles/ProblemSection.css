@@ -171,8 +171,8 @@
     }
 
     .problem-section {
-        padding: 20px 0 0 0;
-        /* Removed bottom padding */
+        padding: 120px 0 0 0;
+        /* Increased top padding to clear mascot */
     }
 
     .toggle-headline {

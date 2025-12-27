@@ -36,7 +36,7 @@ const ProblemSection = () => {
                 {/* Header with Toggle Switch */}
                 <div className="toggle-header">
                     <h2 className="toggle-headline">
-                        When people
+                        {problemData.headline.split('{switch}')[0]}
                         <div className="toggle-switch-container" onClick={() => setIsDo(!isDo)}>
                             <div className={`toggle-switch ${!isDo ? 'active-dont' : ''}`}>
                                 <div className="toggle-slider"></div>
@@ -44,7 +44,7 @@ const ProblemSection = () => {
                                 <span className={`toggle-label ${isDo ? 'active' : ''}`}>{problemData.toggle.do}</span>
                             </div>
                         </div>
-                        work with us.
+                        {problemData.headline.split('{switch}')[1]}
                     </h2>
 
                     <p className="toggle-sub">

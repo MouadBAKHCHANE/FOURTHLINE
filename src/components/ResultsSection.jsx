@@ -9,6 +9,7 @@ const ResultsSection = () => {
 
     const cards = [
         {
+            name: results.card1.name,
             title: results.card1.title,
             beforeLabel: results.beforeLabel,
             afterLabel: results.afterLabel,
@@ -17,6 +18,7 @@ const ResultsSection = () => {
             bgImage: "/assets/works/dreelio.png"
         },
         {
+            name: results.card2.name,
             title: results.card2.title,
             beforeLabel: results.beforeLabel,
             afterLabel: results.afterLabel,
@@ -25,6 +27,7 @@ const ResultsSection = () => {
             bgImage: "/assets/works/fitflow.png"
         },
         {
+            name: results.card3.name,
             title: results.card3.title,
             beforeLabel: results.beforeLabel,
             afterLabel: results.afterLabel,
@@ -33,6 +36,7 @@ const ResultsSection = () => {
             bgImage: "/assets/works/glade.png"
         },
         {
+            name: results.card4.name,
             title: results.card4.title,
             beforeLabel: results.beforeLabel,
             afterLabel: results.afterLabel,
@@ -41,6 +45,7 @@ const ResultsSection = () => {
             bgImage: "/assets/works/refit.png"
         },
         {
+            name: results.card5.name,
             title: results.card5.title,
             beforeLabel: results.beforeLabel,
             afterLabel: results.afterLabel,
@@ -69,6 +74,7 @@ const ResultsSection = () => {
 
                             {/* Content Overlay */}
                             <div className="result-content-box">
+                                <span className="result-project-name">{card.name}</span>
                                 <h3 className="result-card-title">{card.title}</h3>
 
                                 <div className="stats-row">

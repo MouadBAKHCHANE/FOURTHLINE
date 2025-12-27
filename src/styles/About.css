@@ -56,20 +56,24 @@
 }
 
 .hero-title.nova-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1.1;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -1px;
     margin-bottom: 2rem;
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-    /* Removed text-transform: uppercase */
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .text-highlight {
-    color: var(--accent-blue);
-    font-size: 2.5rem;
-    /* Matches previous fix */
+    font-size: 4rem;
+    background: linear-gradient(135deg, #00A1E0 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
@@ -221,7 +225,8 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 140px;
+        padding-top: 180px;
+        /* Increased from 140px */
         padding-bottom: 40px;
         /* Reduced from default */
         min-height: auto;
@@ -243,12 +248,14 @@
 
     .hero-actions {
         justify-content: center;
+        margin-bottom: 1.5rem;
+        /* Reduced from 4rem to move social proof up */
     }
 
     .hero-visual-creative {
         padding-left: 0;
-        margin-top: 0;
-        /* Reduced from 20px */
+        margin-top: 50px;
+        /* Added spacing between text/logos and images */
         justify-content: center;
     }
 
@@ -311,4 +318,83 @@
 .hero.about-section .btn-dot-indicator {
     width: 6px;
     height: 6px;
+}
+
+/* Floating Signs */
+.float-sign {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 16px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 6;
+    /* Above mascot if needed */
+    transition: transform 0.3s ease;
+}
+
+.float-sign:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-blue);
+}
+
+.sign-dev {
+    top: 20px;
+    right: -30px;
+    animation: floatSign 6s ease-in-out infinite;
+    color: #61dafb;
+    /* React Blueish */
+    border-left: 3px solid #61dafb;
+}
+
+.sign-dev span {
+    color: white;
+    /* Keep text white */
+}
+
+.sign-scale {
+    bottom: 80px;
+    left: -40px;
+    animation: floatSign 5s ease-in-out infinite 1s;
+    /* Delay */
+    color: #42b883;
+    /* Vue Greenish */
+    border-left: 3px solid #42b883;
+}
+
+.sign-scale span {
+    color: white;
+}
+
+@keyframes floatSign {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 900px) {
+    .sign-dev {
+        top: 0;
+        right: 0;
+    }
+
+    .sign-scale {
+        bottom: 0;
+        left: 0;
+    }
 }

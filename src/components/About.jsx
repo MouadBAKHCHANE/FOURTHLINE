@@ -3,6 +3,7 @@ import '../styles/About.css';
 import '../styles/FlipText.css';
 import { useLanguage } from '../App';
 import { Link } from 'react-router-dom';
+import { Code, TrendingUp } from 'lucide-react';
 
 const About = () => {
     const { t } = useLanguage();
@@ -10,18 +11,14 @@ const About = () => {
     // Flip Text State
     const [index, setIndex] = React.useState(0);
 
-    const phrases = [
-        "Digital infra",
-        "CRM to scale",
-        "Premium websites"
-    ];
+    const phrases = t.hero.dynamicPhrases || ["Digital infra", "CRM to scale", "Premium websites"];
 
     React.useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % phrases.length);
         }, 3000); // Change every 3 seconds
         return () => clearInterval(interval);
-    }, []);
+    }, [phrases]); // Add phrases to dependency to reset if lang changes
 
     return (
         <section className="hero about-section" id="about">
@@ -34,7 +31,7 @@ const About = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h2 className="hero-title nova-title">
-                        We design and engineer <br />
+                        {t.hero.mainTitle} <br />
                         <span key={index} className="text-highlight flip-enter" style={{ display: 'inline-block' }}>
                             {phrases[index]}
                         </span>
@@ -81,6 +78,17 @@ const About = () => {
                             alt="Salesforce Dashboard Interface"
                             className="hero-dashboard-img"
                         />
+                    </div>
+
+                    {/* Floating Signs */}
+                    <div className="float-sign sign-dev">
+                        <Code size={20} />
+                        <span>Dev</span>
+                    </div>
+
+                    <div className="float-sign sign-scale">
+                        <TrendingUp size={20} />
+                        <span>Scale</span>
                     </div>
 
                     {/* Astro Mascot */}

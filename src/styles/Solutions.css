@@ -1,8 +1,8 @@
 /* Solutions.css */
 
 .solutions-section {
-    padding: 100px 40px;
-    /* Added side padding as requested */
+    padding: 80px 40px 100px 40px;
+    /* Adjusted top padding to 80px */
     position: relative;
     background: radial-gradient(circle at left center, rgba(0, 161, 224, 0.03), transparent 50%);
 }

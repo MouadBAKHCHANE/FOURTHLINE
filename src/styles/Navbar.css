@@ -271,6 +271,15 @@
     border: none;
     cursor: pointer;
     font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-submenu-items button:hover {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    transform: translateX(5px);
 }
 
 .mobile-submenu-label {
