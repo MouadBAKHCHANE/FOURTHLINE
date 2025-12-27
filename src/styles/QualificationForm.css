@@ -480,7 +480,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .qualification-wrapper {
         padding-top: 60px;
         /* Reduced navbar gap */

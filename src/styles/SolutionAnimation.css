@@ -179,7 +179,7 @@
     filter: drop-shadow(0 0 5px var(--accent-blue));
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .dashboard-stage {
         display: flex !important;
         flex-direction: column !important;

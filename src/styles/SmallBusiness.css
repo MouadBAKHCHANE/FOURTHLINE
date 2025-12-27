@@ -1,4 +1,4 @@
-,
+/* SmallBusiness.css */
 .small-business-page {
     padding-top: 80px;
 }
@@ -375,7 +375,7 @@
 }
 
 /* Update Media Queries */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .sb-hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -558,7 +558,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .packages-grid {
         grid-template-columns: 1fr;
     }
@@ -795,7 +795,7 @@
     font-size: 1.5rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
     /* Hero Section */
     .sb-hero-container {

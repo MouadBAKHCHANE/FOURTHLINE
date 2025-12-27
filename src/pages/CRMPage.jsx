@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
 import ComparisonSlider from '../components/ComparisonSlider';
-import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe, TrendingUp, Megaphone, Bot, BarChart } from 'lucide-react';
 import '../styles/CRMPage.css';
 
 const SmallBusiness = () => {
@@ -100,6 +100,14 @@ const SmallBusiness = () => {
                             </div>
                             <div className="tab-visual-wrapper">
                                 <div className={`tab-visual ${activeTab}`}>
+                                    <div className="visual-backdrop"></div>
+                                    <div className="floating-icon-badge">
+                                        {activeTab === 'sales' && <TrendingUp size={24} />}
+                                        {activeTab === 'service' && <ShieldCheck size={24} />}
+                                        {activeTab === 'marketing' && <Megaphone size={24} />}
+                                        {activeTab === 'ai' && <Bot size={24} />}
+                                        {activeTab === 'analytics' && <BarChart size={24} />}
+                                    </div>
                                     {activeTab === 'sales' && (
                                         <img src="/assets/salesforce_dashboard_preview.png" alt="Salesforce Sales Dashboard" />
                                     )}

@@ -151,7 +151,49 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+    .timeline-vertical::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+        /* No specific adjustment needed if default is left aligned or flex */
+    }
+
+    /* Reset alignment for mobile if needed, assuming timeline becomes left-aligned list */
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -60px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+        left: -60px;
+        right: auto;
+    }
+
+    .timeline-icon-box {
+        left: 6px;
+        /* Center on the line at 30px? Line is at 30px. Icon is 48px? */
+        /* Let's assume standard left alignment */
+        right: auto;
+    }
+
+
+    .timeline-item:nth-child(even) .timeline-icon-box {
+        left: 6px;
+    }
+
+
     .solution-section {
         padding-top: 60px;
         padding-bottom: 60px;

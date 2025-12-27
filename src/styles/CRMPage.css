@@ -381,7 +381,7 @@
 }
 
 /* Update Media Queries */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .sb-hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -731,22 +731,76 @@
 }
 
 .tab-visual {
-    background: #1a1c23;
+    background: transparent;
     border-radius: 24px;
     height: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     position: relative;
-    overflow: hidden;
-    /* Placeholder pattern */
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-    background-size: 30px 30px;
+    overflow: visible;
 }
 
-/* Custom Visuals for each tab (CSS Only) */
+.visual-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 161, 224, 0.2) 0%, transparent 60%);
+    filter: blur(50px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.floating-icon-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
 /* Custom Visuals for each tab (CSS Only) */
 .tab-visual.sales {
     background: transparent;
     border: none;
+}
+
+/* Force Marketing Circle Visibility */
+.tab-visual.marketing .visual-backdrop {
+    width: 320px;
+    height: 320px;
+    opacity: 1;
+    background: #FE9339;
+    border-radius: 50%;
+    filter: none;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .tab-visual img {
@@ -756,46 +810,13 @@
     border-radius: 12px;
 }
 
-.tab-visual.marketing::after {
-    content: "Email Campaign";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
 .tab-visual.ai {
-    background: linear-gradient(135deg, #2a0845 0%, #6441A5 100%);
-}
-
-.tab-visual.ai::after {
-    content: "Agentforce Bot";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: 700;
-    font-size: 1.5rem;
+    background: transparent;
 }
 
 .tab-visual.service {
     background: transparent;
     border: none;
-}
-
-.tab-visual.analytics::after {
-    content: "Growth Charts";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: 700;
-    font-size: 1.5rem;
 }
 
 @media (max-width: 900px) {

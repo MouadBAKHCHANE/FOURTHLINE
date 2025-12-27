@@ -282,8 +282,34 @@
     font-weight: 600;
 }
 
-/* Mobile Media Query */
-@media (max-width: 900px) {
+/* Tablet/Laptop adjustments to keep desktop menu visible */
+@media (max-width: 1024px) {
+    .navbar-pill {
+        padding: 8px 16px;
+        max-width: 95%;
+    }
+
+    .nav-center {
+        gap: 20px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .desktop-links a,
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .btn-pill-gradient {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Media Query - Triggered only on smaller devices now */
+@media (max-width: 768px) {
     .desktop-links {
         display: none;
     }
