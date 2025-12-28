@@ -74,7 +74,7 @@ const ComparisonSlider = () => {
             <div className="container">
                 <div className="comparison-header">
                     <h2>Stop the <span className="text-grad-red">Chaos.</span> Start the <span className="text-grad-blue">Flow.</span></h2>
-                    <p>Slide to see how Fourthline transforms your business operations.</p>
+                    <p>Slide to see how Seedsvision transforms your business operations.</p>
                 </div>
 
                 <div className="comparison-wrapper-outer">
@@ -140,7 +140,7 @@ const ComparisonSlider = () => {
 
                             <div className="layer-content">
                                 <div className="label-badge solution">
-                                    <Zap size={14} /> The Fourthline Way
+                                    <Zap size={14} /> The Seedsvision Way
                                 </div>
 
                                 <div className="diagram-cluster solution">

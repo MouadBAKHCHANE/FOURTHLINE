@@ -165,19 +165,86 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .comparison-grid {
-        grid-template-columns: 1fr;
-        /* Stack vertically */
+    .problem-section {
+        padding: 40px 0 60px 0;
+        /* Further reduced padding */
     }
 
-    .problem-section {
-        padding: 120px 0 0 0;
-        /* Increased top padding to clear mascot */
+    /* Reduce side spacing (make cards wider) */
+    .problem-section .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .comparison-card {
+        padding: 30px 24px;
+        /* More internal breathing room */
+    }
+
+    .comparison-card h3 {
+        font-size: 1.3rem;
+        /* Bigger title */
+    }
+
+    .comparison-card p {
+        font-size: 1.05rem;
+        /* Bigger text */
+    }
+
+    .card-icon-wrapper {
+        width: 56px;
+        /* Bigger icons */
+        height: 56px;
+    }
+
+    .toggle-header {
+        margin-bottom: 40px;
+        align-items: center;
+        text-align: center;
     }
 
     .toggle-headline {
-        font-size: 2rem;
+        font-size: 1.5rem;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .toggle-sub {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Smaller Toggle Switch for Mobile */
+    .toggle-switch {
+        width: 130px;
+        height: 44px;
+        padding: 3px;
+    }
+
+    .toggle-slider {
+        width: 60px;
+        height: 38px;
+        left: 64px;
+        border-radius: 30px;
+    }
+
+    .toggle-switch.active-dont .toggle-slider {
+        left: 3px;
+    }
+
+    .toggle-label {
+        font-size: 1rem;
+    }
+
+    .stat-banner {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }

@@ -705,12 +705,12 @@
 /* Mobile */
 @media (max-width: 600px) {
     .comparison-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .comparison-header {
-        margin-bottom: 40px;
-        padding: 0 20px;
+        margin-bottom: 30px;
+        padding: 0 15px;
     }
 
     .comparison-header h2 {
@@ -718,35 +718,35 @@
     }
 
     .comparison-header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .comparison-wrapper-outer {
-        height: 600px;
-        /* Taller on mobile to fit vertical layout if needed, or keep compact */
-        border-radius: 16px;
+        height: 500px;
+        /* Match tablet height */
+        border-radius: 20px;
     }
 
-    /* Scale down the entire diagram heavily for phones */
+    /* Scale closer to tablet (0.65) but fit mobile */
     .diagram-cluster {
-        transform: translate(-50%, -50%) scale(0.42);
-        width: 100%;
-        /* Ensure it doesn't overflow horizontally logic-wise */
+        transform: translate(-50%, -50%) scale(0.55);
+        width: 600px;
+        /* Fixed width to prevent overlapping nodes */
     }
 
     /* Adjust badges */
     .label-badge {
-        top: 20px;
-        padding: 6px 12px;
-        font-size: 0.75rem;
+        top: 15px;
+        padding: 5px 10px;
+        font-size: 0.6rem;
     }
 
     .label-badge.problem {
-        right: 10px;
+        right: 15px;
     }
 
     .label-badge.solution {
-        left: 10px;
+        left: 15px;
     }
 
     /* Make slider handle larger touch target */
