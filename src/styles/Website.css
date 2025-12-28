@@ -314,11 +314,21 @@
         margin: 0 auto 40px;
     }
 
+    .ws-hero-badges {
+        justify-content: center;
+    }
+
     .ws-hero-visual {
         height: 400px;
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
+        display: flex;
+        /* Added */
+        justify-content: center;
+        /* Added */
+        align-items: center;
+        /* Added */
     }
 
     .code-window {

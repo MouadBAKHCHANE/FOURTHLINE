@@ -687,6 +687,15 @@
     transform: translateY(-50%) scale(1.1);
 }
 
+/* Tablet & Smaller Desktop */
+@media (max-width: 1200px) {
+    .layer-content {
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+}
+
 /* Tablet */
 @media (max-width: 768px) {
     .comparison-wrapper-outer {
