@@ -46,6 +46,7 @@ const ComparisonSlider = () => {
         };
 
         const handleTouchStart = (e) => {
+            if (e.cancelable) e.preventDefault(); // Stop scroll immediately
             setIsDragging(true);
             handleMove(e);
             window.addEventListener('touchmove', handleMove, { passive: false });
