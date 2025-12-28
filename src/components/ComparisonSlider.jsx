@@ -14,6 +14,11 @@ const ComparisonSlider = () => {
         if (!container) return;
 
         const handleMove = (e) => {
+            // Prevent scrolling on touch devices while dragging
+            if (e.touches && e.cancelable) {
+                e.preventDefault();
+            }
+
             const rect = container.getBoundingClientRect();
             // Calculate percentage
             // Add slight buffer to edges so handle doesn't get stuck

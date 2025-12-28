@@ -58,6 +58,8 @@
     height: 100%;
     position: relative;
     cursor: col-resize;
+    touch-action: none;
+    /* Prevent scroll while dragging */
 }
 
 /* --- COMMON LAYERS --- */
@@ -645,6 +647,8 @@
     transform: translateX(-50%);
     z-index: 100;
     cursor: col-resize;
+    touch-action: none;
+    /* Prevent scroll while dragging */
     display: flex;
     flex-direction: column;
     align-items: center;
