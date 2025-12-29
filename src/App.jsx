@@ -8,7 +8,7 @@ import QualificationForm from './pages/QualificationForm'
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
 import SmallBusiness from './pages/CRMPage';
-import ServicesPage from './pages/ServicesPage';
+import ExpertisePage from './pages/ExpertisePage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -33,7 +33,6 @@ const AppContent = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
         {/* <Route path="/start-build" element={<QualificationForm />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -43,6 +42,7 @@ const AppContent = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/sparkles" element={<SparklesPreview />} />
+        <Route path="/expertise" element={<ExpertisePage />} />
       </Routes>
       <Footer />
     </div>

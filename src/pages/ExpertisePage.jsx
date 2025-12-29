@@ -1,0 +1,40 @@
+import React, { useEffect } from 'react';
+import { useLanguage } from '../App';
+import Solutions from '../components/Solutions';
+import ResultsSection from '../components/ResultsSection';
+import '../styles/About.css'; // Borrowing styles for hero if needed
+
+const ExpertisePage = () => {
+    const { t } = useLanguage();
+
+    // Smooth scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="expertise-page">
+            {/* Simple Hero Section for Expertise */}
+            <section className="hero" style={{ minHeight: '60vh', paddingBottom: '0' }}>
+                <div className="hero-container" style={{ flexDirection: 'column', textAlign: 'center' }}>
+                    <div className="hero-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+                        <h1 className="hero-title nova-title">
+                            Our <span className="text-highlight">Expertise</span>
+                        </h1>
+                        <p className="section-subtitle">
+                            We specialize in specific industries to deliver tailored digital transformation.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Industries Section */}
+            <Solutions />
+
+            {/* Our Work Section */}
+            <ResultsSection />
+        </div>
+    );
+};
+
+export default ExpertisePage;

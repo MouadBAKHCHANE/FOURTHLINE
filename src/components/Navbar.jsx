@@ -40,7 +40,7 @@ const Navbar = () => {
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
                     <Link to="/">{t.nav.home}</Link>
-                    <Link to="/services">{t.nav.product}</Link>
+                    <Link to="/expertise">Expertise</Link>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <Link to="/" onClick={() => setIsOpen(false)}>{t.nav.home}</Link>
-                    <Link to="/services" onClick={() => setIsOpen(false)}>{t.nav.product}</Link>
+                    <Link to="/expertise" onClick={() => setIsOpen(false)}>Expertise</Link>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>

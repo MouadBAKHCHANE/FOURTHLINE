@@ -3,6 +3,7 @@
     color: var(--text-light);
     min-height: 100vh;
     font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
 }
 
 /* Hero Badge - Small pill tag */
@@ -303,6 +304,8 @@
         grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
+        padding: 0 20px;
+        /* Even padding on both sides */
     }
 
     .ws-hero-text {
@@ -314,22 +317,37 @@
         margin: 0 auto 40px;
     }
 
+    .ws-hero-badges {
+        justify-content: center;
+    }
+
     .ws-hero-visual {
         height: 400px;
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
     .code-window {
         width: 100%;
+        max-width: 350px;
         left: 0;
-        transform: rotateY(0);
+        right: 0;
+        margin: 0 auto;
+        transform: none;
     }
 
     .preview-card {
         bottom: -20px;
-        right: -10px;
+        right: auto;
+        /* Remove right positioning */
+        left: 50%;
+        transform: translateX(30%);
+        /* Offset slightly to the right of center */
         width: 180px;
         padding: 12px;
     }
@@ -350,6 +368,36 @@
 
     .preview-stat .stat-label {
         font-size: 0.6rem;
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 600px) {
+    .ws-hero-container {
+        padding: 0 15px;
+    }
+
+    .ws-hero-visual {
+        height: 350px;
+        max-width: 100%;
+    }
+
+    .code-window {
+        max-width: 280px;
+    }
+
+    .preview-card {
+        width: 150px;
+        padding: 10px;
+        transform: translateX(20%);
+    }
+
+    .ws-title {
+        font-size: 2.5rem;
+    }
+
+    .ws-subtitle {
+        font-size: 1rem;
     }
 }
 
