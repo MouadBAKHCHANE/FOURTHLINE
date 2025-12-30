@@ -15,7 +15,7 @@ const ResultsSection = () => {
             afterLabel: results.afterLabel,
             beforeVal: "45%",
             afterVal: "87%",
-            bgImage: "/assets/works/dreelio.png"
+            bgImage: "/assets/works/dreelio.webp"
         },
         {
             name: results.card2.name,
@@ -24,7 +24,7 @@ const ResultsSection = () => {
             afterLabel: results.afterLabel,
             beforeVal: "35%",
             afterVal: "83%",
-            bgImage: "/assets/works/fitflow.png"
+            bgImage: "/assets/works/fitflow.webp"
         },
         {
             name: results.card3.name,
@@ -33,7 +33,7 @@ const ResultsSection = () => {
             afterLabel: results.afterLabel,
             beforeVal: "52%",
             afterVal: "92%",
-            bgImage: "/assets/works/glade.png"
+            bgImage: "/assets/works/glade.webp"
         },
         {
             name: results.card4.name,
@@ -42,7 +42,7 @@ const ResultsSection = () => {
             afterLabel: results.afterLabel,
             beforeVal: "39%",
             afterVal: "81%",
-            bgImage: "/assets/works/refit.png"
+            bgImage: "/assets/works/refit.webp"
         },
         {
             name: results.card5.name,
@@ -51,7 +51,7 @@ const ResultsSection = () => {
             afterLabel: results.afterLabel,
             beforeVal: "20%",
             afterVal: "65%",
-            bgImage: "/assets/works/editor.png"
+            bgImage: "/assets/works/editor.webp"
         }
     ];
 

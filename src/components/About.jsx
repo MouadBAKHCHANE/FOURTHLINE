@@ -49,20 +49,20 @@ const About = () => {
                         <div className="proof-logos-mask">
                             <div className="proof-logos">
                                 {/* Original Set */}
-                                <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/client-3.png" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-4.png" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-5.png" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" />
 
                                 {/* Duplicate Set for Infinite Scroll */}
-                                <img src="/logos/new-client-1.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-2.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-3.png" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/client-3.png" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-4.png" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-5.png" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" />
+                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" />
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ const About = () => {
                     {/* Main Dashboard Visual */}
                     <div className="dashboard-container">
                         <img
-                            src="/assets/hero/dashboard_v2.png"
+                            src="/assets/hero/dashboard_v2.webp"
                             alt="Salesforce Dashboard Interface"
                             className="hero-dashboard-img"
                         />
@@ -94,7 +94,7 @@ const About = () => {
                     {/* Astro Mascot */}
                     <div className="mascot-container">
                         <img
-                            src="/assets/hero/astro_mascot.png"
+                            src="/assets/hero/astro_mascot.webp"
                             alt="Salesforce Astro"
                             className="sf-mascot-img"
                         />
