@@ -12,22 +12,22 @@ export function GlowingEffectDemo() {
     return (
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <GridItem
-                icon={<img src="/assets/tech/framer.png" alt="Framer" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
+                icon={<img src="/assets/tech/framer.webp" alt="Framer" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
                 title="Framer - No Code"
                 description={ws.techStack.nocode.framer.split(':')[1]}
             />
             <GridItem
-                icon={<img src="/assets/tech/webflow.png" alt="Webflow" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
+                icon={<img src="/assets/tech/webflow.webp" alt="Webflow" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
                 title="Webflow - CMS"
                 description={ws.techStack.nocode.webflow.split(':')[1]}
             />
             <GridItem
-                icon={<img src="/assets/tech/wordpress.png" alt="WordPress" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
+                icon={<img src="/assets/tech/wordpress.webp" alt="WordPress" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
                 title="WordPress - Open Source"
                 description={ws.techStack.cms.wordpress.split(':')[1]}
             />
             <GridItem
-                icon={<img src="/assets/tech/fullstack.png" alt="Full Stack" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
+                icon={<img src="/assets/tech/fullstack.webp" alt="Full Stack" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
                 title="Custom Development"
                 description={
                     <div className="flex flex-col gap-1 mt-2">
