@@ -136,31 +136,38 @@
     background: rgba(255, 255, 255, 0.04);
 }
 
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
 .comparison-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
-    margin-bottom: 8px;
-    margin-top: 16px;
+    margin: 0;
     font-weight: 600;
 }
 
 .comparison-card p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 /* Icon Styles */
 .card-icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 16px;
+    flex-shrink: 0;
 }
 
 /* Mobile Responsive */

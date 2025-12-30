@@ -25,11 +25,11 @@ const Services = () => {
                             <h3 className="tier-name">{t.services.tier1Name}</h3>
                             <p className="tier-desc">{t.services.tier1Desc}</p>
 
-                            <ul className="feature-list">
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat1}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat2}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat3}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
+                            <ul className="feature-list" style={{ textAlign: 'left' }}>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon" /> {t.services.tier1Feat1}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon" /> {t.services.tier1Feat2}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon" /> {t.services.tier1Feat3}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
                             </ul>
 
                             <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
@@ -47,12 +47,12 @@ const Services = () => {
                             <h3 className="tier-name">{t.services.tier2Name}</h3>
                             <p className="tier-desc">{t.services.tier2Desc}</p>
 
-                            <ul className="feature-list">
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat1}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat2}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat3}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat4}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
+                            <ul className="feature-list" style={{ textAlign: 'left' }}>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon accent" /> {t.services.tier2Feat1}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon accent" /> {t.services.tier2Feat2}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon accent" /> {t.services.tier2Feat3}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon accent" /> {t.services.tier2Feat4}</li>
+                                <li style={{ justifyContent: 'flex-start', textAlign: 'left' }}><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
                             </ul>
 
                             <a href="/Webtoleadform.html" className="btn-nova-glow full-width">

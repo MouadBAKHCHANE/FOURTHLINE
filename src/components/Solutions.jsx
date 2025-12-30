@@ -22,13 +22,12 @@ const Solutions = () => {
             document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' });
         };
         window.addEventListener('switchSector', handleSwitch);
-        return () => window.removeEventListener('switchSector', handleSwitch);
     }, []);
 
     const industries = [
         {
             id: 'logistique',
-            icon: <Truck />,
+            icon: <Truck size={18} />,
             title: t.solutionsSection.logistics.title,
             role: t.solutionsSection.logistics.role,
             pain: t.solutionsSection.logistics.pain,
@@ -47,7 +46,7 @@ const Solutions = () => {
         },
         {
             id: 'immobilier',
-            icon: <Building />,
+            icon: <Building size={18} />,
             title: t.solutionsSection.realEstate.title,
             role: t.solutionsSection.realEstate.role,
             pain: t.solutionsSection.realEstate.pain,
@@ -66,7 +65,7 @@ const Solutions = () => {
         },
         {
             id: 'education',
-            icon: <GraduationCap />,
+            icon: <GraduationCap size={18} />,
             title: t.solutionsSection.education.title,
             role: t.solutionsSection.education.role,
             pain: t.solutionsSection.education.pain,
@@ -85,7 +84,7 @@ const Solutions = () => {
         },
         {
             id: 'b2b',
-            icon: <Briefcase />,
+            icon: <Briefcase size={18} />,
             title: t.solutionsSection.b2b.title,
             role: t.solutionsSection.b2b.role,
             pain: t.solutionsSection.b2b.pain,
