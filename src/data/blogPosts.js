@@ -4,24 +4,238 @@ export const blogPosts = [
     title: "Optimizing Salesforce for Large Data Volumes (LDV): A 2025 Architecture Guide",
     excerpt: "Mastering scalability in Salesforce requires more than just indexing. Dive deep into locking contention minimization, Skinny Tables strategy, and the new Async SOQL patterns for enterprise-grade performance.",
     content: `
+      <div class="article-intro">
+        <p class="lead-text">When your Salesforce org crosses the 20 million record threshold, everything changes. Query performance degrades, reports time out, and standard best practices no longer apply. This isn't just about storage—it's about fundamentally rethinking how your data architecture supports business operations at scale.</p>
+      </div>
+
       <h2>The Reality of Enterprise Scale</h2>
-      <p>When an Org surpasses 20 million records, standard best practices become performance bottlenecks. As architects, we stop thinking about "how to build" and start obsessing over "how it queries." Large Data Volumes (LDV) aren't just a storage issue; they are a governance and architectural challenge that defines the stability of your entire business operation.</p>
+      <p>Most Salesforce implementations start with ambitious goals but conservative data volumes. Then reality hits. Your customer base grows exponentially. Historical data accumulates. Integration systems pump millions of transactions monthly. Suddenly, your once-responsive org starts showing cracks.</p>
       
-      <h3>1. Beyond Standard Indexing: Skinny Tables</h3>
-      <p>Most developers know about custom indexes. Fewer leverage <strong>Skinny Tables</strong>. These are custom tables in the Salesforce underlying database that contain a subset of fields from a standard or custom object. Because they avoid joins and contain fewer columns, they can improve query performance by 100x.</p>
-      <pre><code>// Identify candidates for Skinny Tables
-// 1. Tables with millions of rows
-// 2. Reports/List Views that filter on fields from both the base table and associated separate tables
-// 3. Frequent timeouts on standard SOQL queries</code></pre>
+      <p>Welcome to <strong>Large Data Volumes (LDV)</strong>—where technical debt accumulates faster than your development backlog, and every query needs surgical precision.</p>
+
+      <blockquote class="highlight-quote">
+        "At enterprise scale, performance isn't a feature you add later. It's an architectural constraint you design for from day one." 
+      </blockquote>
+
+      <h2>1. Beyond Standard Indexing: The Power of Skinny Tables</h2>
       
-      <h3>2. Mitigating Record Locking Contention</h3>
-      <p>Parent-child skew is the silent killer of batch jobs. When 10,000 "Contact" records all try to update the same "Account" parent simultaneously, the database locks the parent, forcing threads to wait. This leads to the dreaded <code>UNABLE_TO_LOCK_ROW</code> error.</p>
-      <p><strong>The Fix:</strong> Implement a "Round Robin" assignment strategy or use Platform Events to decouple the transaction. By processing updates asynchronously, you reduce the probability of simultaneous lock requests on the same parent record.</p>
+      <p>Every Salesforce admin knows about custom indexes. But when you're dealing with 50+ million records, indexes alone won't save you from timeouts. Enter <strong>Skinny Tables</strong>—Salesforce's secret weapon for LDV optimization.</p>
 
-      <h3>3. Archival Strategies</h3>
-      <p>Data that isn't queried shouldn't be in the operational table. Use <strong>Big Objects</strong> for historical data that needs to be compliant but not performant. Combined with Async SOQL, this allows you to keep your operational tables lean while maintaining access to terabytes of history.</p>
+      <h3>What Are Skinny Tables?</h3>
+      <p>Skinny Tables are custom database tables that Salesforce creates in their underlying infrastructure. Unlike standard tables that contain every field (including audit fields, system timestamps, and unused custom fields), Skinny Tables contain only the columns you specify.</p>
 
-      <blockquote>"Performance is not a feature you add at the end. It is an architectural constraint you design for from day one."</blockquote>
+      <div class="code-example-wrapper">
+        <pre><code>// Ideal Candidates for Skinny Tables:
+// 
+// 1. Objects with > 1M records
+// 2. List views that filter across related objects
+// 3. Reports experiencing frequent timeouts
+// 4. Queries joining Account + Contact + Opportunity
+
+// Example: Account Skinny Table
+Fields: Id, Name, Industry, AnnualRevenue, OwnerId
+Result: 10x-100x query performance improvement</code></pre>
+      </div>
+
+      <div class="pro-tip">
+        <strong>💡 Pro Tip:</strong> Skinny Tables must be requested through Salesforce Support. Document your use case with query execution plans and specific timeout examples to expedite approval.
+      </div>
+
+      <h2>2. Conquering Record Locking Contention</h2>
+
+      <p>The most frustrating error in Salesforce: <code class="inline-code">UNABLE_TO_LOCK_ROW</code>. It appears randomly, breaks batch jobs mid-execution, and leaves you debugging ghost issues that "work fine in sandbox."</p>
+
+      <h3>Understanding Parent-Child Skew</h3>
+      <p>When 10,000 Contact records all try to update the same parent Account simultaneously, Salesforce locks that Account record. Every thread waits. Your batch job times out. Users see errors.</p>
+
+      <div class="diagram-box">
+        <p><strong>The Problem:</strong></p>
+        <pre>Batch Processing Update
+   ↓
+10,000 Contacts → All update Account #12345 simultaneously
+   ↓
+Database Row Lock on Account #12345
+   ↓
+9,999 transactions WAIT
+   ↓
+Timeout / Error Cascade</pre>
+      </div>
+
+      <h3>The Solution: Asynchronous Processing</h3>
+
+      <div class="code-example-wrapper">
+        <pre><code>// ❌ BAD: Direct parent update in trigger
+trigger ContactTrigger on Contact (after update) {
+    Set&lt;Id&gt; accountIds = new Set&lt;Id&gt;();
+    for(Contact c : Trigger.new) {
+        accountIds.add(c.AccountId);
+    }
+    
+    List&lt;Account&gt; accounts = [SELECT Id, LastModifiedDate 
+                               FROM Account WHERE Id IN :accountIds];
+    for(Account a : accounts) {
+        a.Last_Contact_Update__c = System.now();
+    }
+    update accounts; // LOCK CONTENTION!
+}
+
+// ✅ GOOD: Platform Events for async processing
+trigger ContactTrigger on Contact (after update) {
+    List&lt;Contact_Updated__e&gt; events = new List&lt;Contact_Updated__e&gt;();
+    
+    for(Contact c : Trigger.new) {
+        events.add(new Contact_Updated__e(
+            AccountId__c = c.AccountId,
+            Timestamp__c = System.now()
+        ));
+    }
+    
+    EventBus.publish(events); // Fire and forget
+}</code></pre>
+      </div>
+
+      <p>By decoupling the Account update from the Contact transaction, you eliminate simultaneous lock requests. The Platform Event subscriber can batch Account updates intelligently, reducing contention by 95%.</p>
+
+      <h2>3. Strategic Data Archival</h2>
+
+      <p>Not all data needs to be operational. If you haven't queried a record in 2 years, why is it slowing down today's reports?</p>
+
+      <h3>Big Objects: Your Historical Data Warehouse</h3>
+
+      <p>Big Objects can store billions of records with consistent performance. They're perfect for:</p>
+
+      <ul class="styled-list">
+        <li><strong>Audit Logs:</strong> Retain 10 years of field history for compliance</li>
+        <li><strong>IoT Sensor Data:</strong> Millions of telemetry readings</li>
+        <li><strong>Archived Orders:</strong> Completed transactions older than fiscal year</li>
+        <li><strong>Email Campaign History:</strong> Every send, click, and bounce for analytics</li>
+      </ul>
+
+      <div class="code-example-wrapper">
+        <pre><code>// Async SOQL Query on Big Object
+// Returns up to 100k records with <5 second latency
+
+public class BigObjectQueryExample {
+    @future
+    public static void queryArchivedOrders(Date startDate, Date endDate) {
+        String query = 'SELECT OrderId__c, Amount__c, Status__c ' + 
+                       'FROM Order_Archive__b ' +
+                       'WHERE OrderDate__c >= ' + startDate.format() +
+                       ' AND OrderDate__c <= ' + endDate.format() +
+                       ' ORDER BY OrderDate__c DESC';
+        
+        // Submit async query
+        Reports.ReportResults results = Reports.ReportManager.runAsyncReport(
+            query, true
+        );
+        
+        // Process results when ready...
+    }
+}</code></pre>
+      </div>
+
+      <h2>4. Index Strategy: The 5 Golden Rules</h2>
+
+      <p>Custom indexes aren't magic. Poorly designed indexes can actually degrade performance. Follow these principles:</p>
+
+      <div class="numbered-section">
+        <div class="number-item">
+          <span class="number">1</span>
+          <div>
+            <h4>Index Fields Used in WHERE Clauses</h4>
+            <p>If you filter on <code>Status__c</code> in every report, index it. Don't index fields you only display.</p>
+          </div>
+        </div>
+
+        <div class="number-item">
+          <span class="number">2</span>
+          <div>
+            <h4>Avoid Indexing Low-Selectivity Fields</h4>
+            <p>If 90% of records have the same value (e.g., IsActive = true), the index provides minimal benefit.</p>
+          </div>
+        </div>
+
+        <div class="number-item">
+          <span class="number">3</span>
+          <div>
+            <h4>Composite Indexes for Multi-Field Filters</h4>
+            <p>When you always query <code>WHERE Country = 'US' AND Status = 'Active'</code>, request a composite index on both fields.</p>
+          </div>
+        </div>
+
+        <div class="number-item">
+          <span class="number">4</span>
+          <div>
+            <h4>Monitor Query Optimizer Decisions</h4>
+            <p>Use the Query Plan tool in Developer Console to verify Salesforce is actually using your index.</p>
+          </div>
+        </div>
+
+        <div class="number-item">
+          <span class="number">5</span>
+          <div>
+            <h4>Less is More</h4>
+            <p>Too many indexes slow down DML operations. Every insert/update must update every index. Aim for 5-7 strategic indexes per object maximum.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>5. The Governor Limits Playbook</h2>
+
+      <p>In LDV environments, governor limits aren't theoretical—they're daily obstacles. Here's how to navigate them:</p>
+
+      <h3>SOQL Query Limit (100 queries)</h3>
+      <div class="best-practice">
+        <strong>❌ Anti-Pattern:</strong> Query inside a loop<br>
+        <strong>✅ Best Practice:</strong> Bulkify with Sets and Maps
+      </div>
+
+      <div class="code-example-wrapper">
+        <pre><code>// Bulkified query example
+Map&lt;Id, Account&gt; accountMap = new Map&lt;Id, Account&gt;(
+    [SELECT Id, Name, Industry FROM Account 
+     WHERE Id IN :accountIds]
+);
+
+for(Contact c : contacts) {
+    Account a = accountMap.get(c.AccountId);
+    // Process without additional query
+}</code></pre>
+      </div>
+
+      <h3>Heap Size Limit (6MB synchronous / 12MB async)</h3>
+      <div class="best-practice">
+        <strong>❌ Anti-Pattern:</strong> Loading 50k records into memory<br>
+        <strong>✅ Best Practice:</strong> Batch processing with Database.Stateful
+      </div>
+
+      <h2>Monitoring & Observability</h2>
+
+      <p>You can't optimize what you can't measure. Implement these monitoring strategies:</p>
+
+      <ul class="styled-list">
+        <li><strong>Event Monitoring:</strong> Track slow queries in production with field-level detail</li>
+        <li><strong>Custom Metrics Dashboard:</strong> Monitor average query time by object over time</li>
+        <li><strong>Scheduled Apex Jobs:</strong> Alert when batch jobs exceed SLA thresholds</li>
+        <li><strong>Debug Logs:</strong> Capture execution time for critical transactions</li>
+      </ul>
+
+      <h2>Conclusion: Performance as Culture</h2>
+
+      <p>Optimizing Salesforce for large data volumes isn't a one-time project—it's an ongoing architectural discipline. Every new feature, every integration endpoint, every custom formula field must be evaluated through the lens of scale.</p>
+
+      <div class="key-takeaways">
+        <h3>Key Takeaways</h3>
+        <ul>
+          <li>Request Skinny Tables for objects with >1M records and complex reporting needs</li>
+          <li>Use Platform Events to eliminate record locking contention</li>
+          <li>Archive historical data to Big Objects to keep operational tables lean</li>
+          <li>Design indexes strategically—more isn't always better</li>
+          <li>Build monitoring into your architecture from day one</li>
+        </ul>
+      </div>
+
+      <p class="closing-text">The organizations that master LDV optimization don't just have faster systems—they have competitive advantages. When your competitors' systems buckle under load, yours scales effortlessly. That's the power of thoughtful architecture.</p>
     `,
     author: "Jawad Chafai",
     date: "Dec 28, 2025",

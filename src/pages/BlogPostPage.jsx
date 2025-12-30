@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, Share2, Linkedin, Twitter } from 'lucide-react';
 import ReadingProgressBar from '../components/Blog/ReadingProgressBar';
 import { blogPosts } from '../data/blogPosts';
+import '../styles/BlogPost.css';
 
 const BlogPostPage = () => {
     const { id } = useParams();
@@ -121,23 +122,40 @@ const BlogPostPage = () => {
 
                 {/* Sidebar / Related */}
                 <aside className="lg:w-1/3 space-y-8">
-                    <div className="glass-card p-6 rounded-2xl sticky top-24">
-                        <h3 className="text-xl font-bold text-white mb-6 border-b border-white/10 pb-4">Related Articles</h3>
-                        <div className="flex flex-col gap-6">
+                    <div className="glass-card p-6 rounded-2xl sticky top-24 related-articles-sidebar">
+                        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                            <span className="w-1 h-6 bg-gradient-to-b from-[var(--accent-blue)] to-purple-600 rounded-full"></span>
+                            Related Articles
+                        </h3>
+                        <div className="flex flex-col gap-5">
                             {relatedPosts.map(relPost => (
                                 <div
                                     key={relPost.id}
                                     onClick={() => navigate(`/blog/${relPost.id}`)}
-                                    className="group cursor-pointer flex gap-4 items-start"
+                                    className="related-article-card group cursor-pointer"
                                 >
-                                    <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-                                        <img src={relPost.image} alt={relPost.title} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                    <div className="related-article-image">
+                                        <img
+                                            src={relPost.image}
+                                            alt={relPost.title}
+                                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                        />
+                                        <div className="image-overlay"></div>
                                     </div>
-                                    <div>
-                                        <h4 className="text-sm font-bold text-white group-hover:text-[var(--accent-blue)] transition-colors line-clamp-2 mb-1">
+                                    <div className="related-article-content">
+                                        <h4 className="related-article-title">
                                             {relPost.title}
                                         </h4>
-                                        <p className="text-xs text-gray-500">{relPost.date}</p>
+                                        <div className="related-article-meta">
+                                            <span className="meta-item">
+                                                <Calendar size={14} />
+                                                {relPost.date}
+                                            </span>
+                                            <span className="meta-item">
+                                                <Clock size={14} />
+                                                {relPost.readTime}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

@@ -49,20 +49,20 @@ const About = () => {
                         <div className="proof-logos-mask">
                             <div className="proof-logos">
                                 {/* Original Set */}
-                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
 
                                 {/* Duplicate Set for Infinite Scroll */}
-                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" />
-                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" />
-                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" />
+                                <img src="/logos/new-client-1.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/new-client-2.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/new-client-3.webp" alt="Partner Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-3.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-4.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
+                                <img src="/logos/client-5.webp" alt="Client Logo" className="client-logo-hero" width="120" height="auto" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -77,6 +77,9 @@ const About = () => {
                             src="/assets/hero/dashboard_v2.webp"
                             alt="Salesforce Dashboard Interface"
                             className="hero-dashboard-img"
+                            width="800"
+                            height="600"
+                            loading="eager"
                         />
                     </div>
 
@@ -97,6 +100,9 @@ const About = () => {
                             src="/assets/hero/astro_mascot.webp"
                             alt="Salesforce Astro"
                             className="sf-mascot-img"
+                            width="200"
+                            height="200"
+                            loading="lazy"
                         />
                     </div>
                 </div>
