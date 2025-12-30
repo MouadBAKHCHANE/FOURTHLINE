@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/ContactPage.css'; // New Styles
 import { useLanguage } from '../App';
 import { Phone, MapPin, Send, Instagram, Twitter, MessageCircle, Linkedin } from 'lucide-react';
-import WorldMapDots from '../assets/world-map-dots.webp';
+import WorldMapDots from '../assets/world-map-dots.png';
 
 const ContactPage = () => {
     const { t } = useLanguage();

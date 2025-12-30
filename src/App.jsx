@@ -31,21 +31,19 @@ const AppContent = () => {
   return (
     <div className="app-wrapper">
       <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/start-build" element={<QualificationForm />} /> */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/careers/:id" element={<JobDetail />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<BlogPostPage />} />
-          <Route path="/sparkles" element={<SparklesPreview />} />
-          <Route path="/expertise" element={<ExpertisePage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/start-build" element={<QualificationForm />} /> */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:id" element={<JobDetail />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
+        <Route path="/sparkles" element={<SparklesPreview />} />
+        <Route path="/expertise" element={<ExpertisePage />} />
+      </Routes>
       <Footer />
     </div>
   );

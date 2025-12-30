@@ -45,10 +45,10 @@ const Footer = () => {
                         </div>
 
                         <div className="social-buttons footer-socials">
-                            <a href="#" className="social-btn" aria-label="Chat with us on messaging platform"><MessageCircle size={18} /></a>
-                            <a href="#" className="social-btn" aria-label="Connect with us on LinkedIn"><Linkedin size={18} /></a>
-                            <a href="#" className="social-btn" aria-label="Follow us on Twitter"><Twitter size={18} /></a>
-                            <a href="#" className="social-btn" aria-label="Follow us on Instagram"><Instagram size={18} /></a>
+                            <a href="#" className="social-btn"><MessageCircle size={18} /></a>
+                            <a href="#" className="social-btn"><Linkedin size={18} /></a>
+                            <a href="#" className="social-btn"><Twitter size={18} /></a>
+                            <a href="#" className="social-btn"><Instagram size={18} /></a>
                         </div>
                     </div>
 
