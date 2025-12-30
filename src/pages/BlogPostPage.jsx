@@ -107,13 +107,13 @@ const BlogPostPage = () => {
                     <div className="mt-16 pt-8 border-t border-white/10 flex items-center justify-between">
                         <h4 className="text-xl font-bold text-white">Share this article</h4>
                         <div className="flex gap-4">
-                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400">
+                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400" aria-label="Share on Twitter">
                                 <Twitter size={20} />
                             </button>
-                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400">
+                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400" aria-label="Share on LinkedIn">
                                 <Linkedin size={20} />
                             </button>
-                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400">
+                            <button className="p-3 bg-white/5 rounded-full hover:bg-[var(--accent-blue)] hover:text-white transition-all text-gray-400" aria-label="Copy share link">
                                 <Share2 size={20} />
                             </button>
                         </div>
