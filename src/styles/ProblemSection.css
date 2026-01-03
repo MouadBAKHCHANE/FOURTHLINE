@@ -137,7 +137,7 @@
 }
 
 .comparison-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
     margin-bottom: 8px;
     margin-top: 16px;
@@ -152,8 +152,8 @@
 
 /* Icon Styles */
 .card-icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -187,19 +187,19 @@
     }
 
     .comparison-card h3 {
-        font-size: 1.3rem;
-        /* Bigger title */
+        font-size: 1.1rem;
+        /* Slightly larger than desktop on mobile for readability, but smaller than before */
     }
 
     .comparison-card p {
-        font-size: 1.05rem;
-        /* Bigger text */
+        font-size: 0.95rem;
+        /* Adjusted text size */
     }
 
     .card-icon-wrapper {
-        width: 56px;
-        /* Bigger icons */
-        height: 56px;
+        width: 44px;
+        /* Scaled down from 56px */
+        height: 44px;
     }
 
     .toggle-header {

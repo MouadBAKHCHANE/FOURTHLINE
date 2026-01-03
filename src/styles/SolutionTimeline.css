@@ -60,29 +60,8 @@
     /* Ensure overlap space */
 }
 
-.timeline-step {
-    position: sticky;
-    top: 150px;
-    /* Trigger point from top matching header */
-    background: #0B0C10;
-    /* Solid background to cover cards behind */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 40px;
-    display: flex;
-    gap: 30px;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-    /* Shadow triggers on top edge */
-    transition: transform 0.3s ease;
-    /* Glassmorphism */
-    backdrop-filter: blur(20px);
-    background: rgba(11, 12, 16, 0.85);
-    /* Slightly more opaque to hide content behind */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Staggering the sticky tops */
-.timeline-step:nth-child(1) {
+/* Staggering the sticky tops - Removed to enable pure stacking overlap */
+/* .timeline-step:nth-child(1) {
     top: 150px;
 }
 
@@ -96,6 +75,24 @@
 
 .timeline-step:nth-child(4) {
     top: 270px;
+} */
+
+.timeline-step {
+    position: sticky;
+    top: 150px;
+    /* Same top for all so they stack directly on top */
+    background: #0B0C10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(20px);
+    background: rgba(11, 12, 16, 0.95);
+    /* Increased opacity for better covering */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Visual styling for contents */

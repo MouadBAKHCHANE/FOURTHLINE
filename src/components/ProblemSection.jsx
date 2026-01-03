@@ -13,21 +13,21 @@ const ProblemSection = () => {
 
     // Icons mapping
     const iconsDo = [
-        <Layout size={32} className="text-green-400" />,
-        <Database size={32} className="text-blue-400" />,
-        <Bot size={32} className="text-purple-400" />,
-        <BarChart3 size={32} className="text-yellow-400" />,
-        <HeartHandshake size={32} className="text-pink-400" />,
-        <Code2 size={32} className="text-cyan-400" />
+        <Layout size={24} className="text-green-400" />,
+        <Database size={24} className="text-blue-400" />,
+        <Bot size={24} className="text-purple-400" />,
+        <BarChart3 size={24} className="text-yellow-400" />,
+        <HeartHandshake size={24} className="text-pink-400" />,
+        <Code2 size={24} className="text-cyan-400" />
     ];
 
     const iconsDont = [
-        <Copy size={32} className="text-gray-400" />,
-        <Frown size={32} className="text-red-400" />,
-        <EyeOff size={32} className="text-gray-400" />,
-        <Unlink size={32} className="text-red-400" />,
-        <CalendarX2 size={32} className="text-red-400" />,
-        <UserX size={32} className="text-red-400" />
+        <Copy size={24} className="text-gray-400" />,
+        <Frown size={24} className="text-red-400" />,
+        <EyeOff size={24} className="text-gray-400" />,
+        <Unlink size={24} className="text-red-400" />,
+        <CalendarX2 size={24} className="text-red-400" />,
+        <UserX size={24} className="text-red-400" />
     ];
 
     return (
