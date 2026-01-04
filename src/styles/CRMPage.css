@@ -1010,3 +1010,14 @@
     }
 
 }
+
+@media (max-width: 768px) {
+    .sb-hero {
+        padding-top: 40px !important;
+        padding-bottom: 40px;
+    }
+
+    .small-business-page {
+        padding-top: 0 !important;
+    }
+}

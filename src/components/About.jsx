@@ -31,7 +31,10 @@ const About = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h2 className="hero-title nova-title">
-                        {t.hero.mainTitle} <br />
+                        <span className="hero-text-part">{t.hero.mainTitlePart1}</span>
+                        <br className="mobile-break" />
+                        <span className="hero-text-part">{t.hero.mainTitlePart2}</span>
+                        <br />
                         <span key={index} className="text-highlight flip-enter" style={{ display: 'inline-block' }}>
                             {phrases[index]}
                         </span>

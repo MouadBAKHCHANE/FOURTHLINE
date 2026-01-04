@@ -796,6 +796,10 @@
 }
 
 @media (max-width: 768px) {
+    .sb-hero {
+        padding-top: 40px;
+        /* Reduced from 120px */
+    }
 
     /* Hero Section */
     .sb-hero-container {

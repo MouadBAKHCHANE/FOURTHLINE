@@ -4,6 +4,8 @@
     /* Adjusted bottom padding to 80px */
     background: transparent;
     position: relative;
+    overflow: visible !important;
+    /* Ensure no clipping prevents sticky */
 }
 
 /* 2-Column Grid Layout */
@@ -54,35 +56,38 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    /* Gap between start of sticky positions */
+    gap: 100px;
+    /* Increase gap to make the scrolling felt more */
     min-height: 100vh;
-    /* Ensure overlap space */
+    padding-bottom: 20vh;
+    /* Ensure exit space */
 }
 
 /* Staggering the sticky tops - Removed to enable pure stacking overlap */
-/* .timeline-step:nth-child(1) {
-    top: 150px;
+/* But we ADD z-index to ensure stacking order is preserved visually */
+.timeline-step:nth-child(1) {
+    z-index: 10;
 }
 
 .timeline-step:nth-child(2) {
-    top: 190px;
+    z-index: 20;
 }
 
 .timeline-step:nth-child(3) {
-    top: 230px;
+    z-index: 30;
 }
 
 .timeline-step:nth-child(4) {
-    top: 270px;
-} */
+    z-index: 40;
+}
 
 .timeline-step {
     position: sticky;
     top: 150px;
-    /* Same top for all so they stack directly on top */
+    /* Reference desktop stick point */
     background: #0B0C10;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* DEBUG: Verify CSS update */
     border-radius: 24px;
     padding: 40px;
     display: flex;
@@ -90,8 +95,8 @@
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     backdrop-filter: blur(20px);
-    background: rgba(11, 12, 16, 0.95);
-    /* Increased opacity for better covering */
+    background: rgba(11, 12, 16, 1);
+    /* 100% Opaque to fully hide previous card */
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -193,6 +198,7 @@
     }
 
 
+    /* Mobile Responsive Adjustments */
     .solution-section {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -219,30 +225,24 @@
         text-align: center;
     }
 
-    /* Disable sticky stacking for mobile - Use simple vertical stack */
+    /* Keep Sticky Stacking on Mobile! */
     .steps-wrapper {
         min-height: auto;
         gap: 30px;
+        padding-bottom: 40px;
+        /* Override 20vh */
     }
 
     .timeline-step {
-        position: relative;
-        /* Disable sticky */
-        top: auto !important;
-        /* Override any sticky tops */
+        /* Adjust padding for mobile but KEEP sticky behavior */
+        padding: 30px 20px;
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
-        margin-bottom: 0;
-        background: rgba(11, 12, 16, 0.6);
-        /* Ensure contrast */
-        backdrop-filter: blur(10px);
-    }
-
-    /* Remove the staggering offsets completely */
-    .timeline-step:nth-child(n) {
-        margin-top: 0;
-        top: auto;
+        /* Ensure top 150px works on mobile, or adjust slightly if header takes more space? 
+           If header is relative and scrolls away, 150px might be "floating" in middle of screen?
+           Let's set top to something smaller like 100px or even 80px for mobile.
+        */
+        top: 80px;
     }
 
     .step-marker {
@@ -251,6 +251,7 @@
         align-items: center;
         margin-bottom: 20px;
     }
+
 
     .timeline-content h3 {
         font-size: 1.5rem;

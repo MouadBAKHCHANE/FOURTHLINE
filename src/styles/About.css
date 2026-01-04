@@ -227,8 +227,8 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 180px;
-        /* Increased from 140px */
+        padding-top: 110px;
+        /* Reduced from 180px to decrease space */
         padding-bottom: 40px;
         /* Reduced from default */
         min-height: auto;
@@ -285,6 +285,23 @@
         font-size: 2.2rem;
         padding-top: 15px;
         display: block;
+    }
+
+    .mobile-break {
+        display: block;
+        /* Ensure break on mobile */
+    }
+}
+
+/* Hide mobile break on desktop */
+@media (min-width: 769px) {
+    .mobile-break {
+        display: none;
+    }
+
+    /* Ensure spacing on desktop */
+    .hero-text-part:first-child::after {
+        content: " ";
     }
 }
 

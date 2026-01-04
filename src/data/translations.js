@@ -14,9 +14,9 @@ export const translations = {
             requestDemo: "Start Your Build"
         },
         hero: {
-            title: "Turning Vision",
             titleHighlight: "Into Digital Power",
-            mainTitle: "We Design And Engineer", // New key
+            mainTitlePart1: "We Design", // Split for mobile styling
+            mainTitlePart2: "And Engineer",
             dynamicPhrases: [ // New key
                 "Digital infra",
                 "CRM to scale",
@@ -85,7 +85,7 @@ export const translations = {
             title: "Choose Your Growth System",
             subtitle: "Stop buying just a website. Invest in a complete sales infrastructure.",
             tier1Name: "The Accelerator",
-            tier1Badge: "Speed to Lead",
+            tier1Badge: "Lead to Scale",
             tier1Desc: "For companies that need to professionalize fast. We check the engine, fix the leaks, and turn on the magnet.",
             tier1Feat1: "High-Performance Landing Page",
             tier1Feat2: "Salesforce CRM Configuration",
@@ -393,7 +393,8 @@ export const translations = {
         hero: {
             title: "Transformer la Vision",
             titleHighlight: "En Puissance Numérique",
-            mainTitle: "Nous Concevons et Développons",
+            mainTitlePart1: "Nous Concevons",
+            mainTitlePart2: "et Développons",
             dynamicPhrases: [
                 "Infra numérique",
                 "CRM pour scaler",
