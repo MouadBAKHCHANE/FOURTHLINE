@@ -1,0 +1,18 @@
+/* HeroBackground.css */
+
+.trail-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.4;
+}
+
+.trail-svg {
+    width: 100%;
+    height: 100%;
+}

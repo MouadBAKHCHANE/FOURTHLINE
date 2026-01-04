@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/ContactPage.css'; // New Styles
+import HeroBackground from '../components/HeroBackground';
 import { useLanguage } from '../App';
 import { Phone, MapPin, Send, Instagram, Twitter, MessageCircle, Linkedin } from 'lucide-react';
 import WorldMapDots from '../assets/world-map-dots.webp';
@@ -15,7 +16,8 @@ const ContactPage = () => {
     };
 
     return (
-        <section className="contact-page-section">
+        <section className="contact-page-section" style={{ position: 'relative' }}>
+            <HeroBackground />
             <div className="container">
                 {/* 1. Header */}
                 <div className="contact-header">

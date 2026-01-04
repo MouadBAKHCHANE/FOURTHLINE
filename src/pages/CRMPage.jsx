@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../App';
 import ComparisonSlider from '../components/ComparisonSlider';
+import HeroBackground from '../components/HeroBackground';
 import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe, TrendingUp, Megaphone, Bot, BarChart } from 'lucide-react';
 import '../styles/CRMPage.css';
 
@@ -13,6 +14,7 @@ const SmallBusiness = () => {
         <div className="small-business-page">
             {/* Hero Section */}
             <section className="sb-hero">
+                <HeroBackground />
                 <div className="sb-hero-bg"></div>
                 <div className="container sb-hero-container">
                     <div className="sb-hero-content">

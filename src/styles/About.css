@@ -421,3 +421,15 @@
         left: 0;
     }
 }
+/* Expertise Page Specifics */
+@media (max-width: 1024px) {
+    .expertise-main-title {
+        white-space: nowrap;
+        font-size: 3rem !important; /* Ensure it fits on one line */
+    }
+}
+@media (max-width: 480px) {
+    .expertise-main-title {
+        font-size: 2.2rem !important; /* Smaller for very small screens */
+    }
+}

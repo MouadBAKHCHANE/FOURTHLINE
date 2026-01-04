@@ -83,6 +83,7 @@
 
 .timeline-step {
     position: sticky;
+    --base-top: 150px;
     top: 150px;
     /* Reference desktop stick point */
     background: #0B0C10;
@@ -93,7 +94,7 @@
     display: flex;
     gap: 30px;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; Removed to fix Framer Motion conflict */
     backdrop-filter: blur(20px);
     background: rgba(11, 12, 16, 1);
     /* 100% Opaque to fully hide previous card */
@@ -238,11 +239,10 @@
         padding: 30px 20px;
         flex-direction: column;
         text-align: center;
-        /* Ensure top 150px works on mobile, or adjust slightly if header takes more space? 
-           If header is relative and scrolls away, 150px might be "floating" in middle of screen?
-           Let's set top to something smaller like 100px or even 80px for mobile.
-        */
+        /* Ensure top uses variable for JS calculation or fallback */
+        --base-top: 80px;
         top: 80px;
+        /* Fallback */
     }
 
     .step-marker {
