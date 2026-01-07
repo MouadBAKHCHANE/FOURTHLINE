@@ -39,7 +39,7 @@ const Home = () => {
 
 
             {/* Premium Digital Footprint Visual (Moved from ServicesPage) */}
-            <div className="container ws-hero-container" style={{ marginBottom: '80px' }}>
+            <div id="website-section" className="container ws-hero-container" style={{ marginBottom: '80px' }}>
                 <div className="ws-hero-text">
                     <div className="ws-hero-badges">
                         <div className="ws-hero-badge">Website</div>
@@ -94,6 +94,7 @@ const Home = () => {
 
             {/* Services Grid */}
             <section className="container ws-services">
+                <h2 className="ws-section-title text-center mb-10">{t.websitePage.services.title}</h2>
                 <div className="ws-services-grid">
                     <ServiceCard icon={<Globe size={40} className="text-purple-400 mb-4" />} data={t.websitePage.services.custom} />
                     <ServiceCard icon={<Smartphone size={40} className="text-blue-400 mb-4" />} data={t.websitePage.services.responsive} />
@@ -114,7 +115,7 @@ const Home = () => {
             </section>
 
             {/* CRM Section */}
-            <div className="merged-crm-section">
+            <div id="crm-section" className="merged-crm-section">
                 <SmallBusiness />
             </div>
 

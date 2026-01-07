@@ -87,16 +87,22 @@ const SolutionTimeline = () => {
                                 >
                                     <div className="step-marker">
                                         <span className="step-number">0{index + 1}</span>
-                                        <div className="step-icon">
+                                        <div
+                                            className={`step-icon ${[2, 3].includes(step.id) ? 'cursor-pointer hover:scale-110 transition-transform' : ''}`}
+                                            onClick={() => {
+                                                if (step.id === 2) {
+                                                    document.getElementById('website-section')?.scrollIntoView({ behavior: 'smooth' });
+                                                } else if (step.id === 3) {
+                                                    document.getElementById('crm-section')?.scrollIntoView({ behavior: 'smooth' });
+                                                }
+                                            }}
+                                        >
                                             {step.icon}
                                         </div>
                                     </div>
                                     <div className="timeline-content">
                                         <h3>{step.title}</h3>
                                         <p>{step.desc}</p>
-                                        {step.id === 2 && (
-                                            <Link to="/services" className="btn btn-outline btn-sm mt-3">{t.nav.product}</Link>
-                                        )}
                                     </div>
                                 </Card>
                             );

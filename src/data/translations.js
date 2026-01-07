@@ -371,15 +371,15 @@ export const translations = {
                 title: "Technologies",
                 frontend: {
                     title: "Front-End Technologies",
-                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Foundation"]
+                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap"]
                 },
                 backend: {
                     title: "Back-End Technologies",
-                    list: ["Python", "Rails", "Nest", "Node JS", "Spring"]
+                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "RESTful APIs", "GraphQL", "JSON"]
                 },
-                api: {
-                    title: "API and Integration",
-                    list: ["RESTful APIs", "GraphQL", "SOAP", "JSON", "XML"]
+                cms: {
+                    title: "Custom Template & CMS",
+                    list: ["Framer", "Webflow", "WordPress"]
                 },
                 cta: "Start Your Build"
             },

@@ -371,7 +371,6 @@
     }
 }
 
-/* Mobile specific adjustments */
 @media (max-width: 600px) {
     .ws-hero-container {
         padding: 0 15px;
@@ -389,7 +388,12 @@
     .preview-card {
         width: 150px;
         padding: 10px;
-        transform: translateX(20%);
+        bottom: -60px;
+        /* Lower */
+        right: -20px;
+        /* More right */
+        left: auto;
+        transform: none;
     }
 
     .ws-title {
@@ -398,6 +402,11 @@
 
     .ws-subtitle {
         font-size: 1rem;
+    }
+
+    /* Add padding to boxes in mobile */
+    .ws-card {
+        padding: 40px 30px;
     }
 }
 

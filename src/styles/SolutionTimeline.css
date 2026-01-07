@@ -86,7 +86,7 @@
     --base-top: 150px;
     top: 150px;
     /* Reference desktop stick point */
-    background: #0B0C10;
+    background: #252830;
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* DEBUG: Verify CSS update */
     border-radius: 24px;
@@ -96,7 +96,7 @@
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
     /* transition: transform 0.3s ease; Removed to fix Framer Motion conflict */
     backdrop-filter: blur(20px);
-    background: rgba(11, 12, 16, 1);
+    background: #252830;
     /* 100% Opaque to fully hide previous card */
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
