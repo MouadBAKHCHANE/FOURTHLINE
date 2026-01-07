@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 import { useLanguage } from '../App';
 import AuditModal from './AuditModal';
 import { Link, useLocation } from 'react-router-dom';
-import { MessageCircle, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
     const { t } = useLanguage();
@@ -45,10 +45,9 @@ const Footer = () => {
                         </div>
 
                         <div className="social-buttons footer-socials">
-                            <a href="#" className="social-btn"><MessageCircle size={18} /></a>
-                            <a href="#" className="social-btn"><Linkedin size={18} /></a>
-                            <a href="#" className="social-btn"><Twitter size={18} /></a>
-                            <a href="#" className="social-btn"><Instagram size={18} /></a>
+                            <a href="https://www.facebook.com/profile.php?id=61563930911439" target="_blank" rel="noopener noreferrer" className="social-btn"><Facebook size={18} /></a>
+                            <a href="https://www.instagram.com/seedsvision/?hl=fr" target="_blank" rel="noopener noreferrer" className="social-btn"><Instagram size={18} /></a>
+                            <a href="mailto:contact@seedsvision.com" className="social-btn"><Mail size={18} /></a>
                         </div>
                     </div>
 
