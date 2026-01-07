@@ -6,7 +6,7 @@ import { useLanguage } from '../App';
 
 const ProblemSection = () => {
     const { t } = useLanguage();
-    const [isDo, setIsDo] = React.useState(true); // Default to 'Do'
+    const [isDo, setIsDo] = React.useState(false); // Default to 'Don't'
 
     const problemData = t.problem;
     const currentCards = isDo ? problemData.cards.do : problemData.cards.dont;

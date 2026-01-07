@@ -8,7 +8,7 @@ import Services from '../components/Services';
 import Stats from '../components/Stats';
 import { useLocation } from 'react-router-dom';
 
-import { Zap, Layers, Code } from 'lucide-react';
+import { Zap, Layers, Code, Smartphone, ShoppingCart, Webhook, FileText, LifeBuoy, ShieldCheck, Globe } from 'lucide-react';
 import GrowthFormula from '../components/GrowthFormula';
 import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
 import SmallBusiness from './CRMPage';
@@ -95,16 +95,13 @@ const Home = () => {
             {/* Services Grid */}
             <section className="container ws-services">
                 <div className="ws-services-grid">
-                    <div className="ws-card">
-                        <Zap size={40} className="text-yellow mb-4" />
-                        <h3>{t.websitePage.services.landing.title}</h3>
-                        <p>{t.websitePage.services.landing.desc}</p>
-                    </div>
-                    <div className="ws-card">
-                        <Layers size={40} className="text-blue mb-4" />
-                        <h3>{t.websitePage.services.multi.title}</h3>
-                        <p>{t.websitePage.services.multi.desc}</p>
-                    </div>
+                    <ServiceCard icon={<Globe size={40} className="text-purple-400 mb-4" />} data={t.websitePage.services.custom} />
+                    <ServiceCard icon={<Smartphone size={40} className="text-blue-400 mb-4" />} data={t.websitePage.services.responsive} />
+                    <ServiceCard icon={<ShoppingCart size={40} className="text-pink-400 mb-4" />} data={t.websitePage.services.ecommerce} />
+                    <ServiceCard icon={<Webhook size={40} className="text-green-400 mb-4" />} data={t.websitePage.services.api} />
+                    <ServiceCard icon={<FileText size={40} className="text-orange-400 mb-4" />} data={t.websitePage.services.cms} />
+                    <ServiceCard icon={<LifeBuoy size={40} className="text-red-400 mb-4" />} data={t.websitePage.services.support} />
+                    <ServiceCard icon={<ShieldCheck size={40} className="text-teal-400 mb-4" />} data={t.websitePage.services.qa} />
                 </div>
             </section>
 
@@ -127,5 +124,15 @@ const Home = () => {
         </>
     );
 };
+
+const ServiceCard = ({ icon, data }) => (
+    <div className="ws-card group">
+        <div className="mb-4 transform transition-transform group-hover:scale-110 duration-300">
+            {icon}
+        </div>
+        <h3>{data.title}</h3>
+        <p>{data.desc}</p>
+    </div>
+);
 
 export default Home;

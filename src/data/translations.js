@@ -331,13 +331,35 @@ export const translations = {
                 cta: "Start Your Build"
             },
             services: {
-                landing: {
-                    title: "Landing Pages",
-                    desc: "For speed and conversion. High impact, fast deployment.",
+                title: "Solutions We Offer",
+                subtitle: "Comprehensive web development services tailored to your business needs.",
+                custom: {
+                    title: "Custom Web Applications",
+                    desc: "We create bespoke custom web application development solutions designed to address your specific business requirements and challenges."
                 },
-                multi: {
-                    title: "Multi-Page Websites",
-                    desc: "For authority and SEO. Corporate presence, content-rich.",
+                responsive: {
+                    title: "Responsive Web Design",
+                    desc: "Our responsive web design ensure your website looks and functions perfectly on any device, from desktops to smartphones."
+                },
+                ecommerce: {
+                    title: "E-commerce Development",
+                    desc: "We build secure, scalable, and user-friendly e-commerce platforms that enhance your online sales and customer experience."
+                },
+                api: {
+                    title: "API Integration",
+                    desc: "We seamlessly integrate your website with third-party services and platforms to enhance its functionality and connectivity."
+                },
+                cms: {
+                    title: "Content Management Systems (CMS)",
+                    desc: "We create intuitive CMS platforms to make managing your website content easy and efficient, giving you complete control."
+                },
+                support: {
+                    title: "Continuous Support and Maintenance",
+                    desc: "Our ongoing support ensures your website remains secure, updated, and performing optimally with regular updates and audits."
+                },
+                qa: {
+                    title: "Quality Assurance (QA)",
+                    desc: "We implement rigorous testing procedures (`manual` & `automated`) to ensure your website is free of bugs and delivers flawless performance."
                 }
             },
             combo: {
@@ -346,27 +368,20 @@ export const translations = {
                 result: "Scale & Grow"
             },
             techStack: {
-                title: "The Arsenal",
-                nocode: {
-                    title: "No-Code / Low-Code",
-                    framer: "Framer: Design speed. World-class animations.",
-                    webflow: "Webflow: The professional standard for visual development."
+                title: "Technologies",
+                frontend: {
+                    title: "Front-End Technologies",
+                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Foundation"]
                 },
-                cms: {
-                    title: "CMS",
-                    wordpress: "WordPress: Powering 40% of the web. Infinite flexibility."
+                backend: {
+                    title: "Back-End Technologies",
+                    list: ["Python", "Rails", "Nest", "Node JS", "Spring"]
                 },
-                custom: {
-                    title: "Custom Development",
-                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js for modern, scalable apps.",
-                    laravel: "Laravel / VueJS: Elegant syntax, rapid application development.",
-                    java: "Java / Angular: Enterprise-grade stability and strict typing for large-scale systems."
+                api: {
+                    title: "API and Integration",
+                    list: ["RESTful APIs", "GraphQL", "SOAP", "JSON", "XML"]
                 },
-                benefits: {
-                    perf: "Core Web Vitals optimized.",
-                    seo: "Built-in technical SEO.",
-                    scale: "Ready to grow with your business."
-                }
+                cta: "Start Your Build"
             },
             cta: {
                 text: "Ready to upgrade your web presence?",
@@ -708,42 +723,52 @@ export const translations = {
                 cta: "Commencer Votre Build"
             },
             services: {
-                landing: {
-                    title: "Landing Pages",
-                    desc: "Pour la vitesse et la conversion. Impact fort, déploiement rapide.",
+                title: "Solutions Que Nous Offrons",
+                subtitle: "Services de développement web complets adaptés aux besoins de votre entreprise.",
+                custom: {
+                    title: "Applications Web Sur Mesure",
+                    desc: "Nous créons des solutions d'applications web sur mesure conçues pour répondre à vos défis commerciaux spécifiques."
                 },
-                multi: {
-                    title: "Sites Multi-Pages",
-                    desc: "Pour l'autorité et le SEO. Présence corporate, riche en contenu.",
-                }
-            },
-            combo: {
-                part1: "Site Web Premium",
-                part2: "CRM Puissant",
-                result: "Échelle & Croissance"
-            },
-            techStack: {
-                title: "L'Arsenal",
-                nocode: {
-                    title: "No-Code / Low-Code",
-                    framer: "Framer: Vitesse de design. Animations de classe mondiale.",
-                    webflow: "Webflow: Le standard professionnel pour le développement visuel."
+                responsive: {
+                    title: "Design Web Responsive",
+                    desc: "Notre design web responsive garantit que votre site fonctionne parfaitement sur tous les appareils, des ordinateurs aux smartphones."
+                },
+                ecommerce: {
+                    title: "Développement E-commerce",
+                    desc: "Nous construisons des plateformes e-commerce sécurisées, évolutives et conviviales qui améliorent vos ventes en ligne."
+                },
+                api: {
+                    title: "Intégration API",
+                    desc: "Nous intégrons de manière transparente votre site web avec des services tiers pour améliorer sa fonctionnalité et sa connectivité."
                 },
                 cms: {
-                    title: "CMS",
-                    wordpress: "WordPress: Propulse 40% du web. Flexibilité infinie."
+                    title: "Systèmes de Gestion de Contenu (CMS)",
+                    desc: "Nous créons des plateformes CMS intuitives pour faciliter la gestion de votre contenu web, vous donnant un contrôle total."
                 },
-                custom: {
-                    title: "Développement Sur Mesure",
-                    mern: "MERN Full Stack: MongoDB, Express, React, Node.js pour apps modernes.",
-                    laravel: "Laravel / VueJS: Syntaxe élégante, développement rapide.",
-                    java: "Java / Angular: Stabilité entreprise et typage strict."
+                support: {
+                    title: "Support et Maintenance Continus",
+                    desc: "Notre support continu garantit que votre site reste sécurisé, à jour et performant grâce à des mises à jour régulières."
                 },
-                benefits: {
-                    perf: "Core Web Vitals optimisés.",
-                    seo: "SEO technique intégré.",
-                    scale: "Prêt à grandir avec votre entreprise."
+                qa: {
+                    title: "Assurance Qualité (QA)",
+                    desc: "Nous mettons en œuvre des procédures de test rigoureuses (`manuelles` & `automatisées`) pour garantir un site sans bug et performant."
                 }
+            },
+            techStack: {
+                title: "Technologies",
+                frontend: {
+                    title: "Technologies Front-End",
+                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Foundation"]
+                },
+                backend: {
+                    title: "Technologies Back-End",
+                    list: ["Python", "Rails", "Nest", "Node JS", "Spring"]
+                },
+                api: {
+                    title: "API et Intégration",
+                    list: ["RESTful APIs", "GraphQL", "SOAP", "JSON", "XML"]
+                },
+                cta: "Commencer Votre Build"
             },
             cta: {
                 text: "Prêt à moderniser votre présence web ?",

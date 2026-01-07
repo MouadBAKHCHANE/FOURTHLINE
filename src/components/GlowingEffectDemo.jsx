@@ -6,38 +6,52 @@ import { useLanguage } from "../App";
 
 export function GlowingEffectDemo() {
     const { t } = useLanguage();
-    const ws = t.websitePage;
+    const ts = t.websitePage.techStack;
 
-    // Use a simple 4-column grid for "equal rectangles"
     return (
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <GridItem
-                icon={<img src="/assets/tech/framer.webp" alt="Framer" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
-                title="Framer - No Code"
-                description={ws.techStack.nocode.framer.split(':')[1]}
-            />
-            <GridItem
-                icon={<img src="/assets/tech/webflow.webp" alt="Webflow" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:opacity-100" />}
-                title="Webflow - CMS"
-                description={ws.techStack.nocode.webflow.split(':')[1]}
-            />
-            <GridItem
-                icon={<img src="/assets/tech/wordpress.webp" alt="WordPress" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
-                title="WordPress - Open Source"
-                description={ws.techStack.cms.wordpress.split(':')[1]}
-            />
-            <GridItem
-                icon={<img src="/assets/tech/fullstack.webp" alt="Full Stack" className="h-32 w-32 object-contain transition-all duration-500 brightness-0 invert opacity-40 group-hover:filter-none group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100" />}
-                title="Custom Development"
-                description={
-                    <div className="flex flex-col gap-1 mt-2">
-                        <span className="text-xs opacity-80">• MERN Stack</span>
-                        <span className="text-xs opacity-80">• Java/Angular</span>
-                        <span className="text-xs opacity-80">• Laravel/VueJS</span>
-                    </div>
-                }
-            />
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <TechCard title={ts.frontend.title} items={ts.frontend.list} color="blue" />
+            <TechCard title={ts.backend.title} items={ts.backend.list} color="purple" />
+            <TechCard title={ts.api.title} items={ts.api.list} color="emerald" />
         </ul>
+    );
+}
+
+const TechCard = ({ title, items, color }) => {
+    return (
+        <li className="list-none group min-h-[14rem]">
+            <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                    spread={80}
+                    glow={true}
+                    disabled={false}
+                    proximity={80}
+                    inactiveZone={0.2}
+                    borderWidth={2}
+                />
+                <div className="relative flex h-full flex-col items-start p-6 rounded-xl border-[0.75px] bg-[#1a1d23] overflow-hidden group-hover:bg-[#1e2128] transition-colors duration-500">
+                    <h3 className={`text-xl font-bold mb-6 text-${color}-400 group-hover:scale-105 transition-transform origin-left`}>
+                        {title}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-2">
+                        {items.map((item, i) => (
+                            <span
+                                key={i}
+                                className={`
+                                    px-3 py-1.5 rounded-lg text-sm font-medium
+                                    bg-white/5 border border-white/10 text-gray-300
+                                    group-hover:bg-${color}-500/10 group-hover:border-${color}-500/30 group-hover:text-${color}-200
+                                    transition-all duration-300 hover:!scale-105 cursor-default
+                                `}
+                            >
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </li>
     );
 }
 
@@ -46,14 +60,14 @@ const GridItem = ({ area, icon, title, description }) => {
         <li className={cn("min-h-[24rem] list-none group", area)}>
             <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
                 <GlowingEffect
-                    spread={40}
+                    spread={80}
                     glow={true}
                     disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                    borderWidth={3}
+                    proximity={80}
+                    inactiveZone={0.2}
+                    borderWidth={2}
                 />
-                <div className="relative flex h-full flex-col items-center justify-center gap-4 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6 text-center transition-colors duration-500 group-hover:bg-zinc-900">
+                <div className="relative flex h-full flex-col items-center justify-center gap-4 overflow-hidden rounded-xl border-[0.75px] bg-[#1a1d23] p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6 text-center transition-colors duration-500 group-hover:bg-[#1e2128]">
 
                     {/* Icon - Centered */}
                     <div className="mb-4 pointer-events-none">

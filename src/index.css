@@ -5,9 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #08090a;
-  /* Slightly lighter, premium dark */
-  --bg-secondary: #111316;
+  --bg-primary: #1e2128;
+  /* Lighter premium dark (Soft Charcoal) */
+  --bg-dark: #1e2128;
+  /* Ensure Website.css variable matches */
+  --bg-secondary: #252830;
   --accent-blue: #398fff;
   /* OptiRank Blue */
   --accent-glow: rgba(57, 143, 255, 0.4);

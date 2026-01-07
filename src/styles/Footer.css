@@ -2,8 +2,8 @@
 
 /* Footer Section */
 .footer-section {
-    background-color: #020408;
-    /* Deep Dark Background */
+    background-color: transparent;
+    /* Unified Background */
     padding: 80px 0 40px;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.05);

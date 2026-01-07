@@ -5,7 +5,7 @@
     /* Reduced from 180px to bring title closer to navbar */
     padding-bottom: 80px;
     min-height: 100vh;
-    background-color: #000;
+    background-color: transparent;
     /* Ensure background is black */
 }
 
@@ -44,7 +44,7 @@
 
 /* 3. Left Card: Info & Map */
 .contact-info-card {
-    background: #000;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 40px;
@@ -125,7 +125,7 @@
 
 /* 4. Right Card: Form */
 .contact-form-card {
-    background: #0a0a0a;
+    background: rgba(30, 33, 40, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 40px;
