@@ -64,7 +64,23 @@ const ICON_MAP = {
     "WordPress": "wordpress.png"
 };
 
+// Mobile Hook
+const useIsMobile = () => {
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile(); // Check on mount
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return isMobile;
+};
+
 const OrbitTechCard = ({ title, items, color, align = "left" }) => {
+    const isMobile = useIsMobile();
+
     // Distribute items
     // To ensure they are "not near each other", we use larger orbits.
     // If < 8 items, use single large orbit.
@@ -101,7 +117,7 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
             {/* Orbit Section */}
             <div className="flex-1 flex items-center justify-center p-8 z-10 w-full">
                 {/* Increased container size for spacing */}
-                <div className="relative w-[340px] h-[340px] md:w-[500px] md:h-[500px] flex items-center justify-center">
+                <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] flex items-center justify-center">
 
                     {/* Center Core / Star */}
                     <div className={`absolute w-32 h-32 bg-${color}-500/10 rounded-full blur-2xl animate-pulse`} />
@@ -110,23 +126,24 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     {/* Orbit Rings */}
                     <div className={cn(
                         "absolute rounded-full border border-dashed border-white/10 animate-spin-slow",
-                        // Inner ring size
-                        isMultiRing ? "w-[240px] h-[240px] md:w-[300px] md:h-[300px]" : "w-[280px] h-[280px] md:w-[420px] md:h-[420px]"
+                        // Inner ring size - Adjusted for mobile fitting
+                        isMultiRing ? "w-[200px] h-[200px] md:w-[300px] md:h-[300px]" : "w-[260px] h-[260px] md:w-[420px] md:h-[420px]"
                     )} style={{ animationDuration: '60s' }} />
 
                     {isMultiRing && (
                         <div className={cn(
                             "absolute rounded-full border border-dashed border-white/5 animate-spin-slower",
-                            // Outer ring size
-                            "w-[340px] h-[340px] md:w-[480px] md:h-[480px]"
+                            // Outer ring size - Adjusted for mobile fitting
+                            "w-[300px] h-[300px] md:w-[480px] md:h-[480px]"
                         )} style={{ animationDuration: '90s' }} />
                     )}
 
                     {/* Items Placement */}
                     {/* Radius passed here is HALF the width/height defined above roughly, slightly adjusted for centering */}
+                    {/* Mobile Radius adjustment: 100px (inner), 130px (single), 150px (outer) */}
                     <OrbitItems
                         items={innerItems}
-                        radius={isMultiRing ? 150 : 210}
+                        radius={isMultiRing ? (isMobile ? 100 : 150) : (isMobile ? 130 : 210)}
                         color={color}
                         duration={60}
                     />
@@ -134,7 +151,7 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     {isMultiRing && (
                         <OrbitItems
                             items={outerItems}
-                            radius={240}
+                            radius={isMobile ? 150 : 240}
                             color={color}
                             duration={90}
                             reverse

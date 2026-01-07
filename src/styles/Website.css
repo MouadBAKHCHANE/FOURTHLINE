@@ -406,7 +406,23 @@
 
     /* Add padding to boxes in mobile */
     .ws-card {
-        padding: 40px 30px;
+        padding: 40px 30px !important;
+    }
+
+    /* Safely position float icons on mobile */
+    .icon-react {
+        right: 10px !important;
+        top: 0px !important;
+    }
+
+    .icon-vue {
+        left: 10px !important;
+        bottom: 80px !important;
+    }
+
+    /* Add side padding to Services section */
+    .ws-services {
+        padding: 60px 20px !important;
     }
 }
 

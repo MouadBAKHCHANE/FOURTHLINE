@@ -17,50 +17,66 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="pricing-grid">
-                    {/* Tier 1: The Essential */}
-                    <div className="pricing-card glass-card">
-                        <div className="card-content">
-                            <div className="tier-badge">{t.services.tier1Badge}</div>
-                            <h3 className="tier-name">{t.services.tier1Name}</h3>
-                            <p className="tier-desc">{t.services.tier1Desc}</p>
-
-                            <ul className="feature-list">
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat1}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat2}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat3}</li>
-                                <li><Check size={18} className="check-icon" /> {t.services.tier1Feat4}</li>
-                            </ul>
-
-                            <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
-                                <span className="btn-dot-indicator"></span>
-                                {t.services.tier1Button}
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Tier 2: The Enterprise */}
-                    <div className="pricing-card glass-card enterprise-card">
-                        <div className="card-glow"></div>
-                        <div className="card-content">
-                            <div className="tier-badge badge-accent">{t.services.tier2Badge}</div>
-                            <h3 className="tier-name">{t.services.tier2Name}</h3>
-                            <p className="tier-desc">{t.services.tier2Desc}</p>
-
-                            <ul className="feature-list">
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat1}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat2}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat3}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat4}</li>
-                                <li><Check size={18} className="check-icon accent" /> {t.services.tier2Feat5}</li>
-                            </ul>
-
-                            <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
-                                <span className="btn-dot-indicator"></span>
-                                {t.services.tier2Button}
-                            </a>
-                        </div>
-                    </div>
+                <div className="pricing-table-wrapper">
+                    <table className="pricing-table">
+                        <thead>
+                            <tr>
+                                <th className="feature-col">Features</th>
+                                <th className="tier-col">
+                                    <span className="tier-badge">{t.services.tier1Badge}</span>
+                                    <div className="tier-name-small">{t.services.tier1Name}</div>
+                                </th>
+                                <th className="tier-col best-value">
+                                    <span className="tier-badge">{t.services.tier2Badge}</span>
+                                    <div className="tier-name-small">{t.services.tier2Name}</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="feature-name">Web Foundation</td>
+                                <td>{t.services.tier1Feat1}</td>
+                                <td className="highlight-cell">{t.services.tier2Feat1}</td>
+                            </tr>
+                            <tr>
+                                <td className="feature-name">CRM Power</td>
+                                <td>{t.services.tier1Feat2}</td>
+                                <td className="highlight-cell">{t.services.tier2Feat2}</td>
+                            </tr>
+                            <tr>
+                                <td className="feature-name">Lead Engine</td>
+                                <td>{t.services.tier1Feat3}</td>
+                                <td className="highlight-cell">{t.services.tier2Feat3}</td>
+                            </tr>
+                            <tr>
+                                <td className="feature-name">Automation</td>
+                                <td>{t.services.tier1Feat4}</td>
+                                <td className="highlight-cell">{t.services.tier2Feat4}</td>
+                            </tr>
+                            <tr>
+                                <td className="feature-name">Support & Growth</td>
+                                <td className="text-muted">-</td>
+                                <td className="highlight-cell">{t.services.tier2Feat5}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
+                                        <div className="btn-dot-indicator"></div>
+                                        {t.services.tier1Button}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/Webtoleadform.html" className="btn-nova-glow full-width">
+                                        <div className="btn-dot-indicator"></div>
+                                        {t.services.tier2Button}
+                                    </a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </section>
