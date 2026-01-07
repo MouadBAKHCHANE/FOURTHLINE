@@ -22,10 +22,10 @@ const ExpertisePage = () => {
                 <div className="hero-container" style={{ flexDirection: 'column', textAlign: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         <h1 className="hero-title nova-title expertise-main-title">
-                            Our <span className="text-highlight">Expertise</span>
+                            {t.expertisePage.title} <span className="text-highlight">{t.expertisePage.highlight}</span>
                         </h1>
                         <p className="section-subtitle">
-                            We specialize in specific industries to deliver tailored digital transformation.
+                            {t.expertisePage.subtitle}
                         </p>
                     </div>
                     <IndustryMarquee />

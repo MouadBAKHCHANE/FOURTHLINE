@@ -32,6 +32,11 @@ export const translations = {
             closed: "Closed",
             trustedBy: "20+ companies powered by our system"
         },
+        expertisePage: {
+            title: "Our",
+            highlight: "Expertise",
+            subtitle: "We specialize in specific industries to deliver tailored digital transformation."
+        },
         problem: {
             headline: "When people {switch} work with us.",
             toggle: {
@@ -388,8 +393,94 @@ export const translations = {
                 button: "Start Your Build"
             }
         },
+        careersPage: {
+            title: "Join the",
+            highlight: "Empire",
+            subtitle: "We are building the digital infrastructure for Moroccan commerce. We don't just build websites; we build revenue engines.",
+            detail: {
+                back: "Back to Openings",
+                role: "The Role",
+                requirements: "Requirements",
+                benefits: "Benefits",
+                interested: "Interested?",
+                join: "Join the team at Seedsvision.",
+                apply: "Apply for this Position",
+                notFound: "Job not found",
+                backCareers: "Back to Careers"
+            },
+            jobs: [
+                {
+                    id: 'salesforce-developer',
+                    title: "Senior Salesforce Developer",
+                    location: "Casablanca, Morocco (Hybrid)",
+                    type: "Full-Time",
+                    department: "Engineering",
+                    salary: "Competitive",
+                    shortDesc: "Lead the architecture and development of high-scale Salesforce solutions for top-tier clients.",
+                    description: "We are looking for a Senior Salesforce Developer to join our elite engineering team. You will be responsible for designing and implementing complex Salesforce customized solutions that drive revenue for our clients. You won't just write code; you'll build the engines that power Moroccan businesses.",
+                    requirements: [
+                        "5+ years of experience with Salesforce (Apex, LWC, Visualforce).",
+                        "Salesforce Platform Developer I & II certifications are a plus.",
+                        "Deep understanding of Salesforce architecture, limits, and best practices.",
+                        "Experience with REST/SOAP APIs and third-party integrations.",
+                        "Fluent in English and French."
+                    ],
+                    benefits: [
+                        "Competitive salary + Performance bonuses",
+                        "Premium health insurance",
+                        "MacBook Pro M3",
+                        "Remote-first culture"
+                    ]
+                },
+                {
+                    id: 'frontend-engineer',
+                    title: "Frontend Engineer (React)",
+                    location: "Remote",
+                    type: "Full-Time",
+                    department: "Product",
+                    salary: "Competitive",
+                    shortDesc: "Build stunning, high-performance web interfaces using modern React stack and glassmorphism design.",
+                    description: "Seedsvision is obsessed with design and performance. We need a Frontend Engineer who cares about every pixel and animation frame. You will build the client-facing interfaces of our growth systems.",
+                    requirements: [
+                        "3+ years of experience with React, Tailwind, and CSS animations.",
+                        "Experience with Framer Motion or GSAP is widely appreciated.",
+                        "Strong understanding of responsive design and web performance.",
+                        "Ability to turn Figma designs into pixel-perfect code.",
+                        "Passion for UI/UX."
+                    ],
+                    benefits: [
+                        "Competitive salary",
+                        "Flexible hours",
+                        "Learning budget",
+                        "Yearly team retreat"
+                    ]
+                },
+                {
+                    id: 'sales-executive',
+                    title: "B2B Sales Executive",
+                    location: "Casablanca, Morocco",
+                    type: "Full-Time",
+                    department: "Growth",
+                    salary: "Commission Uncapped",
+                    shortDesc: "Drive Seedsvision's growth by closing deals with high-value B2B clients.",
+                    description: "You will be on the front lines, identifying potential clients who need our systems to scale. This is a high-impact role where your results directly correlate with your compensation.",
+                    requirements: [
+                        "2+ years of B2B sales experience (SaaS or Agency).",
+                        "Strong communication and negotiation skills.",
+                        "Understanding of CRM and digital transformation is a plus.",
+                        "Self-starter with a hunter mentality.",
+                        "Fluent in French and English."
+                    ],
+                    benefits: [
+                        "High commission structure",
+                        "Career progression to Sales Manager",
+                        "Company car allowance",
+                        "Networking events"
+                    ]
+                }
+            ]
+        },
     },
-
 
     fr: {
         nav: {
@@ -424,6 +515,11 @@ export const translations = {
             qualified: "Qualifié",
             closed: "Fermé",
             trustedBy: "20+ entreprises propulsées par notre système"
+        },
+        expertisePage: {
+            title: "Notre",
+            highlight: "Expertise",
+            subtitle: "Nous nous spécialisons dans des industries spécifiques pour offrir une transformation numérique sur mesure."
         },
         problem: {
             headline: "Quand les personnes travaillent avec nous {switch}",
@@ -762,11 +858,11 @@ export const translations = {
                 },
                 backend: {
                     title: "Technologies Back-End",
-                    list: ["Python", "Rails", "Nest", "Node JS", "Spring"]
+                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "APIs RESTful", "GraphQL", "JSON"]
                 },
-                api: {
-                    title: "API et Intégration",
-                    list: ["RESTful APIs", "GraphQL", "SOAP", "JSON", "XML"]
+                cms: {
+                    title: "Modèle Personnalisé & CMS",
+                    list: ["Framer", "Webflow", "WordPress"]
                 },
                 cta: "Commencer Votre Build"
             },
@@ -774,6 +870,93 @@ export const translations = {
                 text: "Prêt à moderniser votre présence web ?",
                 button: "Commencer Votre Build"
             }
+        },
+        careersPage: {
+            title: "Rejoignez",
+            highlight: "L'Empire",
+            subtitle: "Nous construisons l'infrastructure numérique du commerce marocain. Nous ne construisons pas juste des sites web; nous construisons des moteurs de revenus.",
+            detail: {
+                back: "Retour aux Offres",
+                role: "Le Rôle",
+                requirements: "Prérequis",
+                benefits: "Avantages",
+                interested: "Intéressé ?",
+                join: "Rejoignez l'équipe chez Seedsvision.",
+                apply: "Postuler pour ce Poste",
+                notFound: "Emploi non trouvé",
+                backCareers: "Retour aux Carrières"
+            },
+            jobs: [
+                {
+                    id: 'salesforce-developer',
+                    title: "Développeur Salesforce Senior",
+                    location: "Casablanca, Maroc (Hybride)",
+                    type: "Temps Plein",
+                    department: "Ingénierie",
+                    salary: "Compétitif",
+                    shortDesc: "Dirigez l'architecture et le développement de solutions Salesforce à grande échelle pour des clients de premier plan.",
+                    description: "Nous recherchons un Développeur Salesforce Senior pour rejoindre notre équipe d'ingénierie d'élite. Vous serez responsable de la conception et de la mise en œuvre de solutions Salesforce personnalisées complexes qui génèrent des revenus pour nos clients. Vous n'écrirez pas seulement du code; vous construirez les moteurs qui propulsent les entreprises marocaines.",
+                    requirements: [
+                        "5+ ans d'expérience avec Salesforce (Apex, LWC, Visualforce).",
+                        "Certifications Salesforce Platform Developer I & II appréciées.",
+                        "Compréhension approfondie de l'architecture Salesforce, des limites et des meilleures pratiques.",
+                        "Expérience avec les API REST/SOAP et les intégrations tierces.",
+                        "Courant en anglais et français."
+                    ],
+                    benefits: [
+                        "Salaire compétitif + Primes de performance",
+                        "Assurance maladie premium",
+                        "MacBook Pro M3",
+                        "Culture Remote-first"
+                    ]
+                },
+                {
+                    id: 'frontend-engineer',
+                    title: "Ingénieur Frontend (React)",
+                    location: "Remote",
+                    type: "Temps Plein",
+                    department: "Produit",
+                    salary: "Compétitif",
+                    shortDesc: "Construisez des interfaces web époustouflantes et performantes utilisant la stack React moderne et le design glassmorphism.",
+                    description: "Seedsvision est obsédé par le design et la performance. Nous avons besoin d'un Ingénieur Frontend soucieux de chaque pixel et frame d'animation. Vous construirez les interfaces clients de nos systèmes de croissance.",
+                    requirements: [
+                        "3+ ans d'expérience avec React, Tailwind et les animations CSS.",
+                        "Expérience avec Framer Motion ou GSAP fortement appréciée.",
+                        "Forte compréhension du design responsive et de la performance web.",
+                        "Capacité à transformer des designs Figma en code pixel-perfect.",
+                        "Passion pour l'UI/UX."
+                    ],
+                    benefits: [
+                        "Salaire compétitif",
+                        "Horaires flexibles",
+                        "Budget formation",
+                        "Retraite d'équipe annuelle"
+                    ]
+                },
+                {
+                    id: 'sales-executive',
+                    title: "Commercial B2B",
+                    location: "Casablanca, Maroc",
+                    type: "Temps Plein",
+                    department: "Croissance",
+                    salary: "Commission Non Plafonnée",
+                    shortDesc: "Stimulez la croissance de Seedsvision en concluant des deals avec des clients B2B à haute valeur.",
+                    description: "Vous serez en première ligne pour identifier les clients potentiels qui ont besoin de nos systèmes pour évoluer. C'est un rôle à fort impact où vos résultats sont directement liés à votre rémunération.",
+                    requirements: [
+                        "2+ ans d'expérience en vente B2B (SaaS ou Agence).",
+                        "Fortes compétences en communication et négociation.",
+                        "Compréhension du CRM et de la transformation digitale est un plus.",
+                        "Autonome avec une mentalité de chasseur.",
+                        "Courant en français et anglais."
+                    ],
+                    benefits: [
+                        "Structure de commission élevée",
+                        "Progression de carrière vers Directeur Commercial",
+                        "Allocation voiture de société",
+                        "Événements de networking"
+                    ]
+                }
+            ]
         }
     }
 };

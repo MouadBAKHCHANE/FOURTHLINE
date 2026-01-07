@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Briefcase, ChevronRight, Clock } from 'lucide-react';
-import { jobs } from '../data/jobs';
+import { useLanguage } from '../App';
 import '../styles/Careers.css';
 
 const Careers = () => {
+    const { t } = useLanguage();
+    const jobs = t.careersPage.jobs;
+
     return (
         <div className="careers-page">
             <div className="container">
                 <div className="careers-hero">
-                    <h1 className="careers-title">Join the <span className="text-gradient">Empire</span></h1>
+                    <h1 className="careers-title">{t.careersPage.title} <span className="text-gradient">{t.careersPage.highlight}</span></h1>
                     <p className="careers-subtitle">
-                        We are building the digital infrastructure for Moroccan commerce.
-                        We don't just build websites; we build revenue engines.
+                        {t.careersPage.subtitle}
                     </p>
                 </div>
 
