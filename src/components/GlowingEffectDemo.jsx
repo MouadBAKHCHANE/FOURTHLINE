@@ -9,7 +9,7 @@ export function GlowingEffectDemo() {
     const ts = t.websitePage.techStack;
 
     return (
-        <div className="flex flex-col gap-32 w-full max-w-6xl mx-auto py-20">
+        <div className="flex flex-col gap-0 w-full max-w-6xl mx-auto py-4">
 
             {/* 1. Frontend: Title Left, Orbit Right */}
             <OrbitTechCard
@@ -107,7 +107,7 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                 "flex-1 flex flex-col justify-center z-10",
                 align === "right" ? "items-center md:items-start text-center md:text-left" : "items-center md:items-end text-center md:text-right"
             )}>
-                <h3 className={`text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]`}>
+                <h3 className={`text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]`}>
                     {title}
                 </h3>
                 {/* Decorative Line - Colored */}
@@ -115,9 +115,9 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
             </div>
 
             {/* Orbit Section */}
-            <div className="flex-1 flex items-center justify-center p-8 z-10 w-full">
+            <div className="flex-1 flex items-center justify-center p-0 z-10 w-full">
                 {/* Increased container size for spacing */}
-                <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] flex items-center justify-center">
+                <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] flex items-center justify-center">
 
                     {/* Center Core / Star */}
                     <div className={`absolute w-32 h-32 bg-${color}-500/10 rounded-full blur-2xl animate-pulse`} />
@@ -126,24 +126,24 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     {/* Orbit Rings */}
                     <div className={cn(
                         "absolute rounded-full border border-dashed border-white/10 animate-spin-slow",
-                        // Inner ring size - Adjusted for mobile fitting
-                        isMultiRing ? "w-[200px] h-[200px] md:w-[300px] md:h-[300px]" : "w-[260px] h-[260px] md:w-[420px] md:h-[420px]"
+                        // Inner ring size - COMPACTED
+                        isMultiRing ? "w-[160px] h-[160px] md:w-[240px] md:h-[240px]" : "w-[200px] h-[200px] md:w-[320px] md:h-[320px]"
                     )} style={{ animationDuration: '60s' }} />
 
                     {isMultiRing && (
                         <div className={cn(
                             "absolute rounded-full border border-dashed border-white/5 animate-spin-slower",
-                            // Outer ring size - Adjusted for mobile fitting
-                            "w-[300px] h-[300px] md:w-[480px] md:h-[480px]"
+                            // Outer ring size - COMPACTED
+                            "w-[240px] h-[240px] md:w-[380px] md:h-[380px]"
                         )} style={{ animationDuration: '90s' }} />
                     )}
 
                     {/* Items Placement */}
                     {/* Radius passed here is HALF the width/height defined above roughly, slightly adjusted for centering */}
-                    {/* Mobile Radius adjustment: 100px (inner), 130px (single), 150px (outer) */}
+                    {/* Compact Radius adjustment */}
                     <OrbitItems
                         items={innerItems}
-                        radius={isMultiRing ? (isMobile ? 100 : 150) : (isMobile ? 130 : 210)}
+                        radius={isMultiRing ? (isMobile ? 80 : 120) : (isMobile ? 100 : 160)}
                         color={color}
                         duration={60}
                     />
@@ -151,7 +151,7 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     {isMultiRing && (
                         <OrbitItems
                             items={outerItems}
-                            radius={isMobile ? 150 : 240}
+                            radius={isMobile ? 120 : 190}
                             color={color}
                             duration={90}
                             reverse

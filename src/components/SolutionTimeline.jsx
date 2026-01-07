@@ -5,32 +5,16 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import '../styles/SolutionTimeline.css';
 import { useLanguage } from '../App';
 
-const Card = ({ i, children, progress, range, targetScale }) => {
-    const scale = useTransform(progress, range, [1, targetScale]);
-    const opacity = useTransform(progress, range, [1, 0.4]); // Added opacity fade
-
+const Card = ({ i, children }) => {
     return (
-        <motion.div
-            className="timeline-step"
-            style={{
-                scale,
-                opacity,
-                top: `var(--base-top, 150px)` // No stagger: cards stack directly on top of each other
-            }}
-        >
+        <div className="timeline-step">
             {children}
-        </motion.div>
+        </div>
     );
 };
 
 const SolutionTimeline = () => {
     const { t } = useLanguage();
-
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ['start start', 'end end']
-    });
 
     const steps = [
         {
@@ -72,19 +56,10 @@ const SolutionTimeline = () => {
                     </div>
 
                     {/* Right Side: Scrollable Steps */}
-                    <div className="steps-wrapper" ref={container}>
+                    <div className="steps-wrapper">
                         {steps.map((step, index) => {
-                            const targetScale = 1 - ((steps.length - 1 - index) * 0.1);
-                            const range = [index * 0.25, 1];
-
                             return (
-                                <Card
-                                    key={step.id}
-                                    i={index}
-                                    progress={scrollYProgress}
-                                    range={range}
-                                    targetScale={targetScale}
-                                >
+                                <Card key={step.id} i={index}>
                                     <div className="step-marker">
                                         <span className="step-number">0{index + 1}</span>
                                         <div
