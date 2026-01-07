@@ -127,7 +127,8 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     <div className={cn(
                         "absolute rounded-full border border-dashed border-white/10 animate-spin-slow",
                         // Inner ring size - COMPACTED
-                        isMultiRing ? "w-[160px] h-[160px] md:w-[240px] md:h-[240px]" : "w-[200px] h-[200px] md:w-[320px] md:h-[320px]"
+                        // Single Ring (CMS) reduced to match Inner Ring size for compactness
+                        isMultiRing ? "w-[160px] h-[160px] md:w-[240px] md:h-[240px]" : "w-[160px] h-[160px] md:w-[240px] md:h-[240px]"
                     )} style={{ animationDuration: '60s' }} />
 
                     {isMultiRing && (
@@ -143,7 +144,7 @@ const OrbitTechCard = ({ title, items, color, align = "left" }) => {
                     {/* Compact Radius adjustment */}
                     <OrbitItems
                         items={innerItems}
-                        radius={isMultiRing ? (isMobile ? 80 : 120) : (isMobile ? 100 : 160)}
+                        radius={isMultiRing ? (isMobile ? 80 : 120) : (isMobile ? 80 : 120)}
                         color={color}
                         duration={60}
                     />

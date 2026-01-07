@@ -3,7 +3,7 @@
     color: var(--text-light);
     min-height: 100vh;
     font-family: 'Outfit', sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; REMOVED to fix sticky */
 }
 
 /* Hero Badge - Small pill tag */

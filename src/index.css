@@ -41,7 +41,6 @@ h4,
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -51,10 +50,11 @@ body {
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  overflow-x: hidden;
   position: relative;
   width: 100%;
   max-width: 100vw;
+  overflow-x: clip;
+  /* Modern fix: clips overflow without breaking sticky */
 }
 
 /* 1. Global Background (OptiRank Style) */
