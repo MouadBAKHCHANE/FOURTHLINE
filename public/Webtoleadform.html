@@ -439,6 +439,76 @@
                 font-size: 0.95rem;
             }
         }
+
+        /* Thank You Card */
+        .thank-you-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .thank-you-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .thank-you-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .thank-you-overlay.visible .thank-you-card {
+            transform: scale(1);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 30px rgba(57, 143, 255, 0.4);
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .ty-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ty-text {
+            color: #9ca3af;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -472,8 +542,25 @@
             </div>
         </div>
 
+        <!-- Hidden Iframe for submission -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+            onload="if(submitted){window.location='/';}"></iframe>
+
+        <!-- THANK YOU OVERLAY -->
+        <div class="thank-you-overlay" id="thankYouOverlay">
+            <div class="thank-you-card">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 class="ty-title">Thank You!</h3>
+                <p class="ty-text">We've received your details.<br>Redirecting you to home...</p>
+            </div>
+        </div>
+
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV"
-            method="POST" id="mainForm">
+            method="POST" id="mainForm" target="hidden_iframe" onsubmit="handleSubmit()">
             <input type=hidden name="oid" value="00DQH00000KAqzV">
             <input type=hidden name="retURL" value="https://www.seedsvision.com/small-business">
 
@@ -610,6 +697,20 @@
     </div>
 
     <script>
+        var submitted = false;
+
+        // Handle Submit Logic
+        function handleSubmit() {
+            submitted = true;
+            // Show Thank You Card
+            document.getElementById('thankYouOverlay').classList.add('visible');
+
+            // Redirect after 4 seconds
+            setTimeout(() => {
+                window.location.href = '/'; // Go to Home
+            }, 4000);
+        }
+
         // STEP LOGIC
         function nextStep(targetStep) {
             // Validation (Basic) for Step 1
