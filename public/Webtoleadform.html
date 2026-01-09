@@ -543,8 +543,7 @@
         </div>
 
         <!-- Hidden Iframe for submission -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-            onload="if(submitted){window.location='/';}"></iframe>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
         <!-- THANK YOU OVERLAY -->
         <div class="thank-you-overlay" id="thankYouOverlay">
@@ -705,10 +704,16 @@
             // Show Thank You Card
             document.getElementById('thankYouOverlay').classList.add('visible');
 
-            // Redirect after 4 seconds
+            // Hide the wrapper content to make the card "stand alone"
+            document.querySelector('.wrapper > form').style.opacity = '0';
+            document.querySelector('.wrapper > h2').style.opacity = '0';
+            document.querySelector('.wrapper > .subtitle').style.opacity = '0';
+            document.querySelector('.stepper-header').style.opacity = '0';
+
+            // Redirect after 6 seconds
             setTimeout(() => {
                 window.location.href = '/'; // Go to Home
-            }, 4000);
+            }, 6000);
         }
 
         // STEP LOGIC
