@@ -9,7 +9,7 @@ export function GlowingEffectDemo() {
     const ts = t.websitePage.techStack;
 
     return (
-        <div className="flex flex-col gap-0 w-full max-w-6xl mx-auto py-4">
+        <div className="flex flex-col gap-24 md:gap-0 w-full max-w-6xl mx-auto py-4">
 
             {/* 1. Frontend: Title Left, Orbit Right */}
             <OrbitTechCard
