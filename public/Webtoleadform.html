@@ -19,14 +19,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap');
 
         :root {
-            --bg-dark: #020408;
-            --card-bg: #0f1115;
-            --accent-blue: #00A1E0;
-            --accent-glow: rgba(0, 161, 224, 0.4);
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --font-main: 'Inter', sans-serif;
+            --bg-primary: #1e2128;
+            --accent-blue: #398fff;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
             --font-heading: 'Outfit', sans-serif;
         }
 
@@ -37,204 +32,335 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            background-image:
-                radial-gradient(circle at 50% 0%, rgba(0, 161, 224, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 90%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
-            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            color: #ffffff;
             font-family: var(--font-main);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
             overflow-x: hidden;
         }
 
-        /* Ambient Glow */
+        /* 1. Global Background (OptiRank Style) */
+        /* Noise Texture */
         body::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 161, 224, 0.1) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: -1;
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
             pointer-events: none;
+            z-index: 9999;
+            opacity: 0.3;
+            /* Subtle noise */
+            mix-blend-mode: overlay;
         }
 
-        .main-container {
+        /* Top Radial Blue Glow */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            max-width: 550px;
+            max-width: 1200px;
+            height: 600px;
+            background: radial-gradient(circle at 50% -20%, rgba(57, 143, 255, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        /* Container */
+        .wrapper {
+            width: 100%;
+            max-width: 600px;
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Stepper */
+        .stepper-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .step-line-bg {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .step-line-fill {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            height: 2px;
+            background: var(--accent-blue);
+            z-index: 0;
+            transform: translateY(-50%);
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        .steps-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             position: relative;
             z-index: 1;
         }
 
-        .form-card {
-            background: rgba(15, 17, 21, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 48px 40px;
-            box-shadow:
-                0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-                0 40px 80px -20px rgba(0, 0, 0, 0.6);
-            position: relative;
-            overflow: hidden;
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Subtle top shine */
-        .form-card::after {
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1f2937;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #9ca3af;
+            transition: all 0.3s ease;
+        }
+
+        .step-item.active .step-circle,
+        .step-item.completed .step-circle {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+            box-shadow: 0 0 15px rgba(57, 143, 255, 0.4);
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .step-item.active .step-label {
+            color: #fff;
+        }
+
+        /* Content */
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9ca3af;
+            margin-bottom: 30px;
+        }
+
+        /* Form Fields */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(57, 143, 255, 0.05);
+        }
+
+        /* CARD SELECTION STYLES */
+        .selection-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .select-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px 15px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-height: 80px;
+        }
+
+        .select-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .select-card.active {
+            background: rgba(57, 143, 255, 0.15);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 1px var(--accent-blue), 0 10px 25px -5px rgba(57, 143, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .card-text {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            z-index: 2;
+        }
+
+        .select-card.active .card-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Logo Styling */
+        .card-logo {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 5px;
+            filter: grayscale(100%) opacity(0.8);
+            transition: all 0.3s;
+        }
+
+        .select-card:hover .card-logo,
+        .select-card.active .card-logo {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        /* Hover Overlay */
+        .select-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        }
-
-        /* Progress Bar */
-        .progress-wrapper {
-            margin-bottom: 40px;
-            padding: 0 10px;
-        }
-
-        .progress-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .progress-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            position: relative;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
             z-index: 1;
         }
 
-        /* Connection Lines */
-        .progress-step::before {
-            content: '';
-            position: absolute;
-            top: 16px;
-            left: -50%;
+        .select-card:hover::before {
+            opacity: 1;
+        }
+
+        .other-input {
+            margin-top: -10px;
+            display: none;
             width: 100%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: -1;
-            transition: background 0.4s ease;
         }
 
-        .progress-step:first-child::before {
-            display: none;
+        .other-input.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        /* Active/Completed Line Color */
-        .progress-step.completed+.progress-step::before,
-        .progress-step.active::before {
-            background: var(--accent-blue);
-        }
-
-        .step-number {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #1e293b;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+        /* Navigation Buttons */
+        .nav-buttons {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
             font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .progress-step.active .step-number {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: #fff;
-            box-shadow: 0 0 20px rgba(0, 161, 224, 0.4);
-            transform: scale(1.1);
-        }
-
-        .progress-step.completed .step-number {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: #fff;
-        }
-
-        /* Checkmark for completed steps */
-        .progress-step.completed .step-number::after {
-            content: '✓';
-            font-size: 0.8rem;
-        }
-
-        .progress-step.completed .step-number {
-            font-size: 0;
-            /* Hide number */
-        }
-
-        .progress-step.completed .step-number::after {
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .step-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: color 0.3s ease;
-        }
-
-        .progress-step.active .step-label {
-            color: #fff;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #fff;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
+            cursor: pointer;
+            border: none;
             font-size: 1rem;
-            font-weight: 400;
+            transition: all 0.2s;
         }
 
-        /* Form Steps */
-        .form-step {
+        .btn-next {
+            background: var(--accent-blue);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-next:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px rgba(57, 143, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-prev {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+        }
+
+        .btn-prev:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        /* Step Visibility */
+        .step-content {
             display: none;
-            animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .form-step.active {
+        .step-content.active {
             display: block;
         }
 
-        @keyframes slideUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(10px);
             }
 
             to {
@@ -243,469 +369,436 @@
             }
         }
 
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #e2e8f0;
-            margin-bottom: 10px;
-        }
-
-        /* Premium Inputs */
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            /* Darker border */
-            border-radius: 12px;
-            padding: 14px 18px;
-            color: #fff;
-            font-family: var(--font-main);
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        input:hover,
-        select:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: rgba(15, 23, 42, 0.8);
-            box-shadow: 0 0 0 4px rgba(0, 161, 224, 0.15);
-        }
-
-        /* Custom Select Arrow */
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 16px;
-        }
-
-        /* Buttons */
-        .form-navigation {
-            display: flex;
-            gap: 16px;
-            margin-top: 40px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            font-family: var(--font-main);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #00A1E0 0%, #0077A8 100%);
-            color: white;
-            box-shadow: 0 20px 40px -12px rgba(0, 161, 224, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 25px 50px -12px rgba(0, 161, 224, 0.5);
-            filter: brightness(1.1);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Other fields animation */
-        .other-field {
-            display: none;
-            margin-top: 12px;
-            animation: fadeIn 0.3s ease;
-        }
-
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 480px) {
-            .form-card {
-                padding: 32px 24px;
+            body {
+                padding: 10px;
+                align-items: flex-start;
+                /* Allow scrolling on small screens if content is tall */
+            }
+
+            .wrapper {
+                padding: 24px 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
             }
 
             h2 {
                 font-size: 1.5rem;
             }
+
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .stepper-header {
+                margin-bottom: 30px;
+            }
+
+            /* Compact Stepper on Mobile */
+            .step-circle {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .step-label {
+                font-size: 0.7rem;
+                margin-top: 4px;
+            }
+
+            .step-line-bg,
+            .step-line-fill {
+                top: 16px;
+                /* Adjust for smaller circle (32px/2) */
+            }
+
+            /* Responsive Grid for Cards */
+            .selection-group {
+                grid-template-columns: 1fr 1fr;
+                /* Force 2 columns */
+                gap: 10px;
+            }
+
+            .select-card {
+                padding: 15px 10px;
+                min-height: 70px;
+            }
+
+            .card-text {
+                font-size: 0.85rem;
+            }
+
+            .card-logo {
+                height: 24px;
+            }
+
+            .btn {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
         }
 
-        /* Success Screen */
-        .success-screen {
-            display: none;
+        /* Thank You Card */
+        .thank-you-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .thank-you-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .thank-you-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
             text-align: center;
-            padding: 40px 20px;
+            max-width: 400px;
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .success-screen.active {
-            display: block;
-            animation: slideUp 0.5s ease;
+        .thank-you-overlay.visible .thank-you-card {
+            transform: scale(1);
         }
 
         .success-icon {
             width: 80px;
             height: 80px;
-            background: rgba(16, 185, 129, 0.1);
+            background: linear-gradient(135deg, var(--accent-blue), #2563eb);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            color: #10b981;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 30px rgba(57, 143, 255, 0.4);
         }
 
-        .checkmark {
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .ty-title {
+            font-family: var(--font-heading);
             font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ty-text {
+            color: #9ca3af;
+            margin-bottom: 0;
         }
     </style>
 </head>
 
 <body>
-    <div class="main-container">
-        <div class="form-card">
-            <!-- Progress Bar -->
-            <div class="progress-wrapper">
-                <div class="progress-steps">
-                    <div class="progress-step active" data-step="1">
-                        <div class="step-number">1</div>
-                        <div class="step-label">Contact</div>
-                    </div>
-                    <div class="progress-step" data-step="2">
-                        <div class="step-number">2</div>
-                        <div class="step-label">Company</div>
-                    </div>
-                    <div class="progress-step" data-step="3">
-                        <div class="step-number">3</div>
-                        <div class="step-label">Project</div>
-                    </div>
-                    <div class="progress-step" data-step="4">
-                        <div class="step-number">4</div>
-                        <div class="step-label">Budget</div>
-                    </div>
+
+    <div class="wrapper">
+        <h2 id="header-title">Contact Info</h2>
+        <p class="subtitle" id="header-subtitle">Let's start with your details</p>
+
+        <!-- Stepper -->
+        <div class="stepper-header">
+            <div class="step-line-bg"></div>
+            <div class="step-line-fill" id="progress-bar"></div>
+            <div class="steps-container">
+                <div class="step-item active" id="step-node-1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Contact</div>
                 </div>
-            </div>
-
-            <!-- Header -->
-            <div class="header">
-                <h2>Start Building</h2>
-                <p class="subtitle">Help us understand your needs</p>
-            </div>
-
-            <!-- Form -->
-            <form id="leadForm"
-                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV"
-                method="POST">
-                <input type="hidden" name="oid" value="00DQH00000KAqzV">
-                <input type="hidden" name="retURL" value="https://www.seedsvision.com/small-business">
-
-                <!-- Step 1: Contact Info -->
-                <div class="form-step active" data-step="1">
-                    <div class="form-group">
-                        <label for="first_name">First Name *</label>
-                        <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="last_name">Last Name *</label>
-                        <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input id="email" maxlength="80" name="email" type="email" placeholder="john@company.com"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input id="phone" maxlength="40" name="phone" type="tel" placeholder="+212 6..." />
-                    </div>
+                <div class="step-item" id="step-node-2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Company</div>
                 </div>
-
-                <!-- Step 2: Company Info -->
-                <div class="form-step" data-step="2">
-                    <div class="form-group">
-                        <label for="company">Company *</label>
-                        <input id="company" maxlength="40" name="company" type="text" placeholder="Acme Inc."
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="00NQH00000NSvqv">Your Role</label>
-                        <select id="00NQH00000NSvqv" name="00NQH00000NSvqv" title="Role">
-                            <option value="">Select your role...</option>
-                            <option value="CEO / FOUNDER">CEO / FOUNDER</option>
-                            <option value="Sales Director">Sales Director</option>
-                            <option value="Tech Lead">Tech Lead</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <div id="otherRole" class="other-field">
-                            <input id="00NQH00000NUGN3" maxlength="255" name="00NQH00000NUGN3" type="text"
-                                placeholder="Please specify your role" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="00NQH00000NSvyz">Industry Sector</label>
-                        <select id="00NQH00000NSvyz" name="00NQH00000NSvyz" title="Industry Sector">
-                            <option value="">Select your industry...</option>
-                            <option value="Logistics">Logistics</option>
-                            <option value="Real Estate">Real Estate</option>
-                            <option value="Education">Education</option>
-                            <option value="Consulting">Consulting</option>
-                            <option value="Industry">Industry</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <div id="otherIndustry" class="other-field">
-                            <input id="00NQH00000NUGOf" maxlength="255" name="00NQH00000NUGOf" type="text"
-                                placeholder="Please specify your industry" />
-                        </div>
-                    </div>
+                <div class="step-item" id="step-node-3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Project</div>
                 </div>
-
-                <!-- Step 3: Project Details -->
-                <div class="form-step" data-step="3">
-                    <div class="form-group">
-                        <label for="00NQH00000NSw8f">What do you need?</label>
-                        <select id="00NQH00000NSw8f" name="00NQH00000NSw8f" title="Client Needs">
-                            <option value="">Select an option...</option>
-                            <option value="Website Only">Website Only</option>
-                            <option value="CRM Setup">CRM Setup</option>
-                            <option value="Website + CRM">Website + CRM</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="00NQH00000NSwAH">Primary Pain Point</label>
-                        <select id="00NQH00000NSwAH" name="00NQH00000NSwAH" title="Primary Pain Point">
-                            <option value="">Select your biggest challenge...</option>
-                            <option value="Losing Leads">Losing Leads</option>
-                            <option value="No Visibility">No Visibility</option>
-                            <option value="Slow Website">Slow Website</option>
-                            <option value="Manual Data">Manual Data</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="00NQH00000NSwG1">Preferred CRM Platform</label>
-                        <select id="00NQH00000NSwG1" name="00NQH00000NSwG1" title="Preferred CRM Platform">
-                            <option value="">Select a CRM...</option>
-                            <option value="Salesforce">Salesforce</option>
-                            <option value="Odoo">Odoo</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <div id="otherCRM" class="other-field">
-                            <input id="00NQH00000NUGQH" maxlength="255" name="00NQH00000NUGQH" type="text"
-                                placeholder="Please specify your CRM" />
-                        </div>
-                    </div>
+                <div class="step-item" id="step-node-4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Budget</div>
                 </div>
-
-                <!-- Step 4: Budget -->
-                <div class="form-step" data-step="4">
-                    <div class="form-group">
-                        <label for="00NQH00000NSwLZ">Investment Range</label>
-                        <select id="00NQH00000NSwLZ" name="00NQH00000NSwLZ" title="Investment Range">
-                            <option value="">Select your budget...</option>
-                            <option value="15k - 25k MAD">15k - 25k MAD</option>
-                            <option value="25k - 45k MAD">25k - 45k MAD</option>
-                            <option value="&gt; 45k MAD">&gt; 45k MAD</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <div id="otherBudget" class="other-field">
-                            <input id="00NQH00000NUGJq" maxlength="255" name="00NQH00000NUGJq" type="text"
-                                placeholder="Please specify your budget" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 20px;">
-                            Review your information and click "Submit Request" to send your details to our team.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Navigation -->
-                <div class="form-navigation">
-                    <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">←
-                        Previous</button>
-                    <button type="button" class="btn btn-primary" id="nextBtn">Next →</button>
-                    <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit
-                        Request</button>
-                </div>
-            </form>
-
-            <!-- Success Screen -->
-            <div class="success-screen" id="successScreen">
-                <div class="success-icon">
-                    <div class="checkmark"></div>
-                </div>
-                <h3>Thank You!</h3>
-                <p>Your request has been submitted successfully.</p>
-                <p>Our team will review your information and reach out shortly.</p>
-                <p class="redirect-note">Redirecting you to the homepage in <span id="countdown">3</span> seconds...</p>
             </div>
         </div>
+
+        <!-- Hidden Iframe for submission -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+        <!-- THANK YOU OVERLAY -->
+        <div class="thank-you-overlay" id="thankYouOverlay">
+            <div class="thank-you-card">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 class="ty-title">Thank You!</h3>
+                <p class="ty-text">We've received your details.<br>Redirecting you to home...</p>
+            </div>
+        </div>
+
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH00000KAqzV"
+            method="POST" id="mainForm" target="hidden_iframe" onsubmit="handleSubmit()">
+            <input type=hidden name="oid" value="00DQH00000KAqzV">
+            <input type=hidden name="retURL" value="https://www.seedsvision.com/small-business">
+
+            <!-- STEP 1: CONTACT -->
+            <div class="step-content active" id="step-1">
+                <label>First Name</label>
+                <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John" required />
+
+                <label>Last Name</label>
+                <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
+
+                <label>Email</label>
+                <input id="email" maxlength="80" name="email" type="text" placeholder="john@company.com" required />
+
+                <label>Phone</label>
+                <input id="phone" maxlength="40" name="phone" type="text" placeholder="+1 234 567 890" />
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-next" onclick="nextStep(2)">Next Step</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: COMPANY -->
+            <div class="step-content" id="step-2">
+                <label>Company Name</label>
+                <input id="company" maxlength="40" name="company" type="text" placeholder="Acme Inc." />
+
+                <label>Your Role</label>
+                <input type="hidden" id="00NQH00000NSvqv" name="00NQH00000NSvqv">
+                <div class="selection-group" data-target="00NQH00000NSvqv">
+                    <div class="select-card" data-value="CEO / FOUNDER"><span class="card-text">CEO / FOUNDER</span>
+                    </div>
+                    <div class="select-card" data-value="Sales Director"><span class="card-text">Sales Director</span>
+                    </div>
+                    <div class="select-card" data-value="Tech Lead"><span class="card-text">Tech Lead</span></div>
+                    <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
+                </div>
+                <!-- Other Input -->
+                <div class="other-input" data-linked-to="00NQH00000NSvqv">
+                    <input id="00NQH00000NUGN3" maxlength="255" name="00NQH00000NUGN3" type="text"
+                        placeholder="Please specify your role..." />
+                </div>
+
+                <label>Industry Sector</label>
+                <input type="hidden" id="00NQH00000NSvyz" name="00NQH00000NSvyz">
+                <div class="selection-group" data-target="00NQH00000NSvyz">
+                    <div class="select-card" data-value="Logistics"><span class="card-text">Logistics</span></div>
+                    <div class="select-card" data-value="Real Estate"><span class="card-text">Real Estate</span></div>
+                    <div class="select-card" data-value="Education"><span class="card-text">Education</span></div>
+                    <div class="select-card" data-value="Consulting"><span class="card-text">Consulting</span></div>
+                    <div class="select-card" data-value="Industry"><span class="card-text">Industry</span></div>
+                    <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
+                </div>
+                <div class="other-input" data-linked-to="00NQH00000NSvyz">
+                    <input id="00NQH00000NUGOf" maxlength="255" name="00NQH00000NUGOf" type="text"
+                        placeholder="Please specify industry..." />
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(1)">Previous</button>
+                    <button type="button" class="btn btn-next" onclick="nextStep(3)">Next Step</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: PROJECT -->
+            <div class="step-content" id="step-3">
+                <label>Preferred CRM Platform</label>
+                <input type="hidden" id="00NQH00000NSwG1" name="00NQH00000NSwG1">
+                <div class="selection-group" data-target="00NQH00000NSwG1">
+                    <div class="select-card" data-value="Salesforce">
+                        <img src="/logos/salesforce.png" alt="Salesforce" class="card-logo">
+                        <span class="card-text">Salesforce</span>
+                    </div>
+                    <div class="select-card" data-value="Odoo">
+                        <img src="/logos/odoo.png" alt="Odoo" class="card-logo">
+                        <span class="card-text">Odoo</span>
+                    </div>
+                    <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
+                </div>
+                <div class="other-input" data-linked-to="00NQH00000NSwG1">
+                    <input id="00NQH00000NUGQH" maxlength="255" name="00NQH00000NUGQH" type="text"
+                        placeholder="Please specify CRM..." />
+                </div>
+
+                <label>Client Needs</label>
+                <input type="hidden" id="00NQH00000NSw8f" name="00NQH00000NSw8f">
+                <div class="selection-group" data-target="00NQH00000NSw8f">
+                    <div class="select-card" data-value="Website Only"><span class="card-text">Website Only</span></div>
+                    <div class="select-card" data-value="CRM Setup"><span class="card-text">CRM Setup</span></div>
+                    <div class="select-card" data-value="Website + CRM"><span class="card-text">Website + CRM</span>
+                    </div>
+                </div>
+
+                <label>Primary Pain Point</label>
+                <input type="hidden" id="00NQH00000NSwAH" name="00NQH00000NSwAH">
+                <div class="selection-group" data-target="00NQH00000NSwAH">
+                    <div class="select-card" data-value="Losing Leads"><span class="card-text">Losing Leads</span></div>
+                    <div class="select-card" data-value="No Visibility"><span class="card-text">No Visibility</span>
+                    </div>
+                    <div class="select-card" data-value="Slow Website"><span class="card-text">Slow Website</span></div>
+                    <div class="select-card" data-value="Manual Data"><span class="card-text">Manual Data</span></div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(2)">Previous</button>
+                    <button type="button" class="btn btn-next" onclick="nextStep(4)">Next Step</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: BUDGET -->
+            <div class="step-content" id="step-4">
+                <label>Investment Range</label>
+                <input type="hidden" id="00NQH00000NSwLZ" name="00NQH00000NSwLZ">
+                <div class="selection-group" data-target="00NQH00000NSwLZ">
+                    <div class="select-card" data-value="15k - 25k MAD"><span class="card-text">15k - 25k MAD</span>
+                    </div>
+                    <div class="select-card" data-value="25k - 45k MAD"><span class="card-text">25k - 45k MAD</span>
+                    </div>
+                    <div class="select-card" data-value="> 45k MAD"><span class="card-text">&gt; 45k MAD</span></div>
+                    <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
+                </div>
+                <div class="other-input" data-linked-to="00NQH00000NSwLZ">
+                    <input id="00NQH00000NUGJq" maxlength="255" name="00NQH00000NUGJq" type="text"
+                        placeholder="Please specify budget..." />
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(3)">Previous</button>
+                    <input type="submit" class="btn btn-next" value="Submit Request" style="font-family: inherit;">
+                </div>
+            </div>
+
+        </form>
     </div>
 
     <script>
-        let currentStep = 1;
-        const totalSteps = 4;
-        const form = document.getElementById('leadForm');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const submitBtn = document.getElementById('submitBtn');
-        const successScreen = document.getElementById('successScreen');
+        var submitted = false;
 
-        // Show/hide "Other" fields
-        function setupOtherFields() {
-            const configs = [
-                { selectId: '00NQH00000NSvqv', otherId: 'otherRole' },
-                { selectId: '00NQH00000NSvyz', otherId: 'otherIndustry' },
-                { selectId: '00NQH00000NSwG1', otherId: 'otherCRM' },
-                { selectId: '00NQH00000NSwLZ', otherId: 'otherBudget' }
-            ];
+        // Handle Submit Logic
+        function handleSubmit() {
+            submitted = true;
+            // Show Thank You Card
+            document.getElementById('thankYouOverlay').classList.add('visible');
 
-            configs.forEach(config => {
-                const select = document.getElementById(config.selectId);
-                const otherField = document.getElementById(config.otherId);
+            // Hide the wrapper content to make the card "stand alone"
+            document.querySelector('.wrapper > form').style.opacity = '0';
+            document.querySelector('.wrapper > h2').style.opacity = '0';
+            document.querySelector('.wrapper > .subtitle').style.opacity = '0';
+            document.querySelector('.stepper-header').style.opacity = '0';
 
-                if (select && otherField) {
-                    select.addEventListener('change', function () {
-                        if (this.value === 'Other') {
-                            otherField.style.display = 'block';
-                        } else {
-                            otherField.style.display = 'none';
+            // Redirect after 6 seconds
+            setTimeout(() => {
+                window.location.href = '/'; // Go to Home
+            }, 6000);
+        }
+
+        // STEP LOGIC
+        function nextStep(targetStep) {
+            // Validation (Basic) for Step 1
+            if (targetStep === 2) {
+                const fName = document.getElementById('first_name').value;
+                const lName = document.getElementById('last_name').value;
+                const email = document.getElementById('email').value;
+                if (!fName || !lName || !email) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+            }
+
+            goToStep(targetStep);
+        }
+
+        function prevStep(targetStep) {
+            goToStep(targetStep);
+        }
+
+        function goToStep(step) {
+            // Hide all contents
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show target content
+            document.getElementById(`step-${step}`).classList.add('active');
+
+            // Update Header Text
+            const titles = {
+                1: { t: "Contact Info", s: "Let's start with your details" },
+                2: { t: "Company", s: "Tell us about your organization" },
+                3: { t: "Project", s: "What are you looking to build?" },
+                4: { t: "Budget", s: "Help us understand your range" }
+            };
+            document.getElementById('header-title').innerText = titles[step].t;
+            document.getElementById('header-subtitle').innerText = titles[step].s;
+
+            // Update Progress Bar
+            const progress = (step - 1) * 33.33;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            // Update Stepper Circles
+            for (let i = 1; i <= 4; i++) {
+                const node = document.getElementById(`step-node-${i}`);
+                if (i <= step) {
+                    node.classList.add('active');
+                } else {
+                    node.classList.remove('active');
+                }
+            }
+        }
+
+        // BUTTON SELECTION LOGIC
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.selection-group').forEach(group => {
+                const hiddenInputId = group.getAttribute('data-target');
+                const hiddenInput = document.getElementById(hiddenInputId);
+                const buttons = group.querySelectorAll('.select-card'); // UPDATED SELECTOR
+                const otherContainer = document.querySelector(`.other-input[data-linked-to="${hiddenInputId}"]`);
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Toggle active state
+                        buttons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Set value
+                        const val = btn.getAttribute('data-value');
+                        hiddenInput.value = val;
+
+                        // Show/Hide Other Input
+                        if (otherContainer) {
+                            if (val === 'Other') {
+                                otherContainer.classList.add('show');
+                                const inp = otherContainer.querySelector('input');
+                                if (inp) inp.focus();
+                            } else {
+                                otherContainer.classList.remove('show');
+                            }
                         }
                     });
-                }
+                });
             });
-        }
-
-        // Update progress bar
-        function updateProgressBar() {
-            document.querySelectorAll('.progress-step').forEach(step => {
-                const stepNum = parseInt(step.dataset.step);
-                step.classList.remove('active', 'completed');
-
-                if (stepNum === currentStep) {
-                    step.classList.add('active');
-                } else if (stepNum < currentStep) {
-                    step.classList.add('completed');
-                }
-            });
-        }
-
-        // Show step
-        function showStep(step) {
-            document.querySelectorAll('.form-step').forEach(stepEl => {
-                stepEl.classList.remove('active');
-            });
-
-            const activeStep = document.querySelector(`.form-step[data-step="${step}"]`);
-            if (activeStep) {
-                activeStep.classList.add('active');
-            }
-
-            // Update buttons
-            prevBtn.style.display = step === 1 ? 'none' : 'block';
-
-            if (step === totalSteps) {
-                nextBtn.style.display = 'none';
-                submitBtn.style.display = 'block';
-            } else {
-                nextBtn.style.display = 'block';
-                submitBtn.style.display = 'none';
-            }
-
-            updateProgressBar();
-        }
-
-        // Validate current step
-        function validateStep() {
-            const currentStepEl = document.querySelector(`.form-step[data-step="${currentStep}"]`);
-            const requiredInputs = currentStepEl.querySelectorAll('input[required], select[required]');
-
-            for (let input of requiredInputs) {
-                if (!input.value.trim()) {
-                    input.focus();
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        // Next button
-        nextBtn.addEventListener('click', () => {
-            if (validateStep() && currentStep < totalSteps) {
-                currentStep++;
-                showStep(currentStep);
-            }
         });
-
-        // Previous button
-        prevBtn.addEventListener('click', () => {
-            if (currentStep > 1) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
-
-        // Form submission
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Hide form, show success screen
-            form.style.display = 'none';
-            document.querySelector('.progress-wrapper').style.display = 'none';
-            document.querySelector('.header').style.display = 'none';
-            successScreen.classList.add('active');
-
-            // Countdown and redirect
-            let countdown = 3;
-            const countdownEl = document.getElementById('countdown');
-
-            const timer = setInterval(() => {
-                countdown--;
-                countdownEl.textContent = countdown;
-
-                if (countdown === 0) {
-                    clearInterval(timer);
-                    // Submit to Salesforce
-                    form.submit();
-                }
-            }, 1000);
-        });
-
-        // Initialize
-        setupOtherFields();
-        showStep(1);
     </script>
 </body>
 
