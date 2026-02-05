@@ -2,37 +2,34 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "../App";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function GlowingEffectDemo() {
     const { t } = useLanguage();
     const ts = t.websitePage.techStack;
 
     return (
-        <div className="flex flex-col gap-24 md:gap-0 w-full max-w-6xl mx-auto py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto py-8">
 
-            {/* 1. Frontend: Title Left, Orbit Right */}
-            <OrbitTechCard
+            {/* 1. Frontend */}
+            <TechCategoryCard
                 title={ts.frontend.title}
                 items={ts.frontend.list}
                 color="blue"
-                align="left"
             />
 
-            {/* 2. Backend: Title Right, Orbit Left */}
-            <OrbitTechCard
+            {/* 2. Backend */}
+            <TechCategoryCard
                 title={ts.backend.title}
                 items={ts.backend.list}
                 color="purple"
-                align="right"
             />
 
-            {/* 3. CMS: Title Left, Orbit Right */}
-            <OrbitTechCard
+            {/* 3. CMS */}
+            <TechCategoryCard
                 title={ts.cms.title}
                 items={ts.cms.list}
                 color="emerald"
-                align="left"
             />
 
         </div>
@@ -64,173 +61,57 @@ const ICON_MAP = {
     "WordPress": "wordpress.png"
 };
 
-// Mobile Hook
-const useIsMobile = () => {
-    const [isMobile, setIsMobile] = React.useState(false);
 
-    React.useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile(); // Check on mount
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
 
-    return isMobile;
-};
-
-const OrbitTechCard = ({ title, items, color, align = "left" }) => {
-    const isMobile = useIsMobile();
-
-    // Distribute items
-    // To ensure they are "not near each other", we use larger orbits.
-    // If < 8 items, use single large orbit.
-    // If >= 8 items, split: but put MORE on the outer ring to keep spacing.
-    const count = items.length;
-    const isMultiRing = count > 8;
-
-    // Split logic: Inner ring gets fewer items to maintain good spacing there too
-    const innerCount = isMultiRing ? Math.floor(count * 0.4) : count;
-    const innerItems = items.slice(0, innerCount);
-    const outerItems = items.slice(innerCount);
-
+const TechCategoryCard = ({ title, items, color }) => {
     return (
-        <div className={cn(
-            "flex items-center gap-8 md:gap-24 w-full relative",
-            align === "right" ? "flex-col md:flex-row-reverse" : "flex-col md:flex-row"
-        )}>
-
-            {/* Ambient Background Glow for the whole section */}
-            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-${color}-500/5 blur-[100px] rounded-full pointer-events-none`} />
-
+        <div className="flex flex-col gap-6 w-full relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-blue-500/30 transition-all duration-500 group">
             {/* Title Section */}
-            <div className={cn(
-                "flex-1 flex flex-col justify-center z-10",
-                align === "right" ? "items-center md:items-start text-center md:text-left" : "items-center md:items-end text-center md:text-right"
-            )}>
-                <h3 className={`text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]`}>
+            <div className="flex flex-col items-center text-center">
+                <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                     {title}
                 </h3>
-                {/* Decorative Line - Colored */}
-                <div className={`mt-4 h-1.5 w-32 rounded-full bg-${color}-500 shadow-[0_0_10px_var(--tw-shadow-color)] shadow-${color}-500/50`} />
+                <div className={`mt-2 h-1 w-16 rounded-full bg-${color}-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]`} />
             </div>
 
-            {/* Orbit Section */}
-            <div className="flex-1 flex items-center justify-center p-0 z-10 w-full">
-                {/* Increased container size for spacing */}
-                <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] flex items-center justify-center">
+            {/* Icons Grid */}
+            <div className="flex flex-wrap justify-center gap-4 mt-4">
+                {items.map((item) => {
+                    const iconFile = ICON_MAP[item];
+                    const folder = ["Framer", "Webflow", "WordPress"].includes(item) ? "tech" : "Custom Web Application and Website Development Services";
+                    const iconPath = iconFile ? `/assets/${folder}/${iconFile}` : null;
+                    const isSvg = iconFile && iconFile.endsWith('.svg');
 
-                    {/* Center Core / Star */}
-                    <div className={`absolute w-32 h-32 bg-${color}-500/10 rounded-full blur-2xl animate-pulse`} />
-                    <div className={`absolute w-4 h-4 bg-${color}-400 rounded-full shadow-[0_0_20px_var(--tw-shadow-color)] shadow-${color}-400`} />
+                    return (
+                        <div
+                            key={item}
+                            className="relative group/icon flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#1a1d23] border border-white/10 shadow-lg transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-pointer"
+                        >
+                            {iconPath ? (
+                                <img
+                                    src={iconPath}
+                                    alt={item}
+                                    className={cn(
+                                        "w-7 h-7 md:w-8 md:h-8 object-contain transition-all duration-300",
+                                        isSvg ? "filter brightness-0 invert opacity-60" : "filter grayscale brightness-110 opacity-90",
+                                        "group-hover/icon:opacity-100 group-hover/icon:filter-[brightness(0)_saturate(100%)_invert(38%)_sepia(55%)_saturate(3754%)_hue-rotate(205deg)_brightness(103%)_contrast(93%)]"
+                                    )}
+                                />
+                            ) : (
+                                <span className="text-xs font-bold text-gray-400 group-hover/icon:text-blue-400">{item[0]}</span>
+                            )}
 
-                    {/* Orbit Rings */}
-                    <div className={cn(
-                        "absolute rounded-full border border-dashed border-white/10 animate-spin-slow",
-                        // Inner ring size - COMPACTED
-                        // Single Ring (CMS) reduced to match Inner Ring size for compactness
-                        isMultiRing ? "w-[160px] h-[160px] md:w-[240px] md:h-[240px]" : "w-[160px] h-[160px] md:w-[240px] md:h-[240px]"
-                    )} style={{ animationDuration: '60s' }} />
-
-                    {isMultiRing && (
-                        <div className={cn(
-                            "absolute rounded-full border border-dashed border-white/5 animate-spin-slower",
-                            // Outer ring size - COMPACTED
-                            "w-[240px] h-[240px] md:w-[380px] md:h-[380px]"
-                        )} style={{ animationDuration: '90s' }} />
-                    )}
-
-                    {/* Items Placement */}
-                    {/* Radius passed here is HALF the width/height defined above roughly, slightly adjusted for centering */}
-                    {/* Compact Radius adjustment */}
-                    <OrbitItems
-                        items={innerItems}
-                        radius={isMultiRing ? (isMobile ? 80 : 120) : (isMobile ? 80 : 120)}
-                        color={color}
-                        duration={60}
-                    />
-
-                    {isMultiRing && (
-                        <OrbitItems
-                            items={outerItems}
-                            radius={isMobile ? 120 : 190}
-                            color={color}
-                            duration={90}
-                            reverse
-                        />
-                    )}
-
-                </div>
+                            {/* Tooltip */}
+                            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-semibold rounded-lg bg-[#0f1115] border border-blue-500/30 text-blue-400 opacity-0 transform translate-y-2 group-hover/icon:opacity-100 group-hover/icon:translate-y-0 transition-all duration-300 z-50 whitespace-nowrap pointer-events-none shadow-xl">
+                                {item}
+                            </span>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
-const OrbitItems = ({ items, radius, color, duration, reverse = false }) => {
-    return (
-        <div className={cn("absolute inset-0 flex items-center justify-center animate-spin-slow", reverse && "direction-reverse")}
-            style={{ animationDuration: `${duration}s`, animationDirection: reverse ? 'reverse' : 'normal' }}
-        >
-            {items.map((item, index) => {
-                const angle = (index / items.length) * 2 * Math.PI;
-                const x = Math.cos(angle) * (radius);
-                const y = Math.sin(angle) * (radius);
 
-                // Icon Logic
-                const isCms = ["Framer", "Webflow", "WordPress"].includes(item);
-                const iconFile = ICON_MAP[item];
-                const folder = ["Framer", "Webflow", "WordPress"].includes(item) ? "tech" : "Custom Web Application and Website Development Services";
-                const iconPath = iconFile ? `/assets/${folder}/${iconFile}` : null;
-                const isSvg = iconFile && iconFile.endsWith('.svg');
-
-                return (
-                    <div
-                        key={item}
-                        className="absolute flex flex-col items-center justify-center"
-                        style={{
-                            transform: `translate(${x}px, ${y}px)`,
-                        }}
-                    >
-                        {/* Counter-rotate the icon so it stays upright */}
-                        <div className="animate-spin-slow" style={{ animationDuration: `${duration}s`, animationDirection: reverse ? 'normal' : 'reverse' }}>
-                            <div className={cn(
-                                "relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#1a1d23] border border-white/10 shadow-lg transition-all duration-300 group/icon hover:scale-125 cursor-pointer",
-                                // HOVER EFFECT: Force BLUE border and shadow for EVERYONE
-                                "hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:bg-[#1a1d23]"
-                            )}>
-                                {iconPath ? (
-                                    <img
-                                        src={iconPath}
-                                        alt={item}
-                                        style={{ transition: 'all 0.3s ease' }}
-                                        className={cn(
-                                            "w-8 h-8 md:w-9 md:h-9 object-contain transition-all duration-300",
-                                            // Base State
-                                            isSvg
-                                                ? 'filter brightness-0 invert opacity-60'
-                                                : 'filter grayscale brightness-110 opacity-90',
-
-                                            // Hover State: Turn BLUE using CSS Filter for #3b82f6
-                                            "group-hover/icon:opacity-100 group-hover/icon:filter-[brightness(0)_saturate(100%)_invert(38%)_sepia(55%)_saturate(3754%)_hue-rotate(205deg)_brightness(103%)_contrast(93%)]"
-                                        )}
-                                    />
-                                ) : (
-                                    <span className="text-xs font-bold text-gray-400 group-hover/icon:text-blue-400">{item[0]}</span>
-                                )}
-
-                                {/* Tooltip label */}
-                                {/* Always Blue Text on Hover */}
-                                <span className={cn(
-                                    "absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm font-semibold rounded-lg bg-[#0f1115] border border-blue-500/30",
-                                    "text-blue-400 shadow-[0_4px_12px_rgba(0,0,0,0.5)]",
-                                    "opacity-0 transform translate-y-2 group-hover/icon:opacity-100 group-hover/icon:translate-y-0 transition-all duration-300 z-50 whitespace-nowrap pointer-events-none"
-                                )}>
-                                    {item}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
-}
+export default GlowingEffectDemo;

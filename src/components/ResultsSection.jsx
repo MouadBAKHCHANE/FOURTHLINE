@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/ResultsSection.css';
 import { cn } from "@/lib/utils";
 

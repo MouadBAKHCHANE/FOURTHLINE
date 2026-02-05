@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Solutions.css';
 import { Truck, Building, GraduationCap, Briefcase, ChevronRight, BarChart3, Users, Globe, ArrowUpRight, CheckCircle2, Clock } from 'lucide-react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Solutions = () => {
     const { t } = useLanguage();

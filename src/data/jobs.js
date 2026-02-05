@@ -2,7 +2,7 @@ export const jobs = [
     {
         id: 'salesforce-developer',
         title: "Senior Salesforce Developer",
-        location: "Casablanca, Morocco (Hybrid)",
+        location: "Rabat, Morocco (Hybrid)",
         type: "Full-Time",
         department: "Engineering",
         salary: "Competitive",
@@ -48,7 +48,7 @@ export const jobs = [
     {
         id: 'sales-executive',
         title: "B2B Sales Executive",
-        location: "Casablanca, Morocco",
+        location: "Rabat, Morocco",
         type: "Full-Time",
         department: "Growth",
         salary: "Commission Uncapped",

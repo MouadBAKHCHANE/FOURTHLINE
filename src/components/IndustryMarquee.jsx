@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Truck, Building2, GraduationCap, Briefcase, Globe, BarChart3 } from 'lucide-react';
 import '../styles/IndustryMarquee.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const icons = {
     logistics: Truck,

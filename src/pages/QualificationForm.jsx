@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/QualificationForm.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import {
     ArrowRight, Check, ArrowLeft, Globe, Database,

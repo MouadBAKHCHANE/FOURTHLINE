@@ -48,11 +48,11 @@
 }
 
 .comparison-card.card-do:hover {
-    border-color: rgba(69, 183, 209, 0.5);
-    /* Cyan/Blue Glow */
+    border-color: rgba(57, 143, 255, 0.5);
+    /* Website Blue Glow */
     box-shadow:
         0 20px 40px -5px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(69, 183, 209, 0.1);
+        0 0 20px rgba(57, 143, 255, 0.1);
     /* Glow */
     transform: translateY(-8px) scale(1.02);
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
@@ -60,15 +60,15 @@
 
 .comparison-card.card-do .card-icon-wrapper {
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: none;
 }
 
 .comparison-card.card-do:hover .card-icon-wrapper {
-    background: rgba(69, 183, 209, 0.1);
-    border-color: rgba(69, 183, 209, 0.4);
+    background: transparent;
+    border: none;
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 15px rgba(69, 183, 209, 0.2);
+    box-shadow: none;
 }
 
 /* Enhancing Typography for Premium Feel */
@@ -95,14 +95,14 @@
 }
 
 .comparison-card.card-dont .card-icon-wrapper {
-    background: rgba(239, 68, 68, 0.05);
-    border: 1px solid rgba(239, 68, 68, 0.1);
+    background: transparent;
+    border: none;
     transition: all 0.3s ease;
 }
 
 .comparison-card.card-dont:hover .card-icon-wrapper {
-    background: rgba(239, 68, 68, 0.15);
-    border-color: rgba(239, 68, 68, 0.5);
+    background: transparent;
+    border: none;
     transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    box-shadow: none;
 }

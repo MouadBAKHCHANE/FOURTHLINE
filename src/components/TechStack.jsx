@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Zap, Layers, Code, ArrowRight } from 'lucide-react';
 import '../styles/TechStack.css';
 

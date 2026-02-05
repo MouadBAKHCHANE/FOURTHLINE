@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Footer.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import AuditModal from './AuditModal';
 import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Mail } from 'lucide-react';
@@ -55,7 +55,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>{t.footer.sections}</h4>
                         <ul>
-                            <li><Link to="/services">{t.nav.product}</Link></li>
+                            <li><Link to="/technologies">{t.nav.product}</Link></li>
                             <li><Link to="/careers">{t.nav.careers}</Link></li>
                             <li><Link to="/blog">{t.nav.blog}</Link></li>
                             <li><Link to="/contact">{t.nav.contact}</Link></li>

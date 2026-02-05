@@ -1,8 +1,8 @@
 import React from 'react';
-import { Unlink, Layout, Database, Bot, BarChart3, HeartHandshake, Code2, Copy, Frown, EyeOff, CalendarX2, UserX, AlertTriangle } from 'lucide-react';
+import { Zap, Magnet, Trophy, Rocket, Settings2, ShieldCheck, Component, MousePointerBan, EyeOff, PlugZap, Hourglass, MessageSquareOff, AlertTriangle } from 'lucide-react';
 import '../styles/ProblemSection.css';
 import '../styles/ProblemSectionPremium.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ProblemSection = () => {
     const { t } = useLanguage();
@@ -13,21 +13,21 @@ const ProblemSection = () => {
 
     // Icons mapping
     const iconsDo = [
-        <Layout size={24} className="text-green-400" />,
-        <Database size={24} className="text-blue-400" />,
-        <Bot size={24} className="text-purple-400" />,
-        <BarChart3 size={24} className="text-yellow-400" />,
-        <HeartHandshake size={24} className="text-pink-400" />,
-        <Code2 size={24} className="text-cyan-400" />
+        <Zap size={48} className="text-[#398fff]" />,           // Fast
+        <Magnet size={48} className="text-[#398fff]" />,        // New Leads
+        <Trophy size={48} className="text-[#398fff]" />,        // Top 3 SEO
+        <Rocket size={48} className="text-[#398fff]" />,        // 400% Traffic
+        <Settings2 size={48} className="text-[#398fff]" />,     // Custom Dev
+        <ShieldCheck size={48} className="text-[#398fff]" />    // Service & Support
     ];
 
     const iconsDont = [
-        <Copy size={24} className="text-gray-400" />,
-        <Frown size={24} className="text-red-400" />,
-        <EyeOff size={24} className="text-gray-400" />,
-        <Unlink size={24} className="text-red-400" />,
-        <CalendarX2 size={24} className="text-red-400" />,
-        <UserX size={24} className="text-red-400" />
+        <Component size={48} className="text-red-500" />,        // Generic Designs
+        <MousePointerBan size={48} className="text-red-500" />,  // Poor UX
+        <EyeOff size={48} className="text-red-500" />,           // Low Visibility
+        <PlugZap size={48} className="text-red-500" />,          // Limited Functionality
+        <Hourglass size={48} className="text-red-500" />,        // Missed Deadlines
+        <MessageSquareOff size={48} className="text-red-500" />  // Inadequate Support
     ];
 
     return (

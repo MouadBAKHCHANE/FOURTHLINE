@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import ComparisonSlider from '../components/ComparisonSlider';
 import HeroBackground from '../components/HeroBackground';
-import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe, TrendingUp, Megaphone, Bot, BarChart } from 'lucide-react';
-import '../styles/CRMPage.css';
+import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe, TrendingUp, Megaphone, Bot, BarChart, Smartphone, ShoppingCart, Webhook, FileText, LifeBuoy } from 'lucide-react';
+import Services from '../components/Services';
+import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
+import '../styles/TechnologiesPage.css';
 
-const SmallBusiness = () => {
+const ServiceCard = ({ icon, data }) => (
+    <div className="ws-card group">
+        <div className="mb-4 transform transition-transform group-hover:scale-110 duration-300">
+            {icon}
+        </div>
+        <h3 style={{ color: 'white', marginBottom: '1rem' }}>{data.title}</h3>
+        <p>{data.desc}</p>
+    </div>
+);
+
+const TechnologiesPage = () => {
     const { t } = useLanguage();
     const sb = t.smallBusiness;
     const [activeTab, setActiveTab] = useState('sales');
@@ -18,9 +30,6 @@ const SmallBusiness = () => {
                 <div className="sb-hero-bg"></div>
                 <div className="container sb-hero-container">
                     <div className="sb-hero-content">
-                        <div className="sb-badge">
-                            <span className="dot"></span> {sb.navLink}
-                        </div>
                         <h1 className="sb-title">
                             {sb.title.split(',')[0]}
                             <br />
@@ -135,6 +144,31 @@ const SmallBusiness = () => {
 
 
 
+            {/* Services Grid (Moved from Home) */}
+            <section className="container ws-services section-padding">
+                <h2 className="ws-section-title text-center mb-10">{t.websitePage.services.title}</h2>
+                <div className="ws-services-grid">
+                    <ServiceCard icon={<Globe size={40} className="text-purple-400 mb-4" />} data={t.websitePage.services.custom} />
+                    <ServiceCard icon={<Smartphone size={40} className="text-blue-400 mb-4" />} data={t.websitePage.services.responsive} />
+                    <ServiceCard icon={<ShoppingCart size={40} className="text-pink-400 mb-4" />} data={t.websitePage.services.ecommerce} />
+                    <ServiceCard icon={<Webhook size={40} className="text-green-400 mb-4" />} data={t.websitePage.services.api} />
+                    <ServiceCard icon={<FileText size={40} className="text-orange-400 mb-4" />} data={t.websitePage.services.cms} />
+                    <ServiceCard icon={<LifeBuoy size={40} className="text-red-400 mb-4" />} data={t.websitePage.services.support} />
+                    <ServiceCard icon={<ShieldCheck size={40} className="text-teal-400 mb-4" />} data={t.websitePage.services.qa} />
+                </div>
+            </section>
+
+            {/* Tech Stack (Moved from Home) */}
+            <section className="ws-stack-section section-padding">
+                <div className="container">
+                    <h2 className="ws-section-title">{t.websitePage.techStack.title}</h2>
+                    <GlowingEffectDemo />
+                </div>
+            </section>
+
+            {/* Services Table (Moved from Home) */}
+            <Services />
+
             {/* Comparison Slider Section */}
             <ComparisonSlider />
 
@@ -142,4 +176,4 @@ const SmallBusiness = () => {
     );
 };
 
-export default SmallBusiness;
+export default TechnologiesPage;

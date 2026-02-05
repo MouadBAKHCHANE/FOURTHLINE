@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import { ArrowLeft, MapPin, Briefcase, Clock, CheckCircle2 } from 'lucide-react';
 import JobApplicationModal from '../components/JobApplicationModal';
 import '../styles/Careers.css';

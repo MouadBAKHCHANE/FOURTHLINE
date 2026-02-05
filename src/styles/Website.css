@@ -114,6 +114,34 @@
     max-width: 500px;
 }
 
+/* Hero CTA Group */
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
 /* Visual Side - The Code Factory */
 .ws-hero-visual {
     position: relative;
@@ -197,15 +225,15 @@
 /* The Live Preview Card */
 .preview-card {
     position: absolute;
-    bottom: 40px;
-    right: 0;
-    width: 280px;
+    bottom: 60px;
+    right: -40px;
+    width: 180px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 14px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     transform: translateZ(50px);
     animation: float 6s ease-in-out infinite;
@@ -215,13 +243,13 @@
 .preview-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .preview-avatar {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
     border-radius: 50%;
 }
@@ -242,10 +270,10 @@
 }
 
 .preview-stat {
-    margin-top: 15px;
+    margin-top: 10px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    border-radius: 8px;
+    padding: 8px;
+    border-radius: 6px;
     text-align: center;
 }
 
@@ -253,11 +281,11 @@
     display: block;
     color: var(--accent-green);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
 }

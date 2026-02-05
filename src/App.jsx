@@ -7,8 +7,8 @@ import TermsOfService from './pages/TermsOfService'
 import QualificationForm from './pages/QualificationForm'
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
-import SmallBusiness from './pages/CRMPage';
-import ExpertisePage from './pages/ExpertisePage';
+import TechnologiesPage from './pages/TechnologiesPage';
+import Technologies from './pages/Technologies';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -17,9 +17,7 @@ import './index.css'
 import { SparklesPreview } from './components/SparklesDemo';
 import { translations } from './data/translations'
 
-const LanguageContext = createContext();
-
-export const useLanguage = () => useContext(LanguageContext);
+import { LanguageProvider } from './contexts/LanguageContext';
 
 const AppContent = () => {
   const location = useLocation();
@@ -42,7 +40,7 @@ const AppContent = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/sparkles" element={<SparklesPreview />} />
-        <Route path="/expertise" element={<ExpertisePage />} />
+        <Route path="/technologies" element={<Technologies />} />
       </Routes>
       <Footer />
     </div>
@@ -50,23 +48,13 @@ const AppContent = () => {
 };
 
 function App() {
-  const [language, setLanguage] = useState('en');
-
-  const t = translations[language];
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'fr' : 'en');
-  };
-
-  const value = { language, toggleLanguage, t };
-
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageProvider>
       <Router>
         <AppContent />
       </Router>
-    </LanguageContext.Provider>
-  )
+    </LanguageProvider>
+  );
 }
 
-export default App
+export default App;

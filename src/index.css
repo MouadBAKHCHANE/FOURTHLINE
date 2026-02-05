@@ -19,8 +19,8 @@
   --glass-bg: rgba(20, 20, 20, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
 
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
 }
 
 h1,
@@ -142,6 +142,17 @@ body::after {
     0 0 0 1px rgba(57, 143, 255, 0.3),
     /* Blue border glow */
     0 5px 15px rgba(57, 143, 255, 0.2);
+}
+
+/* Smaller size for navbar */
+.btn-nova-glow.btn-nav-size {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+}
+
+.btn-nova-glow.btn-nav-size .btn-dot-indicator {
+  width: 6px;
+  height: 6px;
 }
 
 /* 3. OptiRank Secondary Button (Glass) */

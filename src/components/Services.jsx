@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../styles/Services.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Services = () => {
     const { t } = useLanguage();

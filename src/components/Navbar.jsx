@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, ArrowRight, Globe, ChevronDown, Sprout } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
                 {/* Desktop Links */}
                 <div className="nav-center desktop-links">
                     <Link to="/">{t.nav.home}</Link>
-                    <Link to="/expertise">Expertise</Link>
+                    <Link to="/technologies">{t.smallBusiness.navLink}</Link>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>
@@ -51,8 +51,8 @@ const Navbar = () => {
                         <Globe size={16} />
                         <span>{language === 'en' ? 'FR' : 'EN'}</span>
                     </button>
-                    <a href="/Webtoleadform.html" className="btn-pill-gradient">
-                        {t.nav.requestDemo} <ArrowRight size={16} />
+                    <a href="/Webtoleadform.html" className="btn-nova-glow btn-nav-size">
+                        <div className="btn-dot-indicator"></div> {t.nav.requestDemo}
                     </a>
                 </div>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <Link to="/" onClick={() => setIsOpen(false)}>{t.nav.home}</Link>
-                    <Link to="/expertise" onClick={() => setIsOpen(false)}>Expertise</Link>
+                    <Link to="/technologies" onClick={() => setIsOpen(false)}>{t.smallBusiness.navLink}</Link>
                     <Link to="/careers" onClick={() => setIsOpen(false)}>{t.nav.careers}</Link>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>{t.nav.blog}</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</Link>

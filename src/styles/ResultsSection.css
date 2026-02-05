@@ -6,7 +6,7 @@
 }
 
 .results-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -34,7 +34,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 900px;
-    margin: 0 auto;
 }
 
 /* Grid */

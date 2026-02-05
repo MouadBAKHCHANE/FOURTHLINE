@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../styles/Legal.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const PrivacyPolicy = () => {
     const { language } = useLanguage();

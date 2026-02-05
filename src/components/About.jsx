@@ -1,24 +1,12 @@
 import React from 'react';
 import '../styles/About.css';
-import '../styles/FlipText.css';
-import { useLanguage } from '../App';
+import '../styles/Website.css';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Code, TrendingUp } from 'lucide-react';
+import { Code, Zap } from 'lucide-react';
 
 const About = () => {
     const { t } = useLanguage();
-
-    // Flip Text State
-    const [index, setIndex] = React.useState(0);
-
-    const phrases = t.hero.dynamicPhrases || ["Digital infra", "CRM to scale", "Premium websites"];
-
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % phrases.length);
-        }, 3000); // Change every 3 seconds
-        return () => clearInterval(interval);
-    }, [phrases]); // Add phrases to dependency to reset if lang changes
 
     return (
         <section className="hero about-section" id="about">
@@ -28,26 +16,20 @@ const About = () => {
                     <path opacity="0.05" d="M-100 700 C 300 500, 700 900, 1540 300" stroke="#00A1E0" strokeWidth="40" />
                 </svg>
             </div>
-            <div className="container hero-container">
-                <div className="hero-content">
-                    <h2 className="hero-title nova-title">
-                        <span className="hero-text-part">{t.hero.mainTitlePart1}</span>
-                        <br className="mobile-break" />
-                        <span className="hero-text-part">{t.hero.mainTitlePart2}</span>
-                        <br />
-                        <span key={index} className="text-highlight flip-enter" style={{ display: 'inline-block' }}>
-                            {phrases[index]}
-                        </span>
-                    </h2>
-                    <div className="hero-actions">
-                        <a href="/Webtoleadform.html" className="btn-nova-glow">
-                            <span className="btn-dot-indicator"></span>
-                            {t.hero.startBuild}
-                        </a>
+            <div className="container hero-container ws-hero-container-override">
+                <div className="hero-content ws-hero-text-override">
 
+                    <h1 className="ws-title mb-4">{t.websitePage.hero.title}</h1>
+                    <div className="hero-cta-group mb-12">
+                        <a href="/Webtoleadform.html" className="btn-nova-glow">
+                            <div className="btn-dot-indicator"></div> {t.websitePage.hero.cta}
+                        </a>
+                        <a href="#works" className="btn-nova-glow">
+                            {t.websitePage.hero.ctaSecondary}
+                        </a>
                     </div>
 
-                    <div className="hero-social-proof">
+                    <div className="hero-social-proof mt-8">
                         <p className="proof-text">{t.hero.trustedBy}</p>
                         <div className="proof-logos-mask">
                             <div className="proof-logos">
@@ -71,36 +53,43 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="hero-visual-creative">
-                    <div className="glow-bg hero-glow"></div>
+                <div className="hero-visual-creative ws-hero-visual-override">
+                    {/* Floating Tech Icons */}
+                    <div className="float-icon icon-react"><Code size={24} /></div>
+                    <div className="float-icon icon-vue"><Zap size={24} /></div>
 
-                    {/* Main Dashboard Visual */}
-                    <div className="dashboard-container">
-                        <img
-                            src="/assets/hero/dashboard_v2.webp"
-                            alt="Salesforce Dashboard Interface"
-                            className="hero-dashboard-img"
-                        />
+                    {/* The Code Window */}
+                    <div className="code-window">
+                        <div className="window-header">
+                            <div className="dot red"></div>
+                            <div className="dot yellow"></div>
+                            <div className="dot green"></div>
+                        </div>
+                        <div className="code-content">
+                            <span className="code-line"><span className="c-purple">const</span> <span className="c-yellow">GrowthSystem</span> = () =&gt; {'{'}</span>
+                            <span className="code-line">&nbsp;&nbsp;<span className="c-purple">return</span> (</span>
+                            <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="c-green">AutoPilot</span></span>
+                            <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-orange">leads</span>={'{'}<span className="c-blue">true</span>{'}'}</span>
+                            <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-orange">sales</span>={'{'}<span className="c-blue">"24/7"</span>{'}'}</span>
+                            <span className="code-line">&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</span>
+                            <span className="code-line">&nbsp;&nbsp;);</span>
+                            <span className="code-line">{'}'};</span>
+                        </div>
                     </div>
 
-                    {/* Floating Signs */}
-                    <div className="float-sign sign-dev">
-                        <Code size={20} />
-                        <span>Dev</span>
-                    </div>
-
-                    <div className="float-sign sign-scale">
-                        <TrendingUp size={20} />
-                        <span>Scale</span>
-                    </div>
-
-                    {/* Astro Mascot */}
-                    <div className="mascot-container">
-                        <img
-                            src="/assets/hero/astro_mascot.webp"
-                            alt="Salesforce Astro"
-                            className="sf-mascot-img"
-                        />
+                    {/* The Live Preview Card */}
+                    <div className="preview-card">
+                        <div className="preview-header">
+                            <div className="preview-avatar"></div>
+                            <div className="preview-lines">
+                                <div className="p-line"></div>
+                                <div className="p-line short"></div>
+                            </div>
+                        </div>
+                        <div className="preview-stat">
+                            <span className="stat-num">+124%</span>
+                            <span className="stat-label">Conversion Rate</span>
+                        </div>
                     </div>
                 </div>
             </div>

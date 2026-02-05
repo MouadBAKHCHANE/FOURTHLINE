@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Code, Cloud, Handshake } from 'lucide-react';
+import { Map, Palette, PenTool, Code, Rocket, Database } from 'lucide-react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import '../styles/SolutionTimeline.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Card = ({ i, children }) => {
     return (
@@ -20,26 +20,38 @@ const SolutionTimeline = () => {
         {
             id: 1,
             title: t.solution.step1Title,
-            icon: <Search size={24} />,
+            icon: <Map size={24} />,
             desc: t.solution.step1Desc
         },
         {
             id: 2,
             title: t.solution.step2Title,
-            icon: <Code size={24} />,
+            icon: <Palette size={24} />,
             desc: t.solution.step2Desc
         },
         {
             id: 3,
             title: t.solution.step3Title,
-            icon: <Cloud size={24} />,
+            icon: <PenTool size={24} />,
             desc: t.solution.step3Desc
         },
         {
             id: 4,
             title: t.solution.step4Title,
-            icon: <Handshake size={24} />,
+            icon: <Code size={24} />,
             desc: t.solution.step4Desc
+        },
+        {
+            id: 5,
+            title: t.solution.step5Title,
+            icon: <Rocket size={24} />,
+            desc: t.solution.step5Desc
+        },
+        {
+            id: 6,
+            title: t.solution.step6Title,
+            icon: <Database size={24} />,
+            desc: t.solution.step6Desc
         }
     ];
 
@@ -53,6 +65,15 @@ const SolutionTimeline = () => {
                         <p className="section-subtitle sticky-subtitle">
                             {t.solution.subtitle}
                         </p>
+                        <div className="flex gap-4 mt-8">
+                            <a href="#contact" className="btn-nova-glow btn-nav-size">
+                                <div className="btn-dot-indicator"></div>
+                                {t.nav.requestDemo}
+                            </a>
+                            <a href="#results" className="btn-nova-glow btn-nav-size">
+                                {t.hero?.viewSystem || "See Our Work"}
+                            </a>
+                        </div>
                     </div>
 
                     {/* Right Side: Scrollable Steps */}

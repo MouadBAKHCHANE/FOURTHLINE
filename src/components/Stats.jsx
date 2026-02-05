@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/Stats.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const StatItem = ({ number, suffix, label }) => {
     const [count, setCount] = useState(0);

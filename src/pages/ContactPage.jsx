@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ContactPage.css'; // New Styles
 import HeroBackground from '../components/HeroBackground';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Phone, MapPin, Send, Instagram, Twitter, MessageCircle, Linkedin } from 'lucide-react';
 import WorldMapDots from '../assets/world-map-dots.webp';
 

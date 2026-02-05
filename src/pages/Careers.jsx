@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Briefcase, ChevronRight, Clock } from 'lucide-react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/Careers.css';
 
 const Careers = () => {

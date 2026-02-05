@@ -2,7 +2,7 @@ export const translations = {
     en: {
         nav: {
             home: "Home",
-            product: "Services",
+            product: "Technologies",
             industries: "Industries",
             careers: "Careers",
             docs: "Methodology",
@@ -11,7 +11,7 @@ export const translations = {
             signin: "Sign in",
             blog: "Blog",
             contact: "Contact",
-            requestDemo: "Start Your Build"
+            requestDemo: "Start Your Project"
         },
         hero: {
             titleHighlight: "Into Digital Power",
@@ -24,7 +24,7 @@ export const translations = {
             ],
             subtitle: "We build the digital infrastructure for business. Professional websites integrated directly with CRM to scale.",
             startBuild: "Start Your Build",
-            viewSystem: "View the System",
+            viewSystem: "See Our Work",
             contactUs: "Contact Us",
             salesPipeline: "Sales Pipeline",
             newLeads: "New Leads",
@@ -48,12 +48,12 @@ export const translations = {
             subDont: "Expect generic templates, missed deadlines, and systems that don't scale.",
             cards: {
                 do: [
-                    { title: "Premium Landing Page & Websites", desc: "Design that builds trust instantly." },
-                    { title: "Salesforce CRM Integration", desc: "Capture and organize every lead automatically." },
-                    { title: "AI & Automations", desc: "Work smarter with intelligent workflows." },
-                    { title: "Analytics & Insights", desc: "Data-driven decisions for growth." },
-                    { title: "Service & Support", desc: "Long-term partnership for success." },
-                    { title: "Custom Development", desc: "Scalable solutions for complex needs." }
+                    { title: "Fast", desc: "5 Days To Redo the Website" },
+                    { title: "New Leads", desc: "Each Week from Google Ads" },
+                    { title: "Top 3", desc: "In Google Search for 11 New Target Keywords" },
+                    { title: "400%", desc: "Increase in Organic Web Traffic" },
+                    { title: "Custom Development", desc: "Scalable solutions for complex needs." },
+                    { title: "Service & Support", desc: "Long-term partnership for success." }
                 ],
                 dont: [
                     { title: "Generic Designs", desc: "Uninspired templates that blend in." },
@@ -65,26 +65,44 @@ export const translations = {
                 ]
             }
         },
+        whatWeDo: {
+            title: "What we do",
+            cta: "Start Your Project",
+            items: [
+                {
+                    title: "Premium Website Development",
+                    desc: "We design and build stunning, high-performance websites that capture your brand's essence and convert visitors into customers."
+                },
+                {
+                    title: "CRM Ecosystem Integration",
+                    desc: "We implement and customize Salesforce to streamline your sales, automate follow-ups, and organize your entire customer database."
+                },
+                {
+                    title: "Growth Engines & Marketing",
+                    desc: "We drive targeted traffic through SEO and paid campaigns, turning your digital presence into a measurable revenue machine."
+                }
+            ]
+        },
 
         solutionVisual: {
             title: "Turning Vision Into Digital Power",
             subtitle: "Bridging the gap with automated, intelligent infrastructure."
         },
         solution: {
-            title: "Work Process",
+            title: "How Our Process Works",
             subtitle: "Our Proven Strategy",
-            step1Title: "The Audit",
-            step1Desc: "We audit your current flow to find exactly where you're losing money.",
-            step2Title: "The Website",
-            step2Desc: "We build a high-performance website designed to convert, not just look pretty.",
-            step3Title: "The CRM",
-            step3Desc: "We connect your forms to Salesforce. Zero manual data entry. Infinite scale.",
-            step4Title: "The Training",
-            step4Desc: "We train your team and hand over the keys to a self-driving sales machine.",
-            week1: "Week 1",
-            week2: "Week 2",
-            week3: "Week 3",
-            week4: "Week 4"
+            step1Title: "Strategic UX Planning",
+            step1Desc: "We map the exact path your visitors take, identifying pain points and dismantling objections to build immediate trust. Includes a collaborative 2-hour Wireframe Workshop.",
+            step2Title: "Visual Identity & Design",
+            step2Desc: "Whether strictly adhering to guidelines or reinventing from scratch, we craft aesthetics that resonate with your audience and establish authority.",
+            step3Title: "High-Conversion Copywriting",
+            step3Desc: "We specialize in concise, persuasive writing that informs visitors and drives action, strategically optimized for both brand voice and SEO.",
+            step4Title: "Development & Testing",
+            step4Desc: "Measurements become clarity. We translate designs into clean, high-performance code (Webflow, Shopify, WordPress, or Custom Stack) with exhaustive device testing.",
+            step5Title: "Growth & Traffic Acquisition",
+            step5Desc: "We flip the switch on growth using a data-driven mix of SEO and high-intent Google Ads (PPC) to funnel qualified leads directly to you.",
+            step6Title: "CRM Ecosystem Integration",
+            step6Desc: "We connect your forms to a CRM (Salesforce, Odoo...). Zero manual data entry. We train your team and hand over a self-driving sales machine."
         },
         services: {
             title: "Choose Your Growth System",
@@ -151,7 +169,7 @@ export const translations = {
             social: "Social",
             rights: "All rights reserved.",
             poweredBy: "Powered by Seedsvision",
-            brandAddr: "Casablanca, Morocco",
+            brandAddr: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Morocco",
             brandPhone: "+212 600 000 000",
             links: {
                 features: "Features",
@@ -208,7 +226,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "CRM",
+            navLink: "Technologies",
             title: "The Power of the #1 CRM",
             finalCta: {
                 title: ["Stop losing leads.", "Start building your system."],
@@ -297,7 +315,7 @@ export const translations = {
                 phone: "Phone",
                 phoneValue: "+212 600 000 000",
                 office: "Office",
-                officeValue: "Casablanca, Morocco",
+                officeValue: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Morocco",
                 social: {
                     whatsapp: "WhatsApp",
                     twitter: "Twitter",
@@ -331,9 +349,10 @@ export const translations = {
         },
         websitePage: {
             hero: {
-                title: "Build a Premium Digital Footprint.",
+                title: "We Make Websites That Drive Sales.",
                 subtitle: "From landing pages to complex web applications. We build fast, scalable, and stunning websites.",
-                cta: "Start Your Build"
+                cta: "Book A Free Call",
+                ctaSecondary: "See Our Work"
             },
             services: {
                 title: "Solutions We Offer",
@@ -412,7 +431,7 @@ export const translations = {
                 {
                     id: 'salesforce-developer',
                     title: "Senior Salesforce Developer",
-                    location: "Casablanca, Morocco (Hybrid)",
+                    location: "Rabat, Morocco (Hybrid)",
                     type: "Full-Time",
                     department: "Engineering",
                     salary: "Competitive",
@@ -458,7 +477,7 @@ export const translations = {
                 {
                     id: 'sales-executive',
                     title: "B2B Sales Executive",
-                    location: "Casablanca, Morocco",
+                    location: "Rabat, Morocco",
                     type: "Full-Time",
                     department: "Growth",
                     salary: "Commission Uncapped",
@@ -485,7 +504,7 @@ export const translations = {
     fr: {
         nav: {
             home: "Accueil",
-            product: "Services",
+            product: "Technologies",
             industries: "Industries",
             careers: "Carrières",
             docs: "Méthodologie",
@@ -494,7 +513,7 @@ export const translations = {
             signin: "Connexion",
             blog: "Blog",
             contact: "Contact",
-            requestDemo: "Commencer"
+            requestDemo: "Démarrer Votre Projet"
         },
         hero: {
             title: "Transformer la Vision",
@@ -508,7 +527,7 @@ export const translations = {
             ],
             subtitle: "Nous construisons l'infrastructure numérique des entreprises. Des sites web professionnels intégrés directement à un CRM pour évoluer.",
             startBuild: "Commencer Votre Build",
-            viewSystem: "Voir le Système",
+            viewSystem: "Voir Nos Réalisations",
             contactUs: "Contactez-nous",
             salesPipeline: "Pipeline de Vente",
             newLeads: "Nouveaux Leads",
@@ -532,12 +551,12 @@ export const translations = {
             subDont: "Attendez-vous à des modèles génériques, des délais manqués et des systèmes inadaptés.",
             cards: {
                 do: [
-                    { title: "Landing Page & Sites Premium", desc: "Un design qui inspire confiance instantanément." },
-                    { title: "Intégration Salesforce CRM", desc: "Capturez et organisez chaque lead automatiquement." },
-                    { title: "IA & Automatisations", desc: "Travaillez mieux avec des workflows intelligents." },
-                    { title: "Analytics & Insights", desc: "Décisions basées sur les données pour la croissance." },
-                    { title: "Service & Support", desc: "Partenariat à long terme pour le succès." },
-                    { title: "Développement Sur Mesure", desc: "Solutions évolutives pour besoins complexes." }
+                    { title: "Rapide", desc: "5 Jours pour Refaire le Site Web" },
+                    { title: "Nouveaux Leads", desc: "Chaque Semaine via Google Ads" },
+                    { title: "Top 3", desc: "Sur Google pour 11 Nouveaux Mots-clés" },
+                    { title: "400%", desc: "Augmentation du Trafic Organique" },
+                    { title: "Développement Sur Mesure", desc: "Solutions évolutives pour besoins complexes." },
+                    { title: "Service & Support", desc: "Partenariat à long terme pour le succès." }
                 ],
                 dont: [
                     { title: "Designs Génériques", desc: "Modèles sans inspiration qui passent inaperçus." },
@@ -548,6 +567,24 @@ export const translations = {
                     { title: "Support Inadéquat", desc: "Silence radio après la facture finale." }
                 ]
             }
+        },
+        whatWeDo: {
+            title: "Ce que nous faisons",
+            cta: "Démarrer Votre Projet",
+            items: [
+                {
+                    title: "Développement Web Premium",
+                    desc: "Nous concevons et développons des sites web époustouflants et performants qui capturent l'essence de votre marque et convertissent les visiteurs."
+                },
+                {
+                    title: "Écosystème CRM",
+                    desc: "Nous implémentons et personnalisons Salesforce pour rationaliser vos ventes, automatiser les suivis et organiser votre base de données."
+                },
+                {
+                    title: "Moteurs de Croissance & Marketing",
+                    desc: "Nous générons un trafic ciblé via le SEO et les campagnes payantes, transformant votre présence numérique en une machine à revenus."
+                }
+            ]
         },
         solutionVisual: {
             title: "Transformer la Vision en Puissance Numérique",
@@ -634,7 +671,7 @@ export const translations = {
             social: "Social",
             rights: "Tous droits réservés.",
             poweredBy: "Propulsé par Seedsvision",
-            brandAddr: "Casablanca, Maroc",
+            brandAddr: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Morocco",
             brandPhone: "+212 600 000 000",
             links: {
                 features: "Fonctionnalités",
@@ -691,7 +728,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "CRM",
+            navLink: "Technologies",
             title: "La Puissance du CRM n°1",
             finalCta: {
                 title: ["Arrêtez de perdre des leads.", "Commencez à construire votre système."],
@@ -780,7 +817,7 @@ export const translations = {
                 phone: "Téléphone",
                 phoneValue: "+212 600 000 000",
                 office: "Bureau",
-                officeValue: "Casablanca, Maroc",
+                officeValue: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Morocco",
                 social: {
                     whatsapp: "WhatsApp",
                     twitter: "Twitter",
@@ -816,7 +853,8 @@ export const translations = {
             hero: {
                 title: "Construisez une Empreinte Numérique Premium.",
                 subtitle: "Des landing pages aux applications web complexes. Nous construisons des sites rapides, évolutifs et époustouflants.",
-                cta: "Commencer Votre Build"
+                cta: "Réserver un Appel Gratuit",
+                ctaSecondary: "Voir Nos Réalisations"
             },
             services: {
                 title: "Solutions Que Nous Offrons",
@@ -890,7 +928,7 @@ export const translations = {
                 {
                     id: 'salesforce-developer',
                     title: "Développeur Salesforce Senior",
-                    location: "Casablanca, Maroc (Hybride)",
+                    location: "Rabat, Morocco (Hybride)",
                     type: "Temps Plein",
                     department: "Ingénierie",
                     salary: "Compétitif",
@@ -936,7 +974,7 @@ export const translations = {
                 {
                     id: 'sales-executive',
                     title: "Commercial B2B",
-                    location: "Casablanca, Maroc",
+                    location: "Rabat, Morocco",
                     type: "Temps Plein",
                     department: "Croissance",
                     salary: "Commission Non Plafonnée",

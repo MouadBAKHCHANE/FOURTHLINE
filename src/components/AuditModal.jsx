@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { X, CheckCircle, ArrowRight } from 'lucide-react';
 import '../styles/AuditModal.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AuditModal = ({ isOpen, onClose }) => {
     const { t } = useLanguage();

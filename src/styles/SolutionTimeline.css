@@ -84,6 +84,16 @@
     top: 210px;
 }
 
+.timeline-step:nth-child(5) {
+    z-index: 50;
+    top: 230px;
+}
+
+.timeline-step:nth-child(6) {
+    z-index: 60;
+    top: 250px;
+}
+
 .timeline-step {
     position: sticky;
     --base-top: 150px;

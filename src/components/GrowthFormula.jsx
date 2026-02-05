@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/GrowthFormula.css';
-import { useLanguage } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Sprout, Globe, Database, Rocket, Sparkles, TrendingUp, Zap } from 'lucide-react';
 
 const GrowthFormula = () => {
