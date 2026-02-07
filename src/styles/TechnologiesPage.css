@@ -826,7 +826,7 @@
     border: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
 
     /* Hero Section */
     .sb-hero-container {
@@ -1021,5 +1021,388 @@
 
     .small-business-page {
         padding-top: 0 !important;
+    }
+}
+
+/* New Hero Visual Styles */
+.stack-card {
+    background: #0f1115;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+.contact-card {
+    top: 60px;
+    left: -40px;
+    transform: rotateY(15deg) rotateX(5deg);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.card-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.card-header-text {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.card-body-empty {
+    flex: 1;
+    width: 100%;
+}
+
+.pipeline-card {
+    top: 0;
+    right: -40px;
+    transform: rotateY(-10deg) rotateX(5deg) scale(1.1);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    background: #0f1115;
+    transition: all 0.5s ease;
+}
+
+.card-header-simple {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-icon-square {
+    width: 16px;
+    height: 16px;
+    background: var(--accent-blue);
+    border-radius: 4px;
+}
+
+.card-header-simple span {
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.pipeline-columns {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.col-header {
+    font-size: 0.6rem;
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.col-item {
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.col.active .col-header {
+    color: var(--accent-blue);
+}
+
+.col-item.highlight {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 161, 224, 0.2);
+}
+
+.arrow-line-dotted {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
+}
+
+.arrow-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--accent-blue);
+    animation: moveDot 2s linear infinite;
+}
+
+@keyframes moveDot {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.glass-stack:hover .contact-card {
+    transform: rotateY(15deg) rotateX(5deg) translateX(-20px);
+    box-shadow: 0 0 30px rgba(0, 161, 224, 0.2);
+    border-color: rgba(0, 161, 224, 0.3);
+}
+
+.glass-stack:hover .pipeline-card {
+    transform: rotateY(-10deg) rotateX(5deg) scale(1.15) translateX(20px);
+    box-shadow: 0 0 50px rgba(0, 161, 224, 0.4);
+    border-color: rgba(0, 161, 224, 0.5);
+}
+
+.glass-stack::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 161, 224, 0.4) 0%, transparent 70%);
+    transition: all 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glass-stack:hover::before {
+    width: 150%;
+    height: 150%;
+    opacity: 1;
+}
+
+/* Mobile Fixes for New Hero Visual */
+@media (max-width: 768px) {
+    .sb-hero {
+        padding-top: 140px !important;
+        /* Fix title overlap */
+        padding-bottom: 60px;
+    }
+
+    .sb-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .sb-hero-content {
+        margin-bottom: 40px;
+    }
+
+    .sb-hero-visual {
+        height: 450px;
+        /* Increase height for vertical stack */
+        margin-top: 20px;
+    }
+
+    .glass-stack {
+        transform: scale(0.8);
+        transform-origin: top center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        /* Remove absolute centering reliance if possible, but cards are absolute */
+    }
+
+    .contact-card {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: 2;
+        margin: 0;
+    }
+
+    .pipeline-card {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        top: 220px;
+        /* Push down significantly */
+        transform: translateX(-50%);
+        z-index: 3;
+        margin: 0;
+    }
+
+    .transform-arrow {
+        display: none !important;
+    }
+}
+
+/* Tablet Adjustments (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    /* Scale down slightly for tablet but keep desktop layout */
+    .glass-stack {
+        transform: scale(0.9);
+        transform-origin: center center;
+    }
+
+    /* Separate cards more on tablet to permit arrow visibility */
+    .contact-card {
+        left: -80px;
+        /* Reduced separation */
+    }
+
+    .pipeline-card {
+        right: -80px;
+        /* Reduced separation */
+    }
+
+    /* Ensure arrow is visible and centered */
+    .transform-arrow {
+        display: block !important;
+        position: absolute;
+        top: 40%;
+        /* Moved higher as requested */
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        /* Horizontal */
+        width: 140px;
+        /* Narrower to match gap */
+        z-index: 10;
+    }
+
+    /* Ensure arrow and hover effects remain ACTIVE (Desktop experience) */
+    /* No overrides needed if we want it to behave like desktop */
+
+    /* Center the button on tablet as requested */
+    .sb-hero-actions {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        /* Slight buffer */
+    }
+}
+
+/* Mobile Overrides (max-width: 767px) */
+@media (max-width: 767px) {
+    .sb-hero {
+        padding-top: 140px !important;
+        padding-bottom: 60px;
+    }
+
+    .sb-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .sb-hero-content {
+        margin-bottom: 40px;
+    }
+
+    .sb-hero-visual {
+        height: 450px;
+        margin-top: 20px;
+    }
+
+    .glass-stack {
+        transform: scale(0.8);
+        transform-origin: top center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .contact-card {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: 2;
+        margin: 0;
+    }
+
+    .pipeline-card {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        top: 220px;
+        transform: translateX(-50%);
+        z-index: 3;
+        margin: 0;
+    }
+
+    .transform-arrow {
+        display: block !important;
+        /* Restore arrow for mobile */
+        position: absolute;
+        top: 180px;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(90deg);
+        z-index: 4;
+        width: 80px;
+    }
+
+    /* Disable hover effects regarding movement for Mobile (Keep Mobile Static State) */
+    /* But keep internal animations if any */
+    .glass-stack:hover .contact-card {
+        transform: translateX(-50%) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .glass-stack:hover .pipeline-card {
+        transform: translateX(-50%) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .glass-stack:hover::before {
+        opacity: 0 !important;
     }
 }

@@ -1,10 +1,10 @@
-import { useState, createContext, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import PrivacyPolicy from './pages/PrivacyPolicy'
-import TermsOfService from './pages/TermsOfService'
-import QualificationForm from './pages/QualificationForm'
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import QualificationForm from './pages/QualificationForm';
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
 import CRMPage from './pages/CRMPage';
@@ -12,12 +12,13 @@ import CRM from './pages/CRM';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
-import Footer from './components/Footer'
-import './index.css'
+import Footer from './components/Footer';
+import './index.css';
 import { SparklesPreview } from './components/SparklesDemo';
-import { translations } from './data/translations'
-
+import { translations } from './data/translations';
 import { LanguageProvider } from './contexts/LanguageContext';
+import CustomCursor from './components/ui/CustomCursor';
+import ScrollProgress from './components/ui/ScrollProgress';
 
 const AppContent = () => {
   const location = useLocation();
@@ -28,6 +29,8 @@ const AppContent = () => {
 
   return (
     <div className="app-wrapper">
+      <CustomCursor />
+      <ScrollProgress />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
