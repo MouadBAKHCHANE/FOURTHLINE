@@ -226,7 +226,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "Technologies",
+            navLink: "CRM",
             title: "The Power of the #1 CRM",
             finalCta: {
                 title: ["Stop losing leads.", "Start building your system."],
@@ -392,14 +392,14 @@ export const translations = {
                 result: "Scale & Grow"
             },
             techStack: {
-                title: "Technologies",
+                title: "CRM",
                 frontend: {
-                    title: "Front-End Technologies",
-                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap"]
+                    title: "Frontend Ecosystem",
+                    list: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "PHP", "Tailwind"]
                 },
                 backend: {
-                    title: "Back-End Technologies",
-                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "RESTful APIs", "GraphQL", "JSON"]
+                    title: "Backend Infrastructure",
+                    list: ["Laravel", "Python", "Node JS", "RESTful APIs", "Supabase", "FastAPI", "PostgreSQL"]
                 },
                 cms: {
                     title: "Custom Template & CMS",
@@ -732,7 +732,7 @@ export const translations = {
             }
         },
         smallBusiness: {
-            navLink: "Technologies",
+            navLink: "CRM",
             title: "La Puissance du CRM n°1 mondial",
             finalCta: {
                 title: ["Cessez de perdre vos leads.", "Structurer votre système de vente."],
@@ -893,14 +893,14 @@ export const translations = {
                 }
             },
             techStack: {
-                title: "Technologies",
+                title: "CRM",
                 frontend: {
                     title: "Écosystème Front-End",
-                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Tailwind"]
+                    list: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "PHP", "Tailwind"]
                 },
                 backend: {
                     title: "Écosystème Back-End",
-                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "APIs REST", "GraphQL", "JSON"]
+                    list: ["Laravel", "Python", "Node JS", "APIs REST", "Supabase", "FastAPI", "PostgreSQL"]
                 },
                 cms: {
                     title: "Solutions CMS & No-Code",

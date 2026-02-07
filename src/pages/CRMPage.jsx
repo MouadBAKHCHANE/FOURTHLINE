@@ -18,23 +18,22 @@ const ServiceCard = ({ icon, data }) => (
     </div>
 );
 
-const TechnologiesPage = () => {
+const CRMPage = () => {
     const { t } = useLanguage();
     const sb = t.smallBusiness;
-    const [activeTab, setActiveTab] = useState('sales');
+    const [activeTab, setActiveTab] = useState('sales'); // Kept for now, but will be removed if featureTabs section is removed
 
     return (
-        <div className="small-business-page">
+        <div className="technologies-page">
+            <Navbar />
             {/* Hero Section */}
-            <section className="sb-hero">
+            <section className="tech-hero">
                 <HeroBackground />
-                <div className="sb-hero-bg"></div>
-                <div className="container sb-hero-container">
-                    <div className="sb-hero-content">
-                        <h1 className="sb-title">
-                            {sb.title.split(',')[0]}
-                            <br />
-                            <span className="text-gradient">{sb.title.split(',')[1]}</span>
+                <div className="tech-hero-bg"></div>
+                <div className="container">
+                    <div className="tech-hero-content">
+                        <h1 className="tech-hero-title">
+                            <span className="text-gradient">CRM</span>
                         </h1>
                         <p className="sb-subtitle">
                             {sb.hook.valueProp}
@@ -78,69 +77,71 @@ const TechnologiesPage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
 
 
             {/* Feature Tabs Section */}
-            {sb.featureTabs && (
-                <section className="sb-tabs-section section-padding">
-                    <div className="container">
-                        <div className="tabs-header">
-                            <h2 className="tabs-title">{sb.featureTabs.title}</h2>
-                        </div>
-
-                        <div className="tabs-nav">
-                            {Object.entries(sb.featureTabs.tabs).map(([key, label]) => (
-                                <button
-                                    key={key}
-                                    className={`tab-btn ${activeTab === key ? 'active' : ''} `}
-                                    onClick={() => setActiveTab(key)}
-                                >
-                                    {label}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="tab-content" key={activeTab}>
-                            <div className="tab-text">
-                                <h3>{sb.featureTabs.content[activeTab].title}</h3>
-                                <p>{sb.featureTabs.content[activeTab].desc}</p>
-                                <a href="/Webtoleadform.html" className="btn btn-outline">
-                                    {sb.featureTabs.content[activeTab].btn} <ArrowRight size={16} />
-                                </a>
+            {
+                sb.featureTabs && (
+                    <section className="sb-tabs-section section-padding">
+                        <div className="container">
+                            <div className="tabs-header">
+                                <h2 className="tabs-title">{sb.featureTabs.title}</h2>
                             </div>
-                            <div className="tab-visual-wrapper">
-                                <div className={`tab-visual ${activeTab}`}>
-                                    <div className="visual-backdrop"></div>
-                                    <div className="floating-icon-badge">
-                                        {activeTab === 'sales' && <TrendingUp size={24} />}
-                                        {activeTab === 'service' && <ShieldCheck size={24} />}
-                                        {activeTab === 'marketing' && <Megaphone size={24} />}
-                                        {activeTab === 'ai' && <Bot size={24} />}
-                                        {activeTab === 'analytics' && <BarChart size={24} />}
+
+                            <div className="tabs-nav">
+                                {Object.entries(sb.featureTabs.tabs).map(([key, label]) => (
+                                    <button
+                                        key={key}
+                                        className={`tab-btn ${activeTab === key ? 'active' : ''} `}
+                                        onClick={() => setActiveTab(key)}
+                                    >
+                                        {label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div className="tab-content" key={activeTab}>
+                                <div className="tab-text">
+                                    <h3>{sb.featureTabs.content[activeTab].title}</h3>
+                                    <p>{sb.featureTabs.content[activeTab].desc}</p>
+                                    <a href="/Webtoleadform.html" className="btn btn-outline">
+                                        {sb.featureTabs.content[activeTab].btn} <ArrowRight size={16} />
+                                    </a>
+                                </div>
+                                <div className="tab-visual-wrapper">
+                                    <div className={`tab-visual ${activeTab}`}>
+                                        <div className="visual-backdrop"></div>
+                                        <div className="floating-icon-badge">
+                                            {activeTab === 'sales' && <TrendingUp size={24} />}
+                                            {activeTab === 'service' && <ShieldCheck size={24} />}
+                                            {activeTab === 'marketing' && <Megaphone size={24} />}
+                                            {activeTab === 'ai' && <Bot size={24} />}
+                                            {activeTab === 'analytics' && <BarChart size={24} />}
+                                        </div>
+                                        {activeTab === 'sales' && (
+                                            <img src="/assets/salesforce_dashboard_preview.webp" alt="Salesforce Sales Dashboard" />
+                                        )}
+                                        {activeTab === 'service' && (
+                                            <img src="/assets/service_dashboard_preview.webp" alt="Salesforce Service Dashboard" />
+                                        )}
+                                        {activeTab === 'marketing' && (
+                                            <img src="/assets/marketing_cloud_dashboard.webp" alt="Salesforce Marketing Cloud Dashboard" />
+                                        )}
+                                        {activeTab === 'ai' && (
+                                            <img src="/assets/agentforce_dashboard.webp" alt="Salesforce Agentforce AI & Automation" />
+                                        )}
+                                        {activeTab === 'analytics' && (
+                                            <img src="/assets/analytics_dashboard.webp" alt="Salesforce Einstein Analytics Dashboard" />
+                                        )}
                                     </div>
-                                    {activeTab === 'sales' && (
-                                        <img src="/assets/salesforce_dashboard_preview.webp" alt="Salesforce Sales Dashboard" />
-                                    )}
-                                    {activeTab === 'service' && (
-                                        <img src="/assets/service_dashboard_preview.webp" alt="Salesforce Service Dashboard" />
-                                    )}
-                                    {activeTab === 'marketing' && (
-                                        <img src="/assets/marketing_cloud_dashboard.webp" alt="Salesforce Marketing Cloud Dashboard" />
-                                    )}
-                                    {activeTab === 'ai' && (
-                                        <img src="/assets/agentforce_dashboard.webp" alt="Salesforce Agentforce AI & Automation" />
-                                    )}
-                                    {activeTab === 'analytics' && (
-                                        <img src="/assets/analytics_dashboard.webp" alt="Salesforce Einstein Analytics Dashboard" />
-                                    )}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            )}
+                    </section>
+                )
+            }
 
 
 
@@ -178,8 +179,8 @@ const TechnologiesPage = () => {
             {/* Comparison Slider Section */}
             <ComparisonSlider />
 
-        </div>
+        </div >
     );
 };
 
-export default TechnologiesPage;
+export default CRMPage;

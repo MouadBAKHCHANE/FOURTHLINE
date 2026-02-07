@@ -7,8 +7,8 @@ import TermsOfService from './pages/TermsOfService'
 import QualificationForm from './pages/QualificationForm'
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
-import TechnologiesPage from './pages/TechnologiesPage';
-import Technologies from './pages/Technologies';
+import CRMPage from './pages/CRMPage';
+import CRM from './pages/CRM';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -40,7 +40,7 @@ const AppContent = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/sparkles" element={<SparklesPreview />} />
-        <Route path="/technologies" element={<Technologies />} />
+        <Route path="/crm" element={<CRM />} />
       </Routes>
       <Footer />
     </div>

@@ -55,7 +55,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>{t.footer.sections}</h4>
                         <ul>
-                            <li><Link to="/technologies">{t.nav.product}</Link></li>
+                            <li><Link to="/crm">{t.nav.product}</Link></li>
                             <li><Link to="/careers">{t.nav.careers}</Link></li>
                             <li><Link to="/blog">{t.nav.blog}</Link></li>
                             <li><Link to="/contact">{t.nav.contact}</Link></li>

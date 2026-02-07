@@ -58,7 +58,15 @@ const ICON_MAP = {
     "XML": "icon_xml.png",
     "Framer": "framer-icon.svg",
     "Webflow": "webflow-icon.png",
-    "WordPress": "wordpress.png"
+    "WordPress": "wordpress.png",
+    "Shopify": "shopify_glyph_white.svg",
+    "Laravel": "icons8-laravel-100.png",
+    "PHP": "php.png",
+    "TypeScript": "Typescript_logo_2.png",
+    "Tailwind": "icons8-tailwind-css-100.png",
+    "Supabase": "icons8-supabase-96.png",
+    "FastAPI": "fastapi-icon-.png",
+    "PostgreSQL": "icons8-postgresql-100.png"
 };
 
 
@@ -78,7 +86,7 @@ const TechCategoryCard = ({ title, items, color }) => {
             <div className="flex flex-wrap justify-center gap-4 mt-4">
                 {items.map((item) => {
                     const iconFile = ICON_MAP[item];
-                    const folder = ["Framer", "Webflow", "WordPress"].includes(item) ? "tech" : "Custom Web Application and Website Development Services";
+                    const folder = ["Framer", "Webflow", "WordPress", "Shopify", "Laravel", "PHP", "TypeScript", "Tailwind", "Supabase", "FastAPI", "PostgreSQL"].includes(item) ? "tech" : "Custom Web Application and Website Development Services";
                     const iconPath = iconFile ? `/assets/${folder}/${iconFile}` : null;
                     const isSvg = iconFile && iconFile.endsWith('.svg');
 
@@ -90,12 +98,8 @@ const TechCategoryCard = ({ title, items, color }) => {
                             {iconPath ? (
                                 <img
                                     src={iconPath}
-                                    alt={item}
-                                    className={cn(
-                                        "w-7 h-7 md:w-8 md:h-8 object-contain transition-all duration-300",
-                                        isSvg ? "filter brightness-0 invert opacity-60" : "filter grayscale brightness-110 opacity-90",
-                                        "group-hover/icon:opacity-100 group-hover/icon:filter-[brightness(0)_saturate(100%)_invert(38%)_sepia(55%)_saturate(3754%)_hue-rotate(205deg)_brightness(103%)_contrast(93%)]"
-                                    )}
+                                    alt={`${item} Icon`}
+                                    className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-lg transition-transform duration-300 scale-90 group-hover/icon:scale-110 grayscale opacity-70 invert-[0.8] group-hover/icon:grayscale-0 group-hover/icon:opacity-100 group-hover/icon:invert-0 group-hover/icon:filter-[brightness(0)_saturate(100%)_invert(38%)_sepia(55%)_saturate(3754%)_hue-rotate(205deg)_brightness(103%)_contrast(93%)]"
                                 />
                             ) : (
                                 <span className="text-xs font-bold text-gray-400 group-hover/icon:text-blue-400">{item[0]}</span>
