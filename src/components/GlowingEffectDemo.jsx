@@ -9,7 +9,7 @@ export function GlowingEffectDemo() {
     const ts = t.websitePage.techStack;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto py-8">
 
             {/* 1. Frontend */}
             <TechCategoryCard
@@ -56,7 +56,7 @@ const ICON_MAP = {
     "SOAP": "icon_soap.png",
     "JSON": "imgi_82_JSON.svg",
     "XML": "icon_xml.png",
-    "Framer": "framer-icon.png",
+    "Framer": "framer-icon.svg",
     "Webflow": "webflow-icon.png",
     "WordPress": "wordpress.png"
 };
@@ -102,7 +102,7 @@ const TechCategoryCard = ({ title, items, color }) => {
                             )}
 
                             {/* Tooltip */}
-                            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-semibold rounded-lg bg-[#0f1115] border border-blue-500/30 text-blue-400 opacity-0 transform translate-y-2 group-hover/icon:opacity-100 group-hover/icon:translate-y-0 transition-all duration-300 z-50 whitespace-nowrap pointer-events-none shadow-xl">
+                            <span className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-semibold rounded-lg bg-[#0f1115] border border-blue-500/30 text-blue-400 opacity-0 transform translate-y-2 group-hover/icon:opacity-100 group-hover/icon:translate-y-0 transition-all duration-300 z-50 whitespace-nowrap pointer-events-none shadow-xl">
                                 {item}
                             </span>
                         </div>

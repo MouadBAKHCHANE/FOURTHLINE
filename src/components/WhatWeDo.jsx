@@ -13,9 +13,11 @@ const WhatWeDo = () => {
                 {/* Left Column: Title & CTA */}
                 <div className="wwd-left">
                     <h2 className="wwd-title">{title}</h2>
-                    <a href="#contact" className="btn-nova-glow">
-                        <div className="btn-dot-indicator"></div> {cta}
-                    </a>
+                    <div className="wwd-cta-wrapper flex gap-4 mt-8">
+                        <a href="#contact" className="btn-nova-glow">
+                            <div className="btn-dot-indicator"></div> {cta}
+                        </a>
+                    </div>
                 </div>
 
                 {/* Right Column: Interactive List */}
@@ -32,8 +34,10 @@ const WhatWeDo = () => {
                         </div>
                     ))}
                 </div>
+
             </div>
-        </section>
+
+        </section >
     );
 };
 

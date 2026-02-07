@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import About from '../components/About';
 import ProblemSection from '../components/ProblemSection';
 import WhatWeDo from '../components/WhatWeDo';
-import Solutions from '../components/Solutions';
 import SolutionTimeline from '../components/SolutionTimeline';
 import { useLocation } from 'react-router-dom';
 import { Zap, Layers, Code, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ResultsSection from '../components/ResultsSection';
+import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
 import '../styles/Website.css'; // Needed for ws-hero styles
 
 const Home = () => {
@@ -32,8 +32,15 @@ const Home = () => {
             <ProblemSection />
             <SolutionTimeline />
 
-            {/* Industries / Expertise Section */}
-            <Solutions />
+            {/* Technologies Section */}
+            <section className="ws-stack-section section-padding">
+                <div className="container">
+                    <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
+                        Our <span className="text-gradient">Technologies</span>
+                    </h2>
+                    <GlowingEffectDemo />
+                </div>
+            </section>
 
             {/* Results / Our Work Section */}
             <ResultsSection />

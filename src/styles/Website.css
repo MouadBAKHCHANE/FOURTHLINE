@@ -106,6 +106,18 @@
     letter-spacing: -1px;
 }
 
+@media (max-width: 1024px) {
+    .ws-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ws-title {
+        font-size: 2.5rem;
+    }
+}
+
 .ws-subtitle {
     font-size: 1.35rem;
     color: var(--text-gray);
@@ -446,7 +458,7 @@
 
     /* Add padding to boxes in mobile */
     .ws-card {
-        padding: 40px 30px !important;
+        padding: 24px !important;
     }
 
     /* Safely position float icons on mobile */

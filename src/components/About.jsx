@@ -19,7 +19,7 @@ const About = () => {
             <div className="container hero-container ws-hero-container-override">
                 <div className="hero-content ws-hero-text-override">
 
-                    <h1 className="ws-title mb-4">{t.websitePage.hero.title}</h1>
+                    <h1 className="ws-title mb-16">{t.websitePage.hero.title}</h1>
                     <div className="hero-cta-group mb-12">
                         <a href="/Webtoleadform.html" className="btn-nova-glow">
                             <div className="btn-dot-indicator"></div> {t.websitePage.hero.cta}
@@ -29,7 +29,7 @@ const About = () => {
                         </a>
                     </div>
 
-                    <div className="hero-social-proof mt-8">
+                    <div className="hero-social-proof mt-48">
                         <p className="proof-text">{t.hero.trustedBy}</p>
                         <div className="proof-logos-mask">
                             <div className="proof-logos">
@@ -56,7 +56,7 @@ const About = () => {
                 <div className="hero-visual-creative ws-hero-visual-override">
                     {/* Floating Tech Icons */}
                     <div className="float-icon icon-react"><Code size={24} /></div>
-                    <div className="float-icon icon-vue"><Zap size={24} /></div>
+
 
                     {/* The Code Window */}
                     <div className="code-window">

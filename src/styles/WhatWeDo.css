@@ -32,16 +32,11 @@
 .wwd-title {
     font-family: var(--font-heading);
     font-size: 3rem;
-    /* H2 standard */
     font-weight: 700;
-    /* Matching .ws-title */
     line-height: 1.1;
     margin-bottom: 50px;
     letter-spacing: -0.02em;
-    margin-bottom: 50px;
-    letter-spacing: -0.02em;
     color: #ffffff;
-    /* Solid white match */
 }
 
 
@@ -129,24 +124,48 @@
 @media (max-width: 1024px) {
     .wwd-layout {
         flex-direction: column;
-        gap: 60px;
+        gap: 20px;
     }
 
     .wwd-left {
         position: relative;
         top: 0;
         flex: auto;
+        width: 100%;
     }
 
     .wwd-title {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .wwd-cta-wrapper {
+        display: flex;
+        justify-content: center;
     }
 
     .wwd-item-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .wwd-item {
         padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .wwd-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .wwd-item-title {
+        font-size: 1.5rem;
+    }
+
+    .what-we-do-section {
+        padding: 60px 0;
     }
 }

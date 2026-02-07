@@ -74,12 +74,12 @@ export const translations = {
                     desc: "We design and build stunning, high-performance websites that capture your brand's essence and convert visitors into customers."
                 },
                 {
-                    title: "CRM Ecosystem Integration",
-                    desc: "We implement and customize Salesforce to streamline your sales, automate follow-ups, and organize your entire customer database."
-                },
-                {
                     title: "Growth Engines & Marketing",
                     desc: "We drive targeted traffic through SEO and paid campaigns, turning your digital presence into a measurable revenue machine."
+                },
+                {
+                    title: "CRM Ecosystem Integration",
+                    desc: "We implement and customize Salesforce to streamline your sales, automate follow-ups, and organize your entire customer database."
                 }
             ]
         },
@@ -403,7 +403,7 @@ export const translations = {
                 },
                 cms: {
                     title: "Custom Template & CMS",
-                    list: ["Framer", "Webflow", "WordPress"]
+                    list: ["Framer", "Webflow", "WordPress", "Shopify"]
                 },
                 cta: "Start Your Build"
             },
@@ -505,160 +505,164 @@ export const translations = {
         nav: {
             home: "Accueil",
             product: "Technologies",
-            industries: "Industries",
+            industries: "Secteurs",
             careers: "Carrières",
             docs: "Méthodologie",
             projects: "Projets",
-            pricing: "Prix",
+            pricing: "Tarifs",
             signin: "Connexion",
             blog: "Blog",
             contact: "Contact",
             requestDemo: "Démarrer Votre Projet"
         },
         hero: {
-            title: "Transformer la Vision",
-            titleHighlight: "En Puissance Numérique",
-            mainTitlePart1: "Nous Concevons",
-            mainTitlePart2: "et Développons",
+            title: "Créez votre",
+            titleHighlight: "Performance Numérique",
+            mainTitlePart1: "Design &",
+            mainTitlePart2: "Ingénierie",
             dynamicPhrases: [
-                "Infra numérique",
-                "CRM pour scaler",
+                "Infrastructure digitale",
+                "CRM sur mesure",
                 "Sites web premium"
             ],
-            subtitle: "Nous construisons l'infrastructure numérique des entreprises. Des sites web professionnels intégrés directement à un CRM pour évoluer.",
-            startBuild: "Commencer Votre Build",
-            viewSystem: "Voir Nos Réalisations",
-            contactUs: "Contactez-nous",
+            subtitle: "Nous construisons l'épine dorsale numérique de votre entreprise. Des sites web d'exception intégrés à un CRM puissant pour une croissance automatisée.",
+            startBuild: "Démarrer le Projet",
+            viewSystem: "Nos Réalisations",
+            contactUs: "Nous Contacter",
             salesPipeline: "Pipeline de Vente",
             newLeads: "Nouveaux Leads",
-            qualified: "Qualifié",
-            closed: "Fermé",
-            trustedBy: "20+ entreprises propulsées par notre système"
+            qualified: "Qualifiés",
+            closed: "Conclus",
+            trustedBy: "Plus de 20 entreprises propulsées par nos systèmes"
         },
         expertisePage: {
             title: "Notre",
             highlight: "Expertise",
-            subtitle: "Nous nous spécialisons dans des industries spécifiques pour offrir une transformation numérique sur mesure."
+            subtitle: "Nous nous spécialisons dans des secteurs clés pour délivrer une transformation numérique sur mesure."
         },
         problem: {
-            headline: "Quand les personnes travaillent avec nous {switch}",
+            headline: "Pourquoi {switch} travailler avec nous ?",
             toggle: {
                 do: "OUI",
                 dont: "NON"
             },
-            stat: "75% des utilisateurs perdent confiance en une entreprise si le design de son site est mauvais.",
-            subDo: "Attendez-vous à des solutions créatives, une communication claire et des résultats adaptés à votre vision.",
-            subDont: "Attendez-vous à des modèles génériques, des délais manqués et des systèmes inadaptés.",
+            stat: "75% des utilisateurs ne font pas confiance à une entreprise si le design de son site est médiocre.",
+            subDo: "Optimisez votre succès avec des solutions créatives, une communication transparente et des résultats concrets.",
+            subDont: "Subissez des modèles génériques, des délais non respectés et des systèmes qui ne tiennent pas la charge.",
             cards: {
                 do: [
-                    { title: "Rapide", desc: "5 Jours pour Refaire le Site Web" },
-                    { title: "Nouveaux Leads", desc: "Chaque Semaine via Google Ads" },
-                    { title: "Top 3", desc: "Sur Google pour 11 Nouveaux Mots-clés" },
-                    { title: "400%", desc: "Augmentation du Trafic Organique" },
-                    { title: "Développement Sur Mesure", desc: "Solutions évolutives pour besoins complexes." },
-                    { title: "Service & Support", desc: "Partenariat à long terme pour le succès." }
+                    { title: "Rapidité", desc: "Refonte complète en 5 jours" },
+                    { title: "Nouveaux Leads", desc: "Flux hebdomadaire via Google Ads" },
+                    { title: "Top 3", desc: "Positionnement sur 11 mots-clés stratégiques" },
+                    { title: "+400%", desc: "Augmentation du trafic organique" },
+                    { title: "Sur Mesure", desc: "Solutions évolutives pour besoins complexes" },
+                    { title: "Accompagnement", desc: "Partenariat stratégique à long terme" }
                 ],
                 dont: [
-                    { title: "Designs Génériques", desc: "Modèles sans inspiration qui passent inaperçus." },
-                    { title: "Mauvaise Expérience Utilisateur", desc: "Navigation frustrante qui tue les conversions." },
-                    { title: "Faible Visibilité", desc: "Sites qui disparaissent des résultats de recherche." },
-                    { title: "Fonctionnalité Limitée", desc: "Systèmes qui cassent quand vous grandissez." },
-                    { title: "Délais Manqués", desc: "Projets qui s'éternisent." },
-                    { title: "Support Inadéquat", desc: "Silence radio après la facture finale." }
+                    { title: "Designs Génériques", desc: "Modèles sans âme qui se fondent dans la masse" },
+                    { title: "Expérience Médiocre", desc: "Navigation complexe qui freine les conversions" },
+                    { title: "Invisibilité", desc: "Sites perdus dans les abysses de Google" },
+                    { title: "Limites Techniques", desc: "Systèmes instables face à la croissance" },
+                    { title: "Retards Chroniques", desc: "Projets qui n'en finissent jamais" },
+                    { title: "Support Inexistant", desc: "Silence radio après la livraison" }
                 ]
             }
         },
         whatWeDo: {
-            title: "Ce que nous faisons",
-            cta: "Démarrer Votre Projet",
+            title: "Nos Services",
+            cta: "Lancer mon Projet",
             items: [
                 {
                     title: "Développement Web Premium",
-                    desc: "Nous concevons et développons des sites web époustouflants et performants qui capturent l'essence de votre marque et convertissent les visiteurs."
+                    desc: "Nous concevons des interfaces haute performance qui capturent l'essence de votre marque et convertissent vos visiteurs en clients fidèles."
                 },
                 {
-                    title: "Écosystème CRM",
-                    desc: "Nous implémentons et personnalisons Salesforce pour rationaliser vos ventes, automatiser les suivis et organiser votre base de données."
+                    title: "Stratégies de Croissance SEO/SEA",
+                    desc: "Nous générons un trafic qualifié via le référencement et les campagnes payantes, transformant votre site en un levier de revenus mesurable."
                 },
                 {
-                    title: "Moteurs de Croissance & Marketing",
-                    desc: "Nous générons un trafic ciblé via le SEO et les campagnes payantes, transformant votre présence numérique en une machine à revenus."
+                    title: "Écosystème CRM & Automatisation",
+                    desc: "Nous déployons et personnalisons Salesforce pour fluidifier vos ventes, automatiser vos suivis et structurer vos données clients."
                 }
             ]
         },
         solutionVisual: {
-            title: "Transformer la Vision en Puissance Numérique",
-            subtitle: "Combler le fossé avec une infrastructure automatisée et intelligente."
+            title: "Infra-Numérique Haute Performance",
+            subtitle: "Comblez le fossé entre votre vision et la réalité commerciale."
         },
         solution: {
-            title: "Processus de Travail",
-            subtitle: "Notre Stratégie Éprouvée",
-            step1Title: "L'Audit",
-            step1Desc: "Nous auditons votre flux actuel pour trouver exactement où vous perdez de l'argent.",
-            step2Title: "Le Site Web",
-            step2Desc: "Nous construisons un site haute performance conçu pour convertir, pas juste pour faire joli.",
-            step3Title: "Le CRM",
-            step3Desc: "Nous connectons vos formulaires à Salesforce. Zéro saisie manuelle. Évolutivité infinie.",
-            step4Title: "La Formation",
-            step4Desc: "Nous formons votre équipe et vous remettons les clés d'une machine de vente autonome.",
+            title: "Notre Méthodologie",
+            subtitle: "Une Stratégie Fondée sur les Résultats",
+            step1Title: "Audit Stratégique UX",
+            step1Desc: "Nous analysons votre parcours client pour identifier les points de friction. Inclut un atelier 'Wireframe' collaboratif de 2 heures.",
+            step2Title: "Identité Visuelle & Design",
+            step2Desc: "Nous créons une esthétique premium qui résonne avec votre audience et renforce votre autorité sur le marché.",
+            step3Title: "Copywriting Haute Conversion",
+            step3Desc: "Rédaction persuasive et concise pour informer et inciter à l'action, optimisée pour votre marque et le SEO.",
+            step4Title: "Développement & Tests",
+            step4Desc: "Nous traduisons les designs en code propre (React, Webflow, WordPress) avec des tests exhaustifs sur tous les supports.",
+            step5Title: "Acquisition & Croissance",
+            step5Desc: "Nous activons les leviers SEO et Google Ads pour drainer des leads qualifiés directement vers votre pipeline.",
+            step6Title: "Intégration Écosystème CRM",
+            step6Desc: "Connexion de vos flux à Salesforce. Zéro saisie manuelle. Formation de vos équipes pour une autonomie totale.",
             week1: "Semaine 1",
             week2: "Semaine 2",
             week3: "Semaine 3",
             week4: "Semaine 4"
         },
         services: {
-            title: "Choisissez Votre Système de Croissance",
-            subtitle: "Arrêtez d'acheter juste un site web. Investissez dans une infrastructure de vente complète.",
+            title: "Choisissez Votre Écosystème",
+            subtitle: "Ne vous contentez plus d'un simple site. Investissez dans une infrastructure de vente complète.",
             tier1Name: "L'Accélérateur",
             tier1Badge: "Vitesse Commerciale",
-            tier1Desc: "Pour les entreprises qui doivent se professionnaliser vite. Nous vérifions le moteur, réparons les fuites et activons l'aimant.",
+            tier1Desc: "Pour les entreprises qui doivent se professionnaliser rapidement. Nous optimisons vos fondations et activons la croissance.",
             tier1Feat1: "Landing Page Haute Performance",
-            tier1Feat2: "Configuration Salesforce CRM",
-            tier1Feat3: "Capture de Leads Automatisée",
-            tier1Feat4: "Automatisation Email de Base",
-            tier1Button: "Obtenir L'Accélérateur",
+            tier1Feat2: "Configuration CRM Salesforce",
+            tier1Feat3: "Capture Automatisée de Leads",
+            tier1Feat4: "Séquences Email Automatisées",
+            tier1Button: "Activer l'Accélérateur",
             tier2Name: "Le Dominateur",
             tier2Badge: "Leader du Marché",
-            tier2Desc: "Domination numérique totale. Un écosystème sur mesure qui gère des milliers de leads sans transpirer.",
-            tier2Feat1: "Plateforme Corporate Complète (Scalable)",
-            tier2Feat2: "CRM Avancé & Reporting",
-            tier2Feat3: "Logique IA de Lead Scoring",
-            tier2Feat4: "Onboarding Équipe Commerciale",
-            tier2Feat5: "30 Jours de Support Croissance",
-            tier2Button: "Construire L'Empire"
+            tier2Desc: "Domination numérique totale. Un écosystème sur mesure capable de gérer des flux massifs sans compromis.",
+            tier2Feat1: "Plateforme Corporate Complète",
+            tier2Feat2: "CRM Avancé & Reporting BI",
+            tier2Feat3: "Score Prédictif des Leads (IA)",
+            tier2Feat4: "Onboarding des Équipes de Vente",
+            tier2Feat5: "30 Jours de Support Stratégique",
+            tier2Button: "Bâtir votre Empire"
         },
         techStack: {
-            title: "Ingénierie de la Vitesse Digitale.",
+            title: "Ingénierie de la Vitesse.",
             cards: {
                 nocode: {
-                    title: "Design-First & Déploiement Rapide",
+                    title: "Design & Déploiement Rapide",
                     platform: "Framer / Webflow",
-                    desc: "Livrez des sites web époustouflants et animés en quelques jours. Parfait pour un impact immédiat avec des interactions fluides."
+                    desc: "Des sites web époustouflants et animés en un temps record. Idéal pour les startups cherchant un impact visuel immédiat."
                 },
                 cms: {
-                    title: "Évolutivité & Contrôle de Contenu",
+                    title: "Évolutivité & Gestion de Contenu",
                     platform: "WordPress / Headless",
-                    desc: "Le CMS le plus populaire, optimisé pour la performance. Gérez votre contenu facilement pendant que nous gérons le code."
+                    desc: "Le leader mondial du CMS, optimisé pour la performance. Gardez la main sur vos contenus en toute simplicité."
                 },
                 custom: {
-                    title: "Next.js/React - Potentiel Illimité",
-                    platform: "Stack Sur-Mesure",
-                    desc: "Sécurité bancaire et performance ultra-rapide. Pour les applications web complexes nécessitant une logique robuste."
+                    title: "Next.js/React - Puissance Illimitée",
+                    platform: "Développement Sur Mesure",
+                    desc: "Sécurité maximale et performances exceptionnelles pour des applications web complexes et robustes."
                 }
             },
-            cta: "⚡ Commencer Votre Build"
+            cta: "⚡ Lancer la Construction"
         },
         stats: {
-            projects: "Leads Générés",
-            satisfaction: "Revenu Influencé",
-            experience: "Heures Automatisées",
-            systems: "Déploiements CRM",
+            projects: "Projets Livrés",
+            satisfaction: "Satisfaction Client",
+            experience: "Ans d'Expertise",
+            systems: "Systèmes Optimisés",
             formula: {
                 seed: "Votre Vision",
-                item1: "Site Web Premium",
+                item1: "Site Premium",
                 item2: "CRM Puissant",
-                result: "Scaler & Croître",
-                tagline: "De l'idée à l'empire. Nous construisons l'infrastructure de votre domination digitale."
+                result: "Croissance & Scale",
+                tagline: "De l'idée à la domination numérique. Nous bâtissons l'infrastructure de votre succès."
             }
         },
         footer: {
@@ -687,137 +691,137 @@ export const translations = {
             }
         },
         solutionsSection: {
-            title: "Votre Industrie,",
+            title: "Votre Business,",
             titleHighlight: "Notre Expertise",
-            subtitle: "Des systèmes de vente conçus pour les réalités de votre marché.\nConstruisez un système, pas juste un site.",
+            subtitle: "Des infrastructures de vente pensées pour les réalités de votre marché.\nBâtissez un système, pas seulement un site.",
             logistics: {
                 title: "Logistique & Transport",
-                role: "Directeur de Flotte",
+                role: "Gestion de Flotte",
                 pain: "Devis perdus dans les emails.",
-                solution: "Attribution auto aux ventes fret.",
-                result: "Réponse en < 15 min.",
+                solution: "Attribution automatique aux commerciaux.",
+                result: "Réponse en moins de 15 min.",
                 dashTitle: "Aperçu Logistique",
-                dashList: ["Devis Fret #2929", "Route: CMN -> PAR", "Doc Douane En Attente"]
+                dashList: ["Devis Fret #2929", "Route: CMN -> PAR", "Documents Douane"]
             },
             realEstate: {
                 title: "Immobilier",
                 role: "Promoteur",
                 pain: "Suivi papier & leads oubliés.",
                 solution: "Centralisation & Tri par budget.",
-                result: "Pipeline 100% visible.",
+                result: "Pipeline 100% transparent.",
                 dashTitle: "CRM Immobilier",
-                dashList: ["Demande Villa - Anfa", "Budget: > 5M DH", "Rendez-vous Programmé"]
+                dashList: ["Demande Villa - Anfa", "Budget: > 5M DH", "Visite Programmée"]
             },
             education: {
                 title: "Éducation",
-                role: "Directeur",
-                pain: "Dossiers d'inscription en chaos.",
-                solution: "Portail d'admission sécurisé.",
-                result: "Image moderne & zéro papier.",
+                role: "Direction",
+                pain: "Inscriptions chaotiques.",
+                solution: "Portail d'admission sécurisé & automatisé.",
+                result: "Zéro papier & Image moderne.",
                 dashTitle: "Portail Admissions",
-                dashList: ["Étudiant: Sara B.", "Statut: Accepté", "Docs Vérifiés"]
+                dashList: ["Candidat: Sara B.", "Statut: Accepté", "Dossier Vérifié"]
             },
             b2b: {
                 title: "Services B2B",
-                role: "Consultant",
-                pain: "Image amateur (Gmail/Excel).",
-                solution: "Portail Client & CRM Pro.",
-                result: "Confiance & Signature rapide.",
-                dashTitle: "Hub Consulting",
-                dashList: ["Audit Corp - Q3", "Facture Envoyée", "Renouvellement: 30 Jours"]
+                role: "Cabinet Conseil",
+                pain: "Image peu professionnelle (Excel).",
+                solution: "Portail Client & CRM Professionnel.",
+                result: "Confiance & Signature accélérée.",
+                dashTitle: "Espace Consulting",
+                dashList: ["Audit Corp - Q3", "Facture Envoyée", "Renouvellement : 30 j"]
             }
         },
         smallBusiness: {
             navLink: "Technologies",
-            title: "La Puissance du CRM n°1",
+            title: "La Puissance du CRM n°1 mondial",
             finalCta: {
-                title: ["Arrêtez de perdre des leads.", "Commencez à construire votre système."],
-                button: "Obtenir votre Audit"
+                title: ["Cessez de perdre vos leads.", "Structurer votre système de vente."],
+                button: "Demander un Audit"
             },
             packages: {
                 launchpad: {
-                    name: "Le Lancement (Starter)",
+                    name: "Le Tremplin (Starter)",
                     target: "Entrepreneurs solo & équipes < 5.",
                     feat1: "Landing Page Haute Performance",
-                    feat2: "Intégration Salesforce Free Suite",
+                    feat2: "Intégration Salesforce Starter",
                     feat3: "Capture Automatisée WhatsApp/Email",
-                    feat4: "Organisation des Contacts \"Zero-Touch\""
+                    feat4: "Organisation Client 'Zéro Effort'"
                 },
                 engine: {
-                    name: "Le Moteur (Scalable)",
-                    target: "Équipes en croissance prêtes à automatiser.",
-                    feat1: "Site Web Corporate Complet",
-                    feat2: "Configuration Avancée Salesforce Pro Suite",
-                    feat3: "Scoring de Leads IA (Logique Einstein)",
-                    feat4: "Tableau de Bord Commercial & Onboarding"
+                    name: "Le Moteur (Évolutif)",
+                    target: "Équipes prêtes pour l'automatisation.",
+                    feat1: "Site Web Corporate Multi-pages",
+                    feat2: "Setup Salesforce Pro & Personnalisé",
+                    feat3: "IA Lead Scoring (Logique Einstein)",
+                    feat4: "Tableau de Bord & Formation Équipes"
                 }
             },
             hook: {
-                title: "Arrêtez de gérer votre entreprise sur Excel.",
-                text: "Nous construisons votre site web et le connectons à la Suite Gratuite Salesforce. Vous obtenez le CRM le plus puissant au monde pour 0$/mois (jusqu'à 2 utilisateurs), et nous gérons 100% de la configuration technique.",
-                valueProp: "Nous ne vous donnons pas juste un site web; nous vous donnons un moteur de revenus. Votre site capture le lead, Salesforce l'organise, et vous vous concentrez sur la conclusion du deal."
+                title: "Ne gérez plus votre croissance sur Excel.",
+                text: "Nous concevons votre site et le connectons nativement à Salesforce. Profitez du CRM le plus puissant pour booster vos ventes dès le premier jour.",
+                valueProp: "Nous ne livrons pas seulement un site, mais un véritable moteur de revenus. Votre site capte le lead, Salesforce l'organise, vous n'avez plus qu'à conclure."
             },
             industries: {
-                agencies: "Agences de Service",
-                agenciesDesc: "Arrêtez de perdre des leads dans votre boîte de réception. Votre site envoie chaque demande directement sur votre app mobile Salesforce.",
-                retail: "Retail & Boutiques",
-                retailDesc: "Connectez votre boutique en ligne à une base client qui se souvient automatiquement des préférences de chacun.",
-                local: "Professionnels Locaux",
-                localDesc: "Réservation de rendez-vous automatisée qui se synchronise avec votre calendrier et crée un enregistrement Salesforce instantanément."
+                agencies: "Agences de Services",
+                agenciesDesc: "Ne laissez plus aucun lead s'échapper. Chaque demande arrive instantanément sur votre application mobile Salesforce.",
+                retail: "Commerce & Boutique",
+                retailDesc: "Unifiez votre base client et personnalisez vos offres selon les préférences de chaque acheteur.",
+                local: "Services de Proximité",
+                localDesc: "Prise de rendez-vous fluide et synchronisée automatiquement avec votre CRM pour un suivi parfait."
             },
-            cta: "Construire Votre Système",
+            cta: "Structurer mon Système",
             comparison: {
-                oldWay: "La Fuite de Leads",
+                oldWay: "La Perte de Leads",
                 newWay: "Le Système de Croissance"
             },
             featureTabs: {
-                title: "Gérez toute votre entreprise sur une seule plateforme.",
+                title: "Pilotez toute votre activité sur une interface unique.",
                 tabs: {
                     sales: "Ventes",
-                    service: "Service",
+                    service: "Service Client",
                     marketing: "Marketing",
-                    ai: "IA & Automatisation",
-                    analytics: "Analytique"
+                    ai: "IA & Automation",
+                    analytics: "Analyses"
                 },
                 content: {
                     sales: {
-                        title: "Augmentez vos revenus plus rapidement avec une équipe connectée.",
-                        desc: "Gérez vos contacts et vos opportunités en un seul endroit. Automatisez les suivis et fermez plus de deals avec moins d'effort.",
-                        btn: "Voir Fonct. Ventes"
+                        title: "Accélérez vos ventes avec des équipes connectées.",
+                        desc: "Gérez contacts et opportunités en un seul lieu. Automatisez vos relances et signez plus vite.",
+                        btn: "Fonctions Ventes"
                     },
                     service: {
-                        title: "Gardez vos clients heureux et fidèles.",
-                        desc: "Répondez plus vite aux demandes clients avec une vue unifiée. Transformez chaque interaction en une opportunité de fidélisation.",
-                        btn: "Voir Fonct. Service"
+                        title: "Fidélisez avec un service client d'exception.",
+                        desc: "Répondez plus vite grâce à une vue client à 360°. Transformez chaque ticket en opportunité.",
+                        btn: "Fonctions Service"
                     },
                     marketing: {
-                        title: "Étendez votre portée avec un marketing personnalisé.",
-                        desc: "La solution marketing connectée est là. Les agents d'IA vous aident à personnaliser chaque touche, connectant les campagnes aux ventes et au service pour renforcer la fidélité.",
-                        btn: "Voir Fonct. Marketing"
+                        title: "Personnalisez l'engagement à grande échelle.",
+                        desc: "L'IA marketing vous aide à cibler juste. Connectez vos campagnes à vos ventes pour une fidélité accrue.",
+                        btn: "Fonctions Marketing"
                     },
                     ai: {
-                        title: "Faites-en plus avec l'Automatisation et les Agents IA.",
-                        desc: "Simplifiez les tâches quotidiennes. De la qualification des leads à la résolution des cas de support, l'IA et l'automatisation gèrent le travail répétitif.",
-                        btn: "Explorer Agentforce"
+                        title: "Gagnez en productivité avec Agentforce.",
+                        desc: "L'IA et l'automatisation gèrent les tâches chronophages. Vos équipes se concentrent sur l'essentiel.",
+                        btn: "Découvrir Agentforce"
                     },
                     analytics: {
-                        title: "Prenez des décisions plus intelligentes avec des données en temps réel.",
-                        desc: "Visualisez vos performances instantanément. Comprenez ce qui fonctionne et optimisez pour la croissance.",
-                        btn: "Voir Fonct. Analytique"
+                        title: "Décidez mieux avec la donnée en temps réel.",
+                        desc: "Visualisez vos KPI instantanément. Optimisez votre stratégie pour une croissance saine.",
+                        btn: "Fonctions Analytics"
                     }
                 }
             }
         },
         contactPage: {
             header: {
-                title: "Élevons Votre Business",
-                highlight: "Contactez-nous Aujourd'hui !",
+                title: "Propulsez votre Activité",
+                highlight: "Parlons de votre Projet",
             },
             info: {
                 phone: "Téléphone",
                 phoneValue: "+212 600 000 000",
                 office: "Bureau",
-                officeValue: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Morocco",
+                officeValue: "Immeuble Omniprise, Av. Al Alaouiyine Rabat, Maroc",
                 social: {
                     whatsapp: "WhatsApp",
                     twitter: "Twitter",
@@ -826,172 +830,146 @@ export const translations = {
             },
             form: {
                 title: "Envoyez-nous un Message",
-                subtitle: "Utilisez le formulaire ci-dessous pour nous envoyer un message direct. Nous vous répondrons dès que possible.",
+                subtitle: "Un projet ? Une question ? Utilisez le formulaire ci-dessous. Notre équipe vous répondra sous 24h.",
                 nameLabel: "Nom Complet",
-                namePlaceholder: "Entrez votre nom",
-                emailLabel: "Email",
-                emailPlaceholder: "Entrez votre email",
-                businessLabel: "Type d'Entreprise",
-                businessPlaceholder: "E-commerce",
-                messageLabel: "Message",
-                messagePlaceholder: "Tapez votre message",
-                submitButton: "Envoyer Maintenant"
+                namePlaceholder: "Votre nom",
+                emailLabel: "Email Professionnel",
+                emailPlaceholder: "votre@email.com",
+                businessLabel: "Secteur d'Activité",
+                businessPlaceholder: "ex: Immobilier",
+                messageLabel: "Votre Message",
+                messagePlaceholder: "Comment pouvons-nous vous aider ?",
+                submitButton: "Envoyer le Message"
             }
         },
         resultsSection: {
-            badge: "Réalisations",
+            badge: "Success Stories",
             title: "Nos Résultats Parlent d'Eux-mêmes",
-            beforeLabel: "Avant Croissance",
-            afterLabel: "Après Croissance",
-            card1: { name: "Dreelio", title: "Recherche de Mots-clés" },
-            card2: { name: "FitFlow", title: "Maîtrise Réseaux Sociaux" },
-            card3: { name: "Glade", title: "Stratégie Marketing" },
-            card4: { name: "Refit", title: "Trafic Organique" },
-            card5: { name: "Editor", title: "SaaS Édition Vidéo" }
+            beforeLabel: "Trafic Initial",
+            afterLabel: "Trafic Optimisé",
+            card1: { name: "Dreelio", title: "Analyse Stratégique de Mots-clés" },
+            card2: { name: "FitFlow", title: "Domination des Réseaux Sociaux" },
+            card3: { name: "Glade", title: "Stratégie Marketing à 360°" },
+            card4: { name: "Refit", title: "Accélération du Trafic Organique" },
+            card5: { name: "Editor", title: "SaaS de Montage Vidéo" }
         },
         websitePage: {
             hero: {
-                title: "Construisez une Empreinte Numérique Premium.",
-                subtitle: "Des landing pages aux applications web complexes. Nous construisons des sites rapides, évolutifs et époustouflants.",
-                cta: "Réserver un Appel Gratuit",
-                ctaSecondary: "Voir Nos Réalisations"
+                title: "Des Sites Web Conçus Pour Vendre.",
+                subtitle: "De la landing page à l'application métier complexe. Nous bâtissons des interfaces ultra-rapides et hautement convertibles.",
+                cta: "Audit Gratuit",
+                ctaSecondary: "Voir Nos Projets"
             },
             services: {
-                title: "Solutions Que Nous Offrons",
-                subtitle: "Services de développement web complets adaptés aux besoins de votre entreprise.",
+                title: "Nos Solutions Web",
+                subtitle: "Un éventail de services experts pour structurer votre présence en ligne.",
                 custom: {
                     title: "Applications Web Sur Mesure",
-                    desc: "Nous créons des solutions d'applications web sur mesure conçues pour répondre à vos défis commerciaux spécifiques."
+                    desc: "Développement de solutions métier complexes pour répondre à vos besoins organisationnels spécifiques."
                 },
                 responsive: {
-                    title: "Design Web Responsive",
-                    desc: "Notre design web responsive garantit que votre site fonctionne parfaitement sur tous les appareils, des ordinateurs aux smartphones."
+                    title: "Design Multi-supports",
+                    desc: "Interfaces adaptatives garantissant une expérience fluide sur mobile, tablette et desktop."
                 },
                 ecommerce: {
-                    title: "Développement E-commerce",
-                    desc: "Nous construisons des plateformes e-commerce sécurisées, évolutives et conviviales qui améliorent vos ventes en ligne."
+                    title: "Plateformes E-commerce",
+                    desc: "Boutiques en ligne sécurisées et optimisées pour maximiser votre panier moyen et vos conversions."
                 },
                 api: {
-                    title: "Intégration API",
-                    desc: "Nous intégrons de manière transparente votre site web avec des services tiers pour améliorer sa fonctionnalité et sa connectivité."
+                    title: "Intégration & Connectivité",
+                    desc: "Interconnexion de vos outils tiers pour un flux de données sans couture entre votre site et vos logiciels internes."
                 },
                 cms: {
-                    title: "Systèmes de Gestion de Contenu (CMS)",
-                    desc: "Nous créons des plateformes CMS intuitives pour faciliter la gestion de votre contenu web, vous donnant un contrôle total."
+                    title: "Gestion de Contenu Intuitive",
+                    desc: "Plateformes CMS robustes vous permettant de piloter votre communication en toute autonomie."
                 },
                 support: {
-                    title: "Support et Maintenance Continus",
-                    desc: "Notre support continu garantit que votre site reste sécurisé, à jour et performant grâce à des mises à jour régulières."
+                    title: "Maintenance & Évolution",
+                    desc: "Accompagnement continu pour garantir la sécurité et la performance constante de votre plateforme."
                 },
                 qa: {
-                    title: "Assurance Qualité (QA)",
-                    desc: "Nous mettons en œuvre des procédures de test rigoureuses (`manuelles` & `automatisées`) pour garantir un site sans bug et performant."
+                    title: "Assurance Qualité Premium",
+                    desc: "Protocoles de tests rigoureux pour une livraison sans bug et une expérience utilisateur parfaite."
                 }
             },
             techStack: {
                 title: "Technologies",
                 frontend: {
-                    title: "Technologies Front-End",
-                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Foundation"]
+                    title: "Écosystème Front-End",
+                    list: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Tailwind"]
                 },
                 backend: {
-                    title: "Technologies Back-End",
-                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "APIs RESTful", "GraphQL", "JSON"]
+                    title: "Écosystème Back-End",
+                    list: ["Python", "Rails", "Nest", "Node JS", "Spring", "APIs REST", "GraphQL", "JSON"]
                 },
                 cms: {
-                    title: "Modèle Personnalisé & CMS",
-                    list: ["Framer", "Webflow", "WordPress"]
+                    title: "Solutions CMS & No-Code",
+                    list: ["Framer", "Webflow", "WordPress", "Shopify"]
                 },
-                cta: "Commencer Votre Build"
+                cta: "Lancer mon Site"
             },
             cta: {
-                text: "Prêt à moderniser votre présence web ?",
-                button: "Commencer Votre Build"
+                text: "Prêt à transformer votre présence en ligne ?",
+                button: "Démarrer Maintenant"
             }
         },
         careersPage: {
             title: "Rejoignez",
-            highlight: "L'Empire",
-            subtitle: "Nous construisons l'infrastructure numérique du commerce marocain. Nous ne construisons pas juste des sites web; nous construisons des moteurs de revenus.",
+            highlight: "l'Empire",
+            subtitle: "Nous bâtissons l'infrastructure du futur pour les entreprises leaders. Plus que des outils, nous créons des systèmes de croissance.",
             detail: {
-                back: "Retour aux Offres",
-                role: "Le Rôle",
-                requirements: "Prérequis",
+                back: "Voir les Offres",
+                role: "Missions",
+                requirements: "Profil Recherché",
                 benefits: "Avantages",
                 interested: "Intéressé ?",
-                join: "Rejoignez l'équipe chez Seedsvision.",
-                apply: "Postuler pour ce Poste",
-                notFound: "Emploi non trouvé",
+                join: "Intégrez l'élite chez Seedsvision.",
+                apply: "Postuler Maintenant",
+                notFound: "Offre non trouvée",
                 backCareers: "Retour aux Carrières"
             },
             jobs: [
                 {
                     id: 'salesforce-developer',
                     title: "Développeur Salesforce Senior",
-                    location: "Rabat, Morocco (Hybride)",
-                    type: "Temps Plein",
-                    department: "Ingénierie",
+                    location: "Rabat (Hybride)",
+                    type: "CDI",
+                    department: "Engineering",
                     salary: "Compétitif",
-                    shortDesc: "Dirigez l'architecture et le développement de solutions Salesforce à grande échelle pour des clients de premier plan.",
-                    description: "Nous recherchons un Développeur Salesforce Senior pour rejoindre notre équipe d'ingénierie d'élite. Vous serez responsable de la conception et de la mise en œuvre de solutions Salesforce personnalisées complexes qui génèrent des revenus pour nos clients. Vous n'écrirez pas seulement du code; vous construirez les moteurs qui propulsent les entreprises marocaines.",
+                    shortDesc: "Pilotez l'architecture de solutions Salesforce complexes pour nos clients stratégiques.",
+                    description: "Rejoignez notre équipe d'élite en tant que Développeur Salesforce Senior. Vous concevrez des solutions personnalisées impactantes pour de grands comptes.",
                     requirements: [
-                        "5+ ans d'expérience avec Salesforce (Apex, LWC, Visualforce).",
-                        "Certifications Salesforce Platform Developer I & II appréciées.",
-                        "Compréhension approfondie de l'architecture Salesforce, des limites et des meilleures pratiques.",
-                        "Expérience avec les API REST/SOAP et les intégrations tierces.",
-                        "Courant en anglais et français."
+                        "5+ ans d'expérience Salesforce (Apex, LWC).",
+                        "Certifications Salesforce PD I & II recommandées.",
+                        "Expertise en intégrations API complexes.",
+                        "Français et Anglais courants."
                     ],
                     benefits: [
-                        "Salaire compétitif + Primes de performance",
-                        "Assurance maladie premium",
-                        "MacBook Pro M3",
-                        "Culture Remote-first"
+                        "Salaire attractif + Bonus",
+                        "Couverture santé premium",
+                        "Équipement Apple dernière génération",
+                        "Culture orientée résultats"
                     ]
                 },
                 {
                     id: 'frontend-engineer',
                     title: "Ingénieur Frontend (React)",
-                    location: "Remote",
-                    type: "Temps Plein",
+                    location: "Télétravail",
+                    type: "CDI",
                     department: "Produit",
                     salary: "Compétitif",
-                    shortDesc: "Construisez des interfaces web époustouflantes et performantes utilisant la stack React moderne et le design glassmorphism.",
-                    description: "Seedsvision est obsédé par le design et la performance. Nous avons besoin d'un Ingénieur Frontend soucieux de chaque pixel et frame d'animation. Vous construirez les interfaces clients de nos systèmes de croissance.",
+                    shortDesc: "Creez des interfaces d'exception avec React et les dernières technologies d'animation.",
+                    description: "Passionné par l'UI/UX et la performance ? Venez construire les interfaces de nos systèmes de croissance.",
                     requirements: [
-                        "3+ ans d'expérience avec React, Tailwind et les animations CSS.",
-                        "Expérience avec Framer Motion ou GSAP fortement appréciée.",
-                        "Forte compréhension du design responsive et de la performance web.",
-                        "Capacité à transformer des designs Figma en code pixel-perfect.",
-                        "Passion pour l'UI/UX."
+                        "3+ ans d'expérience React & Tailwind.",
+                        "Maîtrise des animations (Framer Motion, GSAP).",
+                        "Sensibilité accrue au design de précision.",
+                        "Expertise en web performance."
                     ],
                     benefits: [
-                        "Salaire compétitif",
-                        "Horaires flexibles",
-                        "Budget formation",
-                        "Retraite d'équipe annuelle"
-                    ]
-                },
-                {
-                    id: 'sales-executive',
-                    title: "Commercial B2B",
-                    location: "Rabat, Morocco",
-                    type: "Temps Plein",
-                    department: "Croissance",
-                    salary: "Commission Non Plafonnée",
-                    shortDesc: "Stimulez la croissance de Seedsvision en concluant des deals avec des clients B2B à haute valeur.",
-                    description: "Vous serez en première ligne pour identifier les clients potentiels qui ont besoin de nos systèmes pour évoluer. C'est un rôle à fort impact où vos résultats sont directement liés à votre rémunération.",
-                    requirements: [
-                        "2+ ans d'expérience en vente B2B (SaaS ou Agence).",
-                        "Fortes compétences en communication et négociation.",
-                        "Compréhension du CRM et de la transformation digitale est un plus.",
-                        "Autonome avec une mentalité de chasseur.",
-                        "Courant en français et anglais."
-                    ],
-                    benefits: [
-                        "Structure de commission élevée",
-                        "Progression de carrière vers Directeur Commercial",
-                        "Allocation voiture de société",
-                        "Événements de networking"
+                        "Flexibilité totale",
+                        "Budget formation annuel",
+                        "Événements d'équipe réguliers"
                     ]
                 }
             ]

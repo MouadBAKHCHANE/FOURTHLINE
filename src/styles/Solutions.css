@@ -448,8 +448,27 @@
     color: #fff;
 }
 
+/* Tablet - Center header */
+@media (max-width: 1024px) {
+    .solutions-header {
+        text-align: center;
+    }
+
+    .section-subtitle {
+        margin: 0 auto;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .solutions-section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
     .solutions-grid {
         grid-template-columns: 1fr;
         gap: 0;
@@ -466,7 +485,6 @@
     .dashboard-frame {
         height: 400px;
         transform: none;
-        /* Disable 3D on mobile for performance */
     }
 
     .result-badge {

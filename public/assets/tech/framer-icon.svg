@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Framer stylized F with angular pointed design -->
+  <path d="M128 48h256v144H256L128 48z"/>
+  <path d="M128 192h128v144L128 464V192z"/>
+  <path d="M256 192h128l-128 144V192z"/>
+</svg>

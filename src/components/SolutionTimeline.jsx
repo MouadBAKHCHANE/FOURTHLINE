@@ -65,13 +65,10 @@ const SolutionTimeline = () => {
                         <p className="section-subtitle sticky-subtitle">
                             {t.solution.subtitle}
                         </p>
-                        <div className="flex gap-4 mt-8">
+                        <div className="flex flex-col gap-4 mt-8">
                             <a href="#contact" className="btn-nova-glow btn-nav-size">
                                 <div className="btn-dot-indicator"></div>
                                 {t.nav.requestDemo}
-                            </a>
-                            <a href="#results" className="btn-nova-glow btn-nav-size">
-                                {t.hero?.viewSystem || "See Our Work"}
                             </a>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ import ComparisonSlider from '../components/ComparisonSlider';
 import HeroBackground from '../components/HeroBackground';
 import { ArrowRight, CheckCircle, ShieldCheck, Zap, Users, Layers, Code, Globe, TrendingUp, Megaphone, Bot, BarChart, Smartphone, ShoppingCart, Webhook, FileText, LifeBuoy } from 'lucide-react';
 import Services from '../components/Services';
+import Solutions from '../components/Solutions';
 import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
 import '../styles/TechnologiesPage.css';
 
@@ -161,10 +162,15 @@ const TechnologiesPage = () => {
             {/* Tech Stack (Moved from Home) */}
             <section className="ws-stack-section section-padding">
                 <div className="container">
-                    <h2 className="ws-section-title">{t.websitePage.techStack.title}</h2>
+                    <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
+                        Our <span className="text-gradient">Technologies</span>
+                    </h2>
                     <GlowingEffectDemo />
                 </div>
             </section>
+
+            {/* Industries / Expertise Section (Moved from Home) */}
+            <Solutions />
 
             {/* Services Table (Moved from Home) */}
             <Services />

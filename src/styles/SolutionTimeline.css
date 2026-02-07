@@ -95,10 +95,7 @@
 }
 
 .timeline-step {
-    position: sticky;
-    --base-top: 150px;
-    top: 150px;
-    /* Reference desktop stick point */
+    top: var(--base-top, 150px);
     background: #252830;
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* DEBUG: Verify CSS update */
@@ -184,9 +181,6 @@
         left: 0;
     }
 
-    .timeline-item:nth-child(odd) {
-        /* No specific adjustment needed if default is left aligned or flex */
-    }
 
     /* Reset alignment for mobile if needed, assuming timeline becomes left-aligned list */
     .timeline-item:nth-child(even) .timeline-content::before {
@@ -215,7 +209,7 @@
     /* Mobile Responsive Adjustments */
     .solution-section {
         padding-top: 60px;
-        padding-bottom: 60px;
+        padding-bottom: 20px;
     }
 
     .timeline-container {
@@ -239,23 +233,46 @@
         text-align: center;
     }
 
+    .section-header-side .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
     /* Keep Sticky Stacking on Mobile! */
     .steps-wrapper {
         min-height: auto;
         gap: 30px;
-        padding-bottom: 40px;
-        /* Override 20vh */
+        padding-bottom: 20px;
     }
 
     .timeline-step {
-        /* Adjust padding for mobile but KEEP sticky behavior */
         padding: 30px 20px;
         flex-direction: column;
         text-align: center;
-        /* Ensure top uses variable for JS calculation or fallback */
-        --base-top: 80px;
+    }
+
+    .timeline-step:nth-child(1) {
         top: 80px;
-        /* Fallback */
+    }
+
+    .timeline-step:nth-child(2) {
+        top: 95px;
+    }
+
+    .timeline-step:nth-child(3) {
+        top: 110px;
+    }
+
+    .timeline-step:nth-child(4) {
+        top: 125px;
+    }
+
+    .timeline-step:nth-child(5) {
+        top: 140px;
+    }
+
+    .timeline-step:nth-child(6) {
+        top: 155px;
     }
 
     .step-marker {
