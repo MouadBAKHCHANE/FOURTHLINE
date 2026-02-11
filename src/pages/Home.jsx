@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { Zap, Layers, Code, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ResultsSection from '../components/ResultsSection';
-import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
+
 import '../styles/Website.css'; // Needed for ws-hero styles
 
 const Home = () => {
@@ -38,7 +38,7 @@ const Home = () => {
                     <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
                         Our <span className="text-gradient">Technologies</span>
                     </h2>
-                    <GlowingEffectDemo />
+
                 </div>
             </section>
 

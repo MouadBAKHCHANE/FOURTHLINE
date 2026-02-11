@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ComparisonSlider from '../components/ComparisonSlider';
-import HeroBackground from '../components/HeroBackground';
+
 import { ArrowRight, ShieldCheck, TrendingUp, Megaphone, Bot, BarChart } from 'lucide-react';
 import Services from '../components/Services';
 import Solutions from '../components/Solutions';
@@ -20,7 +20,7 @@ const CRMPage = () => {
 
             {/* Hero Section */}
             <section className="sb-hero">
-                <HeroBackground />
+
                 <div className="sb-hero-bg"></div>
                 <div className="container sb-hero-container">
                     <div className="sb-hero-content">
