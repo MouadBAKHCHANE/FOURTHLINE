@@ -1,7 +1,7 @@
 /* SolutionTimeline.css - Sticky Header + Stacking Steps Layout */
 .solution-section {
-    padding: 100px 0 80px 0;
-    /* Adjusted bottom padding to 80px */
+    padding: 100px 0 20px 0;
+    /* Adjusted bottom padding to 20px */
     background: transparent;
     position: relative;
     overflow: visible !important;
@@ -17,8 +17,8 @@
     max-width: 1200px;
     margin: 0 auto;
     align-items: start;
-    padding-bottom: 80px;
-    /* Adjusted from 20px */
+    padding-bottom: 40px;
+    /* Adjusted from 80px to 40px */
 }
 
 /* Sticky Header Side */
@@ -95,8 +95,11 @@
 }
 
 .timeline-step {
+    position: sticky;
+    /* Essential for stacking effect */
     top: var(--base-top, 150px);
-    background: #252830;
+    background: rgba(30, 41, 59, 0.7);
+    /* Lighter glass for contrast */
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* DEBUG: Verify CSS update */
     border-radius: 24px;
@@ -106,8 +109,6 @@
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
     /* transition: transform 0.3s ease; Removed to fix Framer Motion conflict */
     backdrop-filter: blur(20px);
-    background: #252830;
-    /* 100% Opaque to fully hide previous card */
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -123,7 +124,7 @@
 .step-number {
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
     /* Big subtle number */
     line-height: 1;
 }

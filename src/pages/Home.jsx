@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { Zap, Layers, Code, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ResultsSection from '../components/ResultsSection';
-import { GlowingEffectDemo } from '../components/GlowingEffectDemo';
+import { ServicesSolutions } from '../components/ServicesSolutions';
 import '../styles/Website.css'; // Needed for ws-hero styles
 
 const Home = () => {
@@ -26,26 +26,29 @@ const Home = () => {
     }, [location]);
 
     return (
-        <>
-            <About />
+        <div className="min-h-screen bg-[#0B1120] relative">
+            {/* Hero Section */}
+            <header className="relative pt-10 pb-0 lg:pt-20 lg:pb-6 overflow-hidden">
+                <div className="container">
+                    <About />
+                </div>
+            </header>
+
             <WhatWeDo />
             <ProblemSection />
             <SolutionTimeline />
 
-            {/* Technologies Section */}
+            {/* Services Section */}
             <section className="ws-stack-section section-padding">
                 <div className="container">
-                    <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
-                        Our <span className="text-gradient">Technologies</span>
-                    </h2>
-                    <GlowingEffectDemo />
+                    <ServicesSolutions />
                 </div>
             </section>
 
             {/* Results / Our Work Section */}
             <ResultsSection />
 
-        </>
+        </div>
     );
 };
 

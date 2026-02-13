@@ -7,9 +7,15 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Card = ({ i, children }) => {
     return (
-        <div className="timeline-step">
+        <motion.div
+            className="timeline-step"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+        >
             {children}
-        </div>
+        </motion.div>
     );
 };
 

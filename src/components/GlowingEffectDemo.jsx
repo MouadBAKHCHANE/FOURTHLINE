@@ -86,7 +86,7 @@ const TechCategoryCard = ({ title, items, color }) => {
             <div className="flex flex-wrap justify-center gap-4 mt-4">
                 {items.map((item) => {
                     const iconFile = ICON_MAP[item];
-                    const folder = ["Framer", "Webflow", "WordPress", "Shopify", "Laravel", "PHP", "TypeScript", "Tailwind", "Supabase", "FastAPI", "PostgreSQL"].includes(item) ? "tech" : "Custom Web Application and Website Development Services";
+                    const folder = ["Framer", "Webflow", "WordPress", "Shopify", "Laravel", "PHP", "TypeScript", "Tailwind", "Supabase", "FastAPI", "PostgreSQL"].includes(item) ? "tech" : "custom";
                     const iconPath = iconFile ? `/assets/${folder}/${iconFile}` : null;
                     const isSvg = iconFile && iconFile.endsWith('.svg');
 

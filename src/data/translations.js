@@ -2,7 +2,7 @@ export const translations = {
     en: {
         nav: {
             home: "Home",
-            product: "Technologies",
+            product: "CRM",
             industries: "Industries",
             careers: "Careers",
             docs: "Methodology",
@@ -145,6 +145,41 @@ export const translations = {
                 }
             },
             cta: "⚡ Start Your Build"
+        },
+        servicesSolutions: {
+            title: "Services & Solutions",
+            cards: [
+                {
+                    headline: "Showcase Website",
+                    subtext: "A stunning digital presence to convert visitors into clients.",
+                    icons: ["HTML5", "CSS3", "JavaScript", "Tailwind"]
+                },
+                {
+                    headline: "Blog & SEO",
+                    subtext: "Content strategies optimized to rank #1 on Google.",
+                    icons: ["WordPress", "Webflow"]
+                },
+                {
+                    headline: "E-Commerce",
+                    subtext: "Secure online stores designed to sell 24/7.",
+                    icons: ["Shopify"]
+                },
+                {
+                    headline: "Web & Mobile Apps",
+                    subtext: "Interactive applications available on iOS, Android, and Web.",
+                    icons: ["React", "TypeScript", "Node JS", "Supabase"]
+                },
+                {
+                    headline: "Custom SaaS",
+                    subtext: "Scalable software solutions to automate your business logic.",
+                    icons: ["Laravel", "Python", "FastAPI", "PostgreSQL"] // Using PostgreSQL as generic DB
+                },
+                {
+                    headline: "Data Dashboards",
+                    subtext: "Real-time analytics and visualization for smarter decisions.",
+                    icons: ["Python", "PostgreSQL"]
+                }
+            ]
         },
         stats: {
             projects: "Projects Completed",
@@ -632,25 +667,60 @@ export const translations = {
             tier2Button: "Bâtir votre Empire"
         },
         techStack: {
-            title: "Ingénierie de la Vitesse.",
+            title: "Ingénierie de la Vitesse Digitale.",
             cards: {
                 nocode: {
-                    title: "Design & Déploiement Rapide",
+                    title: "Design-First & Déploiement Rapide",
                     platform: "Framer / Webflow",
-                    desc: "Des sites web époustouflants et animés en un temps record. Idéal pour les startups cherchant un impact visuel immédiat."
+                    desc: "Lancez des sites époustouflants et animés en quelques jours. Idéal pour les startups ayant besoin d'impact immédiat."
                 },
                 cms: {
-                    title: "Évolutivité & Gestion de Contenu",
+                    title: "Évolutivité & Contrôle de Contenu",
                     platform: "WordPress / Headless",
-                    desc: "Le leader mondial du CMS, optimisé pour la performance. Gardez la main sur vos contenus en toute simplicité."
+                    desc: "Le CMS le plus populaire, optimisé pour la performance. Gérez votre contenu facilement, nous gérons le code."
                 },
                 custom: {
-                    title: "Next.js/React - Puissance Illimitée",
-                    platform: "Développement Sur Mesure",
-                    desc: "Sécurité maximale et performances exceptionnelles pour des applications web complexes et robustes."
+                    title: "Next.js/React - Potentiel Illimité",
+                    platform: "Stack Sur-Mesure",
+                    desc: "Sécurité bancaire et performance ultra-rapide. Pour les applications web complexes nécessitant une logique robuste."
                 }
             },
-            cta: "⚡ Lancer la Construction"
+            cta: "⚡ Lancer Votre Projet"
+        },
+        servicesSolutions: {
+            title: "Services & Solutions",
+            cards: [
+                {
+                    headline: "Site Vitrine",
+                    subtext: "Une présence numérique époustouflante pour convertir les visiteurs en clients.",
+                    icons: ["HTML5", "CSS3", "JavaScript", "Tailwind"]
+                },
+                {
+                    headline: "Blog & SEO",
+                    subtext: "Des stratégies de contenu optimisées pour se classer n°1 sur Google.",
+                    icons: ["WordPress", "Webflow"]
+                },
+                {
+                    headline: "Site E-commerce",
+                    subtext: "Des boutiques en ligne sécurisées conçues pour vendre 24/7.",
+                    icons: ["Shopify"]
+                },
+                {
+                    headline: "Web & Mobile Apps",
+                    subtext: "Applications interactives disponibles sur iOS, Android et Web.",
+                    icons: ["React", "TypeScript", "Node JS", "Supabase"]
+                },
+                {
+                    headline: "SaaS Sur-Mesure",
+                    subtext: "Solutions logicielles évolutives pour automatiser votre logique métier.",
+                    icons: ["Laravel", "Python", "FastAPI", "PostgreSQL"]
+                },
+                {
+                    headline: "Tableaux de Bord de Données",
+                    subtext: "Analyses et visualisations en temps réel pour des décisions plus intelligentes.",
+                    icons: ["Python", "PostgreSQL"]
+                }
+            ]
         },
         stats: {
             projects: "Projets Livrés",
