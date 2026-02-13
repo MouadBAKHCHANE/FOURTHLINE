@@ -8,13 +8,13 @@ import QualificationForm from './pages/QualificationForm';
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
 import CRMPage from './pages/CRMPage';
-import CRM from './pages/CRM';
+
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import Footer from './components/Footer';
 import './index.css';
-import { SparklesPreview } from './components/SparklesDemo';
+
 import { translations } from './data/translations';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CustomCursor from './components/ui/CustomCursor';
@@ -42,8 +42,8 @@ const AppContent = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
-        <Route path="/sparkles" element={<SparklesPreview />} />
-        <Route path="/crm" element={<CRM />} />
+
+        <Route path="/crm" element={<CRMPage />} />
       </Routes>
       <Footer />
     </div>

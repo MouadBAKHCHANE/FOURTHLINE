@@ -42,13 +42,13 @@ const Home = () => {
             <section className="ws-stack-section section-padding">
                 <div className="container">
                     <ServicesSolutions />
-                </div>
-            </section>
+                </div >
+            </section >
 
             {/* Results / Our Work Section */}
-            <ResultsSection />
+            < ResultsSection />
 
-        </div>
+        </div >
     );
 };
 
