@@ -626,30 +626,32 @@
 
             <!-- STEP 3: PROJECT -->
             <div class="step-content" id="step-3">
-                <label>Preferred CRM Platform</label>
-                <input type="hidden" id="00NQH00000NSwG1" name="00NQH00000NSwG1">
-                <div class="selection-group" data-target="00NQH00000NSwG1">
-                    <div class="select-card" data-value="Salesforce">
-                        <img src="/logos/salesforce.png" alt="Salesforce" class="card-logo">
-                        <span class="card-text">Salesforce</span>
-                    </div>
-                    <div class="select-card" data-value="Odoo">
-                        <img src="/logos/odoo.png" alt="Odoo" class="card-logo">
-                        <span class="card-text">Odoo</span>
-                    </div>
-                    <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
-                </div>
-                <div class="other-input" data-linked-to="00NQH00000NSwG1">
-                    <input id="00NQH00000NUGQH" maxlength="255" name="00NQH00000NUGQH" type="text"
-                        placeholder="Please specify CRM..." />
-                </div>
-
                 <label>Client Needs</label>
                 <input type="hidden" id="00NQH00000NSw8f" name="00NQH00000NSw8f">
                 <div class="selection-group" data-target="00NQH00000NSw8f">
                     <div class="select-card" data-value="Website Only"><span class="card-text">Website Only</span></div>
                     <div class="select-card" data-value="CRM Setup"><span class="card-text">CRM Setup</span></div>
                     <div class="select-card" data-value="Website + CRM"><span class="card-text">Website + CRM</span>
+                    </div>
+                </div>
+
+                <div id="crm-section" style="display:none;">
+                    <label>Preferred CRM Platform</label>
+                    <input type="hidden" id="00NQH00000NSwG1" name="00NQH00000NSwG1">
+                    <div class="selection-group" data-target="00NQH00000NSwG1">
+                        <div class="select-card" data-value="Salesforce">
+                            <img src="/logos/salesforce.png" alt="Salesforce" class="card-logo">
+                            <span class="card-text">Salesforce</span>
+                        </div>
+                        <div class="select-card" data-value="Odoo">
+                            <img src="/logos/odoo.png" alt="Odoo" class="card-logo">
+                            <span class="card-text">Odoo</span>
+                        </div>
+                        <div class="select-card" data-value="Other"><span class="card-text">Other</span></div>
+                    </div>
+                    <div class="other-input" data-linked-to="00NQH00000NSwG1">
+                        <input id="00NQH00000NUGQH" maxlength="255" name="00NQH00000NUGQH" type="text"
+                            placeholder="Please specify CRM..." />
                     </div>
                 </div>
 
@@ -793,6 +795,20 @@
                                 if (inp) inp.focus();
                             } else {
                                 otherContainer.classList.remove('show');
+                            }
+                        }
+
+                        // CONDITIONAL LOGIC FOR CRM
+                        if (hiddenInputId === '00NQH00000NSw8f') {
+                            const crmSection = document.getElementById('crm-section');
+                            if (val === 'CRM Setup' || val === 'Website + CRM') {
+                                crmSection.style.display = 'block';
+                                crmSection.classList.add('fade-in'); // Optional animation if class exists
+                            } else {
+                                crmSection.style.display = 'none';
+                                // Optional: Clear selection in CRM section
+                                document.getElementById('00NQH00000NSwG1').value = '';
+                                document.querySelectorAll('[data-target="00NQH00000NSwG1"] .select-card').forEach(c => c.classList.remove('active'));
                             }
                         }
                     });
