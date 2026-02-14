@@ -24,7 +24,7 @@ const About = () => {
                         <a href="/Webtoleadform.html" className="btn-nova-glow">
                             <div className="btn-dot-indicator"></div> {t.websitePage.hero.cta}
                         </a>
-                        <a href="#works" className="btn-nova-glow">
+                        <a href="#works" className="btn-nova-glass">
                             {t.websitePage.hero.ctaSecondary}
                         </a>
                     </div>

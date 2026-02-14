@@ -548,7 +548,7 @@ export const translations = {
             signin: "Connexion",
             blog: "Blog",
             contact: "Contact",
-            requestDemo: "Démarrer Votre Projet"
+            requestDemo: "Devis Gratuit"
         },
         hero: {
             title: "Créez votre",
@@ -925,10 +925,10 @@ export const translations = {
         },
         websitePage: {
             hero: {
-                title: "Des Sites Web Conçus Pour Vendre.",
+                title: "Vos Sites Web Conçus Pour Vendre.",
                 subtitle: "De la landing page à l'application métier complexe. Nous bâtissons des interfaces ultra-rapides et hautement convertibles.",
-                cta: "Audit Gratuit",
-                ctaSecondary: "Voir Nos Projets"
+                cta: "Devis Gratuit",
+                ctaSecondary: "Réservez votre appel gratuit"
             },
             services: {
                 title: "Nos Solutions Web",

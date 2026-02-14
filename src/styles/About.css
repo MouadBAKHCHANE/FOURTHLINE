@@ -227,13 +227,13 @@
 
 @media (max-width: 1024px) {
     .hero {
-        padding-top: 220px;
-        /* Reduced further from 120px to move title up */
-        padding-bottom: 60px;
+        padding-top: 140px;
+        /* Reduced further from 220px to move title up and show content above fold */
+        padding-bottom: 40px;
         min-height: auto;
         position: relative;
-        overflow: hidden;
-        /* Ensure background doesn't spill */
+        overflow: visible;
+        /* Allow overflow for trust signals if needed */
     }
 
     .hero-container {
@@ -259,17 +259,20 @@
 
     .hero-actions {
         display: flex;
-        /* Ensure it's flex */
         justify-content: center;
-        /* Center horizontally */
         align-items: center;
-        /* Center vertically if height differs */
         flex-wrap: wrap;
-        /* Allow wrapping if small screen */
         gap: 16px;
-        /* Explicit gap */
-        margin-bottom: 6rem;
-        /* Increased significantly to push social proof lower */
+        margin-bottom: 2.5rem;
+    }
+
+    /* Stop logo animation on mobile/tablet if requested, or keep it as it's 2D */
+    /* User said "3d animations", but let's be safe if they mean all movement */
+    /* .proof-logos { animation: none; flex-wrap: wrap; justify-content: center; } */
+
+    /* Ensuring float-icon is hidden on larger tablets too if needed */
+    .float-icon {
+        display: none !important;
     }
 
     .hero-visual-creative {
@@ -297,8 +300,13 @@
     }
 
     .dashboard-container {
-        max-width: 100%;
-        transform: none;
+        display: none;
+        /* Hide complex visuals on mobile/tablet to simplify */
+    }
+
+    .code-window {
+        display: none;
+        /* Hide code window on mobile/tablet */
     }
 
     .mascot-container {
@@ -323,6 +331,15 @@
     .mobile-break {
         display: block;
     }
+
+    .hero-cta-group {
+        justify-content: center;
+    }
+
+    .proof-text {
+        font-size: 0.9rem;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -334,7 +351,10 @@
         font-size: 2.2rem;
     }
 
-
+    /* Hide floating icon on tablet/mobile as requested */
+    .float-icon {
+        display: none !important;
+    }
 }
 
 /* Hide mobile break on desktop */
@@ -351,11 +371,18 @@
 
 @media (max-width: 480px) {
     .hero-title.nova-title {
-        font-size: 2rem;
+        font-size: 3.2rem;
+        /* Increased from 2rem for impact */
+        margin-bottom: 1.5rem;
     }
 
     .text-highlight {
-        font-size: 1.8rem;
+        font-size: 3.2rem;
+        /* Match title */
+    }
+
+    .proof-text {
+        font-size: 0.8rem;
     }
 }
 
